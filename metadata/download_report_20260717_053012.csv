@@ -1,0 +1,21 @@
+city_id,city_name,status,output_path,size_bytes,checksum_verified,zip_verified,error
+DE01,Mannheim,skipped_verified,data\raw\sentinel1\DE01_Mannheim\S1A_IW_GRDH_1SDV_20250713T054243_20250713T054308_060061_077642_5B05_COG.SAFE.zip,1236366430,True,True,
+DE02,Heidelberg,skipped_verified,data\raw\sentinel1\DE02_Heidelberg\S1A_IW_GRDH_1SDV_20250713T054243_20250713T054308_060061_077642_5B05_COG.SAFE.zip,1236366430,True,True,
+DE03,Karlsruhe,skipped_verified,data\raw\sentinel1\DE03_Karlsruhe\S1A_IW_GRDH_1SDV_20250720T053445_20250720T053510_060163_0779C8_DD28_COG.SAFE.zip,1234562591,True,True,
+DE04,Stuttgart,skipped_verified,data\raw\sentinel1\DE04_Stuttgart\S1A_IW_GRDH_1SDV_20250720T053445_20250720T053510_060163_0779C8_DD28_COG.SAFE.zip,1234562591,True,True,
+DE05,Munich,skipped_verified,data\raw\sentinel1\DE05_Munich\S1A_IW_GRDH_1SDV_20250711T170738_20250711T170803_060039_077585_136D_COG.SAFE.zip,1238557348,True,True,
+DE06,Nuremberg,skipped_verified,data\raw\sentinel1\DE06_Nuremberg\S1A_IW_GRDH_1SDV_20250715T052633_20250715T052658_060090_077749_BBDE_COG.SAFE.zip,1238534894,True,True,
+DE07,Frankfurt,skipped_verified,data\raw\sentinel1\DE07_Frankfurt\S1A_IW_GRDH_1SDV_20250713T054243_20250713T054308_060061_077642_5B05_COG.SAFE.zip,1236366430,True,True,
+DE08,Cologne,skipped_verified,data\raw\sentinel1\DE08_Cologne\S1A_IW_GRDH_1SDV_20250713T054218_20250713T054243_060061_077642_C89D_COG.SAFE.zip,1241756650,True,True,
+DE09,Dusseldorf,skipped_verified,data\raw\sentinel1\DE09_Dusseldorf\S1A_IW_GRDH_1SDV_20250713T054218_20250713T054243_060061_077642_C89D_COG.SAFE.zip,1241756650,True,True,
+DE10,Dortmund,downloaded_verified,data\raw\sentinel1\DE10_Dortmund\S1A_IW_GRDH_1SDV_20250713T054218_20250713T054243_060061_077642_C89D_COG.SAFE.zip,1241756650,True,True,
+DE11,Hamburg,downloaded_verified,data\raw\sentinel1\DE11_Hamburg\S1A_IW_GRDH_1SDV_20250720T053330_20250720T053355_060163_0779C8_B629_COG.SAFE.zip,1205385740,True,True,
+DE12,Bremen,downloaded_verified,data\raw\sentinel1\DE12_Bremen\S1A_IW_GRDH_1SDV_20250713T054153_20250713T054218_060061_077642_5D99_COG.SAFE.zip,1204116953,True,True,
+DE13,Hanover,downloaded_verified,data\raw\sentinel1\DE13_Hanover\S1A_IW_GRDH_1SDV_20250713T054153_20250713T054218_060061_077642_5D99_COG.SAFE.zip,1204116953,True,True,
+DE14,Berlin,downloaded_verified,data\raw\sentinel1\DE14_Berlin\S1A_IW_GRDH_1SDV_20250713T165226_20250713T165251_060068_077680_23C1_COG.SAFE.zip,1236049503,True,True,
+DE15,Leipzig,downloaded_verified,data\raw\sentinel1\DE15_Leipzig\S1A_IW_GRDH_1SDV_20250715T052543_20250715T052608_060090_077749_A720_COG.SAFE.zip,1210593490,True,True,
+DE16,Dresden,downloaded_verified,data\raw\sentinel1\DE16_Dresden\S1A_IW_GRDH_1SDV_20250710T051734_20250710T051759_060017_0774C4_7428_COG.SAFE.zip,1205851989,True,True,
+DE17,Munster,downloaded_verified,data\raw\sentinel1\DE17_Munster\S1A_IW_GRDH_1SDV_20250713T054218_20250713T054243_060061_077642_C89D_COG.SAFE.zip,1241756650,True,True,
+DE18,Freiburg,failed,data\raw\sentinel1\DE18_Freiburg\S1A_IW_GRDH_1SDV_20250713T054308_20250713T054333_060061_077642_67A5_COG.SAFE.zip,0,False,False,401 Client Error: Unauthorized for url: https://download.dataspace.copernicus.eu/odata/v1/Products(d409500c-3661-411d-9cbf-3f8a55163891)/$value
+DE19,Kiel,failed,data\raw\sentinel1\DE19_Kiel\S1A_IW_GRDH_1SDV_20250713T054128_20250713T054153_060061_077642_BB13_COG.SAFE.zip,0,False,False,401 Client Error: Unauthorized for url: https://download.dataspace.copernicus.eu/odata/v1/Products(88661a55-9772-46ae-8c3f-df3313db3dd2)/$value
+DE20,Rostock,failed,data\raw\sentinel1\DE20_Rostock\S1A_IW_GRDH_1SDV_20250713T165251_20250713T165316_060068_077680_54FD_COG.SAFE.zip,0,False,False,401 Client Error: Unauthorized for url: https://download.dataspace.copernicus.eu/odata/v1/Products(d329e5a2-794e-4526-a627-eef2762d3127)/$value

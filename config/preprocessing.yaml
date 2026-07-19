@@ -1,0 +1,40 @@
+snap:
+  gpt_executable: "D:/Program Files/esa-snap/bin/gpt.exe"
+  graph_file: "snap_graphs/sentinel1_preprocessing_v1.xml"
+
+  cache_size: "6G"
+  parallelism: 4
+  timeout_minutes: 180
+  clear_cache_after_row: true
+
+inputs:
+  selected_scenes_file: "metadata/selected_scenes_v1.csv"
+  raw_sentinel1_directory: "data/raw/sentinel1"
+  city_registry_file: "config/cities.csv"
+  city_aoi_directory: "data/aoi/cities"
+
+outputs:
+  intermediate_directory: "data/interim/sar_buffered"
+  final_directory: "data/processed/sar"
+  log_directory: "metadata/snap_logs"
+  report_file: "metadata/snap_preprocessing_report.csv"
+  crop_report_file: "metadata/sar_crop_report.csv"
+
+processing:
+  subset_buffer_km: 5.0
+
+  skip_existing_valid: true
+  overwrite_invalid: true
+
+  minimum_output_size_mb: 10
+  required_band_count: 2
+
+  final_pixel_size_m: 10.0
+  final_nodata_value: 0.0
+  final_compression: "DEFLATE"
+
+  pilot_cities:
+    - DE01
+    - DE05
+    - DE14
+    - DE18

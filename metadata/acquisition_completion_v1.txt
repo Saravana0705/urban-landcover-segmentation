@@ -1,0 +1,12 @@
+Sentinel-1 acquisition stage completed.
+
+Cities: 20
+Platform: Sentinel-1A
+Mode: IW GRD
+Polarizations: VV and VH
+Orbit directions: 17 descending and 3 approved ascending
+Minimum calculated AOI coverage: 100%
+Downloaded and checksum-verified products: 20
+Failed products: 0
+Acquisition manifest: metadata/selected_scenes_v1.csv
+Download report: metadata/download_report_v1_complete.csv

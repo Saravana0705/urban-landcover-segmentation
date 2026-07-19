@@ -1,0 +1,28 @@
+Dataset acquisition policy — Version 1
+
+Platform:
+Sentinel-1A only.
+
+Product:
+Sentinel-1 Level-1 IW GRD, dual-polarization VV and VH.
+
+Study area:
+Twenty German cities with standardized 30 km × 30 km centred AOIs.
+
+Temporal interval:
+10 July 2025 to 20 July 2025 for selected products.
+
+Orbit-direction policy:
+Descending acquisitions were preferred.
+
+Exceptions:
+Ascending acquisitions were used for Munich (DE05), Berlin (DE14)
+and Rostock (DE20), because no single Sentinel-1A descending
+acquisition provided at least 99% coverage of the standardized AOI.
+
+Coverage:
+All selected products provide at least 99% AOI coverage; selected
+products currently provide 100% calculated AOI coverage.
+
+Scene policy:
+One product per city. No mosaicking is used in dataset version 1.

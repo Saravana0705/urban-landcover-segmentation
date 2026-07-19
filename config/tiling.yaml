@@ -1,0 +1,12 @@
+tile_size_pixels: 256
+stride_pixels: 256
+pixel_spacing_m: 10
+
+minimum_valid_fraction: 0.95
+maximum_ignore_fraction: 0.50
+
+store_georeferenced_tiles: true
+store_preview_images: true
+
+split_level: city
+random_seed: 42

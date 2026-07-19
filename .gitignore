@@ -1,5 +1,5 @@
 # Virtual environment
-.venv/
+venv/
 
 # Python
 __pycache__/
@@ -15,6 +15,10 @@ __pycache__/
 data/raw/
 data/downloads/
 data/processed/
+data/interim/
+
+# Large raw OSM data
+data/labels/raw/
 
 # Outputs
 outputs/
@@ -25,3 +29,20 @@ models/*.pt
 
 # Logs
 *.log
+
+# SNAP
+*.SAFE
+*.dim
+*.data
+
+# Large rasters
+*.tif
+*.tiff
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Others
+.env
+*.part

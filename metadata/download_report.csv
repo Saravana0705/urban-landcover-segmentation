@@ -1,0 +1,2 @@
+city_id,city_name,status,output_path,size_bytes,checksum_verified,zip_verified
+DE01,Mannheim,skipped_verified,data\raw\sentinel1\DE01_Mannheim\S1A_IW_GRDH_1SDV_20250713T054243_20250713T054308_060061_077642_5B05_COG.SAFE.zip,1236366430,True,True

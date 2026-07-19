@@ -1,0 +1,43 @@
+catalog:
+  stac_url: "https://stac.dataspace.copernicus.eu/v1"
+  collection: "sentinel-1-grd"
+
+search:
+  start_date: "2025-04-01"
+  end_date: "2025-10-31"
+
+  required_platform: "sentinel-1a"
+  preferred_orbit_direction: "descending"
+  preferred_instrument_mode: "IW"
+
+  minimum_aoi_coverage: 0.99
+  page_size: 100
+
+  required_polarisations:
+    - VV
+    - VH
+
+selection:
+  target_month: 7
+  target_day: 15
+
+  coverage_weight: 0.45
+  temporal_weight: 0.30
+  orbit_weight: 0.15
+  mode_weight: 0.10
+
+download:
+  selected_scenes_file: "metadata/selected_scenes_v1.csv"
+  output_directory: "data/raw/sentinel1"
+
+  chunk_size_mb: 8
+  timeout_seconds: 300
+  maximum_retries: 5
+  retry_wait_seconds: 30
+
+  verify_file_size: true
+  verify_checksum: true
+  skip_existing_verified: true
+
+  token_url: "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token"
+  client_id: "cdse-public"

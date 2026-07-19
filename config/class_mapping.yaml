@@ -1,0 +1,45 @@
+dataset:
+  name: s1_urban_landcover_de20
+  version: "0.1"
+
+classes:
+  0:
+    name: building
+  1:
+    name: road
+  2:
+    name: vegetation
+  3:
+    name: bare_land
+  4:
+    name: water
+
+ignore_index: 255
+
+priority:
+  - building
+  - road
+  - water
+  - vegetation
+  - bare_land
+
+sources:
+  building:
+    primary: osm
+
+  road:
+    primary: osm
+
+  vegetation:
+    primary: urban_atlas
+    secondary: osm
+
+  bare_land:
+    primary: urban_atlas
+    secondary: corine
+
+  water:
+    primary: urban_atlas
+    secondary: osm
+
+unresolved_pixels: ignore
