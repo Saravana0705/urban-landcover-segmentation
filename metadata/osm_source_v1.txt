@@ -1,0 +1,36 @@
+OpenStreetMap ground-truth source — Version 1
+
+Provider:
+Geofabrik GmbH
+
+Region:
+Germany
+
+Format:
+OpenStreetMap Protocolbuffer Binary Format (.osm.pbf)
+
+Local file:
+data/raw/osm/germany.osm.pbf
+
+Download date:
+2026-07-19
+
+Snapshot date:
+2026-07-17T20:20:51Z
+
+Use:
+Local extraction of OSM features for twenty German city AOIs.
+
+Important:
+The OSM snapshot is frozen for dataset version 1. It will not be
+updated during model development, so every city uses the same source
+version.
+
+Website:
+https://download.geofabrik.de/europe/germany.html
+
+License:
+ODbL 1.0
+
+Checksum:
+Not provided by Geofabrik at download time.

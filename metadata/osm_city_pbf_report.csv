@@ -1,0 +1,2 @@
+city_id,city_name,status,output_pbf,size_mb,bbox,aoi_file,duration_seconds,error
+DE01,Mannheim,created_valid,data\interim\osm_city_pbf\DE01_Mannheim.osm.pbf,364.8892288208008,"[8.25686319164285, 49.35144548618943, 8.673998684450966, 49.62318963061113]",D:\2026\ADSA\11. Case Studies 2\Project Code\Urban-Landcover-Segmentation\data\aoi\cities\DE01_Mannheim_aoi.gpkg,1906.1906409999938,

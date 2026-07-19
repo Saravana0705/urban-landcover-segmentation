@@ -1,0 +1,106 @@
+building:
+
+  include:
+
+    building:
+      - "*"
+
+  exclude:
+
+    building:
+      - "no"
+
+
+road:
+
+  include:
+
+    highway:
+      - motorway
+      - motorway_link
+      - trunk
+      - trunk_link
+      - primary
+      - primary_link
+      - secondary
+      - secondary_link
+      - tertiary
+      - tertiary_link
+      - residential
+      - living_street
+      - service
+      - unclassified
+      - pedestrian
+
+
+vegetation:
+
+  include:
+
+    landuse:
+      - forest
+      - grass
+      - meadow
+      - orchard
+      - vineyard
+      - recreation_ground
+      - village_green
+      - allotments
+      - farmland
+
+    natural:
+      - wood
+      - grassland
+      - scrub
+      - heath
+
+    leisure:
+      - park
+      - garden
+      - golf_course
+      - nature_reserve
+
+
+bare_land:
+
+  include:
+
+    natural:
+      - bare_rock
+      - sand
+      - scree
+      - shingle
+
+    landuse:
+      - quarry
+      - brownfield
+      - construction
+      - landfill
+
+    surface:
+      - sand
+      - gravel
+      - fine_gravel
+      - ground
+      - dirt
+      - bare_rock
+
+
+water:
+
+  include:
+
+    natural:
+      - water
+      - bay
+
+    waterway:
+      - riverbank
+      - dock
+
+    landuse:
+      - reservoir
+      - basin
+
+    leisure:
+      - swimming_pool

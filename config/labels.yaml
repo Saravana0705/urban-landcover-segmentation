@@ -1,0 +1,93 @@
+osm:
+  # ------------------------------------------------------------------
+  # Input data
+  # ------------------------------------------------------------------
+  pbf_file: "data/raw/osm/germany.osm.pbf"
+
+  # One cropped PBF per city (generated once)
+  city_pbf_directory: "data/interim/osm_city_pbf"
+
+  source_name: "Geofabrik Germany OSM extract"
+
+  # ------------------------------------------------------------------
+  # Outputs
+  # ------------------------------------------------------------------
+  output_directory: "data/vector/osm"
+
+  report_file: "metadata/osm_extraction_report.csv"
+
+  crop_report_file: "metadata/osm_city_pbf_report.csv"
+
+  # ------------------------------------------------------------------
+  # Processing
+  # ------------------------------------------------------------------
+  engine: "out_of_core"
+
+  workers: 1
+
+  overwrite_existing: false
+
+  skip_existing_valid: true
+
+  expected_crs: "EPSG:4326"
+
+
+# ----------------------------------------------------------------------
+# Final segmentation classes
+# ----------------------------------------------------------------------
+
+classes:
+
+  background:
+    id: 0
+    name: "background"
+
+  building:
+    id: 1
+    name: "building"
+
+  road:
+    id: 2
+    name: "road"
+
+  vegetation:
+    id: 3
+    name: "vegetation"
+
+  bare_land:
+    id: 4
+    name: "bare_land"
+
+  water:
+    id: 5
+    name: "water"
+
+
+# ----------------------------------------------------------------------
+# Input files
+# ----------------------------------------------------------------------
+
+inputs:
+
+  city_registry_file: "config/cities.csv"
+
+  city_aoi_directory: "data/aoi/cities"
+
+
+# ----------------------------------------------------------------------
+# Quality control
+# ----------------------------------------------------------------------
+
+quality_control:
+
+  require_buildings: true
+
+  require_roads: true
+
+  require_vegetation: true
+
+  require_water: false
+
+  require_bare_land: false
+
+  minimum_valid_geometry_percent: 99.0
