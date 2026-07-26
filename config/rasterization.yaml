@@ -1,0 +1,33 @@
+# Rasterization configuration
+
+reference_raster: vv_vh_multiband
+
+all_touched: false
+
+dtype: uint8
+
+semantic_nodata: 255
+validity_nodata: 0
+ignore_index: 255
+
+class_priority:
+  bare_land: 10
+  vegetation: 20
+  water: 30
+  roads: 40
+  buildings: 50
+
+class_ids:
+  unlabeled: 0
+  buildings: 1
+  roads: 2
+  vegetation: 3
+  bare_land: 4
+  water: 5
+
+output:
+  compress: deflate
+  tiled: true
+  block_size: 256
+  predictor: 2
+  bigtiff: if_safer

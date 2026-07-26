@@ -13,15 +13,48 @@ __pycache__/
 
 # Data
 data/raw/
-data/downloads/
-data/processed/
 data/interim/
-
-# Large raw OSM data
+data/processed/
+data/downloads/
+data/vector/osm/
 data/labels/raw/
 
-# Outputs
+# Generated Metadata
+metadata/dataset_v1/
+metadata/model_development/
+metadata/rasterization/
+metadata/raster_grid/
+metadata/raster_qa/
+metadata/road_buffering/
+metadata/road_audit/
+metadata/overlap_analysis/
+metadata/tile_manifests/
+metadata/tile_qa/
+metadata/all_city_label_pipeline/
+metadata/all_city_tile_pipeline/
+metadata/city_label_pipeline/
+
+# Ignore geopackages except AOIs
+*.gpkg
+!data/aoi/**/*.gpkg
+
+# QGIS
+*.qgz
+*.qgs
+*.qgd
+
+# Large raster outputs
+*.tif
+*.tiff
+*.img
+*.dim
+*.data/
+
+# Training outputs
 outputs/
+checkpoints/
+runs/
+logs/
 
 # Trained models
 models/*.pth
@@ -35,13 +68,13 @@ models/*.pt
 *.dim
 *.data
 
-# Large rasters
-*.tif
-*.tiff
-
 # OS
 .DS_Store
 Thumbs.db
+
+# Timestamped metadata reports
+metadata/*_report_20*.csv
+metadata/*_20*.csv
 
 # Others
 .env

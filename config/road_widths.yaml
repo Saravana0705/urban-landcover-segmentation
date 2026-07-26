@@ -1,0 +1,60 @@
+# Road polygon generation configuration.
+#
+# All width values represent total road width in metres.
+# Buffer distance is total_width_m / 2.
+
+width_resolution:
+  precedence:
+    - osm_width
+    - osm_lanes
+    - highway_default
+    - fallback
+
+  lane_width_m: 3.2
+  fallback_width_m: 5.0
+  minimum_width_m: 2.0
+  maximum_width_m: 40.0
+
+  lane_eligible_highway_classes:
+    - motorway
+    - motorway_link
+    - trunk
+    - trunk_link
+    - primary
+    - primary_link
+    - secondary
+    - secondary_link
+    - tertiary
+    - tertiary_link
+    - residential
+    - unclassified
+
+highway_default_widths_m:
+  motorway: 24.0
+  motorway_link: 10.0
+  trunk: 18.0
+  trunk_link: 9.0
+  primary: 14.0
+  primary_link: 8.0
+  secondary: 12.0
+  secondary_link: 7.0
+  tertiary: 10.0
+  tertiary_link: 6.0
+  residential: 8.0
+  living_street: 6.0
+  unclassified: 6.0
+  service: 5.0
+  pedestrian: 5.0
+
+buffering:
+  cap_style: round
+  join_style: round
+  dissolve: true
+  buffer_resolution: 4
+
+special_rules:
+  exclude_tunnels: true
+  retain_bridges: true
+
+output:
+  layer_name: roads_buffered

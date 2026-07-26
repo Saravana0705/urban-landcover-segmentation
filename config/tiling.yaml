@@ -1,12 +1,15 @@
-tile_size_pixels: 256
-stride_pixels: 256
-pixel_spacing_m: 10
+tile_size: 256
+stride: 256
+edge_policy: pad
 
-minimum_valid_fraction: 0.95
-maximum_ignore_fraction: 0.50
+image_fill_value: 0.0
+semantic_fill_value: 255
+validity_fill_value: 0
 
-store_georeferenced_tiles: true
-store_preview_images: true
-
-split_level: city
-random_seed: 42
+output:
+  compress: deflate
+  tiled: true
+  block_size: 256
+  predictor_image: 3
+  predictor_mask: 2
+  bigtiff: if_safer
