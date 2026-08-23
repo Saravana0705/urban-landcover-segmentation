@@ -1,0 +1,49 @@
+{
+  "dataset_version": "v2.2",
+  "component": "offset_enrichment",
+  "qa_created_at_utc": "2026-08-18T15:15:17.961020+00:00",
+  "materialized_tile_count": 500,
+  "accepted_tile_count": 497,
+  "rejected_tile_count": 3,
+  "maximum_padding_fraction": 0.25,
+  "accepted_city_count": 14,
+  "accepted_valid_pixels": 20264646,
+  "accepted_class_pixels": {
+    "buildings": 4299913,
+    "roads": 2730960,
+    "vegetation": 11237065,
+    "bare_land": 749793,
+    "water": 1246915
+  },
+  "accepted_class_pixel_sum": 20264646,
+  "class_accounting_pass": true,
+  "all_accepted_tiles_qa_pass": true,
+  "rejected_tiles": [
+    {
+      "tile_id": "DE03_off128_r011_c007",
+      "city_id": "DE03",
+      "city_name": "Karlsruhe",
+      "padding_fraction": 0.78125,
+      "qa_failures": "padding_fraction_exceeds_limit"
+    },
+    {
+      "tile_id": "DE06_off128_r011_c010",
+      "city_id": "DE06",
+      "city_name": "Nuremberg",
+      "padding_fraction": 0.78125,
+      "qa_failures": "padding_fraction_exceeds_limit"
+    },
+    {
+      "tile_id": "DE11_off128_r011_c003",
+      "city_id": "DE11",
+      "city_name": "Hamburg",
+      "padding_fraction": 0.78125,
+      "qa_failures": "padding_fraction_exceeds_limit"
+    }
+  ],
+  "qa_audit": "metadata\\dataset_v22\\qa\\dataset_v22_enrichment_qa_audit.csv",
+  "accepted_manifest": "metadata\\dataset_v22\\qa\\dataset_v22_enrichment_accepted.csv",
+  "rejected_manifest": "metadata\\dataset_v22\\qa\\dataset_v22_enrichment_rejected.csv",
+  "accepted_distribution": "metadata\\dataset_v22\\qa\\dataset_v22_enrichment_accepted_distribution.csv",
+  "failure_summary": "metadata\\dataset_v22\\qa\\dataset_v22_enrichment_failure_summary.csv"
+}

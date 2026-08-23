@@ -1,0 +1,150 @@
+# E6 P2: CE + Tversky loss experiment with stronger false-negative penalty
+# Dataset V2.1 curated training subset.
+# Evaluation remains on frozen Dataset V1 validation data.
+# Start from random initialization; do not resume from previous experiments.
+
+seed: 20260725
+
+dataset:
+  dataset_version: v2.2
+
+  manifest_path: metadata/dataset_v22/freeze/dataset_manifest.csv
+
+  dataset_config_path: metadata/dataset_v22/freeze/dataset_config.json
+
+  # Validation/test remain frozen Dataset V1.
+  evaluation_manifest_path: metadata/dataset_v1/dataset_manifest.csv
+
+  evaluation_dataset_config_path: metadata/dataset_v1/freeze/dataset_config.json
+
+  # Same training-city normalization as E6 P2.
+  normalization_path: metadata/dataset_v22/normalization/training_normalization.json
+
+  train_split: train
+  val_split: val
+  test_split: test
+
+  tile_size: 256
+  input_channels: 2
+  num_classes: 5
+  ignore_index: 255
+
+  class_names:
+    - buildings
+    - roads
+    - vegetation
+    - bare_land
+    - water
+
+  exclude_zero_valid: true
+
+
+model:
+  name: unet
+  input_channels: 2
+  num_classes: 5
+  base_channels: 32
+  dropout: 0.1
+  use_batch_norm: true
+
+
+loss:
+  name: ce_tversky
+
+  ce_weight: 0.30
+  tversky_weight: 0.70
+
+  # E6 P2:
+  # Increase false-negative penalty to favour recall,
+  # particularly for roads and bare land.
+  tversky_alpha: 0.20
+  tversky_beta: 0.80
+
+  smooth: 1.0
+  tversky_epsilon: 1.0e-7
+
+  include_absent_classes: false
+
+  class_weights:
+    - 0.708374  # buildings
+    - 0.834706  # roads
+    - 0.244015  # vegetation
+    - 2.046274  # bare_land
+    - 1.166632  # water
+
+
+optimizer:
+  name: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  betas:
+    - 0.9
+    - 0.999
+  epsilon: 1.0e-08
+
+
+scheduler:
+  name: reduce_on_plateau
+  monitor: val_mean_iou
+  mode: max
+  factor: 0.5
+  patience: 3
+  minimum_learning_rate: 1.0e-06
+
+
+data:
+  batch_size: 4
+  num_workers: 0
+  pin_memory: false
+
+
+augmentation:
+  enabled: true
+  horizontal_flip_probability: 0.5
+  vertical_flip_probability: 0.5
+  rotate_90_probability: 0.5
+  enable_sar_intensity: false
+  enable_speckle: false
+
+
+training:
+  max_epochs: 10
+  device: auto
+  mixed_precision: true
+  gradient_clip_norm: 1.0
+  accumulation_steps: 1
+
+  monitor: mean_iou
+  monitor_mode: max
+
+  early_stopping:
+    patience: 8
+    minimum_delta: 0.001
+
+  checkpoint:
+    save_every_epochs: 1
+
+  logging:
+    tensorboard: false
+    progress_bar: true
+
+
+experiment:
+  name: unet_e6_p3_v22_ce30_tversky70_fn80
+  output_directory: outputs/model_experiments/unet_e6_p3_v22_ce30_tversky70_fn80
+
+
+sampling:
+  strategy: fraction_aware
+  manifest_path: metadata/dataset_v22/freeze/dataset_manifest.csv
+
+  bare_land_low_threshold: 0.01
+  bare_land_high_threshold: 0.05
+  water_threshold: 0.05
+
+  bare_land_low_boost: 1.0
+  bare_land_high_boost: 1.5
+  water_boost: 0.5
+
+  max_weight: 4.0
+  replacement: true

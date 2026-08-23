@@ -41,6 +41,7 @@ from src.training.training_state import (
     save_checkpoint,
     step_scheduler,
 )
+from src.evaluation.metrics import MetricsConfig, SegmentationMetrics
 
 
 class MetricCallable(Protocol):
@@ -572,9 +573,21 @@ class GenericTrainer:
         loss_sum = 0.0
         sample_count = 0
         supervised_pixels = 0
-        metric_records: list[
-            tuple[Mapping[str, Any], int]
-        ] = []
+        metric_accumulator = SegmentationMetrics(
+            MetricsConfig(
+                num_classes=5,
+                ignore_index=255,
+                class_names=(
+                    "buildings",
+                    "roads",
+                    "vegetation",
+                    "bare_land",
+                    "water",
+                ),
+                include_absent_classes_in_macro=False,
+            ),
+            device="cpu",
+        )
 
         iterator = tqdm(
             self.validation_loader,
@@ -612,19 +625,15 @@ class GenericTrainer:
             )
             supervised_pixels += valid_count
 
-            metric_output = self.metric_function(
-                logits.detach(),
-                target.detach(),
-                validity.detach() if validity is not None else None,
-            )
+            metric_target = target.detach()
 
-            if not isinstance(metric_output, Mapping):
-                raise TypeError(
-                    "metric_function must return a mapping."
-                )
+            if validity is not None:
+                metric_target = metric_target.clone()
+                metric_target[~validity] = 255
 
-            metric_records.append(
-                (dict(metric_output), max(1, valid_count))
+            metric_accumulator.update(
+                logits.detach().cpu(),
+                metric_target.cpu(),
             )
 
             iterator.set_postfix(
@@ -636,7 +645,7 @@ class GenericTrainer:
                 "Validation DataLoader produced no samples."
             )
 
-        metrics = _weighted_merge(metric_records)
+        metrics = metric_accumulator.compute()
         metrics["loss"] = loss_sum / sample_count
         metrics["supervised_pixels"] = supervised_pixels
 

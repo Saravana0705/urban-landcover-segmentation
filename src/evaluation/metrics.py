@@ -276,6 +276,11 @@ def metrics_from_confusion_matrix(
         true_positive + false_negative,
     )
 
+    f1 = _safe_divide(
+        2.0 * precision * recall,
+        precision + recall,
+    )
+
     total_pixels = matrix.sum()
 
     pixel_accuracy = (
@@ -380,6 +385,11 @@ def metrics_from_confusion_matrix(
                 if torch.isfinite(recall[class_id])
                 else None
             ),
+            "f1": (
+                float(f1[class_id].item())
+                if torch.isfinite(f1[class_id])
+                else None
+            ),
             "present_in_target": bool(
                 target_support[class_id].item() > 0
             ),
@@ -400,6 +410,10 @@ def metrics_from_confusion_matrix(
         "mean_dice": masked_mean(dice),
         "macro_precision": masked_mean(precision),
         "macro_recall": masked_mean(recall),
+        "macro_f1": masked_mean(f1),
+        "mean_precision": masked_mean(precision),
+        "mean_recall": masked_mean(recall),
+        "mean_f1": masked_mean(f1),
         "frequency_weighted_iou": frequency_weighted_iou,
         "frequency_weighted_dice": frequency_weighted_dice,
         "macro_class_policy": (

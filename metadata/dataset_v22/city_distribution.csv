@@ -1,0 +1,15 @@
+city_id,city_name,v21_base_tiles,v22_enrichment_tiles,total_tiles
+DE01,Mannheim,123,29,152
+DE02,Heidelberg,110,22,132
+DE03,Karlsruhe,116,16,132
+DE04,Stuttgart,127,31,158
+DE05,Munich,116,45,161
+DE06,Nuremberg,105,26,131
+DE07,Frankfurt,121,39,160
+DE08,Cologne,122,45,167
+DE09,Dusseldorf,126,45,171
+DE10,Dortmund,127,38,165
+DE11,Hamburg,112,44,156
+DE12,Bremen,106,32,138
+DE13,Hanover,101,40,141
+DE14,Berlin,115,45,160

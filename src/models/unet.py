@@ -12,6 +12,8 @@ import torch
 from torch import Tensor, nn
 import torch.nn.functional as F
 
+from src.models.base import BaseSegmentationModel
+
 
 @dataclass(frozen=True)
 class UNetConfig:
@@ -146,11 +148,16 @@ class UpBlock(nn.Module):
         return self.conv(torch.cat([skip, x], dim=1))
 
 
-class UNet(nn.Module):
+class UNet(BaseSegmentationModel):
+    model_name = "unet"
+    display_name = "U-Net"
     def __init__(self, config: UNetConfig | None = None) -> None:
-        super().__init__()
         self.config = config or UNetConfig()
         self.config.validate()
+        super().__init__(
+            input_channels=self.config.input_channels,
+            num_classes=self.config.num_classes,
+        )
         c = self.config.base_channels
         kwargs = {
             "dropout": self.config.dropout,
@@ -171,36 +178,10 @@ class UNet(nn.Module):
         self.dec2 = UpBlock(c * 4, c * 2, c * 2, **up_kwargs)
         self.dec1 = UpBlock(c * 2, c, c, **up_kwargs)
         self.classifier = nn.Conv2d(c, self.config.num_classes, 1)
-        self.apply(self._init_weights)
-
-    @staticmethod
-    def _init_weights(module: nn.Module) -> None:
-        if isinstance(module, (nn.Conv2d, nn.ConvTranspose2d)):
-            nn.init.kaiming_normal_(
-                module.weight,
-                mode="fan_out",
-                nonlinearity="relu",
-            )
-            if module.bias is not None:
-                nn.init.zeros_(module.bias)
-        elif isinstance(module, nn.BatchNorm2d):
-            nn.init.ones_(module.weight)
-            nn.init.zeros_(module.bias)
+        self.apply(self.initialize_weights)
 
     def forward(self, x: Tensor) -> Tensor:
-        if x.ndim != 4:
-            raise ValueError("Expected input shaped (N,C,H,W).")
-        if x.shape[1] != self.config.input_channels:
-            raise ValueError(
-                f"Expected {self.config.input_channels} channels, "
-                f"found {x.shape[1]}."
-            )
-        if not x.is_floating_point():
-            raise TypeError("U-Net input must be floating point.")
-        if not torch.isfinite(x).all():
-            raise ValueError("U-Net input contains non-finite values.")
-
-        original_size = x.shape[-2:]
+        original_size = self.validate_input(x)
         s1 = self.enc1(x)
         s2 = self.enc2(s1)
         s3 = self.enc3(s2)

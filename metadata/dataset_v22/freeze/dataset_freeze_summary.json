@@ -1,0 +1,87 @@
+{
+  "dataset_version": "v2.2",
+  "created_at_utc": "2026-08-18T17:42:54.552343+00:00",
+  "status": "frozen_training_membership",
+  "training": {
+    "total_tiles": 2124,
+    "base_v21_tiles": 1627,
+    "v22_enrichment_tiles": 497,
+    "city_count": 14,
+    "city_ids": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14"
+    ]
+  },
+  "evaluation": {
+    "validation_test_manifest": "metadata\\dataset_v1\\dataset_manifest.csv",
+    "policy": "unchanged_from_dataset_v1"
+  },
+  "qa": {
+    "tile_id_duplicates": 0,
+    "cross_component_tile_id_overlap": 0,
+    "missing_tile_files": 0,
+    "class_accounting_mismatches": 0,
+    "class_accounting_pass": true
+  },
+  "class_distribution": [
+    {
+      "class_name": "buildings",
+      "pixel_count": 12111496,
+      "fraction_valid": 0.12445880594049584,
+      "percentage_valid": 12.445880594049584
+    },
+    {
+      "class_name": "roads",
+      "pixel_count": 8314087,
+      "fraction_valid": 0.08543629461673431,
+      "percentage_valid": 8.543629461673431
+    },
+    {
+      "class_name": "vegetation",
+      "pixel_count": 70777963,
+      "fraction_valid": 0.7273206185165395,
+      "percentage_valid": 72.73206185165395
+    },
+    {
+      "class_name": "bare_land",
+      "pixel_count": 1739893,
+      "fraction_valid": 0.017879294617628338,
+      "percentage_valid": 1.7879294617628336
+    },
+    {
+      "class_name": "water",
+      "pixel_count": 4369852,
+      "fraction_valid": 0.04490498630860198,
+      "percentage_valid": 4.4904986308601975
+    }
+  ],
+  "paths": {
+    "official_manifest": "metadata\\dataset_v22\\dataset_manifest.csv",
+    "freeze_manifest": "metadata\\dataset_v22\\freeze\\dataset_manifest.csv",
+    "freeze_config": "metadata\\dataset_v22\\freeze\\dataset_config.json",
+    "class_distribution": "metadata\\dataset_v22\\class_distribution.csv",
+    "city_distribution": "metadata\\dataset_v22\\city_distribution.csv"
+  },
+  "checksums": {
+    "dataset_manifest_sha256": "5d5d5fba634de00882c9bab9e5f0a1cb20ff85eb059fd4d0d046ab568725a506",
+    "dataset_config_sha256": "a2dd03ff1e1aa0a5f812342adbf4e9f4487949ad9d5064b2bb1fb0259758e941",
+    "class_distribution_sha256": "0f434232625357c6e7b986bb09264f89238ad3023045ec68d97cf90ef6c054a5",
+    "city_distribution_sha256": "e1584688cbae4e26ad0ed47adfaf69ab0cf3f2d4d05079b545523f13fe96101d",
+    "v21_source_manifest_sha256": "efa4a175f85acee701fd40d865c8f34b9f1c2c2de3ca405e7b6d1d43f4aef689",
+    "enrichment_source_manifest_sha256": "eb409ad8c2598dee6fe3d4dbeaece07b698fde457b88a3f9e98ff60b490fb371",
+    "evaluation_manifest_sha256": "2f40a7b0159a3ffaa74708c195bf62a11bf500d930b462442f7a83fc4418d30f"
+  },
+  "normalization_status": "pending_recomputation_using_existing_training_normalization_method"
+}

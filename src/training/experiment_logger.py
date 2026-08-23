@@ -68,31 +68,53 @@ def _json_safe(value: Any) -> Any:
 
 def _atomic_write_text(
     destination: Path,
-    text: str,
+    content: str,
+    *,
+    encoding: str = "utf-8",
+    max_attempts: int = 8,
 ) -> None:
-    destination.parent.mkdir(
-        parents=True,
-        exist_ok=True,
+    """Write text atomically with retries for transient Windows file locks."""
+
+    import os
+    import time
+    import uuid
+
+    destination = Path(destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+
+    temporary_path = destination.with_name(
+        f".{destination.name}.{uuid.uuid4().hex}.tmp"
     )
 
-    with tempfile.NamedTemporaryFile(
-        mode="w",
-        encoding="utf-8",
-        dir=destination.parent,
-        prefix=f".{destination.name}.",
-        suffix=".tmp",
-        delete=False,
-    ) as temporary_file:
-        temporary_file.write(text)
-        temporary_path = Path(
-            temporary_file.name
-        )
-
     try:
-        temporary_path.replace(destination)
+        temporary_path.write_text(content, encoding=encoding)
+
+        last_error: PermissionError | None = None
+
+        for attempt in range(max_attempts):
+            try:
+                # os.replace is atomic and overwrites an existing destination.
+                os.replace(temporary_path, destination)
+                return
+            except PermissionError as error:
+                last_error = error
+
+                # Windows Defender/indexing can briefly lock either file.
+                delay_seconds = 0.10 * (2**attempt)
+                time.sleep(min(delay_seconds, 2.0))
+
+        raise PermissionError(
+            f"Could not atomically replace '{destination}' after "
+            f"{max_attempts} attempts."
+        ) from last_error
+
     finally:
-        if temporary_path.exists():
-            temporary_path.unlink()
+        # Remove a stranded temporary file where possible.
+        try:
+            if temporary_path.exists():
+                temporary_path.unlink()
+        except PermissionError:
+            pass
 
 
 @dataclass(frozen=True)

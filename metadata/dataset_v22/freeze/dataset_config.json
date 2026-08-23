@@ -1,0 +1,175 @@
+{
+  "dataset_version": "v2.2",
+  "manifest_path": "metadata\\dataset_v1\\dataset_manifest.csv",
+  "manifest_sha256": "2f40a7b0159a3ffaa74708c195bf62a11bf500d930b462442f7a83fc4418d30f",
+  "input": {
+    "channels": [
+      "Sigma0_VV",
+      "Sigma0_VH"
+    ],
+    "channel_count": 2,
+    "source_domain": "linear_sigma0",
+    "conversion": "10 * log10(max(linear_sigma0, 1e-10))",
+    "tile_size": 256,
+    "spatial_resolution_m": 10
+  },
+  "normalization": {
+    "scope": "training_cities_only",
+    "validation_and_test_used": false,
+    "VV": {
+      "clip_lower_db": -19.370056991577147,
+      "clip_upper_db": 2.6345860838889865,
+      "mean_db": -9.321410476299294,
+      "std_db": 3.7878212854222064
+    },
+    "VH": {
+      "clip_lower_db": -26.721191463470458,
+      "clip_upper_db": -5.915637598037739,
+      "mean_db": -16.144641942904,
+      "std_db": 3.764255822885403
+    }
+  },
+  "labels": {
+    "semantic_nodata": 255,
+    "validity_valid": 1,
+    "validity_invalid": 0,
+    "classes": [
+      {
+        "class_id": 1,
+        "class_name": "buildings"
+      },
+      {
+        "class_id": 2,
+        "class_name": "roads"
+      },
+      {
+        "class_id": 3,
+        "class_name": "vegetation"
+      },
+      {
+        "class_id": 4,
+        "class_name": "bare_land"
+      },
+      {
+        "class_id": 5,
+        "class_name": "water"
+      }
+    ]
+  },
+  "splits": {
+    "train_city_ids": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14"
+    ],
+    "validation_city_ids": [
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test_city_ids": [
+      "DE18",
+      "DE19",
+      "DE20"
+    ],
+    "train_tile_count": 2016,
+    "validation_tile_count": 432,
+    "test_tile_count": 432
+  },
+  "class_weight_candidates": {
+    "scope": "training_split_only",
+    "selection_status": "candidate schemes only; final loss weighting has not yet been selected",
+    "classes": [
+      {
+        "class_id": 1,
+        "class_name": "buildings",
+        "training_pixel_count": 8861315,
+        "training_frequency_fraction": 0.09401950069769942,
+        "training_percentage": 9.401950069769942,
+        "inverse_frequency_mean_one": 0.36862176654735285,
+        "median_frequency_balancing_mean_one": 0.36862176654735285,
+        "logarithmic_inverse_c1_02_mean_one": 0.6248770219505095,
+        "effective_number_mean_one": 0.46396397121736555
+      },
+      {
+        "class_id": 2,
+        "class_name": "roads",
+        "training_pixel_count": 6381975,
+        "training_frequency_fraction": 0.06771343790004082,
+        "training_percentage": 6.7713437900040825,
+        "inverse_frequency_mean_one": 0.5118280139349585,
+        "median_frequency_balancing_mean_one": 0.5118280139349584,
+        "logarithmic_inverse_c1_02_mean_one": 0.8024821312887583,
+        "effective_number_mean_one": 0.5780442576305539
+      },
+      {
+        "class_id": 3,
+        "class_name": "vegetation",
+        "training_pixel_count": 74677493,
+        "training_frequency_fraction": 0.7923361944830923,
+        "training_percentage": 79.23361944830923,
+        "inverse_frequency_mean_one": 0.04374107188135729,
+        "median_frequency_balancing_mean_one": 0.04374107188135729,
+        "logarithmic_inverse_c1_02_mean_one": 0.11346952133996033,
+        "effective_number_mean_one": 0.27285187131421595
+      },
+      {
+        "class_id": 4,
+        "class_name": "bare_land",
+        "training_pixel_count": 1061928,
+        "training_frequency_fraction": 0.011267169752672888,
+        "training_percentage": 1.1267169752672888,
+        "inverse_frequency_mean_one": 3.075984049043396,
+        "median_frequency_balancing_mean_one": 3.0759840490433965,
+        "logarithmic_inverse_c1_02_mean_one": 2.191444738125514,
+        "effective_number_mean_one": 2.706693806829772
+      },
+      {
+        "class_id": 5,
+        "class_name": "water",
+        "training_pixel_count": 3267045,
+        "training_frequency_fraction": 0.03466369716649452,
+        "training_percentage": 3.466369716649452,
+        "inverse_frequency_mean_one": 0.9998250985929352,
+        "median_frequency_balancing_mean_one": 0.9998250985929352,
+        "logarithmic_inverse_c1_02_mean_one": 1.2677265872952574,
+        "effective_number_mean_one": 0.978446093008093
+      }
+    ]
+  },
+  "training_policy": {
+    "ignore_unlabeled_pixels": true,
+    "ignore_semantic_nodata": true,
+    "use_validity_mask": true,
+    "normalization_source": "Dataset V1 training split only",
+    "augmentation": "to be defined in model-training configuration",
+    "loss_weighting": "not yet selected; evaluate candidate schemes"
+  },
+  "training_manifest": "metadata\\dataset_v22\\dataset_manifest.csv",
+  "evaluation_manifest": "metadata\\dataset_v1\\dataset_manifest.csv",
+  "training_tile_count": 2124,
+  "training_city_count": 14,
+  "dataset_v22_provenance": {
+    "base_dataset": "v2.1",
+    "base_training_tiles": 1627,
+    "offset_enrichment_tiles": 497,
+    "offset_pixels": 128,
+    "enrichment_qa_policy": {
+      "accepted_only": true,
+      "maximum_padding_fraction": 0.25
+    },
+    "validation_source": "dataset_v1",
+    "test_source": "dataset_v1"
+  }
+}

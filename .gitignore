@@ -3,6 +3,8 @@ venv/
 
 # Python
 __pycache__/
+**/__pycache__/
+.pytest_cache/
 *.pyc
 
 # Jupyter
@@ -55,6 +57,9 @@ outputs/
 checkpoints/
 runs/
 logs/
+
+# Generated evaluation reports and figures
+reports/
 
 # Trained models
 models/*.pth

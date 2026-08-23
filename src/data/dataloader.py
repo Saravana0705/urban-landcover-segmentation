@@ -170,6 +170,8 @@ def create_dataloaders(
     dataset_config_path: str | Path = (
         "metadata/dataset_v1/freeze/dataset_config.json"
     ),
+    evaluation_manifest_path: str | Path | None = None,
+    evaluation_dataset_config_path: str | Path | None = None,
     project_root: str | Path | None = None,
     train_transform: Callable[
         [dict[str, np.ndarray]],
@@ -213,28 +215,40 @@ def create_dataloaders(
         deterministic_algorithms=deterministic_algorithms,
     )
 
-    shared_dataset_kwargs = {
-        "manifest_path": manifest_path,
-        "dataset_config_path": dataset_config_path,
-        "project_root": project_root,
-        "exclude_zero_valid": exclude_zero_valid,
-        "verify_raster_metadata": verify_raster_metadata,
-    }
+    if evaluation_manifest_path is None:
+        evaluation_manifest_path = manifest_path
+
+    if evaluation_dataset_config_path is None:
+        evaluation_dataset_config_path = dataset_config_path
 
     train_dataset = Sentinel1UrbanDataset(
         split="train",
+        manifest_path=manifest_path,
+        dataset_config_path=dataset_config_path,
+        project_root=project_root,
         joint_transform=train_transform,
-        **shared_dataset_kwargs,
+        exclude_zero_valid=exclude_zero_valid,
+        verify_raster_metadata=verify_raster_metadata,
     )
+
     val_dataset = Sentinel1UrbanDataset(
         split="val",
+        manifest_path=evaluation_manifest_path,
+        dataset_config_path=evaluation_dataset_config_path,
+        project_root=project_root,
         joint_transform=val_transform,
-        **shared_dataset_kwargs,
+        exclude_zero_valid=exclude_zero_valid,
+        verify_raster_metadata=verify_raster_metadata,
     )
+
     test_dataset = Sentinel1UrbanDataset(
         split="test",
+        manifest_path=evaluation_manifest_path,
+        dataset_config_path=evaluation_dataset_config_path,
+        project_root=project_root,
         joint_transform=test_transform,
-        **shared_dataset_kwargs,
+        exclude_zero_valid=exclude_zero_valid,
+        verify_raster_metadata=verify_raster_metadata,
     )
 
     train_loader = _build_loader(

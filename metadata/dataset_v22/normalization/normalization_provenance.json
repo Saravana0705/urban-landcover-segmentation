@@ -1,0 +1,33 @@
+{
+  "dataset_version": "v2.2",
+  "created_at_utc": "2026-08-18T17:43:39.217258+00:00",
+  "normalization_policy": "inherited_from_dataset_v1",
+  "reason": "Existing normalization is computed from full-resolution SAR rasters of the 14 training cities. Dataset V2.2 uses the same 14 training cities; only training-tile membership changed.",
+  "source_normalization": "metadata\\dataset_v1\\normalization\\training_normalization.json",
+  "source_sha256": "a2e53c905484b66c3af3122f1487f3e42f4254d7f29e4ec6dedb8e48f27e164b",
+  "v22_copy": "metadata\\dataset_v22\\normalization\\training_normalization.json",
+  "v22_copy_sha256": "a2e53c905484b66c3af3122f1487f3e42f4254d7f29e4ec6dedb8e48f27e164b",
+  "training_city_ids": [
+    "DE01",
+    "DE02",
+    "DE03",
+    "DE04",
+    "DE05",
+    "DE06",
+    "DE07",
+    "DE08",
+    "DE09",
+    "DE10",
+    "DE11",
+    "DE12",
+    "DE13",
+    "DE14"
+  ],
+  "validation_and_test_used": false,
+  "mandatory_checks": {
+    "v22_training_city_count_is_14": true,
+    "normalization_training_city_count_is_14": true,
+    "training_city_ids_match": true,
+    "validation_and_test_not_used": true
+  }
+}

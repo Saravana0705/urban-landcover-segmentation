@@ -1,0 +1,126 @@
+# E5-P2 controlled class-weight experiment.
+# Uniform weights disable class weighting while keeping
+# Dataset V2.1, fraction-aware sampling and CE30/Dice70 unchanged.
+
+seed: 20260725
+dataset:
+  dataset_version: v2.1
+
+  # E5 training uses the curated Dataset V2.1 training subset
+  manifest_path: metadata/dataset_v21/dataset_manifest.csv
+
+  # Dataset structure/class definitions remain identical to frozen V1
+  dataset_config_path: metadata/dataset_v1/freeze/dataset_config.json
+
+  # Keep V1 validation/test unchanged for a fair E4 vs E5 comparison
+  evaluation_manifest_path: metadata/dataset_v1/dataset_manifest.csv
+  evaluation_dataset_config_path: metadata/dataset_v1/freeze/dataset_config.json
+
+  # Keep the same V1 normalization for this controlled experiment
+  normalization_path: metadata/dataset_v1/normalization/training_normalization.json
+
+  train_split: train
+  val_split: val
+  test_split: test
+
+  tile_size: 256
+  input_channels: 2
+  num_classes: 5
+  ignore_index: 255
+
+  class_names:
+    - buildings
+    - roads
+    - vegetation
+    - bare_land
+    - water
+
+  exclude_zero_valid: true
+
+model:
+  name: unet
+  input_channels: 2
+  num_classes: 5
+  base_channels: 32
+  dropout: 0.1
+  use_batch_norm: true
+
+loss:
+  name: ce_dice
+  ce_weight: 0.30
+  dice_weight: 0.70
+  dice_smooth: 1.0
+  dice_epsilon: 1.0e-7
+  include_absent_classes: false
+  class_weights:
+    - 0.440906
+    - 0.612194
+    - 0.358828
+    - 2.392187
+    - 1.195884
+
+optimizer:
+  name: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  betas:
+  - 0.9
+  - 0.999
+  epsilon: 1.0e-08
+
+scheduler:
+  name: reduce_on_plateau
+  monitor: val_mean_iou
+  mode: max
+  factor: 0.5
+  patience: 3
+  minimum_learning_rate: 1.0e-06
+
+data:
+  batch_size: 4
+  num_workers: 0
+  pin_memory: false
+
+augmentation:
+  enabled: true
+  horizontal_flip_probability: 0.5
+  vertical_flip_probability: 0.5
+  rotate_90_probability: 0.5
+  enable_sar_intensity: false
+  enable_speckle: false
+
+training:
+  max_epochs: 10
+  device: auto
+  mixed_precision: true
+  gradient_clip_norm: 1.0
+  accumulation_steps: 1
+  monitor: mean_iou
+  monitor_mode: max
+  early_stopping:
+    patience: 8
+    minimum_delta: 0.001
+  checkpoint:
+    save_every_epochs: 1
+  logging:
+    tensorboard: false
+    progress_bar: true
+
+experiment:
+  name: unet_e5_p3_v21_clipped_weights
+  output_directory: outputs/model_experiments/unet_e5_p3_v21_clipped_weights
+
+sampling:
+  strategy: fraction_aware
+  manifest_path: metadata/dataset_v21/dataset_manifest.csv
+
+  bare_land_low_threshold: 0.01
+  bare_land_high_threshold: 0.05
+  water_threshold: 0.05
+
+  bare_land_low_boost: 1.0
+  bare_land_high_boost: 1.5
+  water_boost: 0.5
+
+  max_weight: 4.0
+  replacement: true
