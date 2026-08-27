@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T16:02:39.963082+00:00",
+  "city_id": "DE03",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      441391.24642737134,
+      0.0,
+      -10.0,
+      5443394.106587356
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2041017,
+    "valid": 6958983,
+    "conflict": 613516,
+    "class_1": 395025,
+    "class_2": 302576,
+    "class_3": 5979074,
+    "class_4": 10962,
+    "class_5": 271346,
+    "support_1": 203070,
+    "support_2": 3379919,
+    "support_3": 3375994
+  },
+  "fractions_all_pixels": {
+    "valid": 0.7732203333333333,
+    "ignore": 0.22677966666666666,
+    "source_conflict": 0.06816844444444445
+  },
+  "provenance_bit_counts": {
+    "0": 2041017,
+    "1": 203070,
+    "3": 811981,
+    "5": 2504348,
+    "6": 63590,
+    "7": 3375994
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE03_Karlsruhe\\DE03_dynamic_world_v3_pilot_2025.tif": "6309e79ec9e94cf69b3886ad9ad70c7431b6943bc96b5db8a7d99e766dce7e68",
+    "data\\processed\\masks\\DE03_Karlsruhe\\DE03_label_mask.tif": "da3fd276e0eeba9d1f889879abeafad6886c6e89fa03b15b2932d891bd3f292c",
+    "data\\processed\\masks\\DE03_Karlsruhe\\DE03_validity_mask.tif": "9a72e9a9f50db41b1f483468b400e129d78c7c5b55592885bef924216f046023",
+    "data\\interim\\labels_v3\\urban_atlas\\DE03\\DE03_urban_atlas_2021_code.tif": "5a98b6311d08a1b592aacb18c11c3381f71fa8af1ff4eadaa492454303bab317",
+    "data\\interim\\labels_v3\\urban_atlas\\DE03\\DE03_urban_atlas_2021_v3_evidence.tif": "f2e24b0c8a7bfd2aab95705a2fd897439277bfbec21c46183315941a2be1fda9"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE03\\DE03_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE03\\DE03_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE03\\DE03_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE03\\DE03_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE03\\DE03_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE03_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

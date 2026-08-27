@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T16:55:01.746224+00:00",
+  "city_id": "DE08",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      341689.07368864154,
+      0.0,
+      -10.0,
+      5659855.7336777095
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 3108400,
+    "valid": 5891600,
+    "conflict": 890040,
+    "class_1": 758441,
+    "class_2": 524385,
+    "class_3": 4251618,
+    "class_4": 66087,
+    "class_5": 291069,
+    "support_1": 294813,
+    "support_2": 3187730,
+    "support_3": 2409057
+  },
+  "fractions_all_pixels": {
+    "valid": 0.6546222222222222,
+    "ignore": 0.3453777777777778,
+    "source_conflict": 0.09889333333333333
+  },
+  "provenance_bit_counts": {
+    "0": 3108400,
+    "1": 294813,
+    "3": 820717,
+    "5": 2270723,
+    "6": 96290,
+    "7": 2409057
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE08_Cologne\\DE08_dynamic_world_v3_2025.tif": "8a4971f5f0084b3ff37e08b19debde0adcb30984b7cae3c073299c1684e68593",
+    "data\\processed\\masks\\DE08_Cologne\\DE08_label_mask.tif": "5f4ecc6e84c720de967eb6d4d4feb92fe1fddd0a3c1a31a5c4ff2a55a0ab8785",
+    "data\\processed\\masks\\DE08_Cologne\\DE08_validity_mask.tif": "bbff8b9f69301f0ead2abeff3c0b623d9871c8a620e24d67a9e58fa0ee61d306",
+    "data\\interim\\labels_v3\\urban_atlas\\DE08\\DE08_urban_atlas_2021_code.tif": "72c1498280623d4ea5871448e257387b6055634ee0f31edd098054f049233516",
+    "data\\interim\\labels_v3\\urban_atlas\\DE08\\DE08_urban_atlas_2021_v3_evidence.tif": "9d846a8dcc20ebfdc4ab114f2b0c1b1acd1e597d59454dd8c4b5144818b6a68c"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE08\\DE08_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE08\\DE08_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE08\\DE08_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE08\\DE08_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE08\\DE08_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE08_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

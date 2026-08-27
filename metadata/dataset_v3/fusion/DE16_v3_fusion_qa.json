@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:15:28.086058+00:00",
+  "city_id": "DE16",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32633",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      396494.3682870129,
+      0.0,
+      -10.0,
+      5671188.093693569
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2297101,
+    "valid": 6702899,
+    "conflict": 477212,
+    "class_1": 378823,
+    "class_2": 365957,
+    "class_3": 5822201,
+    "class_4": 18430,
+    "class_5": 117488,
+    "support_1": 430772,
+    "support_2": 5316291,
+    "support_3": 955836
+  },
+  "fractions_all_pixels": {
+    "valid": 0.7447665555555556,
+    "ignore": 0.25523344444444446,
+    "source_conflict": 0.05302355555555555
+  },
+  "provenance_bit_counts": {
+    "0": 2297101,
+    "1": 430772,
+    "3": 162531,
+    "5": 4985425,
+    "6": 168335,
+    "7": 955836
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE16_Dresden\\DE16_dynamic_world_v3_2025.tif": "76f673e5392583fda6db7ad142c231fd3a74cd37c2211c66637d7f5226e971a6",
+    "data\\processed\\masks\\DE16_Dresden\\DE16_label_mask.tif": "a533d46f0bb103720ee102510ad0d2940135b1cb3cc638a905ef5317ca4fa344",
+    "data\\processed\\masks\\DE16_Dresden\\DE16_validity_mask.tif": "28449825dd2105bfef1737b697387f10c6d39b1e6cc9af957d3117b15eb4162c",
+    "data\\interim\\labels_v3\\urban_atlas\\DE16\\DE16_urban_atlas_2021_code.tif": "b8eeb8b3fe809b9da5eecdf5ee5d908e660a85509d0baaee2cb2aebe17fb25e8",
+    "data\\interim\\labels_v3\\urban_atlas\\DE16\\DE16_urban_atlas_2021_v3_evidence.tif": "a70c12c887306964d16fbbde7b41e09f4ea2d9dff631186f3141d8757552e91d"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE16_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

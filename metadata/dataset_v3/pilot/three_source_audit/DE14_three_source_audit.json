@@ -1,0 +1,195 @@
+{
+  "audit_version": "v3-pilot-three-source-0.1",
+  "generated_at_utc": "2026-08-26T04:54:30.502917+00:00",
+  "city_id": "DE14",
+  "qa_status": "PASS",
+  "total_pixels": 9000000,
+  "urban_atlas_source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\urban_atlas_2021\\DE14_Berlin\\extracted\\CLMS_UA_LCU_S2021_V025ha_DE001L1_BERLIN_03035_V01_R01_20250523.fgb",
+  "urban_atlas_source_sha256": "8531743744f45d45f410729d65598a383dfb89d7e180105eb9649b14aa7f49f9",
+  "dynamic_world_source": "data\\raw\\labels_v3\\dynamic_world\\DE14_Berlin\\DE14_dynamic_world_v3_pilot_2025.tif",
+  "osm_semantic_source": "data\\processed\\masks\\DE14_Berlin\\DE14_label_mask.tif",
+  "osm_validity_source": "data\\processed\\masks\\DE14_Berlin\\DE14_validity_mask.tif",
+  "urban_atlas_code_raster": "data\\interim\\labels_v3\\urban_atlas\\DE14\\DE14_urban_atlas_2021_code.tif",
+  "urban_atlas_evidence_raster": "data\\interim\\labels_v3\\urban_atlas\\DE14\\DE14_urban_atlas_2021_v3_evidence.tif",
+  "direct_urban_atlas_crosswalk": {
+    "12210": 2,
+    "12220": 2,
+    "12230": 2,
+    "14110": 3,
+    "14120": 3,
+    "14130": 3,
+    "21000": 3,
+    "22000": 3,
+    "23000": 3,
+    "31000": 3,
+    "32000": 3,
+    "13100": 4,
+    "13300": 4,
+    "33000": 4,
+    "50000": 5
+  },
+  "dynamic_world_confidence_rule": {
+    "modal_mean_argmax_consensus": true,
+    "assigned_probability_min": 0.6,
+    "temporal_agreement_min": 0.7,
+    "observation_count_min": 5
+  },
+  "pairwise_cross_tabs": {
+    "urban_atlas_rows_dynamic_world_columns": [
+      [
+        811451,
+        3995890,
+        0,
+        40498,
+        4,
+        1208
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        224073,
+        538806,
+        0,
+        25732,
+        0,
+        35
+      ],
+      [
+        1330532,
+        118917,
+        0,
+        1607411,
+        0,
+        480
+      ],
+      [
+        17781,
+        14436,
+        0,
+        209,
+        0,
+        0
+      ],
+      [
+        87315,
+        7016,
+        0,
+        3359,
+        0,
+        174847
+      ]
+    ],
+    "urban_atlas_rows_osm_columns": [
+      [
+        2770467,
+        1004810,
+        311997,
+        665796,
+        75962,
+        20019
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        288532,
+        14749,
+        368764,
+        107419,
+        7795,
+        1387
+      ],
+      [
+        327222,
+        12729,
+        24053,
+        2650025,
+        20810,
+        22501
+      ],
+      [
+        13764,
+        3437,
+        2131,
+        2748,
+        10137,
+        209
+      ],
+      [
+        6576,
+        298,
+        579,
+        10314,
+        248,
+        254522
+      ]
+    ],
+    "dynamic_world_rows_osm_columns": [
+      [
+        676961,
+        67930,
+        101324,
+        1453000,
+        65196,
+        106741
+      ],
+      [
+        2615852,
+        966329,
+        594170,
+        444831,
+        45730,
+        8153
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        112992,
+        1756,
+        12019,
+        1537830,
+        4025,
+        8587
+      ],
+      [
+        2,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        754,
+        8,
+        10,
+        641,
+        0,
+        175157
+      ]
+    ]
+  },
+  "notes": [
+    "These are evidence rasters and agreement statistics, not final V3 labels.",
+    "Urban Atlas transport is supporting evidence only; OSM remains the road geometry source.",
+    "Urban Atlas classes 13400, 14200 and 40000 remain unresolved in this direct crosswalk.",
+    "Class 0 means no direct evidence, not vegetation."
+  ]
+}

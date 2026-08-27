@@ -1,0 +1,17 @@
+tile_id,city_id,city_name,split,visual_qa_reason,decision
+DE18_r006_c005,DE18,Freiburg,test,evaluation_city_representative,PASS
+DE19_r006_c006,DE19,Kiel,test,evaluation_city_representative,PASS
+DE20_r006_c005,DE20,Rostock,test,evaluation_city_representative,PASS
+DE06_r006_c005,DE06,Nuremberg,train,high_buildings,PASS
+DE08_r009_c002,DE08,Cologne,train,high_bare_land,PASS
+DE09_r001_c000,DE09,Dusseldorf,train,high_buildings,PASS
+DE11_r006_c000,DE11,Hamburg,train,high_source_conflict,PASS
+DE11_r006_c003,DE11,Hamburg,train,high_water,PASS
+DE11_r006_c004,DE11,Hamburg,train,high_water,PASS
+DE13_r005_c009,DE13,Hanover,train,high_bare_land,PASS
+DE14_r004_c009,DE14,Berlin,train,high_source_conflict,PASS
+DE14_r007_c003,DE14,Berlin,train,high_roads,PASS
+DE14_r007_c004,DE14,Berlin,train,high_roads,PASS
+DE15_r006_c006,DE15,Leipzig,val,evaluation_city_representative,PASS
+DE16_r006_c004,DE16,Dresden,val,evaluation_city_representative,PASS
+DE17_r006_c006,DE17,Munster,val,evaluation_city_representative,PASS

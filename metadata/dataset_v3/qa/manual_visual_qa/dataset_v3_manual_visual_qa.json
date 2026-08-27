@@ -1,0 +1,58 @@
+{
+  "schema_version": "dataset-v3-manual-visual-qa-0.1",
+  "generated_at_utc": "2026-08-27T02:11:54.392227+00:00",
+  "status": "PASS",
+  "dataset_version": "v3",
+  "decision": "PASS",
+  "review_scope": "16 targeted tiles plus separate conflict overlays for two high-conflict tiles",
+  "reviewed_tile_count": 16,
+  "reviewed_tile_ids": [
+    "DE18_r006_c005",
+    "DE19_r006_c006",
+    "DE20_r006_c005",
+    "DE06_r006_c005",
+    "DE08_r009_c002",
+    "DE09_r001_c000",
+    "DE11_r006_c000",
+    "DE11_r006_c003",
+    "DE11_r006_c004",
+    "DE13_r005_c009",
+    "DE14_r004_c009",
+    "DE14_r007_c003",
+    "DE14_r007_c004",
+    "DE15_r006_c006",
+    "DE16_r006_c004",
+    "DE17_r006_c006"
+  ],
+  "reason_counts": {
+    "evaluation_city_representative": 6,
+    "high_buildings": 2,
+    "high_roads": 2,
+    "high_bare_land": 2,
+    "high_water": 2,
+    "high_source_conflict": 2
+  },
+  "findings": {
+    "spatial_alignment": "PASS",
+    "buildings_and_roads": "PASS",
+    "vegetation": "PASS",
+    "bare_land": "PASS",
+    "water": "PASS",
+    "ignore_regions": "PASS",
+    "source_conflict_patterns": "plausible and concentrated at complex boundaries"
+  },
+  "evidence_document": "metadata\\dataset_v3\\qa\\Dataset_V3_Visual_QA_27Aug2026.docx",
+  "evidence_document_sha256": "45e104485a9d1ce66b83704c5e0c5132af804f75ebc9390223c42919c0f79678",
+  "evidence_embedded_image_count": 18,
+  "sample_manifest": "metadata\\dataset_v3\\qa\\dataset_v3_visual_qa_sample.csv",
+  "sample_manifest_sha256": "cdc83523a93b0a6aca87d6b4152a6931bcf067a2829125dd6413827b78498f67",
+  "review_csv": "metadata\\dataset_v3\\qa\\manual_visual_qa\\dataset_v3_manual_visual_qa_review.csv",
+  "review_csv_sha256": "470292b34e354a22c77d11a6a4c5f5b8ada3de65c75dea090829e54928537020",
+  "mandatory_checks": {
+    "sample_tile_count_is_16": true,
+    "sample_tile_ids_unique": true,
+    "reason_counts_match": true,
+    "evidence_contains_at_least_18_images": true,
+    "reviewer_confirmed_all_samples": true
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:05:18.391909+00:00",
+  "city_id": "DE10",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      378506.8353732135,
+      0.0,
+      -10.0,
+      5723058.186498104
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 3312381,
+    "valid": 5687619,
+    "conflict": 857908,
+    "class_1": 665587,
+    "class_2": 545651,
+    "class_3": 4325951,
+    "class_4": 36767,
+    "class_5": 113663,
+    "support_1": 322171,
+    "support_2": 3614036,
+    "support_3": 1751412
+  },
+  "fractions_all_pixels": {
+    "valid": 0.6319576666666666,
+    "ignore": 0.36804233333333336,
+    "source_conflict": 0.09532311111111111
+  },
+  "provenance_bit_counts": {
+    "0": 3312381,
+    "1": 322171,
+    "3": 807449,
+    "5": 2734347,
+    "6": 72240,
+    "7": 1751412
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE10_Dortmund\\DE10_dynamic_world_v3_2025.tif": "c8f2fc75f2e7e269cb55c687302c658bdbc63f269480069aa917e5a5629cbdfe",
+    "data\\processed\\masks\\DE10_Dortmund\\DE10_label_mask.tif": "6712dd2e636ae55caed9e6f779de7d71579f6f0dca024eea4a40376d6b4fca7e",
+    "data\\processed\\masks\\DE10_Dortmund\\DE10_validity_mask.tif": "c9488766f90b41e6916677e5905f064b547c1e5035ace67abac06d6a0f93dc96",
+    "data\\interim\\labels_v3\\urban_atlas\\DE10\\DE10_urban_atlas_2021_code.tif": "d686929c6088f8f75a0dc4e41a412761374e68fde87b2abd058b99f9233f909b",
+    "data\\interim\\labels_v3\\urban_atlas\\DE10\\DE10_urban_atlas_2021_v3_evidence.tif": "8c41ea9221e64342f2ede53f70ce165d64e53f2a2ae83fcf64efc92ee5f606c8"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE10\\DE10_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE10\\DE10_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE10\\DE10_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE10\\DE10_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE10\\DE10_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE10_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

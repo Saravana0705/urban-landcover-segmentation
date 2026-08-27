@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T16:22:52.213524+00:00",
+  "city_id": "DE05",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      677095.145199985,
+      0.0,
+      -10.0,
+      5349540.636082032
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2666137,
+    "valid": 6333863,
+    "conflict": 810132,
+    "class_1": 689010,
+    "class_2": 481161,
+    "class_3": 4978522,
+    "class_4": 37858,
+    "class_5": 147312,
+    "support_1": 335281,
+    "support_2": 3403942,
+    "support_3": 2594640
+  },
+  "fractions_all_pixels": {
+    "valid": 0.7037625555555556,
+    "ignore": 0.29623744444444444,
+    "source_conflict": 0.09001466666666667
+  },
+  "provenance_bit_counts": {
+    "0": 2666137,
+    "1": 335281,
+    "3": 642280,
+    "5": 2711478,
+    "6": 50184,
+    "7": 2594640
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE05_Munich\\DE05_dynamic_world_v3_2025.tif": "149afae8116ae2c3c252205297587a3f15faee51d7239fbaf1134050b56e198c",
+    "data\\processed\\masks\\DE05_Munich\\DE05_label_mask.tif": "e6dd98c196dc6f472c137713922b3eb4510bd13757bfafca1e050606cd029dd6",
+    "data\\processed\\masks\\DE05_Munich\\DE05_validity_mask.tif": "59c9aafea00d4ceeedfd553536903d6cbe3a628874c2467266da72815c9cac09",
+    "data\\interim\\labels_v3\\urban_atlas\\DE05\\DE05_urban_atlas_2021_code.tif": "95c506587faad4e1f72e27593398e3662f9145d5bb4f006db5ba27b24be8c5ab",
+    "data\\interim\\labels_v3\\urban_atlas\\DE05\\DE05_urban_atlas_2021_v3_evidence.tif": "5fb1199911e4715458cef6ccaeb7dd298018648d3b9a37848e64d8aaa31d06d7"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE05\\DE05_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE05\\DE05_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE05\\DE05_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE05\\DE05_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE05\\DE05_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE05_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

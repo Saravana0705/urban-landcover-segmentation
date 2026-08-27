@@ -1,0 +1,70 @@
+{
+  "schema_version": "v3-dw-grid-normalization-0.1",
+  "generated_at_utc": "2026-08-26T16:37:13.356121+00:00",
+  "method": "top-left window crop only; no reprojection or resampling",
+  "results": [
+    {
+      "city_id": "DE06",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE06_Nuremberg\\DE06_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE06_Nuremberg\\DE06_label_mask.tif",
+      "source_size": [
+        3000,
+        3001
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 1,
+      "same_crs": true,
+      "same_transform": true,
+      "status": "NORMALIZED",
+      "backup": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE06_Nuremberg\\DE06_dynamic_world_v3_2025_original_3000x3001.tif",
+      "original_sha256": "05f146204d6c51d41b2057a8da6c065f8c0d0dcfe133cbf8baa086f6531b6dce",
+      "corrected_sha256": "5108b6f2cb0746d103e35b546893294483a5550eab26b64a6a4094fad8a21451"
+    },
+    {
+      "city_id": "DE08",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE08_Cologne\\DE08_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE08_Cologne\\DE08_label_mask.tif",
+      "source_size": [
+        3000,
+        3001
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 1,
+      "same_crs": true,
+      "same_transform": true,
+      "status": "NORMALIZED",
+      "backup": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE08_Cologne\\DE08_dynamic_world_v3_2025_original_3000x3001.tif",
+      "original_sha256": "288e6f9a8ed1130f80ef422bfd8b73f07b95a0ed8c8375aa1785e81ae22e093e",
+      "corrected_sha256": "8a4971f5f0084b3ff37e08b19debde0adcb30984b7cae3c073299c1684e68593"
+    },
+    {
+      "city_id": "DE09",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE09_Dusseldorf\\DE09_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE09_Dusseldorf\\DE09_label_mask.tif",
+      "source_size": [
+        3000,
+        3001
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 1,
+      "same_crs": true,
+      "same_transform": true,
+      "status": "NORMALIZED",
+      "backup": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE09_Dusseldorf\\DE09_dynamic_world_v3_2025_original_3000x3001.tif",
+      "original_sha256": "b836b252f8c4b3643fe086768b998b315b165273e06c16ad71d8970a9007aece",
+      "corrected_sha256": "c1fa1b53c0c1ac61ffcfee487de7bb7470dcf9c0240157d07e88734e86e4e507"
+    }
+  ]
+}

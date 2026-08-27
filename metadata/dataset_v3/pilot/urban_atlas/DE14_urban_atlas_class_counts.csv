@@ -1,0 +1,56 @@
+city_id,field,value,feature_count
+DE14,fua_code,DE001L1,82024
+DE14,code_2021,11210,16104
+DE14,code_2021,11220,12847
+DE14,code_2021,12100,11635
+DE14,code_2021,31000,7658
+DE14,code_2021,21000,6028
+DE14,code_2021,11100,4910
+DE14,code_2021,14200,3989
+DE14,code_2021,11230,3798
+DE14,code_2021,23000,3610
+DE14,code_2021,14110,3188
+DE14,code_2021,11300,2204
+DE14,code_2021,32000,1625
+DE14,code_2021,50000,1196
+DE14,code_2021,13400,647
+DE14,code_2021,14130,581
+DE14,code_2021,11240,464
+DE14,code_2021,12230,364
+DE14,code_2021,13300,292
+DE14,code_2021,13100,282
+DE14,code_2021,12220,272
+DE14,code_2021,12210,146
+DE14,code_2021,40000,109
+DE14,code_2021,12400,28
+DE14,code_2021,12300,25
+DE14,code_2021,14120,12
+DE14,code_2021,33000,6
+DE14,code_2021,24000,4
+DE14,class_2021,Discontinuous dense urban fabric (S.L. : 50% -  80%),16104
+DE14,class_2021,Discontinuous medium density urban fabric (S.L. : 30% - 50%),12847
+DE14,class_2021,"Industrial, commercial, public, military and private units",11635
+DE14,class_2021,Forests,7658
+DE14,class_2021,Arable land (annual crops),6028
+DE14,class_2021,Continuous urban fabric (S.L. : > 80%),4910
+DE14,class_2021,Sports and leisure facilities,3989
+DE14,class_2021,Discontinuous low density urban fabric (S.L. : 10% - 30%),3798
+DE14,class_2021,Pastures,3610
+DE14,class_2021,Green urban areas (Public access),3188
+DE14,class_2021,Isolated structures,2204
+DE14,class_2021,"Herbaceous vegetation associations (natural grassland, moors...)",1625
+DE14,class_2021,Water,1196
+DE14,class_2021,Land without current use,647
+DE14,class_2021,Green urban areas (Unknown access conditions),581
+DE14,class_2021,Discontinuous very low density urban fabric (S.L. : < 10%),464
+DE14,class_2021,Railways and associated land,364
+DE14,class_2021,Construction sites,292
+DE14,class_2021,Mineral extraction and dump sites,282
+DE14,class_2021,Other roads and associated land,272
+DE14,class_2021,Fast transit roads and associated land,146
+DE14,class_2021,Wetlands,109
+DE14,class_2021,Airports,28
+DE14,class_2021,Port areas,25
+DE14,class_2021,Green urban areas (Private access),12
+DE14,class_2021,"Open spaces with little or no vegetation (beaches, dunes, bare rocks, glaciers)",6
+DE14,class_2021,Complex and mixed cultivation patterns,4

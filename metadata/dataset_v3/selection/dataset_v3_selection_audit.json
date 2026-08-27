@@ -1,0 +1,76 @@
+{
+  "schema_version": "dataset-v3-selection-audit-0.1",
+  "status": "PASS",
+  "dataset_version": "v3",
+  "candidate_manifest": "metadata\\dataset_v3\\candidates\\dataset_v3_candidate_tiles.csv",
+  "candidate_manifest_sha256": "12e160c0b551ba06a73364d5938e7b083e37a6717a1b3224c83244b576279d9c",
+  "policy_path": "config\\dataset_v3_selection.yaml",
+  "policy_sha256": "8a283cbf080db0d136e74fc59415c7c24ef52df9bf893c8496cbda860a4fa617",
+  "candidate_tile_count": 2880,
+  "selected_tile_count": 1664,
+  "selected_by_split": {
+    "train": 974,
+    "val": 351,
+    "test": 339
+  },
+  "selected_city_count_by_split": {
+    "train": 14,
+    "val": 3,
+    "test": 3
+  },
+  "policy": {
+    "schema_version": "dataset-v3-selection-policy-0.1",
+    "dataset_version": "v3",
+    "input": {
+      "candidate_manifest": "metadata/dataset_v3/candidates/dataset_v3_candidate_tiles.csv"
+    },
+    "output": {
+      "directory": "metadata/dataset_v3/selection"
+    },
+    "coverage_gate": {
+      "minimum_valid_fraction_source_pixels": 0.4,
+      "maximum_padding_fraction": 0.25
+    },
+    "training_selection": {
+      "combination": "any",
+      "thresholds_fraction_valid": {
+        "buildings": 0.075,
+        "roads": 0.075,
+        "bare_land": 0.005,
+        "water": 0.05
+      },
+      "vegetation_direct_threshold": null
+    },
+    "evaluation_selection": {
+      "validation_and_test": "coverage_only",
+      "class_composition_filtering": false
+    },
+    "geographic_split_guard": {
+      "expected_city_counts": {
+        "train": 14,
+        "val": 3,
+        "test": 3
+      },
+      "require_each_city_to_contribute": true
+    },
+    "rationale": [
+      "Thresholds were selected from the observed V3 candidate-tile distributions, not from a forced equal class target.",
+      "Training selection admits tiles with meaningful evidence for at least one non-vegetation class.",
+      "Validation and test use only the coverage gate so their geographic class distributions remain representative.",
+      "Vegetation has no direct acceptance threshold; it remains represented through accepted mixed-class tiles."
+    ]
+  },
+  "leakage_guards": {
+    "city_in_exactly_one_split": true,
+    "training_class_rules_applied_to_validation_or_test": false,
+    "validation_and_test_use_coverage_only": true
+  },
+  "write_scope": "metadata/dataset_v3/selection only",
+  "existing_dataset_rasters_modified": false,
+  "output_sha256": {
+    "selected": "39cf3f7a48c7154303efb5f2996129aef7fe4e1a2b2fe40d0f353583561a4693",
+    "audit_csv": "2d416950e5b1b06ad86b3e2c50582b3f5e08c902ee0374a576001c0d6fb121e0",
+    "city": "8c42f65c9a6a811e271fdfc8f7af3461f694af9d431b3ca149bd8cebae6d74f1",
+    "classes": "ed2d27d2f79dcb80835740651d7b7a38ccecc39393ef3a767008e6deb14e1e35"
+  }
+}

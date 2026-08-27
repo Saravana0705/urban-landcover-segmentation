@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:18:30.138130+00:00",
+  "city_id": "DE20",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32633",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      295293.93951925624,
+      0.0,
+      -10.0,
+      6012693.414886766
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2309643,
+    "valid": 6690357,
+    "conflict": 345648,
+    "class_1": 166614,
+    "class_2": 176972,
+    "class_3": 6165170,
+    "class_4": 3102,
+    "class_5": 178499,
+    "support_1": 114176,
+    "support_2": 4693946,
+    "support_3": 1882235
+  },
+  "fractions_all_pixels": {
+    "valid": 0.743373,
+    "ignore": 0.256627,
+    "source_conflict": 0.03840533333333333
+  },
+  "provenance_bit_counts": {
+    "0": 2309643,
+    "1": 114176,
+    "3": 188822,
+    "5": 4316312,
+    "6": 188812,
+    "7": 1882235
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE20_Rostock\\DE20_dynamic_world_v3_2025.tif": "e56cd8a0ee049684267ad3cbe77e55cb99b5259ebc642ede4eedc297d01a01e4",
+    "data\\processed\\masks\\DE20_Rostock\\DE20_label_mask.tif": "e181f8c93749c767989cc8c4e69492bfac29e63292a5a3e390c8244565b5bb0e",
+    "data\\processed\\masks\\DE20_Rostock\\DE20_validity_mask.tif": "17aea75e4a61690482d20ebcf1fab16948b7d03caf4c7eb2a94241ceb79b851b",
+    "data\\interim\\labels_v3\\urban_atlas\\DE20\\DE20_urban_atlas_2021_code.tif": "020e30fc1d7e6df80ead062b44910603873ee4d75f337445cdad0b6eab757a32",
+    "data\\interim\\labels_v3\\urban_atlas\\DE20\\DE20_urban_atlas_2021_v3_evidence.tif": "bcccb8019711ce4c10c817b75292850a16f827e880ee717c30199e17379b1386"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE20\\DE20_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE20\\DE20_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE20\\DE20_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE20\\DE20_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE20\\DE20_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE20_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

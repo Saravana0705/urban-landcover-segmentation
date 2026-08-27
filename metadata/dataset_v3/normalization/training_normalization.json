@@ -1,0 +1,190 @@
+{
+  "dataset_version": "1.0-pre-freeze",
+  "created_at_utc": "2026-07-25T18:45:44.867460+00:00",
+  "scope": "training_cities_only",
+  "training_city_count": 14,
+  "training_city_ids": [
+    "DE01",
+    "DE02",
+    "DE03",
+    "DE04",
+    "DE05",
+    "DE06",
+    "DE07",
+    "DE08",
+    "DE09",
+    "DE10",
+    "DE11",
+    "DE12",
+    "DE13",
+    "DE14"
+  ],
+  "validation_and_test_used": false,
+  "source_domain": "linear_sigma0",
+  "db_conversion": "10 * log10(max(linear_sigma0, epsilon))",
+  "epsilon": 1e-10,
+  "quantile_method": {
+    "type": "deterministic stratified sample by city and band",
+    "sample_per_city_per_band": 200000,
+    "maximum_sample_per_band": 2800000,
+    "base_seed": 20260725
+  },
+  "recommended_model_input_policy": {
+    "step_1": "convert linear Sigma0 to dB",
+    "step_2": "clip each band to its training p01 and p99",
+    "step_3": "standardize using clipped training mean and population standard deviation",
+    "padding_handling": "exclude pixels where validity mask equals 0"
+  },
+  "bands": {
+    "VV": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125774516,
+        "mean": 0.2225686533558397,
+        "std_population": 1.9857176607260074,
+        "minimum": 5.958498583424898e-09,
+        "maximum": 2757.4501953125,
+        "p01": 0.011560968710109592,
+        "p50": 0.11718375608325005,
+        "p99": 1.8342503702640445
+      },
+      "db_unclipped": {
+        "valid_pixel_count": 125774516,
+        "mean": -9.310362224940123,
+        "std_population": 3.9781240743634325,
+        "minimum": -82.24863159568328,
+        "maximum": 34.40507677015658,
+        "p01": -19.370056991577147,
+        "p50": -9.311325550079346,
+        "p99": 2.6345860838889865
+      },
+      "db_clipped_p01_p99": {
+        "valid_pixel_count": 125774516,
+        "mean": -9.321410476299294,
+        "std_population": 3.7878212854222064,
+        "minimum": -19.370056991577147,
+        "maximum": 2.6345860838889865,
+        "clip_lower_db": -19.370056991577147,
+        "clip_upper_db": 2.6345860838889865
+      }
+    },
+    "VH": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125774516,
+        "mean": 0.03932959940957292,
+        "std_population": 0.24142956491059772,
+        "minimum": 1.2808815119669248e-09,
+        "maximum": 474.7709045410156,
+        "p01": 0.002127555632032454,
+        "p50": 0.02607958484441042,
+        "p99": 0.25611572504043467
+      },
+      "db_unclipped": {
+        "valid_pixel_count": 125774516,
+        "mean": -16.13528781381685,
+        "std_population": 3.9109812945668527,
+        "minimum": -88.92491042838418,
+        "maximum": 26.764840961619463,
+        "p01": -26.721191463470458,
+        "p50": -15.836993217468262,
+        "p99": -5.915637598037739
+      },
+      "db_clipped_p01_p99": {
+        "valid_pixel_count": 125774516,
+        "mean": -16.144641942904,
+        "std_population": 3.764255822885403,
+        "minimum": -26.721191463470458,
+        "maximum": -5.915637598037739,
+        "clip_lower_db": -26.721191463470458,
+        "clip_upper_db": -5.915637598037739
+      }
+    }
+  },
+  "source_rasters": [
+    {
+      "city_id": "DE01",
+      "city_name": "Mannheim",
+      "path": "data\\processed\\sar\\DE01_Mannheim\\DE01_Mannheim_S1_VV_VH.tif",
+      "sha256": "0ed79df0067b38ebb1dfd38ff43f23e03bc5ea74b2803d6c94d3bb43e3249db5"
+    },
+    {
+      "city_id": "DE02",
+      "city_name": "Heidelberg",
+      "path": "data\\processed\\sar\\DE02_Heidelberg\\DE02_Heidelberg_S1_VV_VH.tif",
+      "sha256": "44b0743586acca69470cf6393c543a5007a547d4dbe1ddaf5413c6b1b99de84b"
+    },
+    {
+      "city_id": "DE03",
+      "city_name": "Karlsruhe",
+      "path": "data\\processed\\sar\\DE03_Karlsruhe\\DE03_Karlsruhe_S1_VV_VH.tif",
+      "sha256": "0e64580a857ef97536b19b83f073989ecf36a4aa6b624e320e11278fcdf3e3fb"
+    },
+    {
+      "city_id": "DE04",
+      "city_name": "Stuttgart",
+      "path": "data\\processed\\sar\\DE04_Stuttgart\\DE04_Stuttgart_S1_VV_VH.tif",
+      "sha256": "710b4885009ddbe394905f79619cfc0e75e6c5d0c8148cb8998d9fa20f458327"
+    },
+    {
+      "city_id": "DE05",
+      "city_name": "Munich",
+      "path": "data\\processed\\sar\\DE05_Munich\\DE05_Munich_S1_VV_VH.tif",
+      "sha256": "a77706832cfa6839796879b0f3ad911cd627d51bad9935d8d7b33da5c7757a08"
+    },
+    {
+      "city_id": "DE06",
+      "city_name": "Nuremberg",
+      "path": "data\\processed\\sar\\DE06_Nuremberg\\DE06_Nuremberg_S1_VV_VH.tif",
+      "sha256": "c9ae6e23f0a64b34ffbda013540bf3bc016c5ff460564a1693c0dbb7d94c175d"
+    },
+    {
+      "city_id": "DE07",
+      "city_name": "Frankfurt",
+      "path": "data\\processed\\sar\\DE07_Frankfurt\\DE07_Frankfurt_S1_VV_VH.tif",
+      "sha256": "307d8d2ac76ad8000e62f8af435a5b91324085391bfa9002494ccf3b88f00c58"
+    },
+    {
+      "city_id": "DE08",
+      "city_name": "Cologne",
+      "path": "data\\processed\\sar\\DE08_Cologne\\DE08_Cologne_S1_VV_VH.tif",
+      "sha256": "690e17dfe206f00e40749507b30f211b8b262316aaff558f58df3e78930569dc"
+    },
+    {
+      "city_id": "DE09",
+      "city_name": "Dusseldorf",
+      "path": "data\\processed\\sar\\DE09_Dusseldorf\\DE09_Dusseldorf_S1_VV_VH.tif",
+      "sha256": "6b3b7f8050d5d6b330fcfa0f9df859af518593bb10da01a12ec5f37501772ab1"
+    },
+    {
+      "city_id": "DE10",
+      "city_name": "Dortmund",
+      "path": "data\\processed\\sar\\DE10_Dortmund\\DE10_Dortmund_S1_VV_VH.tif",
+      "sha256": "753d6a3d5357779f2edc8cd02981649187ca7d54a75a0dae24705f724e35213a"
+    },
+    {
+      "city_id": "DE11",
+      "city_name": "Hamburg",
+      "path": "data\\processed\\sar\\DE11_Hamburg\\DE11_Hamburg_S1_VV_VH.tif",
+      "sha256": "d74720bb3448f227f2fac300017134bbc3030253bb699dddcd73cd9cd3816748"
+    },
+    {
+      "city_id": "DE12",
+      "city_name": "Bremen",
+      "path": "data\\processed\\sar\\DE12_Bremen\\DE12_Bremen_S1_VV_VH.tif",
+      "sha256": "d64e8028020fad50d6bde34ab43b10f2a13915e631410540352d6f10d62b6c30"
+    },
+    {
+      "city_id": "DE13",
+      "city_name": "Hanover",
+      "path": "data\\processed\\sar\\DE13_Hanover\\DE13_Hanover_S1_VV_VH.tif",
+      "sha256": "be9b00e838f72f23cdc216509c48d48fbed392796d02d927a4d2f20033961df5"
+    },
+    {
+      "city_id": "DE14",
+      "city_name": "Berlin",
+      "path": "data\\processed\\sar\\DE14_Berlin\\DE14_Berlin_S1_VV_VH.tif",
+      "sha256": "7bfa46de8e038de3e5e18512e0cd0c533ba47a5d4c02019b9387f1303c60760d"
+    }
+  ],
+  "dataset_manifest_summary": "metadata\\dataset_v1\\dataset_manifest_summary.json",
+  "dataset_manifest_summary_sha256": "57d35c5b25554cf6a702e5295d3cda005a9decb550b353598970521b33c3744d"
+}

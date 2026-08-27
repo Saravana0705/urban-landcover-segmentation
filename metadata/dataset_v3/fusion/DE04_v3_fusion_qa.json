@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T16:06:38.385244+00:00",
+  "city_id": "DE04",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      498437.70616791205,
+      0.0,
+      -10.0,
+      5417549.149969402
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2485142,
+    "valid": 6514858,
+    "conflict": 799743,
+    "class_1": 664467,
+    "class_2": 471328,
+    "class_3": 5322866,
+    "class_4": 13160,
+    "class_5": 43037,
+    "support_1": 296451,
+    "support_2": 3344826,
+    "support_3": 2873581
+  },
+  "fractions_all_pixels": {
+    "valid": 0.7238731111111111,
+    "ignore": 0.27612688888888887,
+    "source_conflict": 0.08886033333333333
+  },
+  "provenance_bit_counts": {
+    "0": 2485142,
+    "1": 296451,
+    "3": 706752,
+    "5": 2567861,
+    "6": 70213,
+    "7": 2873581
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE04_Stuttgart\\DE04_dynamic_world_v3_2025.tif": "47bb1e2fb70d6db4ff4d3ee0bd9aa5830373ef4d6252714d8327f255679fd886",
+    "data\\processed\\masks\\DE04_Stuttgart\\DE04_label_mask.tif": "56480c682c34f16cb1166e2d38e7e2667294c6d4d9f1e6223515c2ada4cfd309",
+    "data\\processed\\masks\\DE04_Stuttgart\\DE04_validity_mask.tif": "bcca642edd5479ba8ec198279b136ece7d37967c8104828dc8bf73924efbc248",
+    "data\\interim\\labels_v3\\urban_atlas\\DE04\\DE04_urban_atlas_2021_code.tif": "6437b314d4f46730f1c961162bcdeb4581f888520e73c5d5c96692a88ade344a",
+    "data\\interim\\labels_v3\\urban_atlas\\DE04\\DE04_urban_atlas_2021_v3_evidence.tif": "e5beef0bf9bb738671da208e654173ffccec8427f742041615b2aec2c313d0f1"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE04\\DE04_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE04\\DE04_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE04\\DE04_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE04\\DE04_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE04\\DE04_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE04_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

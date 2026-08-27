@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T16:49:31.016945+00:00",
+  "city_id": "DE06",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      635510.4733126876,
+      0.0,
+      -10.0,
+      5494788.6269730525
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2279305,
+    "valid": 6720695,
+    "conflict": 406273,
+    "class_1": 489212,
+    "class_2": 363936,
+    "class_3": 5798613,
+    "class_4": 18994,
+    "class_5": 49940,
+    "support_1": 431057,
+    "support_2": 4275530,
+    "support_3": 2014108
+  },
+  "fractions_all_pixels": {
+    "valid": 0.7467438888888889,
+    "ignore": 0.2532561111111111,
+    "source_conflict": 0.04514144444444444
+  },
+  "provenance_bit_counts": {
+    "0": 2279305,
+    "1": 431057,
+    "3": 547790,
+    "5": 3686891,
+    "6": 40849,
+    "7": 2014108
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE06_Nuremberg\\DE06_dynamic_world_v3_2025.tif": "5108b6f2cb0746d103e35b546893294483a5550eab26b64a6a4094fad8a21451",
+    "data\\processed\\masks\\DE06_Nuremberg\\DE06_label_mask.tif": "47760acaf017fe4e532ebada457a5de4d5f0b6deec53aee7fb9c49358677c91f",
+    "data\\processed\\masks\\DE06_Nuremberg\\DE06_validity_mask.tif": "9938e42b28faece201cdfd39cf3bf24c989e205f631f738f53fe0b7263223a9e",
+    "data\\interim\\labels_v3\\urban_atlas\\DE06\\DE06_urban_atlas_2021_code.tif": "e857b3d73ea3a451e2dc91cff0fda92c9d9234dad52b5586097affa06e6f3a9d",
+    "data\\interim\\labels_v3\\urban_atlas\\DE06\\DE06_urban_atlas_2021_v3_evidence.tif": "7d4f48b0f1058af0183fc9623980769abd6171accfa24731b72ed89c01987457"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE06\\DE06_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE06\\DE06_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE06\\DE06_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE06\\DE06_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE06\\DE06_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE06_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

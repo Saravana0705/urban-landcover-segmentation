@@ -1,0 +1,167 @@
+{
+  "dataset_version": "v3",
+  "freeze_status": "FROZEN",
+  "manifest_path": "metadata\\dataset_v3\\dataset_manifest.csv",
+  "manifest_sha256": "598863050580021efdf7ebc7bf094cc9e330942471ededc636ccd3c9423d247f",
+  "input": {
+    "channels": [
+      "Sigma0_VV",
+      "Sigma0_VH"
+    ],
+    "channel_count": 2,
+    "source_domain": "linear_sigma0",
+    "conversion": "10 * log10(max(linear_sigma0, 1e-10))",
+    "tile_size": 256,
+    "spatial_resolution_m": 10
+  },
+  "normalization": {
+    "scope": "full_rasters_of_training_cities_only",
+    "inheritance": "V1/V2.2 constants after source-SAR hash verification",
+    "validation_and_test_used": false,
+    "VV": {
+      "clip_lower_db": -19.370056991577147,
+      "clip_upper_db": 2.6345860838889865,
+      "mean_db": -9.321410476299294,
+      "std_db": 3.7878212854222064
+    },
+    "VH": {
+      "clip_lower_db": -26.721191463470458,
+      "clip_upper_db": -5.915637598037739,
+      "mean_db": -16.144641942904,
+      "std_db": 3.764255822885403
+    }
+  },
+  "labels": {
+    "semantic_nodata": 255,
+    "validity_valid": 1,
+    "validity_invalid": 0,
+    "classes": [
+      {
+        "class_id": 1,
+        "class_name": "buildings"
+      },
+      {
+        "class_id": 2,
+        "class_name": "roads"
+      },
+      {
+        "class_id": 3,
+        "class_name": "vegetation"
+      },
+      {
+        "class_id": 4,
+        "class_name": "bare_land"
+      },
+      {
+        "class_id": 5,
+        "class_name": "water"
+      }
+    ]
+  },
+  "splits": {
+    "train_city_ids": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14"
+    ],
+    "validation_city_ids": [
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test_city_ids": [
+      "DE18",
+      "DE19",
+      "DE20"
+    ],
+    "train_tile_count": 974,
+    "validation_tile_count": 351,
+    "test_tile_count": 339
+  },
+  "class_distribution": {
+    "train": {
+      "buildings": {
+        "pixel_count": 6143700,
+        "fraction_valid": 0.15577124909541012
+      },
+      "roads": {
+        "pixel_count": 4164241,
+        "fraction_valid": 0.10558279572640589
+      },
+      "vegetation": {
+        "pixel_count": 26526359,
+        "fraction_valid": 0.6725660555338435
+      },
+      "bare_land": {
+        "pixel_count": 294435,
+        "fraction_valid": 0.007465290904081756
+      },
+      "water": {
+        "pixel_count": 2311791,
+        "fraction_valid": 0.058614608740258686
+      }
+    },
+    "val": {
+      "buildings": {
+        "pixel_count": 855490,
+        "fraction_valid": 0.047780525368516145
+      },
+      "roads": {
+        "pixel_count": 814870,
+        "fraction_valid": 0.045511831473240776
+      },
+      "vegetation": {
+        "pixel_count": 15703372,
+        "fraction_valid": 0.877059187386464
+      },
+      "bare_land": {
+        "pixel_count": 55482,
+        "fraction_valid": 0.003098761070843625
+      },
+      "water": {
+        "pixel_count": 475361,
+        "fraction_valid": 0.026549694700935374
+      }
+    },
+    "test": {
+      "buildings": {
+        "pixel_count": 546980,
+        "fraction_valid": 0.0302773679912457
+      },
+      "roads": {
+        "pixel_count": 528487,
+        "fraction_valid": 0.029253711977749584
+      },
+      "vegetation": {
+        "pixel_count": 16087762,
+        "fraction_valid": 0.8905171856915772
+      },
+      "bare_land": {
+        "pixel_count": 23114,
+        "fraction_valid": 0.0012794454710403547
+      },
+      "water": {
+        "pixel_count": 879296,
+        "fraction_valid": 0.048672288868387106
+      }
+    }
+  },
+  "training_policy": {
+    "ignore_index": 255,
+    "use_validity_mask": true,
+    "normalization_source": "unchanged full training-city SAR rasters",
+    "training_selection": "class-aware after coverage gate",
+    "validation_test_selection": "coverage-only; no class filtering"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "audit_version": "v3-pilot-ua-code-agreement-0.1",
+  "generated_at_utc": "2026-08-26T04:59:01.100217+00:00",
+  "city_id": "DE14",
+  "qa_status": "PASS",
+  "dynamic_world_rule": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observations_min": 5
+  },
+  "csv": "metadata\\dataset_v3\\pilot\\ua_code_agreement\\DE14_ua_code_agreement.csv",
+  "notes": [
+    "Class 0 means absent/unconfident evidence, never vegetation.",
+    "This audit separates Urban Atlas bare candidate codes before any final fusion decision."
+  ]
+}

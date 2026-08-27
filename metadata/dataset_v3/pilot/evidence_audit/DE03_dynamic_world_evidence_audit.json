@@ -1,0 +1,289 @@
+{
+  "generated_at_utc": "2026-08-26T03:31:28.602641+00:00",
+  "dynamic_world_raster": "data\\raw\\labels_v3\\dynamic_world\\DE03_Karlsruhe\\DE03_dynamic_world_v3_pilot_2025.tif",
+  "semantic_raster": "data\\processed\\masks\\DE03_Karlsruhe\\DE03_label_mask.tif",
+  "validity_raster": "data\\processed\\masks\\DE03_Karlsruhe\\DE03_validity_mask.tif",
+  "pixel_count": 9000000,
+  "observation_count_distribution": {
+    "4": 128760,
+    "5": 817219,
+    "6": 1911564,
+    "7": 4089550,
+    "8": 568682,
+    "9": 108150,
+    "10": 287420,
+    "11": 232874,
+    "12": 161150,
+    "13": 495986,
+    "14": 193142,
+    "15": 5503
+  },
+  "top1_probability_quantiles": {
+    "0.05": 0.3085,
+    "0.25": 0.5035000000000001,
+    "0.5": 0.6725000000000001,
+    "0.75": 0.7364999999999999,
+    "0.95": 0.7525
+  },
+  "assigned_mode_probability_quantiles": {
+    "0.05": 0.3005,
+    "0.25": 0.5035000000000001,
+    "0.5": 0.6725000000000001,
+    "0.75": 0.7364999999999999,
+    "0.95": 0.7525
+  },
+  "top1_margin_quantiles": {
+    "0.05": 0.0595,
+    "0.25": 0.3525,
+    "0.5": 0.6014999999999999,
+    "0.75": 0.6945000000000001,
+    "0.95": 0.7155
+  },
+  "mode_mean_consensus_pixel_count": 8797641,
+  "mode_mean_consensus_fraction": 0.9775156666666667,
+  "temporal_agreement_quantiles": {
+    "0.05": 0.5715000000000001,
+    "0.25": 0.9995,
+    "0.5": 0.9995,
+    "0.75": 0.9995,
+    "0.95": 0.9995
+  },
+  "dynamic_world_mode_classes": [
+    {
+      "dw_class_id": 0,
+      "dw_class_name": "water",
+      "pixel_count": 283135,
+      "pixel_fraction": 0.03145944444444444,
+      "top1_probability_quantiles": {
+        "0.05": 0.34650000000000003,
+        "0.25": 0.6205,
+        "0.5": 0.7135,
+        "0.75": 0.7324999999999999,
+        "0.95": 0.7505
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.7505,
+        "0.25": 0.9995,
+        "0.5": 0.9995,
+        "0.75": 0.9995,
+        "0.95": 0.9995
+      }
+    },
+    {
+      "dw_class_id": 1,
+      "dw_class_name": "trees",
+      "pixel_count": 4361412,
+      "pixel_fraction": 0.48460133333333333,
+      "top1_probability_quantiles": {
+        "0.05": 0.3215,
+        "0.25": 0.6105,
+        "0.5": 0.7304999999999999,
+        "0.75": 0.7415,
+        "0.95": 0.7555000000000001
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.5715000000000001,
+        "0.25": 0.9995,
+        "0.5": 0.9995,
+        "0.75": 0.9995,
+        "0.95": 0.9995
+      }
+    },
+    {
+      "dw_class_id": 2,
+      "dw_class_name": "grass",
+      "pixel_count": 280631,
+      "pixel_fraction": 0.03118122222222222,
+      "top1_probability_quantiles": {
+        "0.05": 0.2455,
+        "0.25": 0.2985,
+        "0.5": 0.3425,
+        "0.75": 0.3915,
+        "0.95": 0.47750000000000004
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.4285,
+        "0.25": 0.5715000000000001,
+        "0.5": 0.6925000000000001,
+        "0.75": 0.8574999999999999,
+        "0.95": 0.9995
+      }
+    },
+    {
+      "dw_class_id": 3,
+      "dw_class_name": "flooded_vegetation",
+      "pixel_count": 2720,
+      "pixel_fraction": 0.0003022222222222222,
+      "top1_probability_quantiles": {
+        "0.05": 0.2025,
+        "0.25": 0.2795,
+        "0.5": 0.3345,
+        "0.75": 0.3825,
+        "0.95": 0.5105
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.4285,
+        "0.25": 0.5715000000000001,
+        "0.5": 0.7505,
+        "0.75": 0.9995,
+        "0.95": 0.9995
+      }
+    },
+    {
+      "dw_class_id": 4,
+      "dw_class_name": "crops",
+      "pixel_count": 2024773,
+      "pixel_fraction": 0.22497477777777777,
+      "top1_probability_quantiles": {
+        "0.05": 0.3015,
+        "0.25": 0.4255,
+        "0.5": 0.5245,
+        "0.75": 0.5925,
+        "0.95": 0.6495
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.5715000000000001,
+        "0.25": 0.9165000000000001,
+        "0.5": 0.9995,
+        "0.75": 0.9995,
+        "0.95": 0.9995
+      }
+    },
+    {
+      "dw_class_id": 5,
+      "dw_class_name": "shrub_and_scrub",
+      "pixel_count": 14704,
+      "pixel_fraction": 0.0016337777777777778,
+      "top1_probability_quantiles": {
+        "0.05": 0.2135,
+        "0.25": 0.2505,
+        "0.5": 0.28550000000000003,
+        "0.75": 0.3295,
+        "0.95": 0.41050000000000003
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.4285,
+        "0.25": 0.5005,
+        "0.5": 0.6005,
+        "0.75": 0.8005,
+        "0.95": 0.9995
+      }
+    },
+    {
+      "dw_class_id": 6,
+      "dw_class_name": "built",
+      "pixel_count": 2025640,
+      "pixel_fraction": 0.2250711111111111,
+      "top1_probability_quantiles": {
+        "0.05": 0.3635,
+        "0.25": 0.6134999999999999,
+        "0.5": 0.7104999999999999,
+        "0.75": 0.7355,
+        "0.95": 0.7525
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.8334999999999999,
+        "0.25": 0.9995,
+        "0.5": 0.9995,
+        "0.75": 0.9995,
+        "0.95": 0.9995
+      }
+    },
+    {
+      "dw_class_id": 7,
+      "dw_class_name": "bare",
+      "pixel_count": 6642,
+      "pixel_fraction": 0.000738,
+      "top1_probability_quantiles": {
+        "0.05": 0.20350000000000001,
+        "0.25": 0.2995,
+        "0.5": 0.3535,
+        "0.75": 0.4005,
+        "0.95": 0.4975
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.5715000000000001,
+        "0.25": 0.5715000000000001,
+        "0.5": 0.8334999999999999,
+        "0.75": 0.9995,
+        "0.95": 0.9995
+      }
+    },
+    {
+      "dw_class_id": 8,
+      "dw_class_name": "snow_and_ice",
+      "pixel_count": 343,
+      "pixel_fraction": 3.811111111111111e-05,
+      "top1_probability_quantiles": {
+        "0.05": 0.2105,
+        "0.25": 0.2745,
+        "0.5": 0.3165,
+        "0.75": 0.3575,
+        "0.95": 0.4475
+      },
+      "temporal_agreement_quantiles": {
+        "0.05": 0.5715000000000001,
+        "0.25": 0.6665000000000001,
+        "0.5": 0.8574999999999999,
+        "0.75": 0.9995,
+        "0.95": 0.9995
+      }
+    }
+  ],
+  "osm_vs_dynamic_world_target_cross_tab": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      249,
+      388437,
+      0,
+      5065,
+      420,
+      854
+    ],
+    [
+      2,
+      242930,
+      0,
+      58496,
+      354,
+      794
+    ],
+    [
+      9,
+      312409,
+      0,
+      6225291,
+      1774,
+      14284
+    ],
+    [
+      0,
+      21122,
+      0,
+      13852,
+      1597,
+      2450
+    ],
+    [
+      19,
+      9819,
+      0,
+      39375,
+      103,
+      255179
+    ]
+  ],
+  "notes": [
+    "Candidate profiles require modal-label/mean-argmax consensus and use the assigned modal class probability.",
+    "Candidate profiles are sensitivity diagnostics, not frozen V3 thresholds.",
+    "Dynamic World has no road class; roads must remain sourced from OSM/authoritative transport data.",
+    "Snow/ice maps to Unknown and is never accepted as a target class."
+  ]
+}

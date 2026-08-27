@@ -1,0 +1,195 @@
+{
+  "audit_version": "v3-pilot-three-source-0.1",
+  "generated_at_utc": "2026-08-26T04:50:16.447311+00:00",
+  "city_id": "DE03",
+  "qa_status": "PASS",
+  "total_pixels": 9000000,
+  "urban_atlas_source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\urban_atlas_2021\\DE03_Karlsruhe\\extracted\\CLMS_UA_LCU_S2021_V025ha_DE035L1_KARLSRUHE_03035_V01_R01_20250418.fgb",
+  "urban_atlas_source_sha256": "2def2c60cef0b7efbc27879f08ea058dadce286d8772af40e14116f2132833ed",
+  "dynamic_world_source": "data\\raw\\labels_v3\\dynamic_world\\DE03_Karlsruhe\\DE03_dynamic_world_v3_pilot_2025.tif",
+  "osm_semantic_source": "data\\processed\\masks\\DE03_Karlsruhe\\DE03_label_mask.tif",
+  "osm_validity_source": "data\\processed\\masks\\DE03_Karlsruhe\\DE03_validity_mask.tif",
+  "urban_atlas_code_raster": "data\\interim\\labels_v3\\urban_atlas\\DE03\\DE03_urban_atlas_2021_code.tif",
+  "urban_atlas_evidence_raster": "data\\interim\\labels_v3\\urban_atlas\\DE03\\DE03_urban_atlas_2021_v3_evidence.tif",
+  "direct_urban_atlas_crosswalk": {
+    "12210": 2,
+    "12220": 2,
+    "12230": 2,
+    "14110": 3,
+    "14120": 3,
+    "14130": 3,
+    "21000": 3,
+    "22000": 3,
+    "23000": 3,
+    "31000": 3,
+    "32000": 3,
+    "13100": 4,
+    "13300": 4,
+    "33000": 4,
+    "50000": 5
+  },
+  "dynamic_world_confidence_rule": {
+    "modal_mean_argmax_consensus": true,
+    "assigned_probability_min": 0.6,
+    "temporal_agreement_min": 0.7,
+    "observation_count_min": 5
+  },
+  "pairwise_cross_tabs": {
+    "urban_atlas_rows_dynamic_world_columns": [
+      [
+        763817,
+        1304855,
+        0,
+        438899,
+        0,
+        4350
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        163982,
+        162666,
+        0,
+        35231,
+        0,
+        45
+      ],
+      [
+        2508133,
+        52798,
+        0,
+        3233932,
+        0,
+        3132
+      ],
+      [
+        25462,
+        8048,
+        0,
+        717,
+        10,
+        1777
+      ],
+      [
+        69057,
+        1150,
+        0,
+        10931,
+        0,
+        211008
+      ]
+    ],
+    "urban_atlas_rows_osm_columns": [
+      [
+        989041,
+        380727,
+        135954,
+        975671,
+        16358,
+        14170
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        122669,
+        8838,
+        140377,
+        88534,
+        741,
+        765
+      ],
+      [
+        270348,
+        4069,
+        24358,
+        5465049,
+        10409,
+        23762
+      ],
+      [
+        16102,
+        1348,
+        1544,
+        4214,
+        10962,
+        1844
+      ],
+      [
+        6956,
+        43,
+        343,
+        20299,
+        551,
+        263954
+      ]
+    ],
+    "dynamic_world_rows_osm_columns": [
+      [
+        484606,
+        40042,
+        88174,
+        2820945,
+        26309,
+        70375
+      ],
+      [
+        846004,
+        354154,
+        201486,
+        113518,
+        9605,
+        4750
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        73072,
+        739,
+        12876,
+        3617676,
+        2113,
+        13234
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        9,
+        0
+      ],
+      [
+        1434,
+        90,
+        39,
+        1628,
+        985,
+        216136
+      ]
+    ]
+  },
+  "notes": [
+    "These are evidence rasters and agreement statistics, not final V3 labels.",
+    "Urban Atlas transport is supporting evidence only; OSM remains the road geometry source.",
+    "Urban Atlas classes 13400, 14200 and 40000 remain unresolved in this direct crosswalk.",
+    "Class 0 means no direct evidence, not vegetation."
+  ]
+}

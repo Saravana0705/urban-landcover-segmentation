@@ -1,0 +1,24 @@
+{
+  "audit_version": "v3-pilot-ua-aoi-0.1",
+  "generated_at_utc": "2026-08-26T04:36:29.899743+00:00",
+  "city_id": "DE14",
+  "vector_path": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\urban_atlas_2021\\DE14_Berlin\\extracted\\CLMS_UA_LCU_S2021_V025ha_DE001L1_BERLIN_03035_V01_R01_20250523.fgb",
+  "source_crs": "EPSG:3035",
+  "sar_crs": "EPSG:32633",
+  "sar_bounds": [
+    376779.25925275,
+    5805072.1592110265,
+    406779.25925275,
+    5835072.1592110265
+  ],
+  "aoi_area_m2_in_equal_area_crs": 900458922.5246925,
+  "urban_atlas_covered_area_m2": 900458922.5246867,
+  "urban_atlas_coverage_fraction": 0.9999999999999936,
+  "bbox_candidate_feature_count": 24531,
+  "intersecting_feature_count": 23026,
+  "null_geometry_count": 0,
+  "invalid_geometry_count": 0,
+  "class_count_in_aoi": 26,
+  "qa_status": "PASS",
+  "note": "Areas are geometric intersections in EPSG:3035; source vectors are not modified."
+}

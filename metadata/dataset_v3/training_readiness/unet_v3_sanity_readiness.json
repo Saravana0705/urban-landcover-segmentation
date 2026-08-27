@@ -1,0 +1,318 @@
+{
+  "schema_version": "dataset-v3-unet-sanity-readiness-0.1",
+  "generated_at_utc": "2026-08-27T02:34:56.344563+00:00",
+  "status": "PASS",
+  "dataset_version": "v3",
+  "training_config": "config\\training_unet_v3_sanity_e6p3_2ep.yaml",
+  "training_config_sha256": "844f8964b39818b03c465bd6a44f203113be4d672ba265f679899955481100b0",
+  "manifest_sha256": "598863050580021efdf7ebc7bf094cc9e330942471ededc636ccd3c9423d247f",
+  "dataset_config_sha256": "7ca725b3ac78025f71e4a16f43dec1cec56b42788c35a4eb678f3d68de156063",
+  "freeze_record_sha256": "c669be34355c40b558852866b49df08a45b7b013783ac22f2292d891a6aeff3d",
+  "split_tile_counts": {
+    "train": 974,
+    "val": 351,
+    "test": 339
+  },
+  "metadata_checks": {
+    "freeze_status_is_frozen": true,
+    "freeze_all_checks_passed": true,
+    "freeze_record_hash_matches_marker": true,
+    "manifest_hash_matches_freeze": true,
+    "dataset_config_hash_matches_freeze": true,
+    "dataset_config_is_v3_frozen": true,
+    "training_manifest_is_v3": true,
+    "evaluation_manifest_is_v3": true,
+    "training_dataset_config_is_frozen_v3": true,
+    "evaluation_dataset_config_is_frozen_v3": true,
+    "normalization_path_is_v3": true,
+    "model_matches_e6_p3_unet": true,
+    "loss_matches_e6_p3_ce_tversky": true,
+    "sanity_epoch_count_is_2": true,
+    "standard_shuffle_without_weighted_resampling": true,
+    "unique_sanity_output_directory": true,
+    "inference_benchmark_disabled": true,
+    "frozen_split_counts_match": true
+  },
+  "batch_checks": {
+    "loader_split_counts_match": true,
+    "all_first_batches_finite": true,
+    "all_invalid_pixels_ignored": true,
+    "all_supervised_pixels_valid": true
+  },
+  "dataloader_report": {
+    "settings": {
+      "batch_size": 4,
+      "num_workers": 0,
+      "seed": 20260725,
+      "pin_memory": false,
+      "persistent_workers": false,
+      "prefetch_factor": null,
+      "drop_last_train": false,
+      "exclude_zero_valid": true,
+      "verify_raster_metadata": true
+    },
+    "splits": {
+      "train": {
+        "dataset": {
+          "dataset_version": "v3",
+          "split": "train",
+          "tile_count": 974,
+          "city_count": 14,
+          "city_ids": [
+            "DE01",
+            "DE02",
+            "DE03",
+            "DE04",
+            "DE05",
+            "DE06",
+            "DE07",
+            "DE08",
+            "DE09",
+            "DE10",
+            "DE11",
+            "DE12",
+            "DE13",
+            "DE14"
+          ],
+          "tile_size": 256,
+          "channel_count": 2,
+          "class_names": [
+            "buildings",
+            "roads",
+            "vegetation",
+            "bare_land",
+            "water"
+          ],
+          "num_classes": 5,
+          "ignore_index": 255,
+          "exclude_zero_valid": true,
+          "manifest_path": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\metadata\\dataset_v3\\dataset_manifest.csv",
+          "dataset_config_path": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\metadata\\dataset_v3\\freeze\\dataset_config.json"
+        },
+        "batch_count": 244,
+        "first_batch": {
+          "batch_size": 4,
+          "image_shape": [
+            4,
+            2,
+            256,
+            256
+          ],
+          "target_shape": [
+            4,
+            256,
+            256
+          ],
+          "validity_shape": [
+            4,
+            256,
+            256
+          ],
+          "image_dtype": "torch.float32",
+          "target_dtype": "torch.int64",
+          "validity_dtype": "torch.bool",
+          "image_all_finite": true,
+          "target_values": [
+            0,
+            1,
+            2,
+            4,
+            255
+          ],
+          "supervised_pixel_count": 173085,
+          "ignored_pixel_count": 89059,
+          "total_pixel_count": 262144,
+          "supervised_fraction": 0.6602668762207031,
+          "per_class_pixel_counts": {
+            "0": 20250,
+            "1": 14915,
+            "2": 103159,
+            "3": 0,
+            "4": 34761
+          },
+          "invalid_pixels_are_ignored": true,
+          "supervised_pixels_are_valid": true,
+          "tile_ids": [
+            "DE04_r004_c009",
+            "DE01_r001_c003",
+            "DE14_r005_c007",
+            "DE14_r006_c000"
+          ],
+          "city_ids": [
+            "DE04",
+            "DE01",
+            "DE14",
+            "DE14"
+          ]
+        }
+      },
+      "val": {
+        "dataset": {
+          "dataset_version": "v3",
+          "split": "val",
+          "tile_count": 351,
+          "city_count": 3,
+          "city_ids": [
+            "DE15",
+            "DE16",
+            "DE17"
+          ],
+          "tile_size": 256,
+          "channel_count": 2,
+          "class_names": [
+            "buildings",
+            "roads",
+            "vegetation",
+            "bare_land",
+            "water"
+          ],
+          "num_classes": 5,
+          "ignore_index": 255,
+          "exclude_zero_valid": true,
+          "manifest_path": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\metadata\\dataset_v3\\dataset_manifest.csv",
+          "dataset_config_path": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\metadata\\dataset_v3\\freeze\\dataset_config.json"
+        },
+        "batch_count": 88,
+        "first_batch": {
+          "batch_size": 4,
+          "image_shape": [
+            4,
+            2,
+            256,
+            256
+          ],
+          "target_shape": [
+            4,
+            256,
+            256
+          ],
+          "validity_shape": [
+            4,
+            256,
+            256
+          ],
+          "image_dtype": "torch.float32",
+          "target_dtype": "torch.int64",
+          "validity_dtype": "torch.bool",
+          "image_all_finite": true,
+          "target_values": [
+            0,
+            1,
+            2,
+            4,
+            255
+          ],
+          "supervised_pixel_count": 222195,
+          "ignored_pixel_count": 39949,
+          "total_pixel_count": 262144,
+          "supervised_fraction": 0.8476066589355469,
+          "per_class_pixel_counts": {
+            "0": 3947,
+            "1": 5515,
+            "2": 211508,
+            "3": 0,
+            "4": 1225
+          },
+          "invalid_pixels_are_ignored": true,
+          "supervised_pixels_are_valid": true,
+          "tile_ids": [
+            "DE15_r000_c000",
+            "DE15_r000_c001",
+            "DE15_r000_c002",
+            "DE15_r000_c003"
+          ],
+          "city_ids": [
+            "DE15",
+            "DE15",
+            "DE15",
+            "DE15"
+          ]
+        }
+      },
+      "test": {
+        "dataset": {
+          "dataset_version": "v3",
+          "split": "test",
+          "tile_count": 339,
+          "city_count": 3,
+          "city_ids": [
+            "DE18",
+            "DE19",
+            "DE20"
+          ],
+          "tile_size": 256,
+          "channel_count": 2,
+          "class_names": [
+            "buildings",
+            "roads",
+            "vegetation",
+            "bare_land",
+            "water"
+          ],
+          "num_classes": 5,
+          "ignore_index": 255,
+          "exclude_zero_valid": true,
+          "manifest_path": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\metadata\\dataset_v3\\dataset_manifest.csv",
+          "dataset_config_path": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\metadata\\dataset_v3\\freeze\\dataset_config.json"
+        },
+        "batch_count": 85,
+        "first_batch": {
+          "batch_size": 4,
+          "image_shape": [
+            4,
+            2,
+            256,
+            256
+          ],
+          "target_shape": [
+            4,
+            256,
+            256
+          ],
+          "validity_shape": [
+            4,
+            256,
+            256
+          ],
+          "image_dtype": "torch.float32",
+          "target_dtype": "torch.int64",
+          "validity_dtype": "torch.bool",
+          "image_all_finite": true,
+          "target_values": [
+            0,
+            1,
+            2,
+            4,
+            255
+          ],
+          "supervised_pixel_count": 244010,
+          "ignored_pixel_count": 18134,
+          "total_pixel_count": 262144,
+          "supervised_fraction": 0.9308242797851562,
+          "per_class_pixel_counts": {
+            "0": 5364,
+            "1": 4444,
+            "2": 233816,
+            "3": 0,
+            "4": 386
+          },
+          "invalid_pixels_are_ignored": true,
+          "supervised_pixels_are_valid": true,
+          "tile_ids": [
+            "DE18_r000_c000",
+            "DE18_r000_c001",
+            "DE18_r000_c002",
+            "DE18_r000_c003"
+          ],
+          "city_ids": [
+            "DE18",
+            "DE18",
+            "DE18",
+            "DE18"
+          ]
+        }
+      }
+    }
+  },
+  "next": "python -m src.training.train_segmentation --config config/training_unet_v3_sanity_e6p3_2ep.yaml --integration-check"
+}

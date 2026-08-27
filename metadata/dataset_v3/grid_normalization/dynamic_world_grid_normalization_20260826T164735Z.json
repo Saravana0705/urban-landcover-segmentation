@@ -1,0 +1,413 @@
+{
+  "schema_version": "v3-dw-grid-normalization-0.1",
+  "generated_at_utc": "2026-08-26T16:47:35.863652+00:00",
+  "method": "integer-pixel window crop to reference bounds; no reprojection or resampling",
+  "results": [
+    {
+      "city_id": "DE01",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE01_Mannheim\\DE01_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE01_Mannheim\\DE01_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE02",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE02_Heidelberg\\DE02_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE02_Heidelberg\\DE02_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE03",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE03_Karlsruhe\\DE03_dynamic_world_v3_pilot_2025.tif",
+      "reference": "data\\processed\\masks\\DE03_Karlsruhe\\DE03_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE04",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE04_Stuttgart\\DE04_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE04_Stuttgart\\DE04_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE05",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE05_Munich\\DE05_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE05_Munich\\DE05_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE06",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE06_Nuremberg\\DE06_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE06_Nuremberg\\DE06_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE07",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE07_Frankfurt\\DE07_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE07_Frankfurt\\DE07_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE08",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE08_Cologne\\DE08_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE08_Cologne\\DE08_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE09",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE09_Dusseldorf\\DE09_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE09_Dusseldorf\\DE09_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE10",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE10_Dortmund\\DE10_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE10_Dortmund\\DE10_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE11",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE11_Hamburg\\DE11_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE11_Hamburg\\DE11_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE12",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE12_Bremen\\DE12_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE12_Bremen\\DE12_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE13",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE13_Hanover\\DE13_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE13_Hanover\\DE13_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE14",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE14_Berlin\\DE14_dynamic_world_v3_pilot_2025.tif",
+      "reference": "data\\processed\\masks\\DE14_Berlin\\DE14_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE15",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE15_Leipzig\\DE15_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE15_Leipzig\\DE15_label_mask.tif",
+      "source_size": [
+        3001,
+        3001
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 1,
+      "height_excess": 1,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 1,
+      "crop_row_offset": 0,
+      "status": "NORMALIZED",
+      "backup": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE15_Leipzig\\DE15_dynamic_world_v3_2025_original_3001x3001.tif",
+      "original_sha256": "b64f03d6296678b2ba49c5621afd5fae8812c374ad609a403d258985b9101f72",
+      "corrected_sha256": "2c49173f609164c288e65154fa373ff9b9c965c995075ab98b2e57969590696b"
+    },
+    {
+      "city_id": "DE16",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE16_Dresden\\DE16_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE16_Dresden\\DE16_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE17",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE17_Munster\\DE17_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE17_Munster\\DE17_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE18",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE18_Freiburg\\DE18_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE18_Freiburg\\DE18_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE19",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE19_Kiel\\DE19_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE19_Kiel\\DE19_label_mask.tif",
+      "source_size": [
+        3000,
+        3000
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 0,
+      "height_excess": 0,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 0,
+      "crop_row_offset": 0,
+      "status": "ALIGNED"
+    },
+    {
+      "city_id": "DE20",
+      "source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE20_Rostock\\DE20_dynamic_world_v3_2025.tif",
+      "reference": "data\\processed\\masks\\DE20_Rostock\\DE20_label_mask.tif",
+      "source_size": [
+        3001,
+        3001
+      ],
+      "reference_size": [
+        3000,
+        3000
+      ],
+      "width_excess": 1,
+      "height_excess": 1,
+      "same_crs": true,
+      "same_pixel_geometry": true,
+      "crop_col_offset": 1,
+      "crop_row_offset": 0,
+      "status": "NORMALIZED",
+      "backup": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE20_Rostock\\DE20_dynamic_world_v3_2025_original_3001x3001.tif",
+      "original_sha256": "10254aac431e0b197b60f4c7296909f9a6dae8fa565f68a7a174fdb758aa735e",
+      "corrected_sha256": "e56cd8a0ee049684267ad3cbe77e55cb99b5259ebc642ede4eedc297d01a01e4"
+    }
+  ]
+}

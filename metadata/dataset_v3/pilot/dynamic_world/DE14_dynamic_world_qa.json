@@ -1,0 +1,169 @@
+{
+  "dataset_version": "v3-pilot-0.1",
+  "city_id": "DE14",
+  "raster_path": "data\\raw\\labels_v3\\dynamic_world\\DE14_Berlin\\DE14_dynamic_world_v3_pilot_2025.tif",
+  "raster_sha256": "2d0ea5c87f39aff8fb02fb033d1389d51cb52ca8d1f12db13c9e798ff556352d",
+  "validated_at_utc": "2026-08-26T02:47:11.749659+00:00",
+  "qa_status": "PASS",
+  "failures": [],
+  "expected_bands": [
+    "label_mode",
+    "p_mean_water",
+    "p_mean_trees",
+    "p_mean_grass",
+    "p_mean_flooded_vegetation",
+    "p_mean_crops",
+    "p_mean_shrub_and_scrub",
+    "p_mean_built",
+    "p_mean_bare",
+    "p_mean_snow_and_ice",
+    "p_median_water",
+    "p_median_trees",
+    "p_median_grass",
+    "p_median_flooded_vegetation",
+    "p_median_crops",
+    "p_median_shrub_and_scrub",
+    "p_median_built",
+    "p_median_bare",
+    "p_median_snow_and_ice",
+    "observation_count",
+    "temporal_agreement"
+  ],
+  "stored_band_descriptions": [
+    "label_mode",
+    "p_mean_water",
+    "p_mean_trees",
+    "p_mean_grass",
+    "p_mean_flooded_vegetation",
+    "p_mean_crops",
+    "p_mean_shrub_and_scrub",
+    "p_mean_built",
+    "p_mean_bare",
+    "p_mean_snow_and_ice",
+    "p_median_water",
+    "p_median_trees",
+    "p_median_grass",
+    "p_median_flooded_vegetation",
+    "p_median_crops",
+    "p_median_shrub_and_scrub",
+    "p_median_built",
+    "p_median_bare",
+    "p_median_snow_and_ice",
+    "observation_count",
+    "temporal_agreement"
+  ],
+  "grid_checks": {
+    "width": true,
+    "height": true,
+    "crs": true,
+    "transform": true,
+    "band_count": true
+  },
+  "band_statistics": {
+    "label_mode": {
+      "minimum": 0.0,
+      "maximum": 8.0,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_water": {
+      "minimum": 0.012483786791563034,
+      "maximum": 0.7629150152206421,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_trees": {
+      "minimum": 0.015507682226598263,
+      "maximum": 0.779209315776825,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_grass": {
+      "minimum": 0.016687631607055664,
+      "maximum": 0.6157567501068115,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_flooded_vegetation": {
+      "minimum": 0.01081439945846796,
+      "maximum": 0.6409226655960083,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_crops": {
+      "minimum": 0.01694062165915966,
+      "maximum": 0.721359372138977,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_shrub_and_scrub": {
+      "minimum": 0.012903672643005848,
+      "maximum": 0.5444570183753967,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_built": {
+      "minimum": 0.018569689244031906,
+      "maximum": 0.7934110760688782,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_bare": {
+      "minimum": 0.017011672258377075,
+      "maximum": 0.6073312163352966,
+      "finite_pixel_count": 9000000
+    },
+    "p_mean_snow_and_ice": {
+      "minimum": 0.016923246905207634,
+      "maximum": 0.4260672330856323,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_water": {
+      "minimum": 0.012453596107661724,
+      "maximum": 0.7649442553520203,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_trees": {
+      "minimum": 0.015238323248922825,
+      "maximum": 0.7837555408477783,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_grass": {
+      "minimum": 0.016567684710025787,
+      "maximum": 0.6305921077728271,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_flooded_vegetation": {
+      "minimum": 0.010743934661149979,
+      "maximum": 0.6963002681732178,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_crops": {
+      "minimum": 0.01668025180697441,
+      "maximum": 0.741675853729248,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_shrub_and_scrub": {
+      "minimum": 0.012971296906471252,
+      "maximum": 0.5484070777893066,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_built": {
+      "minimum": 0.017952630296349525,
+      "maximum": 0.792316734790802,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_bare": {
+      "minimum": 0.016974827274680138,
+      "maximum": 0.6087590456008911,
+      "finite_pixel_count": 9000000
+    },
+    "p_median_snow_and_ice": {
+      "minimum": 0.016868025064468384,
+      "maximum": 0.40739956498146057,
+      "finite_pixel_count": 9000000
+    },
+    "observation_count": {
+      "minimum": 6.0,
+      "maximum": 19.0,
+      "finite_pixel_count": 9000000
+    },
+    "temporal_agreement": {
+      "minimum": 0.20000000298023224,
+      "maximum": 1.0,
+      "finite_pixel_count": 9000000
+    }
+  }
+}

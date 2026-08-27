@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:17:10.842247+00:00",
+  "city_id": "DE18",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      398624.80418092455,
+      0.0,
+      -10.0,
+      5331837.716426666
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 1315096,
+    "valid": 7684904,
+    "conflict": 450813,
+    "class_1": 243938,
+    "class_2": 218325,
+    "class_3": 7191119,
+    "class_4": 6384,
+    "class_5": 25138,
+    "support_1": 154184,
+    "support_2": 4096461,
+    "support_3": 3434259
+  },
+  "fractions_all_pixels": {
+    "valid": 0.8538782222222222,
+    "ignore": 0.14612177777777777,
+    "source_conflict": 0.050090333333333334
+  },
+  "provenance_bit_counts": {
+    "0": 1315096,
+    "1": 154184,
+    "3": 291215,
+    "5": 3680490,
+    "6": 124756,
+    "7": 3434259
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE18_Freiburg\\DE18_dynamic_world_v3_2025.tif": "45a35186a9eeef687ff9a398f77a0392008b2e501bf337c1be2deb04d1524742",
+    "data\\processed\\masks\\DE18_Freiburg\\DE18_label_mask.tif": "0d365cc8d37e4e89c0b01951249458767c333b5366508822063cb1f818912418",
+    "data\\processed\\masks\\DE18_Freiburg\\DE18_validity_mask.tif": "d87415038b4cc9bfbd83c8f24ed16615bb2dda6f25335b13147f260bcec58e81",
+    "data\\interim\\labels_v3\\urban_atlas\\DE18\\DE18_urban_atlas_2021_code.tif": "5674b390d5786e345d981d8ba07d823b0bad872b21cfb9edc8fb37d3dd1fc7e1",
+    "data\\interim\\labels_v3\\urban_atlas\\DE18\\DE18_urban_atlas_2021_v3_evidence.tif": "935df67daf05e0b1837b0d9f617ace2df599f98669e49d8f59c7948e6d781ec1"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE18_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

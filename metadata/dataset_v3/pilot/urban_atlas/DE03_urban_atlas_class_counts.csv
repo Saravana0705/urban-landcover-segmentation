@@ -1,0 +1,54 @@
+city_id,field,value,feature_count
+DE03,fua_code,DE035L1,16010
+DE03,code_2021,11210,3889
+DE03,code_2021,12100,2440
+DE03,code_2021,21000,1755
+DE03,code_2021,11100,1605
+DE03,code_2021,11220,1320
+DE03,code_2021,31000,1213
+DE03,code_2021,23000,726
+DE03,code_2021,14200,624
+DE03,code_2021,11300,562
+DE03,code_2021,14110,429
+DE03,code_2021,11230,345
+DE03,code_2021,50000,274
+DE03,code_2021,13400,154
+DE03,code_2021,12230,103
+DE03,code_2021,13100,83
+DE03,code_2021,12220,81
+DE03,code_2021,32000,80
+DE03,code_2021,22000,79
+DE03,code_2021,11240,72
+DE03,code_2021,13300,55
+DE03,code_2021,12210,52
+DE03,code_2021,14130,39
+DE03,code_2021,40000,14
+DE03,code_2021,33000,11
+DE03,code_2021,12300,3
+DE03,code_2021,14120,2
+DE03,class_2021,Discontinuous dense urban fabric (S.L. : 50% -  80%),3889
+DE03,class_2021,"Industrial, commercial, public, military and private units",2440
+DE03,class_2021,Arable land (annual crops),1755
+DE03,class_2021,Continuous urban fabric (S.L. : > 80%),1605
+DE03,class_2021,Discontinuous medium density urban fabric (S.L. : 30% - 50%),1320
+DE03,class_2021,Forests,1213
+DE03,class_2021,Pastures,726
+DE03,class_2021,Sports and leisure facilities,624
+DE03,class_2021,Isolated structures,562
+DE03,class_2021,Green urban areas (Public access),429
+DE03,class_2021,Discontinuous low density urban fabric (S.L. : 10% - 30%),345
+DE03,class_2021,Water,274
+DE03,class_2021,Land without current use,154
+DE03,class_2021,Railways and associated land,103
+DE03,class_2021,Mineral extraction and dump sites,83
+DE03,class_2021,Other roads and associated land,81
+DE03,class_2021,"Herbaceous vegetation associations (natural grassland, moors...)",80
+DE03,class_2021,"Permanent crops (vineyards, fruit trees, olive groves)",79
+DE03,class_2021,Discontinuous very low density urban fabric (S.L. : < 10%),72
+DE03,class_2021,Construction sites,55
+DE03,class_2021,Fast transit roads and associated land,52
+DE03,class_2021,Green urban areas (Unknown access conditions),39
+DE03,class_2021,Wetlands,14
+DE03,class_2021,"Open spaces with little or no vegetation (beaches, dunes, bare rocks, glaciers)",11
+DE03,class_2021,Port areas,3
+DE03,class_2021,Green urban areas (Private access),2

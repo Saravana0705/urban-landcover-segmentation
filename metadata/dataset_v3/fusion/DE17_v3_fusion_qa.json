@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:16:16.020378+00:00",
+  "city_id": "DE17",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      390600.6128986948,
+      0.0,
+      -10.0,
+      5772558.641319876
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 1454733,
+    "valid": 7545267,
+    "conflict": 358755,
+    "class_1": 273960,
+    "class_2": 270793,
+    "class_3": 6940919,
+    "class_4": 7332,
+    "class_5": 52263,
+    "support_1": 159120,
+    "support_2": 4676741,
+    "support_3": 2709406
+  },
+  "fractions_all_pixels": {
+    "valid": 0.838363,
+    "ignore": 0.161637,
+    "source_conflict": 0.03986166666666666
+  },
+  "provenance_bit_counts": {
+    "0": 1454733,
+    "1": 159120,
+    "3": 272588,
+    "5": 4345895,
+    "6": 58258,
+    "7": 2709406
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE17_Munster\\DE17_dynamic_world_v3_2025.tif": "6f108b2946df6269980729a3f882908605c5a7b6d8e922317d9871130a40959c",
+    "data\\processed\\masks\\DE17_Munster\\DE17_label_mask.tif": "2315c50b17949cb558bceb25eaa9e72ee8ede0699fab55b2d742e1d9814645d2",
+    "data\\processed\\masks\\DE17_Munster\\DE17_validity_mask.tif": "e7f00f9a79a699d991d8c2cf764385dafd2fc2594fa9defe86889cb3aec82e81",
+    "data\\interim\\labels_v3\\urban_atlas\\DE17\\DE17_urban_atlas_2021_code.tif": "b5fc0733c0ba64432080a5fc394e78332268957023c9c5263cd3d1b6f01217c0",
+    "data\\interim\\labels_v3\\urban_atlas\\DE17\\DE17_urban_atlas_2021_v3_evidence.tif": "38f221578ade5d983c15a3e4e283c0defe48540a263448204176eb7fedbbdefc"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE17_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

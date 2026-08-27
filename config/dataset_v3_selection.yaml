@@ -1,0 +1,38 @@
+schema_version: dataset-v3-selection-policy-0.1
+dataset_version: v3
+
+input:
+  candidate_manifest: metadata/dataset_v3/candidates/dataset_v3_candidate_tiles.csv
+
+output:
+  directory: metadata/dataset_v3/selection
+
+coverage_gate:
+  minimum_valid_fraction_source_pixels: 0.40
+  maximum_padding_fraction: 0.25
+
+training_selection:
+  combination: any
+  thresholds_fraction_valid:
+    buildings: 0.075
+    roads: 0.075
+    bare_land: 0.005
+    water: 0.05
+  vegetation_direct_threshold: null
+
+evaluation_selection:
+  validation_and_test: coverage_only
+  class_composition_filtering: false
+
+geographic_split_guard:
+  expected_city_counts:
+    train: 14
+    val: 3
+    test: 3
+  require_each_city_to_contribute: true
+
+rationale:
+  - Thresholds were selected from the observed V3 candidate-tile distributions, not from a forced equal class target.
+  - Training selection admits tiles with meaningful evidence for at least one non-vegetation class.
+  - Validation and test use only the coverage gate so their geographic class distributions remain representative.
+  - Vegetation has no direct acceptance threshold; it remains represented through accepted mixed-class tiles.

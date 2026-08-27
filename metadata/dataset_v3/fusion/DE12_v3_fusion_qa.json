@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:10:48.910175+00:00",
+  "city_id": "DE12",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      471716.4166748344,
+      0.0,
+      -10.0,
+      5896110.43553928
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2754655,
+    "valid": 6245345,
+    "conflict": 288909,
+    "class_1": 492834,
+    "class_2": 350300,
+    "class_3": 5175135,
+    "class_4": 12528,
+    "class_5": 214548,
+    "support_1": 569148,
+    "support_2": 5333742,
+    "support_3": 342455
+  },
+  "fractions_all_pixels": {
+    "valid": 0.6939272222222223,
+    "ignore": 0.3060727777777778,
+    "source_conflict": 0.032101
+  },
+  "provenance_bit_counts": {
+    "0": 2754655,
+    "1": 569148,
+    "3": 91726,
+    "5": 5213026,
+    "6": 28990,
+    "7": 342455
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE12_Bremen\\DE12_dynamic_world_v3_2025.tif": "e819b10ae3eb262caf8fccc16a2628fc2c3d83aa02c05cd790b8e88beb8396ae",
+    "data\\processed\\masks\\DE12_Bremen\\DE12_label_mask.tif": "09104d7f13e19568394d342e6c37ac251674eee3615801b7f5b69dca017fb412",
+    "data\\processed\\masks\\DE12_Bremen\\DE12_validity_mask.tif": "764e95c2a10b0529f2193bbfa91fb74f70da583b6e4242de7113d0b4f6cd8359",
+    "data\\interim\\labels_v3\\urban_atlas\\DE12\\DE12_urban_atlas_2021_code.tif": "2038802d1cf62a940095f845d47622609f05f9b42b642c4fe28c0bc63b81b499",
+    "data\\interim\\labels_v3\\urban_atlas\\DE12\\DE12_urban_atlas_2021_v3_evidence.tif": "2628702918a3428f36c1ee78e6485b576edff34792fd0608c9473a6ba4a19f90"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE12_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

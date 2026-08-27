@@ -1,0 +1,79 @@
+dataset:
+  version: "v3-pilot-0.2"
+  status: "two_city_fusion_pilot"
+  preserve_existing_versions:
+    - "v1"
+    - "v2.1"
+    - "v2.2"
+
+dynamic_world:
+  collection: "GOOGLE/DYNAMICWORLD/V1"
+  temporal_window_days: 30
+  insufficient_observation_threshold: 3
+  fallback_temporal_window_days: 45
+  drive_folder: "urban_landcover_v3_pilot"
+  probability_classes:
+    - water
+    - trees
+    - grass
+    - flooded_vegetation
+    - crops
+    - shrub_and_scrub
+    - built
+    - bare
+    - snow_and_ice
+
+outputs:
+  raw_root: "data/raw/labels_v3/dynamic_world"
+  report_root: "metadata/dataset_v3/pilot/dynamic_world"
+  fused_root: "data/interim/labels_v3/fused_pilot"
+  fused_report_root: "metadata/dataset_v3/pilot/fusion"
+
+fusion:
+  ignore_index: 255
+  class_ids: {buildings: 1, roads: 2, vegetation: 3, bare_land: 4, water: 5}
+  precedence: [buildings, roads, water, bare_land, vegetation]
+  buildings: {rule: "osm_primary"}
+  roads: {rule: "osm_primary"}
+  vegetation: {rule: "at_least_two_of_osm_dynamic_world_urban_atlas"}
+  water: {rule: "at_least_two_of_osm_dynamic_world_urban_atlas"}
+  bare_land:
+    rule: "osm_and_urban_atlas_code"
+    accepted_urban_atlas_codes: [13100, 13300, 33000]
+    explicitly_ignored_urban_atlas_codes: [13400]
+  dynamic_world_confidence:
+    modal_mean_argmax_consensus: true
+    assigned_probability_min: 0.60
+    temporal_agreement_min: 0.70
+    observation_count_min: 5
+
+cities:
+  DE03:
+    city_name: "Karlsruhe"
+    acquisition_datetime_utc: "2025-07-20T05:34:45.508523Z"
+    start_date: "2025-06-20"
+    end_date_exclusive: "2025-08-20"
+    crs: "EPSG:32632"
+    width: 3000
+    height: 3000
+    transform: [10.0, 0.0, 441391.24642737134, 0.0, -10.0, 5443394.106587356]
+    bounds:
+      left: 441391.24642737134
+      bottom: 5413394.106587356
+      right: 471391.24642737134
+      top: 5443394.106587356
+
+  DE14:
+    city_name: "Berlin"
+    acquisition_datetime_utc: "2025-07-13T16:52:26.091744Z"
+    start_date: "2025-06-13"
+    end_date_exclusive: "2025-08-13"
+    crs: "EPSG:32633"
+    width: 3000
+    height: 3000
+    transform: [10.0, 0.0, 376779.25925275, 0.0, -10.0, 5835072.1592110265]
+    bounds:
+      left: 376779.25925275
+      bottom: 5805072.1592110265
+      right: 406779.25925275
+      top: 5835072.1592110265

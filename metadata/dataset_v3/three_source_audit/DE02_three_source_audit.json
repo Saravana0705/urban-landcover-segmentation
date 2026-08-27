@@ -1,0 +1,195 @@
+{
+  "audit_version": "v3-three-source-0.1",
+  "generated_at_utc": "2026-08-26T16:02:13.342954+00:00",
+  "city_id": "DE02",
+  "qa_status": "PASS",
+  "total_pixels": 9000000,
+  "urban_atlas_source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\urban_atlas_2021\\DE02_Heidelberg\\extracted\\CLMS_UA_LCU_S2021_V025ha_DE522L1_HEIDELBERG_03035_V01_R00_20250321.fgb",
+  "urban_atlas_source_sha256": "7c1bc2a739f6be8ce764de8fce4e81f33f9f3bed5c314e261707f493d9cdf437",
+  "dynamic_world_source": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE02_Heidelberg\\DE02_dynamic_world_v3_2025.tif",
+  "osm_semantic_source": "data\\processed\\masks\\DE02_Heidelberg\\DE02_label_mask.tif",
+  "osm_validity_source": "data\\processed\\masks\\DE02_Heidelberg\\DE02_validity_mask.tif",
+  "urban_atlas_code_raster": "data\\interim\\labels_v3\\urban_atlas\\DE02\\DE02_urban_atlas_2021_code.tif",
+  "urban_atlas_evidence_raster": "data\\interim\\labels_v3\\urban_atlas\\DE02\\DE02_urban_atlas_2021_v3_evidence.tif",
+  "direct_urban_atlas_crosswalk": {
+    "12210": 2,
+    "12220": 2,
+    "12230": 2,
+    "14110": 3,
+    "14120": 3,
+    "14130": 3,
+    "21000": 3,
+    "22000": 3,
+    "23000": 3,
+    "31000": 3,
+    "32000": 3,
+    "13100": 4,
+    "13300": 4,
+    "33000": 4,
+    "50000": 5
+  },
+  "dynamic_world_confidence_rule": {
+    "modal_mean_argmax_consensus": true,
+    "assigned_probability_min": 0.6,
+    "temporal_agreement_min": 0.7,
+    "observation_count_min": 5
+  },
+  "pairwise_cross_tabs": {
+    "urban_atlas_rows_dynamic_world_columns": [
+      [
+        2388736,
+        1379462,
+        0,
+        1555217,
+        0,
+        131516
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        57884,
+        68431,
+        0,
+        10275,
+        0,
+        23
+      ],
+      [
+        1122745,
+        27430,
+        0,
+        2201668,
+        0,
+        67
+      ],
+      [
+        15377,
+        3738,
+        0,
+        840,
+        201,
+        0
+      ],
+      [
+        13033,
+        140,
+        0,
+        459,
+        0,
+        22758
+      ]
+    ],
+    "urban_atlas_rows_osm_columns": [
+      [
+        1252447,
+        439964,
+        258594,
+        3303053,
+        30002,
+        170871
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        36291,
+        1701,
+        79831,
+        17911,
+        582,
+        297
+      ],
+      [
+        99681,
+        3881,
+        11378,
+        3225657,
+        6599,
+        4714
+      ],
+      [
+        2366,
+        838,
+        684,
+        3125,
+        13061,
+        82
+      ],
+      [
+        1847,
+        49,
+        127,
+        1895,
+        43,
+        32429
+      ]
+    ],
+    "dynamic_world_rows_osm_columns": [
+      [
+        520287,
+        103666,
+        131573,
+        2743616,
+        32502,
+        66131
+      ],
+      [
+        797308,
+        341907,
+        205748,
+        116600,
+        15574,
+        2064
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        57912,
+        846,
+        13273,
+        3691247,
+        1926,
+        3255
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        201,
+        0
+      ],
+      [
+        17125,
+        14,
+        20,
+        178,
+        84,
+        136943
+      ]
+    ]
+  },
+  "notes": [
+    "These are evidence rasters and agreement statistics, not final V3 labels.",
+    "Urban Atlas transport is supporting evidence only; OSM remains the road geometry source.",
+    "Urban Atlas classes 13400, 14200 and 40000 remain unresolved in this direct crosswalk.",
+    "Class 0 means no direct evidence, not vegetation."
+  ]
+}

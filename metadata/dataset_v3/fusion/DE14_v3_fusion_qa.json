@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:13:01.424716+00:00",
+  "city_id": "DE14",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32633",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      376779.25925275,
+      0.0,
+      -10.0,
+      5835072.1592110265
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 4199870,
+    "valid": 4800130,
+    "conflict": 1513738,
+    "class_1": 1036023,
+    "class_2": 707524,
+    "class_3": 2789508,
+    "class_4": 10137,
+    "class_5": 256938,
+    "support_1": 408454,
+    "support_2": 2717683,
+    "support_3": 1673993
+  },
+  "fractions_all_pixels": {
+    "valid": 0.5333477777777778,
+    "ignore": 0.46665222222222225,
+    "source_conflict": 0.1681931111111111
+  },
+  "provenance_bit_counts": {
+    "0": 4199870,
+    "1": 408454,
+    "3": 1005323,
+    "5": 1609455,
+    "6": 102905,
+    "7": 1673993
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE14_Berlin\\DE14_dynamic_world_v3_pilot_2025.tif": "2d0ea5c87f39aff8fb02fb033d1389d51cb52ca8d1f12db13c9e798ff556352d",
+    "data\\processed\\masks\\DE14_Berlin\\DE14_label_mask.tif": "4bba50834aa75bfb945e97c010025c0e6682e54f4c3892e88023ed7f7b753568",
+    "data\\processed\\masks\\DE14_Berlin\\DE14_validity_mask.tif": "78fb37af65dd42f4b5d106c08afe0d5e5440b9bf8f1ac97e69af93ed9d9d98d8",
+    "data\\interim\\labels_v3\\urban_atlas\\DE14\\DE14_urban_atlas_2021_code.tif": "76b9abd35886043729bed98da55108b601b1409a705efdfa1bca59d7ac909743",
+    "data\\interim\\labels_v3\\urban_atlas\\DE14\\DE14_urban_atlas_2021_v3_evidence.tif": "6e802160717ebfd0edab4989ff46173a23138e3b4b57f39c08790b960f330093"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE14_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

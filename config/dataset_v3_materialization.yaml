@@ -1,0 +1,41 @@
+schema_version: dataset-v3-materialization-policy-0.1
+dataset_version: v3
+
+input:
+  selected_manifest: metadata/dataset_v3/selection/dataset_v3_selected_candidates.csv
+
+output:
+  tile_root: data/processed/dataset_v3/tiles
+  materialization_metadata: metadata/dataset_v3/materialization
+  qa_metadata: metadata/dataset_v3/qa
+  official_manifest: metadata/dataset_v3/dataset_manifest.csv
+
+encoding:
+  tile_size: 256
+  sar_fill_value: 0.0
+  semantic_ignore_index: 255
+  auxiliary_fill_value: 0
+  trainable_class_ids: [1, 2, 3, 4, 5]
+  validity_values: [0, 1]
+  provenance_values: [0, 1, 2, 3, 4, 5, 6, 7]
+  support_count_values: [0, 1, 2, 3]
+  conflict_values: [0, 1]
+
+geotiff:
+  compress: DEFLATE
+  tiled: true
+  block_size: 256
+  predictor_sar: 3
+  predictor_mask: 2
+  bigtiff: IF_SAFER
+
+visual_qa_sampling:
+  evaluation_city_representative: true
+  top_training_examples_per_minority_class: 2
+  top_source_conflict_examples: 2
+  random_seed: 42
+
+safety:
+  permitted_data_write_prefix: data/processed/dataset_v3
+  permitted_metadata_write_prefix: metadata/dataset_v3
+  legacy_dataset_paths_are_read_only: true

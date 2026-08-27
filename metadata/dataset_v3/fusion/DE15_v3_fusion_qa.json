@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:14:07.241114+00:00",
+  "city_id": "DE15",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32633",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      302034.7504518318,
+      0.0,
+      -10.0,
+      5705878.11673681
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2364976,
+    "valid": 6635024,
+    "conflict": 727858,
+    "class_1": 363897,
+    "class_2": 323762,
+    "class_3": 5566212,
+    "class_4": 32637,
+    "class_5": 348516,
+    "support_1": 227596,
+    "support_2": 4468713,
+    "support_3": 1938715
+  },
+  "fractions_all_pixels": {
+    "valid": 0.7372248888888889,
+    "ignore": 0.2627751111111111,
+    "source_conflict": 0.08087311111111112
+  },
+  "provenance_bit_counts": {
+    "0": 2364976,
+    "1": 227596,
+    "3": 379677,
+    "5": 3992098,
+    "6": 96938,
+    "7": 1938715
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE15_Leipzig\\DE15_dynamic_world_v3_2025.tif": "2c49173f609164c288e65154fa373ff9b9c965c995075ab98b2e57969590696b",
+    "data\\processed\\masks\\DE15_Leipzig\\DE15_label_mask.tif": "b7a853c874634b7ea4986e1a348e5d3260fd679d30b38b2ff7edafd822a8a9f5",
+    "data\\processed\\masks\\DE15_Leipzig\\DE15_validity_mask.tif": "9b57b9c08a08cbdc31da7dbc8f26d0c4160f2d9be787f7271293e9a3ffca5f80",
+    "data\\interim\\labels_v3\\urban_atlas\\DE15\\DE15_urban_atlas_2021_code.tif": "171a61ce0306bd811795971c5eb9e5157ab3f0818da4da08d91c5ee3b411ea4e",
+    "data\\interim\\labels_v3\\urban_atlas\\DE15\\DE15_urban_atlas_2021_v3_evidence.tif": "c157ea0ceb7e681251b8ccc213c2c479b8aa1903db893d127df782278bf30a97"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE15\\DE15_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE15\\DE15_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE15\\DE15_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE15\\DE15_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE15\\DE15_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE15_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:09:17.427203+00:00",
+  "city_id": "DE11",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      550834.3640108273,
+      0.0,
+      -10.0,
+      5949037.951124841
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 3755526,
+    "valid": 5244474,
+    "conflict": 782093,
+    "class_1": 804953,
+    "class_2": 546455,
+    "class_3": 3395726,
+    "class_4": 35529,
+    "class_5": 461811,
+    "support_1": 543040,
+    "support_2": 3564917,
+    "support_3": 1136517
+  },
+  "fractions_all_pixels": {
+    "valid": 0.5827193333333334,
+    "ignore": 0.4172806666666667,
+    "source_conflict": 0.08689922222222222
+  },
+  "provenance_bit_counts": {
+    "0": 3755526,
+    "1": 543040,
+    "3": 586661,
+    "5": 2753505,
+    "6": 224751,
+    "7": 1136517
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE11_Hamburg\\DE11_dynamic_world_v3_2025.tif": "37a25dea62de481aa0bad9cb85b37641159892874506c4c036fb1890ca25166b",
+    "data\\processed\\masks\\DE11_Hamburg\\DE11_label_mask.tif": "aaec3ed91359490d3ef4f1539eea2aadbd0863a93dab485dc4d77da9dda7b0aa",
+    "data\\processed\\masks\\DE11_Hamburg\\DE11_validity_mask.tif": "9eda260ebafdc0355a81e4b8dd5062ffab6bc1c3323b55f801f5c8dae708b1b7",
+    "data\\interim\\labels_v3\\urban_atlas\\DE11\\DE11_urban_atlas_2021_code.tif": "0dd52098e2a1aa8a064b14fd2fca907ad3a6de1c27b922b253ff9a428a51c11b",
+    "data\\interim\\labels_v3\\urban_atlas\\DE11\\DE11_urban_atlas_2021_v3_evidence.tif": "38c350296945529148b74f504a74ab6e07c8893ffdaf86ee15f569255039820d"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE11\\DE11_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE11\\DE11_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE11\\DE11_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE11\\DE11_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE11\\DE11_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE11_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T16:53:27.210618+00:00",
+  "city_id": "DE07",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      462269.50839400734,
+      0.0,
+      -10.0,
+      5566009.574938818
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2811819,
+    "valid": 6188181,
+    "conflict": 436699,
+    "class_1": 655850,
+    "class_2": 462725,
+    "class_3": 4961370,
+    "class_4": 11153,
+    "class_5": 97083,
+    "support_1": 629449,
+    "support_2": 4320779,
+    "support_3": 1237953
+  },
+  "fractions_all_pixels": {
+    "valid": 0.6875756666666667,
+    "ignore": 0.31242433333333336,
+    "source_conflict": 0.04852211111111111
+  },
+  "provenance_bit_counts": {
+    "0": 2811819,
+    "1": 629449,
+    "3": 244760,
+    "5": 4028760,
+    "6": 47259,
+    "7": 1237953
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE07_Frankfurt\\DE07_dynamic_world_v3_2025.tif": "d339357f1538c5277c855b77977d35fb8de652a7b050931af17a59ce6b9d428c",
+    "data\\processed\\masks\\DE07_Frankfurt\\DE07_label_mask.tif": "d19220a0acc66dd470d22c950f2d7c220740a72a069368126f8ada73f9105b23",
+    "data\\processed\\masks\\DE07_Frankfurt\\DE07_validity_mask.tif": "755d34f92912d18711430ac52f8fc6438b3820d7938f7693c04b09b814aafd1d",
+    "data\\interim\\labels_v3\\urban_atlas\\DE07\\DE07_urban_atlas_2021_code.tif": "a5200f067c74eb98ce459324eba61650033a4fd9c488b8036005012e654532d9",
+    "data\\interim\\labels_v3\\urban_atlas\\DE07\\DE07_urban_atlas_2021_v3_evidence.tif": "35c0a74dfe2c6bb6bd6788f25eef59fc688458d4fe66e9d44e9653439ab1f54c"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE07\\DE07_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE07\\DE07_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE07\\DE07_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE07\\DE07_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE07\\DE07_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE07_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

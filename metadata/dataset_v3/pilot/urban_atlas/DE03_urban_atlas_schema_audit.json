@@ -1,0 +1,45 @@
+{
+  "audit_version": "v3-pilot-ua-schema-0.2",
+  "generated_at_utc": "2026-08-26T04:28:03.290585+00:00",
+  "city_id": "DE03",
+  "vector_path": "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\urban_atlas_2021\\DE03_Karlsruhe\\extracted\\CLMS_UA_LCU_S2021_V025ha_DE035L1_KARLSRUHE_03035_V01_R01_20250418.fgb",
+  "reader_backend": "pyogrio",
+  "driver": "FlatGeobuf",
+  "feature_count": 16010,
+  "declared_geometry": "MultiPolygon",
+  "geometry_counts": {
+    "MultiPolygon": 16010
+  },
+  "null_geometry_count": null,
+  "crs": "EPSG:3035",
+  "crs_wkt": null,
+  "bounds": [
+    4171687.1659002304,
+    2849049.8029999994,
+    4225290.2491,
+    2901224.7366000004
+  ],
+  "property_schema": {
+    "country": "object",
+    "fua_name": "object",
+    "fua_code": "object",
+    "code_2021": "object",
+    "class_2021": "object",
+    "prod_date": "object",
+    "identifier": "object",
+    "perimeter": "float64",
+    "area": "float64",
+    "comment": "object"
+  },
+  "candidate_class_fields": [
+    "fua_code",
+    "code_2021",
+    "class_2021"
+  ],
+  "candidate_field_cardinality": {
+    "fua_code": 1,
+    "code_2021": 26,
+    "class_2021": 26
+  },
+  "qa_status": "PASS"
+}

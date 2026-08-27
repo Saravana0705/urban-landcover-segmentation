@@ -1,0 +1,10 @@
+{
+  "schema_version": "dataset-v3-batch-run-0.1",
+  "generated_at_utc": "2026-08-26T17:18:32.348501+00:00",
+  "stage": "all",
+  "registry": "config\\dataset_v3_city_registry.json",
+  "completed_city_ids": [
+    "DE20"
+  ],
+  "safety": "Additive V3 paths only; V1/V2.1/V2.2 unchanged."
+}

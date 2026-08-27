@@ -1,0 +1,30 @@
+{
+  "manifest": {
+    "path": "metadata\\dataset_v3\\dataset_manifest.csv",
+    "sha256": "598863050580021efdf7ebc7bf094cc9e330942471ededc636ccd3c9423d247f"
+  },
+  "tile_qa": {
+    "path": "metadata\\dataset_v3\\qa\\dataset_v3_tile_qa.json",
+    "sha256": "b6a07475e73f026a101266eedb815bbeb149f9a2dd4c1e24139d883be540fff6"
+  },
+  "materialization_audit": {
+    "path": "metadata\\dataset_v3\\materialization\\dataset_v3_materialization_audit.json",
+    "sha256": "f03f23e984d7d23c4a973630daf63fef2ff495d226ceaaef24a1ac15cbffe49a"
+  },
+  "selection_audit": {
+    "path": "metadata\\dataset_v3\\selection\\dataset_v3_selection_audit.json",
+    "sha256": "7319bb791ea445cae8fd7df1a393191015c3bb2ec3d9ab362ba5e8b5e9cbada2"
+  },
+  "normalization_provenance": {
+    "path": "metadata\\dataset_v3\\normalization\\normalization_provenance.json",
+    "sha256": "84e8c6b40e1d5bb30de38c5b133f6f13c87a434169c5fd0391ec340ec5726e57"
+  },
+  "normalization": {
+    "path": "metadata\\dataset_v3\\normalization\\training_normalization.json",
+    "sha256": "a2e53c905484b66c3af3122f1487f3e42f4254d7f29e4ec6dedb8e48f27e164b"
+  },
+  "manual_visual_qa": {
+    "path": "metadata\\dataset_v3\\qa\\manual_visual_qa\\dataset_v3_manual_visual_qa.json",
+    "sha256": "90940a22ba7d6d49f48e23b7d316d9d854c04c1e7c6119f6fcb25fe60cd903e6"
+  }
+}

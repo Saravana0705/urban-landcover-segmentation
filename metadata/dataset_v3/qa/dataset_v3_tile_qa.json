@@ -1,0 +1,42 @@
+{
+  "schema_version": "dataset-v3-tile-qa-0.1",
+  "generated_at_utc": "2026-08-26T23:10:00.833796+00:00",
+  "qa_status": "PASS",
+  "dataset_version": "v3",
+  "tile_count": 1664,
+  "passed_tile_count": 1664,
+  "failed_tile_count": 0,
+  "split_tile_counts": {
+    "test": 339,
+    "train": 974,
+    "val": 351
+  },
+  "city_counts": {
+    "test": 3,
+    "train": 14,
+    "val": 3
+  },
+  "valid_pixel_count": 75410740,
+  "class_pixel_counts": {
+    "buildings": 7546170,
+    "roads": 5507598,
+    "vegetation": 58317493,
+    "bare_land": 373031,
+    "water": 3666448
+  },
+  "materialization_manifest": "metadata\\dataset_v3\\materialization\\dataset_v3_materialized_manifest.csv",
+  "materialization_manifest_sha256": "8040c11545808070e22d61a2b1865bff3f49a8b98266f62c7b903d1e05fd2e17",
+  "materialization_audit_sha256": "f03f23e984d7d23c4a973630daf63fef2ff495d226ceaaef24a1ac15cbffe49a",
+  "selected_manifest_sha256": "39cf3f7a48c7154303efb5f2996129aef7fe4e1a2b2fe40d0f353583561a4693",
+  "official_manifest": "metadata\\dataset_v3\\dataset_manifest.csv",
+  "official_manifest_sha256": "598863050580021efdf7ebc7bf094cc9e330942471ededc636ccd3c9423d247f",
+  "visual_qa_sample": "metadata\\dataset_v3\\qa\\dataset_v3_visual_qa_sample.csv",
+  "visual_qa_tile_count": 16,
+  "ignore_index": 255,
+  "model_target_mapping": {
+    "source_1_to_5": "model_0_to_4",
+    "source_255": "ignore_index_255"
+  },
+  "legacy_dataset_artifacts_modified": false,
+  "next_gate": "targeted_visual_qa_then_training_normalization_and_freeze"
+}

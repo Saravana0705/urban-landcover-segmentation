@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T16:02:23.067774+00:00",
+  "city_id": "DE02",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      461230.41702031455,
+      0.0,
+      -10.0,
+      5486841.618231593
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 3276198,
+    "valid": 5723802,
+    "conflict": 437289,
+    "class_1": 446433,
+    "class_2": 350614,
+    "class_3": 4766958,
+    "class_4": 13061,
+    "class_5": 146736,
+    "support_1": 375309,
+    "support_2": 3151582,
+    "support_3": 2196911
+  },
+  "fractions_all_pixels": {
+    "valid": 0.635978,
+    "ignore": 0.364022,
+    "source_conflict": 0.04858766666666667
+  },
+  "provenance_bit_counts": {
+    "0": 3276198,
+    "1": 375309,
+    "3": 1973387,
+    "5": 1154067,
+    "6": 24128,
+    "7": 2196911
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE02_Heidelberg\\DE02_dynamic_world_v3_2025.tif": "2ccc2a3de7cb61433b5226a289fbae5ea838cb11b02164ef0e52d69922847990",
+    "data\\processed\\masks\\DE02_Heidelberg\\DE02_label_mask.tif": "6d16eea7d94c9b3f3025604f2b80a8041057c962deaa8532bd29e38b88db5d0b",
+    "data\\processed\\masks\\DE02_Heidelberg\\DE02_validity_mask.tif": "1722557a65ed19e2dbf4f1d5a8abbda6c76958a1f71654dec017ed3a56368294",
+    "data\\interim\\labels_v3\\urban_atlas\\DE02\\DE02_urban_atlas_2021_code.tif": "84fe9b510555f11a061b1c09f256af62a32491106fc0d2cd4307478e1b1b8637",
+    "data\\interim\\labels_v3\\urban_atlas\\DE02\\DE02_urban_atlas_2021_v3_evidence.tif": "4b4fb26d9cb4e5eb80221ef064eae3c59de6849dcb3623faf9aa3115e8e850d8"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE02\\DE02_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE02\\DE02_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE02\\DE02_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE02\\DE02_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE02\\DE02_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE02_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}

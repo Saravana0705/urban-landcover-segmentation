@@ -1,0 +1,91 @@
+{
+  "schema_version": "dataset-v3-fusion-0.2",
+  "generated_at_utc": "2026-08-26T17:12:44.918386+00:00",
+  "city_id": "DE13",
+  "qa_status": "PASS",
+  "grid": {
+    "crs": "EPSG:32632",
+    "width": 3000,
+    "height": 3000,
+    "transform": [
+      10.0,
+      0.0,
+      534829.8579044101,
+      0.0,
+      -10.0,
+      5818100.337683735
+    ]
+  },
+  "class_ids": {
+    "1": "buildings",
+    "2": "roads",
+    "3": "vegetation",
+    "4": "bare_land",
+    "5": "water"
+  },
+  "ignore_index": 255,
+  "policy": {
+    "buildings": "OSM primary",
+    "roads": "OSM primary",
+    "water": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000",
+    "vegetation": "at least two of OSM, confident Dynamic World, Urban Atlas",
+    "precedence": [
+      "buildings",
+      "roads",
+      "water",
+      "bare_land",
+      "vegetation"
+    ],
+    "unresolved": "Ignore/Unknown (255); never default vegetation"
+  },
+  "dynamic_world_confidence": {
+    "probability_min": 0.6,
+    "agreement_min": 0.7,
+    "observation_count_min": 5,
+    "mode_equals_mean_argmax": true
+  },
+  "counts": {
+    "total": 9000000,
+    "ignore": 2935691,
+    "valid": 6064309,
+    "conflict": 277333,
+    "class_1": 484416,
+    "class_2": 348984,
+    "class_3": 5070650,
+    "class_4": 34381,
+    "class_5": 125878,
+    "support_1": 555385,
+    "support_2": 4994436,
+    "support_3": 514488
+  },
+  "fractions_all_pixels": {
+    "valid": 0.6738121111111111,
+    "ignore": 0.3261878888888889,
+    "source_conflict": 0.030814777777777778
+  },
+  "provenance_bit_counts": {
+    "0": 2935691,
+    "1": 555385,
+    "3": 87027,
+    "5": 4818878,
+    "6": 88531,
+    "7": 514488
+  },
+  "inputs": {
+    "D:\\2026\\ADSA\\11. Case Studies 2\\Project Code\\Urban-Landcover-Segmentation\\data\\raw\\labels_v3\\dynamic_world\\DE13_Hanover\\DE13_dynamic_world_v3_2025.tif": "5b958fbf099f099de998089f59b2593155a53d2962e7835e294a7b6a8a483c8d",
+    "data\\processed\\masks\\DE13_Hanover\\DE13_label_mask.tif": "e4442b6a8219cc0e7cdb943f2b6209478b619134aaa453bf3ef8a4c2baf776e5",
+    "data\\processed\\masks\\DE13_Hanover\\DE13_validity_mask.tif": "f3ee5a4e9580bf9a7155c17ede0fa6a93e1b39ba8b806f130620402c03056826",
+    "data\\interim\\labels_v3\\urban_atlas\\DE13\\DE13_urban_atlas_2021_code.tif": "9d516001b9e6bff7014012e204b84b18ebddbd3331438c4c85c195b9827102fb",
+    "data\\interim\\labels_v3\\urban_atlas\\DE13\\DE13_urban_atlas_2021_v3_evidence.tif": "bac8b13c1eaa944e1dd9bf04d33e7e18dcdc30765b8e9465c40a6fc48d9e14cf"
+  },
+  "outputs": {
+    "semantic": "data\\interim\\labels_v3\\fused\\DE13\\DE13_v3_semantic.tif",
+    "validity": "data\\interim\\labels_v3\\fused\\DE13\\DE13_v3_validity.tif",
+    "provenance": "data\\interim\\labels_v3\\fused\\DE13\\DE13_v3_provenance.tif",
+    "support_count": "data\\interim\\labels_v3\\fused\\DE13\\DE13_v3_support_count.tif",
+    "conflict": "data\\interim\\labels_v3\\fused\\DE13\\DE13_v3_source_conflict.tif"
+  },
+  "class_distribution_csv": "metadata\\dataset_v3\\fusion\\DE13_v3_class_distribution.csv",
+  "safety": "Additive outputs only; no V1/V2/V2.2 path is written."
+}
