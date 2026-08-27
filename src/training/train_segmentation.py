@@ -48,6 +48,9 @@ from src.evaluation.benchmarking import (
     build_registry_row,
     load_best_checkpoint,
     peak_gpu_memory_mb,
+    peak_gpu_memory_stats,
+    print_runtime_environment,
+    runtime_environment,
     upsert_registry,
     write_benchmark_json,
 )
@@ -1481,6 +1484,12 @@ def main() -> None:
         seed=seed,
     )
 
+    environment = runtime_environment(
+        requested_device=device,
+        resolved_device=trainer.device,
+        mixed_precision_enabled=trainer.amp_enabled,
+    )
+
     trainable_parameters = sum(
         parameter.numel()
         for parameter in model.parameters()
@@ -1504,6 +1513,7 @@ def main() -> None:
     print(f"Validation batches: {len(validation_loader)}")
     print(f"Trainable parameters: {trainable_parameters:,}")
     print(f"Output directory: {experiment_root}")
+    print_runtime_environment(environment)
 
     if trainer.device.type == "cuda":
         torch.cuda.reset_peak_memory_stats(trainer.device)
@@ -1517,6 +1527,9 @@ def main() -> None:
 
     benchmark_result: dict[str, Any] = {}
     peak_memory = peak_gpu_memory_mb(trainer.device)
+    peak_memory_stats = peak_gpu_memory_stats(
+        trainer.device
+    )
     best_checkpoint_path = experiment_root / "checkpoints/best.pt"
     best_checkpoint: Mapping[str, Any] = {}
 
@@ -1545,16 +1558,25 @@ def main() -> None:
 
     if benchmark_enabled:
         benchmark_result = benchmark_inference(
-            model=model,
-            loader=validation_loader,
-            device=trainer.device,
-            warmup_batches=int(
-                nested_get(raw_config, "benchmark.warmup_batches", default=3)
-            ),
-            measured_batches=int(
-                nested_get(raw_config, "benchmark.measured_batches", default=20)
-            ),
-        )
+        model=model,
+        loader=validation_loader,
+        device=trainer.device,
+        warmup_batches=int(
+            nested_get(
+                raw_config,
+                "benchmark.warmup_batches",
+                default=3,
+            )
+        ),
+        measured_batches=int(
+            nested_get(
+                raw_config,
+                "benchmark.measured_batches",
+                default=20,
+            )
+        ),
+        use_mixed_precision=trainer.amp_enabled,
+    )
 
     report_directory = Path(
         "metadata/model_development"
@@ -1583,7 +1605,23 @@ def main() -> None:
         "trainable_parameters": trainable_parameters,
         "experiment_root": str(experiment_root),
         "summary": summary,
+        "runtime_environment": environment,
+
+        # Backward-compatible historical field.
         "peak_gpu_memory_mb": peak_memory,
+
+        # Explicit training-memory metrics.
+        "training_peak_gpu_memory_allocated_mb": (
+            peak_memory_stats[
+                "peak_gpu_memory_allocated_mb"
+            ]
+        ),
+        "training_peak_gpu_memory_reserved_mb": (
+            peak_memory_stats[
+                "peak_gpu_memory_reserved_mb"
+            ]
+        ),
+
         "inference_benchmark": benchmark_result,
         "best_checkpoint_metrics": dict(best_checkpoint.get("metrics", {})),
         "evaluation_outputs": {
@@ -1629,6 +1667,7 @@ def main() -> None:
             checkpoint=best_checkpoint,
             benchmark=benchmark_result,
             peak_memory_mb=peak_memory,
+            peak_memory_stats=peak_memory_stats,
         )
         upsert_registry(registry_path, registry_row)
         write_benchmark_json(
@@ -1650,8 +1689,23 @@ def main() -> None:
             f"{benchmark_result['inference_images_per_second']:.2f} images/s "
             f"({benchmark_result['inference_milliseconds_per_image']:.2f} ms/image)"
         )
+    
     if peak_memory is not None:
-        print(f"Peak GPU memory: {peak_memory:.2f} MB")
+        print(
+            "Peak GPU allocated memory: "
+            f"{peak_memory:.2f} MB"
+        )
+
+        reserved_memory = peak_memory_stats[
+            "peak_gpu_memory_reserved_mb"
+        ]
+
+        if reserved_memory is not None:
+            print(
+                "Peak GPU reserved memory: "
+                f"{reserved_memory:.2f} MB"
+            )
+
     if not args.integration_check:
         print(f"Experiment registry: {registry_path}")
         if metrics_paths:
