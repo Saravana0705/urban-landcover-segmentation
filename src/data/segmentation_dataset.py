@@ -383,8 +383,9 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
         return (self.project_root / path).resolve()
 
     def _record_path(self, value: Any) -> Path:
-        """Resolve a manifest path."""
-        path = Path(str(value))
+        """Resolve a manifest path across Windows and POSIX systems."""
+        normalized = str(value).replace("\\", "/")
+        path = Path(normalized)
         return self._resolve_project_path(path)
 
     def _expected_city_ids(self, split: str) -> list[str]:

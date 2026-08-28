@@ -653,12 +653,14 @@ class MulticlassTverskyLoss(nn.Module):
         if self.class_weights is None:
             return class_losses[active_classes].mean()
 
-        active_weights = self.class_weights[
-            active_classes
-        ].to(
+        weights = self.class_weights.to(
             device=logits.device,
             dtype=logits.dtype,
         )
+
+        active_weights = weights[
+            active_classes
+        ]
 
         active_weights = (
             active_weights / active_weights.sum()
