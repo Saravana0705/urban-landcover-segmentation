@@ -84,3 +84,24 @@ metadata/*_20*.csv
 # Others
 .env
 *.part
+
+# Kaggle/local dataset artifacts
+kaggle_dataset_v3.zip
+kaggle_dataset_v3/
+
+# Generated Dataset V3 archives
+metadata/dataset_v3/*.zip
+
+# QA/export documents
+metadata/dataset_v3/qa/*.docx
+
+# Model checkpoints / experiment binaries
+*.pt
+*.pth
+*.ckpt
+
+# Compact archives
+kaggle_dataset_v3.zip
+metadata/dataset_v3/*.zip
+outputs/**/*.zip
+
