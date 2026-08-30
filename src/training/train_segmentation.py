@@ -469,8 +469,39 @@ def build_project_dataloaders(
         )
     )
 
-    train_transform = build_train_transform()
+    enable_sar_intensity = bool(
+        nested_get(
+            config,
+            "augmentation.enable_sar_intensity",
+            default=False,
+        )
+    )
+
+    enable_speckle = bool(
+        nested_get(
+            config,
+            "augmentation.enable_speckle",
+            default=False,
+        )
+    )
+
+    train_transform = build_train_transform(
+        enable_sar_intensity=enable_sar_intensity,
+        enable_speckle=enable_speckle,
+    )
+
     evaluation_transform = build_evaluation_transform()
+
+    print("\nTraining augmentation")
+    print("---------------------")
+    print(
+        "SAR intensity augmentation:",
+        enable_sar_intensity,
+    )
+    print(
+        "Speckle augmentation:",
+        enable_speckle,
+    )
 
     manifest_path = str(
         nested_get(
