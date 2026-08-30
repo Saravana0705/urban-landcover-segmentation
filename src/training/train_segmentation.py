@@ -314,6 +314,13 @@ def apply_fraction_aware_sampling(
                 default=0.05,
             )
         ),
+        road_threshold=float(
+            nested_get(
+                config,
+                "sampling.road_threshold",
+                default=0.10,
+            )
+        ),
         water_threshold=float(
             nested_get(
                 config,
@@ -333,6 +340,13 @@ def apply_fraction_aware_sampling(
                 config,
                 "sampling.bare_land_high_boost",
                 default=1.5,
+            )
+        ),
+        road_boost=float(
+            nested_get(
+                config,
+                "sampling.road_boost",
+                default=0.0,
             )
         ),
         water_boost=float(

@@ -17,12 +17,14 @@ class FractionAwareSamplingConfig:
     bare_land_low_threshold: float = 0.01
     bare_land_high_threshold: float = 0.05
 
-    # Water threshold
+    # Road / water thresholds
+    road_threshold: float = 0.10
     water_threshold: float = 0.05
 
     # Multiplicative/additive sampling boosts
     bare_land_low_boost: float = 1.0
     bare_land_high_boost: float = 1.5
+    road_boost: float = 0.0
     water_boost: float = 0.5
 
     max_weight: float = 4.0
@@ -49,6 +51,7 @@ def load_training_manifest(
         "split",
         "valid_pixel_count",
         "bare_land_pixel_count",
+        "roads_pixel_count",
         "water_pixel_count",
     }
 
@@ -89,6 +92,7 @@ def load_training_manifest(
     numeric_columns = [
         "valid_pixel_count",
         "bare_land_pixel_count",
+        "roads_pixel_count",
         "water_pixel_count",
     ]
 
@@ -108,6 +112,11 @@ def load_training_manifest(
         / denominator
     )
 
+    split_df["road_fraction"] = (
+        split_df["roads_pixel_count"].astype("float64")
+        / denominator
+    )
+
     split_df["water_fraction"] = (
         split_df["water_pixel_count"].astype("float64")
         / denominator
@@ -116,6 +125,11 @@ def load_training_manifest(
     # Explicitly guarantee numeric dtype for PyTorch conversion.
     split_df["bare_land_fraction"] = pd.to_numeric(
         split_df["bare_land_fraction"],
+        errors="coerce",
+    ).fillna(0.0).astype("float64")
+
+    split_df["road_fraction"] = pd.to_numeric(
+        split_df["road_fraction"],
         errors="coerce",
     ).fillna(0.0).astype("float64")
 
@@ -150,6 +164,12 @@ def calculate_sampling_weights(
         .copy()
     )
 
+    road_fraction = torch.from_numpy(
+        manifest["road_fraction"]
+        .to_numpy(dtype="float64", na_value=0.0)
+        .copy()
+    )
+
     water_fraction = torch.from_numpy(
         manifest["water_fraction"]
         .to_numpy(dtype="float64", na_value=0.0)
@@ -167,6 +187,12 @@ def calculate_sampling_weights(
         bare_fraction
         >= config.bare_land_high_threshold
     ).double() * config.bare_land_high_boost
+
+    # Moderate road boost when enabled.
+    weights += (
+        road_fraction
+        >= config.road_threshold
+    ).double() * config.road_boost
 
     # Smaller water boost.
     weights += (
