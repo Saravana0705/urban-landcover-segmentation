@@ -1,0 +1,88 @@
+{
+  "schema_version": "dataset-v3.1-selection-audit-0.1",
+  "status": "PASS",
+  "dataset_version": "v3.1",
+  "parent_dataset_version": "v3",
+  "candidate_manifest": "metadata\\dataset_v3_1\\candidates\\dataset_v31_candidate_tiles.csv",
+  "candidate_manifest_sha256": "3c2557a7d03dbab7b9495500743239e8a666d18301ef2159163a1e0892b74d91",
+  "policy_path": "config\\dataset_v31_selection.yaml",
+  "policy_sha256": "97532ff519e3c35fa9a2cfe90c47bba6ac269fb08da22ca3a22f9527f586a4c0",
+  "candidate_tile_count": 2880,
+  "selected_tile_count": 1754,
+  "selected_by_split": {
+    "train": 1072,
+    "val": 346,
+    "test": 336
+  },
+  "selected_city_count_by_split": {
+    "train": 14,
+    "val": 3,
+    "test": 3
+  },
+  "policy": {
+    "schema_version": "dataset-v3.1-selection-policy-0.1",
+    "dataset_version": "v3.1",
+    "parent_dataset_version": "v3",
+    "input": {
+      "candidate_manifest": "metadata/dataset_v3_1/candidates/dataset_v31_candidate_tiles.csv"
+    },
+    "output": {
+      "directory": "metadata/dataset_v3_1/selection"
+    },
+    "coverage_gate": {
+      "minimum_valid_fraction_source_pixels": 0.4,
+      "maximum_padding_fraction": 0.25
+    },
+    "training_selection": {
+      "combination": "any",
+      "thresholds_fraction_valid": {
+        "buildings": 0.075,
+        "roads": 0.03,
+        "bare_land": 0.001,
+        "water": 0.05
+      },
+      "vegetation_direct_threshold": null
+    },
+    "evaluation_selection": {
+      "validation_and_test": "coverage_only",
+      "class_composition_filtering": false
+    },
+    "geographic_split_guard": {
+      "expected_city_counts": {
+        "train": 14,
+        "val": 3,
+        "test": 3
+      },
+      "require_each_city_to_contribute": true
+    },
+    "expected_accounting": {
+      "candidate_tiles": 2880,
+      "selected_by_split": {
+        "train": 1072,
+        "val": 346,
+        "test": 336
+      }
+    },
+    "rationale": [
+      "The V3.1 road threshold is reduced to 3% because the frozen label policy deliberately removes unresolved road pixels.",
+      "The stable-bare threshold is 0.1% because bare land is rare after excluding temporally unstable construction labels.",
+      "The selected training set retains approximately 93% of eligible building pixels, 89% of road pixels, 99.9% of stable-bare pixels and 96% of water pixels.",
+      "Vegetation has no direct selection rule and remains represented through mixed-class tiles.",
+      "Validation and test are selected using coverage only; their class composition is not optimized."
+    ]
+  },
+  "leakage_guards": {
+    "city_in_exactly_one_split": true,
+    "training_class_rules_applied_to_validation_or_test": false,
+    "validation_and_test_use_coverage_only": true,
+    "test_performance_metrics_used_for_selection": false
+  },
+  "write_scope": "metadata\\dataset_v3_1\\selection",
+  "existing_dataset_rasters_modified": false,
+  "output_sha256": {
+    "selected": "8a2db039b86b6cb00c053073dbeda1ba2eb970ed5ab837f7c33885b4f85d7f4c",
+    "audit_csv": "497560b65565c6ff11317a7098ea239ed82517abcb3bd7bc9b61c8ab20351fad",
+    "city": "e37694115ebf7defd3a782a006254731c2d03c15a8566aaeda88d4c70edd507b",
+    "classes": "124acaf2bea50e78f7c7ac2047e78f3a11c1e8e7c3abcc59b6cf81afe6ea9b4b"
+  }
+}

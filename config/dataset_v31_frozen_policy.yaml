@@ -1,0 +1,47 @@
+schema_version: dataset-v3.1-frozen-label-policy-0.1
+dataset_version: v3.1
+parent_dataset_version: v3
+ignore_index: 255
+
+road_policy:
+  name: priority_classes_min_6m
+  minimum_width_m: 6.0
+  allowed_highway_classes:
+    - motorway
+    - motorway_link
+    - trunk
+    - trunk_link
+    - primary
+    - primary_link
+    - secondary
+    - secondary_link
+    - tertiary
+    - tertiary_link
+    - residential
+    - unclassified
+
+bare_land_policy:
+  name: stable_urban_atlas_bare
+  retain_urban_atlas_codes:
+    - 13100
+    - 33000
+
+removed_label_policy: ignore_255
+new_labels_added: false
+class_taxonomy_changed: false
+
+decision_evidence:
+  simulation_scope: train_and_validation_only
+  test_metrics_inspected: false
+  training_road_pixel_retention: 0.6553389820549281
+  validation_road_pixel_retention: 0.6523864355676973
+  training_valid_pixel_retention: 0.9740443539373842
+  validation_valid_pixel_retention: 0.9840116859541095
+  training_road_rich_candidates_ge_5pct: 605
+  validation_road_rich_candidates_ge_5pct: 76
+  rationale: >-
+    Removes low-priority and very narrow OSM road labels while retaining a
+    learnable road population across every development city. Construction
+    class 13300 is excluded from bare land because Urban Atlas 2021 and the
+    Sentinel-1 2025 acquisition are temporally mismatched.
+

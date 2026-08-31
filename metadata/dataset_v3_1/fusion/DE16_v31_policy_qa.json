@@ -1,0 +1,151 @@
+{
+  "schema_version": "dataset-v3.1-label-policy-0.1",
+  "generated_at_utc": "2026-08-31T21:11:58.904333+00:00",
+  "status": "PASS",
+  "city_id": "DE16",
+  "city_name": "Dresden",
+  "split": "val",
+  "policy": {
+    "schema_version": "dataset-v3.1-frozen-label-policy-0.1",
+    "dataset_version": "v3.1",
+    "parent_dataset_version": "v3",
+    "ignore_index": 255,
+    "road_policy": {
+      "name": "priority_classes_min_6m",
+      "minimum_width_m": 6.0,
+      "allowed_highway_classes": [
+        "motorway",
+        "motorway_link",
+        "trunk",
+        "trunk_link",
+        "primary",
+        "primary_link",
+        "secondary",
+        "secondary_link",
+        "tertiary",
+        "tertiary_link",
+        "residential",
+        "unclassified"
+      ]
+    },
+    "bare_land_policy": {
+      "name": "stable_urban_atlas_bare",
+      "retain_urban_atlas_codes": [
+        13100,
+        33000
+      ]
+    },
+    "removed_label_policy": "ignore_255",
+    "new_labels_added": false,
+    "class_taxonomy_changed": false,
+    "decision_evidence": {
+      "simulation_scope": "train_and_validation_only",
+      "test_metrics_inspected": false,
+      "training_road_pixel_retention": 0.6553389820549281,
+      "validation_road_pixel_retention": 0.6523864355676973,
+      "training_valid_pixel_retention": 0.9740443539373842,
+      "validation_valid_pixel_retention": 0.9840116859541095,
+      "training_road_rich_candidates_ge_5pct": 605,
+      "validation_road_rich_candidates_ge_5pct": 76,
+      "rationale": "Removes low-priority and very narrow OSM road labels while retaining a learnable road population across every development city. Construction class 13300 is excluded from bare land because Urban Atlas 2021 and the Sentinel-1 2025 acquisition are temporally mismatched."
+    }
+  },
+  "road_policy_details": {
+    "surface_feature_count": 293485,
+    "eligible_feature_count": 123527,
+    "eligible_rasterized_pixels": 238105,
+    "minimum_width_m": 6.0,
+    "allowed_highway_classes": [
+      "motorway",
+      "motorway_link",
+      "primary",
+      "primary_link",
+      "residential",
+      "secondary",
+      "secondary_link",
+      "tertiary",
+      "tertiary_link",
+      "trunk",
+      "trunk_link",
+      "unclassified"
+    ]
+  },
+  "counts": {
+    "buildings_pixels": 378823,
+    "roads_pixels": 236742,
+    "vegetation_pixels": 5822201,
+    "bare_land_pixels": 17312,
+    "water_pixels": 117488,
+    "ignore_pixels": 2427434,
+    "valid_pixels": 6572566,
+    "total_pixels": 9000000
+  },
+  "removed": {
+    "road_pixels": 129215,
+    "bare_land_pixels": 1118,
+    "total_pixels": 130333
+  },
+  "retention": {
+    "valid": 0.9805557267086973,
+    "roads": 0.6469120689042702,
+    "bare_land": 0.9393380358111775
+  },
+  "inputs": {
+    "sar": {
+      "path": "data\\processed\\sar\\DE16_Dresden\\DE16_Dresden_S1_VV_VH.tif",
+      "sha256": "163913877d794a2d49b2a44ef68b2cf1195cbdbb2c8d9254fc3f4a51b83af58a"
+    },
+    "ua_code": {
+      "path": "data\\interim\\labels_v3\\urban_atlas\\DE16\\DE16_urban_atlas_2021_code.tif",
+      "sha256": "b8eeb8b3fe809b9da5eecdf5ee5d908e660a85509d0baaee2cb2aebe17fb25e8"
+    },
+    "semantic": {
+      "path": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_semantic.tif",
+      "sha256": "75c7c8f429f52b4194f34c8d9a990cb117d9c808594a351a13f6a48400e4bc73"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_validity.tif",
+      "sha256": "a5059bce13dfec468c291642e80cb793878f3358ed59e263d570d77fdca85458"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_provenance.tif",
+      "sha256": "f161d5af79b26b0d9afc28b6f48860855544ecbb9644a25b510c765fba910d81"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_support_count.tif",
+      "sha256": "ba1dcb5b4f1d205e368abeb8decfd755d5a47df195ab4a9223cec6b0ce45fcd6"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3\\fused\\DE16\\DE16_v3_source_conflict.tif",
+      "sha256": "cc0b8da75afde32076bdaaf30bd0a6763b1f6b5805c00ea5fb69d0f8ab2fdd30"
+    }
+  },
+  "outputs": {
+    "semantic": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE16\\DE16_v31_semantic.tif",
+      "sha256": "4a10af67ded5a0e1600869f030583110720b2df1025fe0d30b37896d8a18f33c"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE16\\DE16_v31_validity.tif",
+      "sha256": "1679db318512ee3ae3f134a00e95bf80cb8598037277824718739fc3e73bdfff"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE16\\DE16_v31_provenance.tif",
+      "sha256": "6fd384c408aec100b43e8efa32441d5c5113786faeeb224f787dabe68ff5e03b"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE16\\DE16_v31_support_count.tif",
+      "sha256": "061256798a167ab638bffc941599e5e95ce741c532bcab6414863319a2c75114"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE16\\DE16_v31_source_conflict.tif",
+      "sha256": "3fd08d9a1ac4134e52946c8efb1f3f2be4e8395bc12bb4396198eb306d7bf656"
+    }
+  },
+  "class_distribution_csv": "metadata\\dataset_v3_1\\fusion\\DE16_v31_class_distribution.csv",
+  "safety": {
+    "parent_v3_modified": false,
+    "new_labels_added": false,
+    "removed_labels_become": "Ignore/Unknown (255)"
+  }
+}

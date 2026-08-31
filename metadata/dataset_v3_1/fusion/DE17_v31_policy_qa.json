@@ -1,0 +1,151 @@
+{
+  "schema_version": "dataset-v3.1-label-policy-0.1",
+  "generated_at_utc": "2026-08-31T21:12:20.291104+00:00",
+  "status": "PASS",
+  "city_id": "DE17",
+  "city_name": "Munster",
+  "split": "val",
+  "policy": {
+    "schema_version": "dataset-v3.1-frozen-label-policy-0.1",
+    "dataset_version": "v3.1",
+    "parent_dataset_version": "v3",
+    "ignore_index": 255,
+    "road_policy": {
+      "name": "priority_classes_min_6m",
+      "minimum_width_m": 6.0,
+      "allowed_highway_classes": [
+        "motorway",
+        "motorway_link",
+        "trunk",
+        "trunk_link",
+        "primary",
+        "primary_link",
+        "secondary",
+        "secondary_link",
+        "tertiary",
+        "tertiary_link",
+        "residential",
+        "unclassified"
+      ]
+    },
+    "bare_land_policy": {
+      "name": "stable_urban_atlas_bare",
+      "retain_urban_atlas_codes": [
+        13100,
+        33000
+      ]
+    },
+    "removed_label_policy": "ignore_255",
+    "new_labels_added": false,
+    "class_taxonomy_changed": false,
+    "decision_evidence": {
+      "simulation_scope": "train_and_validation_only",
+      "test_metrics_inspected": false,
+      "training_road_pixel_retention": 0.6553389820549281,
+      "validation_road_pixel_retention": 0.6523864355676973,
+      "training_valid_pixel_retention": 0.9740443539373842,
+      "validation_valid_pixel_retention": 0.9840116859541095,
+      "training_road_rich_candidates_ge_5pct": 605,
+      "validation_road_rich_candidates_ge_5pct": 76,
+      "rationale": "Removes low-priority and very narrow OSM road labels while retaining a learnable road population across every development city. Construction class 13300 is excluded from bare land because Urban Atlas 2021 and the Sentinel-1 2025 acquisition are temporally mismatched."
+    }
+  },
+  "road_policy_details": {
+    "surface_feature_count": 176656,
+    "eligible_feature_count": 79042,
+    "eligible_rasterized_pixels": 179382,
+    "minimum_width_m": 6.0,
+    "allowed_highway_classes": [
+      "motorway",
+      "motorway_link",
+      "primary",
+      "primary_link",
+      "residential",
+      "secondary",
+      "secondary_link",
+      "tertiary",
+      "tertiary_link",
+      "trunk",
+      "trunk_link",
+      "unclassified"
+    ]
+  },
+  "counts": {
+    "buildings_pixels": 273960,
+    "roads_pixels": 179255,
+    "vegetation_pixels": 6940919,
+    "bare_land_pixels": 6246,
+    "water_pixels": 52263,
+    "ignore_pixels": 1547357,
+    "valid_pixels": 7452643,
+    "total_pixels": 9000000
+  },
+  "removed": {
+    "road_pixels": 91538,
+    "bare_land_pixels": 1086,
+    "total_pixels": 92624
+  },
+  "retention": {
+    "valid": 0.9877242250009178,
+    "roads": 0.6619631969807196,
+    "bare_land": 0.8518821603927987
+  },
+  "inputs": {
+    "sar": {
+      "path": "data\\processed\\sar\\DE17_Munster\\DE17_Munster_S1_VV_VH.tif",
+      "sha256": "99d82d6136a6c363573b43a12c1ffa1c4b1db2a2f188f8abb4e50a208695ec82"
+    },
+    "ua_code": {
+      "path": "data\\interim\\labels_v3\\urban_atlas\\DE17\\DE17_urban_atlas_2021_code.tif",
+      "sha256": "b5fc0733c0ba64432080a5fc394e78332268957023c9c5263cd3d1b6f01217c0"
+    },
+    "semantic": {
+      "path": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_semantic.tif",
+      "sha256": "61519914650adc08f115d023800573b8203e817d8707328b3ba108afb279aac4"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_validity.tif",
+      "sha256": "bcfa33d9846c9cb54d489e14ab67353f8239291b0a246c92ceed800a162e92b0"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_provenance.tif",
+      "sha256": "87ece24e3f4570f967f81589a5e415f65556fef382d302f65543dccc1fd662ed"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_support_count.tif",
+      "sha256": "c63b56a95197d60ee1fd3b875421b9d1e9ce9645632567eb08da8e0f64aa15ca"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3\\fused\\DE17\\DE17_v3_source_conflict.tif",
+      "sha256": "9533e81a91f1940a7c1439e9fe851251b7e07729ffcecae7f62e29c7d1c6f86a"
+    }
+  },
+  "outputs": {
+    "semantic": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE17\\DE17_v31_semantic.tif",
+      "sha256": "4d87293281f81ab309883026590f2a5299ff30809f58e7b46347a0748b47d9d0"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE17\\DE17_v31_validity.tif",
+      "sha256": "fb1961f500d600304a1211d30f99670a86b34cae615e7c83074d2fc2cf6771c6"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE17\\DE17_v31_provenance.tif",
+      "sha256": "46df38ec579ff904f86066884c307d0689d4e4301f2fbae4a24cc771f4a8da0c"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE17\\DE17_v31_support_count.tif",
+      "sha256": "5383cb08d681e89cb264461c6305700f2165ec1f4f50bf9e0fb9ae5ffab1994f"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE17\\DE17_v31_source_conflict.tif",
+      "sha256": "53071de4f5af64ef257f029a9c801a3e576b5a99ce1e17dd25a984c7d5f35b91"
+    }
+  },
+  "class_distribution_csv": "metadata\\dataset_v3_1\\fusion\\DE17_v31_class_distribution.csv",
+  "safety": {
+    "parent_v3_modified": false,
+    "new_labels_added": false,
+    "removed_labels_become": "Ignore/Unknown (255)"
+  }
+}

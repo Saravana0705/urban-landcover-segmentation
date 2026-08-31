@@ -1,0 +1,65 @@
+schema_version: dataset-v3.1-policy-simulation-0.1
+
+ignore_index: 255
+tile_size: 256
+
+coverage_gate:
+  minimum_valid_fraction_source_pixels: 0.40
+  maximum_padding_fraction: 0.25
+
+stable_bare_land:
+  # V3 used 13100, 13300 and 33000. Construction (13300) is removed because
+  # Urban Atlas 2021 and Sentinel-1 2025 are temporally mismatched.
+  retain_urban_atlas_codes:
+    - 13100  # Mineral extraction sites
+    - 33000  # Open spaces with little or no vegetation
+
+road_policies:
+  resolution_aware:
+    minimum_width_m: 10.0
+    allowed_highway_classes:
+      - motorway
+      - motorway_link
+      - trunk
+      - trunk_link
+      - primary
+      - primary_link
+      - secondary
+      - secondary_link
+      - tertiary
+      - tertiary_link
+      - residential
+      - unclassified
+
+  high_precision_major:
+    minimum_width_m: 10.0
+    allowed_highway_classes:
+      - motorway
+      - motorway_link
+      - trunk
+      - trunk_link
+      - primary
+      - primary_link
+      - secondary
+      - secondary_link
+
+simulation_variants:
+  - name: v3_control
+    road_policy: none
+    stable_bare: false
+  - name: v31_stable_bare_only
+    road_policy: none
+    stable_bare: true
+  - name: v31_resolution_road_only
+    road_policy: resolution_aware
+    stable_bare: false
+  - name: v31_major_road_only
+    road_policy: high_precision_major
+    stable_bare: false
+  - name: v31_resolution_road_stable_bare
+    road_policy: resolution_aware
+    stable_bare: true
+  - name: v31_major_road_stable_bare
+    road_policy: high_precision_major
+    stable_bare: true
+

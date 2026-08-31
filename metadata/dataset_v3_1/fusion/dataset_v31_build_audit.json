@@ -1,0 +1,38 @@
+{
+  "schema_version": "dataset-v3.1-build-audit-0.1",
+  "generated_at_utc": "2026-08-31T21:13:10.250746+00:00",
+  "status": "PASS",
+  "dataset_version": "v3.1",
+  "parent_dataset_version": "v3",
+  "requested_city_count": 20,
+  "written_city_ids": [
+    "DE01",
+    "DE02",
+    "DE03",
+    "DE04",
+    "DE05",
+    "DE06",
+    "DE07",
+    "DE08",
+    "DE09",
+    "DE10",
+    "DE11",
+    "DE12",
+    "DE13",
+    "DE14",
+    "DE15",
+    "DE16",
+    "DE17",
+    "DE18",
+    "DE19",
+    "DE20"
+  ],
+  "skipped_complete_city_ids": [],
+  "policy_config": {
+    "path": "config\\dataset_v31_frozen_policy.yaml",
+    "sha256": "6ce5b9ab84a84f250a1c2992834fed91408199008613621dcc9e76f5df36acd7"
+  },
+  "output_root": "data\\interim\\labels_v3_1\\fused",
+  "parent_v3_modified": false,
+  "next_gate": "v3_1_candidate_analysis_and_selection"
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": "dataset-v3.1-freeze-0.1",
+  "dataset_version": "v3.1",
+  "parent_dataset_version": "v3",
+  "freeze_status": "FROZEN",
+  "frozen_at_utc": "2026-08-31T22:40:24.875537+00:00",
+  "city_count": 20,
+  "tile_count": 1754,
+  "raster_file_count": 10524,
+  "split_tile_counts": {
+    "train": 1072,
+    "val": 346,
+    "test": 336
+  },
+  "split_city_ids": {
+    "train": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14"
+    ],
+    "val": [
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test": [
+      "DE18",
+      "DE19",
+      "DE20"
+    ]
+  },
+  "valid_pixel_counts": {
+    "train": 44598389,
+    "val": 17501683,
+    "test": 17821587
+  },
+  "class_distribution": {
+    "train": {
+      "buildings": {
+        "pixel_count": 5738045,
+        "fraction_valid": 0.1286603648396358
+      },
+      "roads": {
+        "pixel_count": 2675134,
+        "fraction_valid": 0.05998274960111227
+      },
+      "vegetation": {
+        "pixel_count": 33638566,
+        "fraction_valid": 0.7542551817286495
+      },
+      "bare_land": {
+        "pixel_count": 256859,
+        "fraction_valid": 0.005759378438535078
+      },
+      "water": {
+        "pixel_count": 2289785,
+        "fraction_valid": 0.051342325392067414
+      }
+    },
+    "val": {
+      "buildings": {
+        "pixel_count": 793016,
+        "fraction_valid": 0.04531084239155743
+      },
+      "roads": {
+        "pixel_count": 515832,
+        "fraction_valid": 0.0294732797982914
+      },
+      "vegetation": {
+        "pixel_count": 15669292,
+        "fraction_valid": 0.8953020118122355
+      },
+      "bare_land": {
+        "pixel_count": 52659,
+        "fraction_valid": 0.0030087963540420654
+      },
+      "water": {
+        "pixel_count": 470884,
+        "fraction_valid": 0.026905069643873677
+      }
+    },
+    "test": {
+      "buildings": {
+        "pixel_count": 513849,
+        "fraction_valid": 0.028832954102235676
+      },
+      "roads": {
+        "pixel_count": 346794,
+        "fraction_valid": 0.019459209777445745
+      },
+      "vegetation": {
+        "pixel_count": 16062907,
+        "fraction_valid": 0.9013174303725028
+      },
+      "bare_land": {
+        "pixel_count": 21633,
+        "fraction_valid": 0.0012138649605110926
+      },
+      "water": {
+        "pixel_count": 876404,
+        "fraction_valid": 0.04917654078730475
+      }
+    }
+  },
+  "manifest_path": "metadata\\dataset_v3_1\\dataset_manifest.csv",
+  "manifest_sha256": "93f9c3bfa17e2b82660a9bc69703eaae831b23753bc9e46892b00730a543ef28",
+  "dataset_config_path": "metadata\\dataset_v3_1\\freeze\\dataset_config.json",
+  "dataset_config_sha256": "8f38baa58cb4e92337744eb859a9b01db630fd3ea1a1aeab995d034ced0904d6",
+  "metadata_checksums_path": "metadata\\dataset_v3_1\\freeze\\metadata_checksums.json",
+  "normalization_policy": {
+    "scope": "full_rasters_of_training_cities_only",
+    "inheritance": "Frozen V3 constants after V3.1 source-SAR SHA-256 verification",
+    "validation_and_test_used": false,
+    "VV": {
+      "clip_lower_db": -19.370056991577147,
+      "clip_upper_db": 2.6345860838889865,
+      "mean_db": -9.321410476299294,
+      "std_db": 3.7878212854222064
+    },
+    "VH": {
+      "clip_lower_db": -26.721191463470458,
+      "clip_upper_db": -5.915637598037739,
+      "mean_db": -16.144641942904,
+      "std_db": 3.764255822885403
+    }
+  },
+  "manual_visual_qa": {
+    "required": false,
+    "status": "WAIVED_BY_CONSERVATIVE_ADDITIVE_POLICY",
+    "rationale": "V3.1 adds no new positive labels: uncertain V3 road and bare-land pixels are changed only to Ignore. Automated alignment, encoding, pixel-accounting and checksum QA passed all 1,754 tiles.",
+    "automated_visual_sample_manifest": "metadata\\dataset_v3_1\\qa\\dataset_v31_visual_qa_sample.csv",
+    "sample_tile_count": 16
+  },
+  "mandatory_checks": {
+    "manifest_has_1754_unique_tiles": true,
+    "split_tile_counts_match": true,
+    "split_city_counts_match": true,
+    "city_splits_disjoint": true,
+    "all_tile_qa_passed": true,
+    "tile_qa_manifest_hash_matches": true,
+    "tile_qa_counts_match_manifest": true,
+    "materialization_passed": true,
+    "materialization_split_counts_match": true,
+    "selection_passed": true,
+    "normalization_provenance_passed": true,
+    "normalization_is_v31": true,
+    "normalization_excludes_validation_and_test": true,
+    "normalization_copy_hash_matches": true,
+    "class_pixels_reconcile_to_valid_pixels": true,
+    "all_manifest_rows_pass_qa": true,
+    "manual_visual_qa_not_required": true,
+    "legacy_dataset_artifacts_unmodified": true
+  },
+  "all_checks_passed": true,
+  "freeze_policy": {
+    "do_not_modify_or_regenerate_v31_tiles": true,
+    "do_not_change_city_splits": true,
+    "do_not_recompute_normalization_from_selected_tiles": true,
+    "future_label_or_selection_changes_require_a_new_dataset_version": true,
+    "models_must_use_frozen_dataset_config": true,
+    "test_split_remains_locked_until_final_evaluation": true
+  }
+}

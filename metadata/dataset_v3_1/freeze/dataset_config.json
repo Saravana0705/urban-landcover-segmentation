@@ -1,0 +1,173 @@
+{
+  "dataset_version": "v3.1",
+  "parent_dataset_version": "v3",
+  "freeze_status": "FROZEN",
+  "manifest_path": "metadata\\dataset_v3_1\\dataset_manifest.csv",
+  "manifest_sha256": "93f9c3bfa17e2b82660a9bc69703eaae831b23753bc9e46892b00730a543ef28",
+  "input": {
+    "channels": [
+      "Sigma0_VV",
+      "Sigma0_VH"
+    ],
+    "channel_count": 2,
+    "source_domain": "linear_sigma0",
+    "conversion": "10 * log10(max(linear_sigma0, 1e-10))",
+    "tile_size": 256,
+    "spatial_resolution_m": 10
+  },
+  "normalization": {
+    "scope": "full_rasters_of_training_cities_only",
+    "inheritance": "Frozen V3 constants after V3.1 source-SAR SHA-256 verification",
+    "validation_and_test_used": false,
+    "VV": {
+      "clip_lower_db": -19.370056991577147,
+      "clip_upper_db": 2.6345860838889865,
+      "mean_db": -9.321410476299294,
+      "std_db": 3.7878212854222064
+    },
+    "VH": {
+      "clip_lower_db": -26.721191463470458,
+      "clip_upper_db": -5.915637598037739,
+      "mean_db": -16.144641942904,
+      "std_db": 3.764255822885403
+    }
+  },
+  "labels": {
+    "semantic_nodata": 255,
+    "validity_valid": 1,
+    "validity_invalid": 0,
+    "classes": [
+      {
+        "class_id": 1,
+        "class_name": "buildings"
+      },
+      {
+        "class_id": 2,
+        "class_name": "roads"
+      },
+      {
+        "class_id": 3,
+        "class_name": "vegetation"
+      },
+      {
+        "class_id": 4,
+        "class_name": "bare_land"
+      },
+      {
+        "class_id": 5,
+        "class_name": "water"
+      }
+    ],
+    "v31_policy": {
+      "roads": "retain resolvable priority OSM roads; uncertain narrow or low-priority roads become Ignore",
+      "bare_land": "retain stable high-confidence bare/open land; ambiguous or temporary construction becomes Ignore",
+      "policy_applied_to_all_splits": true
+    }
+  },
+  "splits": {
+    "train_city_ids": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14"
+    ],
+    "validation_city_ids": [
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test_city_ids": [
+      "DE18",
+      "DE19",
+      "DE20"
+    ],
+    "train_tile_count": 1072,
+    "validation_tile_count": 346,
+    "test_tile_count": 336
+  },
+  "class_distribution": {
+    "train": {
+      "buildings": {
+        "pixel_count": 5738045,
+        "fraction_valid": 0.1286603648396358
+      },
+      "roads": {
+        "pixel_count": 2675134,
+        "fraction_valid": 0.05998274960111227
+      },
+      "vegetation": {
+        "pixel_count": 33638566,
+        "fraction_valid": 0.7542551817286495
+      },
+      "bare_land": {
+        "pixel_count": 256859,
+        "fraction_valid": 0.005759378438535078
+      },
+      "water": {
+        "pixel_count": 2289785,
+        "fraction_valid": 0.051342325392067414
+      }
+    },
+    "val": {
+      "buildings": {
+        "pixel_count": 793016,
+        "fraction_valid": 0.04531084239155743
+      },
+      "roads": {
+        "pixel_count": 515832,
+        "fraction_valid": 0.0294732797982914
+      },
+      "vegetation": {
+        "pixel_count": 15669292,
+        "fraction_valid": 0.8953020118122355
+      },
+      "bare_land": {
+        "pixel_count": 52659,
+        "fraction_valid": 0.0030087963540420654
+      },
+      "water": {
+        "pixel_count": 470884,
+        "fraction_valid": 0.026905069643873677
+      }
+    },
+    "test": {
+      "buildings": {
+        "pixel_count": 513849,
+        "fraction_valid": 0.028832954102235676
+      },
+      "roads": {
+        "pixel_count": 346794,
+        "fraction_valid": 0.019459209777445745
+      },
+      "vegetation": {
+        "pixel_count": 16062907,
+        "fraction_valid": 0.9013174303725028
+      },
+      "bare_land": {
+        "pixel_count": 21633,
+        "fraction_valid": 0.0012138649605110926
+      },
+      "water": {
+        "pixel_count": 876404,
+        "fraction_valid": 0.04917654078730475
+      }
+    }
+  },
+  "training_policy": {
+    "ignore_index": 255,
+    "use_validity_mask": true,
+    "normalization_source": "unchanged full training-city SAR rasters",
+    "training_selection": "class-aware after coverage gate",
+    "validation_test_selection": "coverage-only; no class filtering"
+  }
+}

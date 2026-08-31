@@ -1,0 +1,151 @@
+{
+  "schema_version": "dataset-v3.1-label-policy-0.1",
+  "generated_at_utc": "2026-08-31T21:12:56.216469+00:00",
+  "status": "PASS",
+  "city_id": "DE19",
+  "city_name": "Kiel",
+  "split": "test",
+  "policy": {
+    "schema_version": "dataset-v3.1-frozen-label-policy-0.1",
+    "dataset_version": "v3.1",
+    "parent_dataset_version": "v3",
+    "ignore_index": 255,
+    "road_policy": {
+      "name": "priority_classes_min_6m",
+      "minimum_width_m": 6.0,
+      "allowed_highway_classes": [
+        "motorway",
+        "motorway_link",
+        "trunk",
+        "trunk_link",
+        "primary",
+        "primary_link",
+        "secondary",
+        "secondary_link",
+        "tertiary",
+        "tertiary_link",
+        "residential",
+        "unclassified"
+      ]
+    },
+    "bare_land_policy": {
+      "name": "stable_urban_atlas_bare",
+      "retain_urban_atlas_codes": [
+        13100,
+        33000
+      ]
+    },
+    "removed_label_policy": "ignore_255",
+    "new_labels_added": false,
+    "class_taxonomy_changed": false,
+    "decision_evidence": {
+      "simulation_scope": "train_and_validation_only",
+      "test_metrics_inspected": false,
+      "training_road_pixel_retention": 0.6553389820549281,
+      "validation_road_pixel_retention": 0.6523864355676973,
+      "training_valid_pixel_retention": 0.9740443539373842,
+      "validation_valid_pixel_retention": 0.9840116859541095,
+      "training_road_rich_candidates_ge_5pct": 605,
+      "validation_road_rich_candidates_ge_5pct": 76,
+      "rationale": "Removes low-priority and very narrow OSM road labels while retaining a learnable road population across every development city. Construction class 13300 is excluded from bare land because Urban Atlas 2021 and the Sentinel-1 2025 acquisition are temporally mismatched."
+    }
+  },
+  "road_policy_details": {
+    "surface_feature_count": 135741,
+    "eligible_feature_count": 68659,
+    "eligible_rasterized_pixels": 146306,
+    "minimum_width_m": 6.0,
+    "allowed_highway_classes": [
+      "motorway",
+      "motorway_link",
+      "primary",
+      "primary_link",
+      "residential",
+      "secondary",
+      "secondary_link",
+      "tertiary",
+      "tertiary_link",
+      "trunk",
+      "trunk_link",
+      "unclassified"
+    ]
+  },
+  "counts": {
+    "buildings_pixels": 209831,
+    "roads_pixels": 146199,
+    "vegetation_pixels": 5255977,
+    "bare_land_pixels": 18045,
+    "water_pixels": 800756,
+    "ignore_pixels": 2569192,
+    "valid_pixels": 6430808,
+    "total_pixels": 9000000
+  },
+  "removed": {
+    "road_pixels": 59099,
+    "bare_land_pixels": 521,
+    "total_pixels": 59620
+  },
+  "retention": {
+    "valid": 0.9908141651059067,
+    "roads": 0.7121306588471393,
+    "bare_land": 0.9719379510933965
+  },
+  "inputs": {
+    "sar": {
+      "path": "data\\processed\\sar\\DE19_Kiel\\DE19_Kiel_S1_VV_VH.tif",
+      "sha256": "030926a98c7db24a2c98aea45769983e8699d2fb3bbe913a48091a73256a2c2b"
+    },
+    "ua_code": {
+      "path": "data\\interim\\labels_v3\\urban_atlas\\DE19\\DE19_urban_atlas_2021_code.tif",
+      "sha256": "b38d0d9a476489eed4b706f3919e6dd4f72dd0da4669b81caaa1151c199d46b9"
+    },
+    "semantic": {
+      "path": "data\\interim\\labels_v3\\fused\\DE19\\DE19_v3_semantic.tif",
+      "sha256": "4403e92f51b98b538b7676fa2608999a9416f1e5576a578de46bf3a5bd8a457d"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3\\fused\\DE19\\DE19_v3_validity.tif",
+      "sha256": "9a991796b8721ed5e37d72142d5ee3d5b50469fb3e82b86156ba8777a5c16cc7"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3\\fused\\DE19\\DE19_v3_provenance.tif",
+      "sha256": "c97ba2205864953ad09259d1964b2bd20265257888019bd9181300c65baebe58"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3\\fused\\DE19\\DE19_v3_support_count.tif",
+      "sha256": "82592bf9e372ccc4ca59c034e2b77b3bdfb40a674ab3a184fb73b5d7fac5b672"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3\\fused\\DE19\\DE19_v3_source_conflict.tif",
+      "sha256": "019db5a5e3f39b77552d1afd14ba58b733983eeae5428286967127944ad172f2"
+    }
+  },
+  "outputs": {
+    "semantic": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE19\\DE19_v31_semantic.tif",
+      "sha256": "d3c0e5f8c074e9799c6b84f89b444ae94ba594212af2db78fd5ef6986c46a875"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE19\\DE19_v31_validity.tif",
+      "sha256": "7543f6a9cc48d302e7524a877d4d9377c11db737ef05f5910b56e75a9e9dcc49"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE19\\DE19_v31_provenance.tif",
+      "sha256": "d0f8a36b523d53c0380b9275f18ddec1f38ab7b11af17c667c9f73abd728611c"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE19\\DE19_v31_support_count.tif",
+      "sha256": "e421cbaaff74d448a29f94d117b0e629239ffda241129c9d5db29c100f5bfc50"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE19\\DE19_v31_source_conflict.tif",
+      "sha256": "fa9bef56f5e69900e2e121cb4504b8e85d5bcc6c5a10c5d280b4294e5e9de1b5"
+    }
+  },
+  "class_distribution_csv": "metadata\\dataset_v3_1\\fusion\\DE19_v31_class_distribution.csv",
+  "safety": {
+    "parent_v3_modified": false,
+    "new_labels_added": false,
+    "removed_labels_become": "Ignore/Unknown (255)"
+  }
+}

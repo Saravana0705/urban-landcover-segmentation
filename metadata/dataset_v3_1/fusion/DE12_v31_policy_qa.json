@@ -1,0 +1,151 @@
+{
+  "schema_version": "dataset-v3.1-label-policy-0.1",
+  "generated_at_utc": "2026-08-31T21:09:37.593571+00:00",
+  "status": "PASS",
+  "city_id": "DE12",
+  "city_name": "Bremen",
+  "split": "train",
+  "policy": {
+    "schema_version": "dataset-v3.1-frozen-label-policy-0.1",
+    "dataset_version": "v3.1",
+    "parent_dataset_version": "v3",
+    "ignore_index": 255,
+    "road_policy": {
+      "name": "priority_classes_min_6m",
+      "minimum_width_m": 6.0,
+      "allowed_highway_classes": [
+        "motorway",
+        "motorway_link",
+        "trunk",
+        "trunk_link",
+        "primary",
+        "primary_link",
+        "secondary",
+        "secondary_link",
+        "tertiary",
+        "tertiary_link",
+        "residential",
+        "unclassified"
+      ]
+    },
+    "bare_land_policy": {
+      "name": "stable_urban_atlas_bare",
+      "retain_urban_atlas_codes": [
+        13100,
+        33000
+      ]
+    },
+    "removed_label_policy": "ignore_255",
+    "new_labels_added": false,
+    "class_taxonomy_changed": false,
+    "decision_evidence": {
+      "simulation_scope": "train_and_validation_only",
+      "test_metrics_inspected": false,
+      "training_road_pixel_retention": 0.6553389820549281,
+      "validation_road_pixel_retention": 0.6523864355676973,
+      "training_valid_pixel_retention": 0.9740443539373842,
+      "validation_valid_pixel_retention": 0.9840116859541095,
+      "training_road_rich_candidates_ge_5pct": 605,
+      "validation_road_rich_candidates_ge_5pct": 76,
+      "rationale": "Removes low-priority and very narrow OSM road labels while retaining a learnable road population across every development city. Construction class 13300 is excluded from bare land because Urban Atlas 2021 and the Sentinel-1 2025 acquisition are temporally mismatched."
+    }
+  },
+  "road_policy_details": {
+    "surface_feature_count": 212914,
+    "eligible_feature_count": 97287,
+    "eligible_rasterized_pixels": 234196,
+    "minimum_width_m": 6.0,
+    "allowed_highway_classes": [
+      "motorway",
+      "motorway_link",
+      "primary",
+      "primary_link",
+      "residential",
+      "secondary",
+      "secondary_link",
+      "tertiary",
+      "tertiary_link",
+      "trunk",
+      "trunk_link",
+      "unclassified"
+    ]
+  },
+  "counts": {
+    "buildings_pixels": 492834,
+    "roads_pixels": 233965,
+    "vegetation_pixels": 5175135,
+    "bare_land_pixels": 10415,
+    "water_pixels": 214548,
+    "ignore_pixels": 2873103,
+    "valid_pixels": 6126897,
+    "total_pixels": 9000000
+  },
+  "removed": {
+    "road_pixels": 116335,
+    "bare_land_pixels": 2113,
+    "total_pixels": 118448
+  },
+  "retention": {
+    "valid": 0.9810341942678907,
+    "roads": 0.6678989437624893,
+    "bare_land": 0.831337803320562
+  },
+  "inputs": {
+    "sar": {
+      "path": "data\\processed\\sar\\DE12_Bremen\\DE12_Bremen_S1_VV_VH.tif",
+      "sha256": "d64e8028020fad50d6bde34ab43b10f2a13915e631410540352d6f10d62b6c30"
+    },
+    "ua_code": {
+      "path": "data\\interim\\labels_v3\\urban_atlas\\DE12\\DE12_urban_atlas_2021_code.tif",
+      "sha256": "2038802d1cf62a940095f845d47622609f05f9b42b642c4fe28c0bc63b81b499"
+    },
+    "semantic": {
+      "path": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_semantic.tif",
+      "sha256": "656546c507f290143802a2f1aae2f087a5ec2dfef0b15c943776fc7269c21bc7"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_validity.tif",
+      "sha256": "407541734d6b014a2313ae8a3e676986a2b44e943574a15f6ba93835f8a1db8a"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_provenance.tif",
+      "sha256": "c25299ae0ae47264110d964dc16830d25bf7a9ebfa26f358d23072ed7885e041"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_support_count.tif",
+      "sha256": "b8192d1b5511300b050611c3ae43cff1e426579477d22938b5a12fe0ffdbe9ba"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3\\fused\\DE12\\DE12_v3_source_conflict.tif",
+      "sha256": "5febf66e7041dc251b9071e7d26b805d91095f4a137d75c5a87ae08f69949e36"
+    }
+  },
+  "outputs": {
+    "semantic": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE12\\DE12_v31_semantic.tif",
+      "sha256": "ca83e539d7fd66ad18b66da30363e1be3a84f9726d2050b7f5539866107a63ec"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE12\\DE12_v31_validity.tif",
+      "sha256": "a214d27e9d776a8e0cb530b0721161bae30381ef30947aa6f8f35ded63e6657e"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE12\\DE12_v31_provenance.tif",
+      "sha256": "bcc09bba43d8a9dd8f0359d8d9185680307d441866610a17ea6bb1b8e8d470ba"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE12\\DE12_v31_support_count.tif",
+      "sha256": "400718667295c52ac3dad092ff0670aef6bf34546bb85fcab1ba8c03058bd8f2"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE12\\DE12_v31_source_conflict.tif",
+      "sha256": "04fdc671b91e038b8661dae396c909d0b2bbfc9fcb3008d14a282933c69c8eb7"
+    }
+  },
+  "class_distribution_csv": "metadata\\dataset_v3_1\\fusion\\DE12_v31_class_distribution.csv",
+  "safety": {
+    "parent_v3_modified": false,
+    "new_labels_added": false,
+    "removed_labels_become": "Ignore/Unknown (255)"
+  }
+}

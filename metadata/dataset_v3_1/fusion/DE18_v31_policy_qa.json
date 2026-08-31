@@ -1,0 +1,151 @@
+{
+  "schema_version": "dataset-v3.1-label-policy-0.1",
+  "generated_at_utc": "2026-08-31T21:12:40.121362+00:00",
+  "status": "PASS",
+  "city_id": "DE18",
+  "city_name": "Freiburg",
+  "split": "test",
+  "policy": {
+    "schema_version": "dataset-v3.1-frozen-label-policy-0.1",
+    "dataset_version": "v3.1",
+    "parent_dataset_version": "v3",
+    "ignore_index": 255,
+    "road_policy": {
+      "name": "priority_classes_min_6m",
+      "minimum_width_m": 6.0,
+      "allowed_highway_classes": [
+        "motorway",
+        "motorway_link",
+        "trunk",
+        "trunk_link",
+        "primary",
+        "primary_link",
+        "secondary",
+        "secondary_link",
+        "tertiary",
+        "tertiary_link",
+        "residential",
+        "unclassified"
+      ]
+    },
+    "bare_land_policy": {
+      "name": "stable_urban_atlas_bare",
+      "retain_urban_atlas_codes": [
+        13100,
+        33000
+      ]
+    },
+    "removed_label_policy": "ignore_255",
+    "new_labels_added": false,
+    "class_taxonomy_changed": false,
+    "decision_evidence": {
+      "simulation_scope": "train_and_validation_only",
+      "test_metrics_inspected": false,
+      "training_road_pixel_retention": 0.6553389820549281,
+      "validation_road_pixel_retention": 0.6523864355676973,
+      "training_valid_pixel_retention": 0.9740443539373842,
+      "validation_valid_pixel_retention": 0.9840116859541095,
+      "training_road_rich_candidates_ge_5pct": 605,
+      "validation_road_rich_candidates_ge_5pct": 76,
+      "rationale": "Removes low-priority and very narrow OSM road labels while retaining a learnable road population across every development city. Construction class 13300 is excluded from bare land because Urban Atlas 2021 and the Sentinel-1 2025 acquisition are temporally mismatched."
+    }
+  },
+  "road_policy_details": {
+    "surface_feature_count": 186681,
+    "eligible_feature_count": 83296,
+    "eligible_rasterized_pixels": 143714,
+    "minimum_width_m": 6.0,
+    "allowed_highway_classes": [
+      "motorway",
+      "motorway_link",
+      "primary",
+      "primary_link",
+      "residential",
+      "secondary",
+      "secondary_link",
+      "tertiary",
+      "tertiary_link",
+      "trunk",
+      "trunk_link",
+      "unclassified"
+    ]
+  },
+  "counts": {
+    "buildings_pixels": 243938,
+    "roads_pixels": 143176,
+    "vegetation_pixels": 7191119,
+    "bare_land_pixels": 6384,
+    "water_pixels": 25138,
+    "ignore_pixels": 1390245,
+    "valid_pixels": 7609755,
+    "total_pixels": 9000000
+  },
+  "removed": {
+    "road_pixels": 75149,
+    "bare_land_pixels": 0,
+    "total_pixels": 75149
+  },
+  "retention": {
+    "valid": 0.9902212181180142,
+    "roads": 0.6557929691972976,
+    "bare_land": 1.0
+  },
+  "inputs": {
+    "sar": {
+      "path": "data\\processed\\sar\\DE18_Freiburg\\DE18_Freiburg_S1_VV_VH.tif",
+      "sha256": "8ab848987fd47cca3e258d5239ce6463ccdb1f2ec8b61d1ae702cc29baf619ee"
+    },
+    "ua_code": {
+      "path": "data\\interim\\labels_v3\\urban_atlas\\DE18\\DE18_urban_atlas_2021_code.tif",
+      "sha256": "5674b390d5786e345d981d8ba07d823b0bad872b21cfb9edc8fb37d3dd1fc7e1"
+    },
+    "semantic": {
+      "path": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_semantic.tif",
+      "sha256": "ba3f10248182f09a4ab76ad1ad509a2636f36b25094458ad644e80623b3c8c32"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_validity.tif",
+      "sha256": "27c337794623f42f20b19f41e3929c25c7f95c11f22c45b3159e5beff7063e52"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_provenance.tif",
+      "sha256": "3c76775649650deb8be3db7ea2d2865201fc6dc277ac48aeaec1cdf007012457"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_support_count.tif",
+      "sha256": "43daed1531bde3ef6073fe004a590ccc9a0812b0c1fba371e06124338bb01fb0"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3\\fused\\DE18\\DE18_v3_source_conflict.tif",
+      "sha256": "43d05753658dd25cff0580f8964168c027993ade9b063a9236f3356ace6d3619"
+    }
+  },
+  "outputs": {
+    "semantic": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE18\\DE18_v31_semantic.tif",
+      "sha256": "a3a5d7117d8300bd4078d651ee14e4f6f0de3219206c41026391b52b78461023"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE18\\DE18_v31_validity.tif",
+      "sha256": "af627a6ff07be73c58fdcd65fc904b222b4f9a5b69cd9bf8bc62c7e800a56151"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE18\\DE18_v31_provenance.tif",
+      "sha256": "d8af8817f67f1fc73863018e62a6a598f893fe84947f6ee526fff8017fe3346a"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE18\\DE18_v31_support_count.tif",
+      "sha256": "36464e86339b046ccacda911425c332e5ae18816640707efbc073b2a0b2debdb"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE18\\DE18_v31_source_conflict.tif",
+      "sha256": "0b6ede2b67b54cf65bfb6188a8096e40a811a42a893be68c0c0c567e40c30a37"
+    }
+  },
+  "class_distribution_csv": "metadata\\dataset_v3_1\\fusion\\DE18_v31_class_distribution.csv",
+  "safety": {
+    "parent_v3_modified": false,
+    "new_labels_added": false,
+    "removed_labels_become": "Ignore/Unknown (255)"
+  }
+}

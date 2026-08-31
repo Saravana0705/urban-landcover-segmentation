@@ -1,0 +1,48 @@
+schema_version: dataset-v3.1-selection-policy-0.1
+dataset_version: v3.1
+parent_dataset_version: v3
+
+input:
+  candidate_manifest: metadata/dataset_v3_1/candidates/dataset_v31_candidate_tiles.csv
+
+output:
+  directory: metadata/dataset_v3_1/selection
+
+coverage_gate:
+  minimum_valid_fraction_source_pixels: 0.40
+  maximum_padding_fraction: 0.25
+
+training_selection:
+  combination: any
+  thresholds_fraction_valid:
+    buildings: 0.075
+    roads: 0.030
+    bare_land: 0.001
+    water: 0.050
+  vegetation_direct_threshold: null
+
+evaluation_selection:
+  validation_and_test: coverage_only
+  class_composition_filtering: false
+
+geographic_split_guard:
+  expected_city_counts:
+    train: 14
+    val: 3
+    test: 3
+  require_each_city_to_contribute: true
+
+expected_accounting:
+  candidate_tiles: 2880
+  selected_by_split:
+    train: 1072
+    val: 346
+    test: 336
+
+rationale:
+  - The V3.1 road threshold is reduced to 3% because the frozen label policy deliberately removes unresolved road pixels.
+  - The stable-bare threshold is 0.1% because bare land is rare after excluding temporally unstable construction labels.
+  - The selected training set retains approximately 93% of eligible building pixels, 89% of road pixels, 99.9% of stable-bare pixels and 96% of water pixels.
+  - Vegetation has no direct selection rule and remains represented through mixed-class tiles.
+  - Validation and test are selected using coverage only; their class composition is not optimized.
+

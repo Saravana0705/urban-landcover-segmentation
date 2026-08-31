@@ -1,0 +1,151 @@
+{
+  "schema_version": "dataset-v3.1-label-policy-0.1",
+  "generated_at_utc": "2026-08-31T21:03:04.947305+00:00",
+  "status": "PASS",
+  "city_id": "DE01",
+  "city_name": "Mannheim",
+  "split": "train",
+  "policy": {
+    "schema_version": "dataset-v3.1-frozen-label-policy-0.1",
+    "dataset_version": "v3.1",
+    "parent_dataset_version": "v3",
+    "ignore_index": 255,
+    "road_policy": {
+      "name": "priority_classes_min_6m",
+      "minimum_width_m": 6.0,
+      "allowed_highway_classes": [
+        "motorway",
+        "motorway_link",
+        "trunk",
+        "trunk_link",
+        "primary",
+        "primary_link",
+        "secondary",
+        "secondary_link",
+        "tertiary",
+        "tertiary_link",
+        "residential",
+        "unclassified"
+      ]
+    },
+    "bare_land_policy": {
+      "name": "stable_urban_atlas_bare",
+      "retain_urban_atlas_codes": [
+        13100,
+        33000
+      ]
+    },
+    "removed_label_policy": "ignore_255",
+    "new_labels_added": false,
+    "class_taxonomy_changed": false,
+    "decision_evidence": {
+      "simulation_scope": "train_and_validation_only",
+      "test_metrics_inspected": false,
+      "training_road_pixel_retention": 0.6553389820549281,
+      "validation_road_pixel_retention": 0.6523864355676973,
+      "training_valid_pixel_retention": 0.9740443539373842,
+      "validation_valid_pixel_retention": 0.9840116859541095,
+      "training_road_rich_candidates_ge_5pct": 605,
+      "validation_road_rich_candidates_ge_5pct": 76,
+      "rationale": "Removes low-priority and very narrow OSM road labels while retaining a learnable road population across every development city. Construction class 13300 is excluded from bare land because Urban Atlas 2021 and the Sentinel-1 2025 acquisition are temporally mismatched."
+    }
+  },
+  "road_policy_details": {
+    "surface_feature_count": 258236,
+    "eligible_feature_count": 114266,
+    "eligible_rasterized_pixels": 281724,
+    "minimum_width_m": 6.0,
+    "allowed_highway_classes": [
+      "motorway",
+      "motorway_link",
+      "primary",
+      "primary_link",
+      "residential",
+      "secondary",
+      "secondary_link",
+      "tertiary",
+      "tertiary_link",
+      "trunk",
+      "trunk_link",
+      "unclassified"
+    ]
+  },
+  "counts": {
+    "buildings_pixels": 556662,
+    "roads_pixels": 280419,
+    "vegetation_pixels": 5255120,
+    "bare_land_pixels": 15644,
+    "water_pixels": 291870,
+    "ignore_pixels": 2600285,
+    "valid_pixels": 6399715,
+    "total_pixels": 9000000
+  },
+  "removed": {
+    "road_pixels": 141402,
+    "bare_land_pixels": 3503,
+    "total_pixels": 144905
+  },
+  "retention": {
+    "valid": 0.9778589131225343,
+    "roads": 0.6647819809824547,
+    "bare_land": 0.8170470569802057
+  },
+  "inputs": {
+    "sar": {
+      "path": "data\\processed\\sar\\DE01_Mannheim\\DE01_Mannheim_S1_VV_VH.tif",
+      "sha256": "0ed79df0067b38ebb1dfd38ff43f23e03bc5ea74b2803d6c94d3bb43e3249db5"
+    },
+    "ua_code": {
+      "path": "data\\interim\\labels_v3\\urban_atlas\\DE01\\DE01_urban_atlas_2021_code.tif",
+      "sha256": "9ea9126fddd23aa66de3dafd60d6908630b5b296392b56a4048d07688470b27e"
+    },
+    "semantic": {
+      "path": "data\\interim\\labels_v3\\fused\\DE01\\DE01_v3_semantic.tif",
+      "sha256": "52adebec0723092c22e22caa99fb36f64632b66c776df71c69e73ed5f74ca483"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3\\fused\\DE01\\DE01_v3_validity.tif",
+      "sha256": "766786a330c7bbd1a5e4e699ca32753a5be69f60768e90836b087e9d550776db"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3\\fused\\DE01\\DE01_v3_provenance.tif",
+      "sha256": "f598f29254492c1e2a24838121eabdb428a159a3cd3ddd820c09e1bff70a1cac"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3\\fused\\DE01\\DE01_v3_support_count.tif",
+      "sha256": "a368cd878cd81b98a9526b454a9fb81a7b5c14b9649edb5687032ba9abd251e5"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3\\fused\\DE01\\DE01_v3_source_conflict.tif",
+      "sha256": "96c3e59e40c7c889cc7b92b64fcd55edd6634fbe28d3fa9a614ddb0508a4915e"
+    }
+  },
+  "outputs": {
+    "semantic": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE01\\DE01_v31_semantic.tif",
+      "sha256": "bd566b044f1d1f11ee244fde077d6de80f7338b81c4900c89958935d982e5f43"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE01\\DE01_v31_validity.tif",
+      "sha256": "34c390875387f5c2e27e7126ec339934d75a6864e4fac3b75971d7eb18268e0a"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE01\\DE01_v31_provenance.tif",
+      "sha256": "d926b81c10eb489497d449e34a908d809720131c60869e72673fa22c019e8d88"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE01\\DE01_v31_support_count.tif",
+      "sha256": "3faeb5b91606ced46dbb5d245e6115d0ee34fbbb837e8866b832928890b364f8"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE01\\DE01_v31_source_conflict.tif",
+      "sha256": "5cf0089321e5772b28311e27c82fb6e2eef29333b6f4f9fa427a2f208a997f87"
+    }
+  },
+  "class_distribution_csv": "metadata\\dataset_v3_1\\fusion\\DE01_v31_class_distribution.csv",
+  "safety": {
+    "parent_v3_modified": false,
+    "new_labels_added": false,
+    "removed_labels_become": "Ignore/Unknown (255)"
+  }
+}

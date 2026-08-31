@@ -1,0 +1,153 @@
+{
+  "schema_version": "dataset-v3.1-normalization-provenance-0.1",
+  "generated_at_utc": "2026-08-31T22:40:02.308326+00:00",
+  "status": "PASS",
+  "dataset_version": "v3.1",
+  "parent_dataset_version": "v3",
+  "policy": "inherit_unchanged_v3_full_training_city_sar_normalization",
+  "scientific_rationale": "V3.1 changes label confidence policy and candidate selection only. It uses the same fourteen training cities and unchanged Sentinel-1 source rasters as V3. Recomputing from the V3.1 selected-tile subset would confound the controlled V3 versus V3.1 comparison.",
+  "validation_and_test_used": false,
+  "manifest": "metadata\\dataset_v3_1\\dataset_manifest.csv",
+  "manifest_sha256": "93f9c3bfa17e2b82660a9bc69703eaae831b23753bc9e46892b00730a543ef28",
+  "source_normalization": "metadata\\dataset_v3\\normalization\\training_normalization.json",
+  "source_normalization_sha256": "a2e53c905484b66c3af3122f1487f3e42f4254d7f29e4ec6dedb8e48f27e164b",
+  "source_v3_provenance": "metadata\\dataset_v3\\normalization\\normalization_provenance.json",
+  "source_v3_provenance_sha256": "84e8c6b40e1d5bb30de38c5b133f6f13c87a434169c5fd0391ec340ec5726e57",
+  "copied_normalization": "metadata\\dataset_v3_1\\normalization\\training_normalization.json",
+  "copied_normalization_sha256": "a2e53c905484b66c3af3122f1487f3e42f4254d7f29e4ec6dedb8e48f27e164b",
+  "copied_normalization_csv": "metadata\\dataset_v3_1\\normalization\\training_normalization.csv",
+  "split_tile_counts": {
+    "train": 1072,
+    "val": 346,
+    "test": 336
+  },
+  "training_city_ids": [
+    "DE01",
+    "DE02",
+    "DE03",
+    "DE04",
+    "DE05",
+    "DE06",
+    "DE07",
+    "DE08",
+    "DE09",
+    "DE10",
+    "DE11",
+    "DE12",
+    "DE13",
+    "DE14"
+  ],
+  "training_sar_hash_checks": [
+    {
+      "city_id": "DE01",
+      "path": "data/processed/sar/DE01_Mannheim/DE01_Mannheim_S1_VV_VH.tif",
+      "v3_normalization_sha256": "0ed79df0067b38ebb1dfd38ff43f23e03bc5ea74b2803d6c94d3bb43e3249db5",
+      "v31_materialization_source_sha256": "0ed79df0067b38ebb1dfd38ff43f23e03bc5ea74b2803d6c94d3bb43e3249db5",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE02",
+      "path": "data/processed/sar/DE02_Heidelberg/DE02_Heidelberg_S1_VV_VH.tif",
+      "v3_normalization_sha256": "44b0743586acca69470cf6393c543a5007a547d4dbe1ddaf5413c6b1b99de84b",
+      "v31_materialization_source_sha256": "44b0743586acca69470cf6393c543a5007a547d4dbe1ddaf5413c6b1b99de84b",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE03",
+      "path": "data/processed/sar/DE03_Karlsruhe/DE03_Karlsruhe_S1_VV_VH.tif",
+      "v3_normalization_sha256": "0e64580a857ef97536b19b83f073989ecf36a4aa6b624e320e11278fcdf3e3fb",
+      "v31_materialization_source_sha256": "0e64580a857ef97536b19b83f073989ecf36a4aa6b624e320e11278fcdf3e3fb",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE04",
+      "path": "data/processed/sar/DE04_Stuttgart/DE04_Stuttgart_S1_VV_VH.tif",
+      "v3_normalization_sha256": "710b4885009ddbe394905f79619cfc0e75e6c5d0c8148cb8998d9fa20f458327",
+      "v31_materialization_source_sha256": "710b4885009ddbe394905f79619cfc0e75e6c5d0c8148cb8998d9fa20f458327",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE05",
+      "path": "data/processed/sar/DE05_Munich/DE05_Munich_S1_VV_VH.tif",
+      "v3_normalization_sha256": "a77706832cfa6839796879b0f3ad911cd627d51bad9935d8d7b33da5c7757a08",
+      "v31_materialization_source_sha256": "a77706832cfa6839796879b0f3ad911cd627d51bad9935d8d7b33da5c7757a08",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE06",
+      "path": "data/processed/sar/DE06_Nuremberg/DE06_Nuremberg_S1_VV_VH.tif",
+      "v3_normalization_sha256": "c9ae6e23f0a64b34ffbda013540bf3bc016c5ff460564a1693c0dbb7d94c175d",
+      "v31_materialization_source_sha256": "c9ae6e23f0a64b34ffbda013540bf3bc016c5ff460564a1693c0dbb7d94c175d",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE07",
+      "path": "data/processed/sar/DE07_Frankfurt/DE07_Frankfurt_S1_VV_VH.tif",
+      "v3_normalization_sha256": "307d8d2ac76ad8000e62f8af435a5b91324085391bfa9002494ccf3b88f00c58",
+      "v31_materialization_source_sha256": "307d8d2ac76ad8000e62f8af435a5b91324085391bfa9002494ccf3b88f00c58",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE08",
+      "path": "data/processed/sar/DE08_Cologne/DE08_Cologne_S1_VV_VH.tif",
+      "v3_normalization_sha256": "690e17dfe206f00e40749507b30f211b8b262316aaff558f58df3e78930569dc",
+      "v31_materialization_source_sha256": "690e17dfe206f00e40749507b30f211b8b262316aaff558f58df3e78930569dc",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE09",
+      "path": "data/processed/sar/DE09_Dusseldorf/DE09_Dusseldorf_S1_VV_VH.tif",
+      "v3_normalization_sha256": "6b3b7f8050d5d6b330fcfa0f9df859af518593bb10da01a12ec5f37501772ab1",
+      "v31_materialization_source_sha256": "6b3b7f8050d5d6b330fcfa0f9df859af518593bb10da01a12ec5f37501772ab1",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE10",
+      "path": "data/processed/sar/DE10_Dortmund/DE10_Dortmund_S1_VV_VH.tif",
+      "v3_normalization_sha256": "753d6a3d5357779f2edc8cd02981649187ca7d54a75a0dae24705f724e35213a",
+      "v31_materialization_source_sha256": "753d6a3d5357779f2edc8cd02981649187ca7d54a75a0dae24705f724e35213a",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE11",
+      "path": "data/processed/sar/DE11_Hamburg/DE11_Hamburg_S1_VV_VH.tif",
+      "v3_normalization_sha256": "d74720bb3448f227f2fac300017134bbc3030253bb699dddcd73cd9cd3816748",
+      "v31_materialization_source_sha256": "d74720bb3448f227f2fac300017134bbc3030253bb699dddcd73cd9cd3816748",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE12",
+      "path": "data/processed/sar/DE12_Bremen/DE12_Bremen_S1_VV_VH.tif",
+      "v3_normalization_sha256": "d64e8028020fad50d6bde34ab43b10f2a13915e631410540352d6f10d62b6c30",
+      "v31_materialization_source_sha256": "d64e8028020fad50d6bde34ab43b10f2a13915e631410540352d6f10d62b6c30",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE13",
+      "path": "data/processed/sar/DE13_Hanover/DE13_Hanover_S1_VV_VH.tif",
+      "v3_normalization_sha256": "be9b00e838f72f23cdc216509c48d48fbed392796d02d927a4d2f20033961df5",
+      "v31_materialization_source_sha256": "be9b00e838f72f23cdc216509c48d48fbed392796d02d927a4d2f20033961df5",
+      "status": "PASS"
+    },
+    {
+      "city_id": "DE14",
+      "path": "data/processed/sar/DE14_Berlin/DE14_Berlin_S1_VV_VH.tif",
+      "v3_normalization_sha256": "7bfa46de8e038de3e5e18512e0cd0c533ba47a5d4c02019b9387f1303c60760d",
+      "v31_materialization_source_sha256": "7bfa46de8e038de3e5e18512e0cd0c533ba47a5d4c02019b9387f1303c60760d",
+      "status": "PASS"
+    }
+  ],
+  "mandatory_checks": {
+    "manifest_has_1754_unique_tiles": true,
+    "split_tile_counts_match": true,
+    "training_city_ids_match": true,
+    "materialization_status_pass": true,
+    "materialization_tile_count_is_1754": true,
+    "source_v3_normalization_provenance_pass": true,
+    "source_v3_normalization_hash_matches_provenance": true,
+    "normalization_training_city_count_is_14": true,
+    "normalization_training_city_ids_match": true,
+    "validation_and_test_not_used": true,
+    "all_training_sar_hashes_match": true
+  }
+}

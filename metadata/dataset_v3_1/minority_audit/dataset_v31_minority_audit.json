@@ -1,0 +1,110 @@
+{
+  "schema_version": "dataset-v3.1-minority-audit-0.1",
+  "generated_at_utc": "2026-08-31T02:12:33.342688+00:00",
+  "status": "PASS",
+  "scope": {
+    "splits": [
+      "train",
+      "val"
+    ],
+    "city_ids": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14",
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test_inspected": false
+  },
+  "baseline_policy": {
+    "roads": "all OSM roads are authoritative after V3 rasterization",
+    "bare_land": "OSM bare AND Urban Atlas code in 13100/13300/33000"
+  },
+  "diagnostic_candidate_policy": {
+    "road_major_classes": [
+      "motorway",
+      "motorway_link",
+      "primary",
+      "primary_link",
+      "secondary",
+      "secondary_link",
+      "trunk",
+      "trunk_link"
+    ],
+    "road_manual_review_classes": [
+      "residential",
+      "tertiary",
+      "tertiary_link",
+      "unclassified"
+    ],
+    "road_likely_ignore_classes": [
+      "bridleway",
+      "cycleway",
+      "footway",
+      "living_street",
+      "path",
+      "pedestrian",
+      "service",
+      "steps",
+      "track"
+    ],
+    "bare_tier_1": "confident Urban Atlas bare AND confident Dynamic World bare",
+    "bare_tier_2": "OSM bare AND confident Dynamic World bare",
+    "bare_existing": "OSM bare AND accepted Urban Atlas code",
+    "warning": "These are audit strata, not an approved V3.1 label policy."
+  },
+  "record_counts": {
+    "road_summary_rows": 516,
+    "bare_summary_rows": 93,
+    "candidate_summary_rows": 17,
+    "qgis_review_samples": 1150
+  },
+  "bare_pixel_totals": {
+    "total_pixels": 153000000,
+    "current_v3_pixels": 395355,
+    "tier1_ua_dw_pixels": 474,
+    "tier2_osm_dw_pixels": 1027,
+    "proposed_union_pixels": 395914,
+    "proposed_new_pixels": 559,
+    "proposed_conflict_with_osm_building_road_water_pixels": 1
+  },
+  "inputs": {
+    "registry": {
+      "path": "config\\dataset_v3_city_registry.json",
+      "sha256": "aff64a8dff37c6cc528d7c6ae228513f996ae647f25f5f2cecc49b31eefdae08"
+    },
+    "road_config": {
+      "path": "config\\road_widths.yaml",
+      "sha256": "879824c0b9df7a93e21939433c0a5acfdbc70e0b4d4617ebd1a025efab468292"
+    },
+    "candidate_manifest": {
+      "path": "metadata\\dataset_v3\\candidates\\dataset_v3_candidate_tiles.csv",
+      "sha256": "12e160c0b551ba06a73364d5938e7b083e37a6717a1b3224c83244b576279d9c"
+    }
+  },
+  "outputs": {
+    "road": "metadata\\dataset_v3_1\\minority_audit\\dataset_v31_road_highway_audit.csv",
+    "bare": "metadata\\dataset_v3_1\\minority_audit\\dataset_v31_bare_source_audit.csv",
+    "candidate": "metadata\\dataset_v3_1\\minority_audit\\dataset_v31_candidate_minority_summary.csv",
+    "samples": "metadata\\dataset_v3_1\\minority_audit\\dataset_v31_qgis_review_sample.csv"
+  },
+  "safety": {
+    "labels_written": false,
+    "tiles_written": false,
+    "dataset_v3_modified": false,
+    "output_scope": "metadata\\dataset_v3_1\\minority_audit"
+  },
+  "next_gate": "manual_qgis_review_and_v31_label_policy_decision"
+}

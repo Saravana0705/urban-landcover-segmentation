@@ -1,0 +1,746 @@
+{
+  "schema_version": "dataset-v3.1-policy-simulation-0.1",
+  "generated_at_utc": "2026-08-31T16:00:36.835276+00:00",
+  "status": "PASS",
+  "scope": {
+    "splits": [
+      "train",
+      "val"
+    ],
+    "city_ids": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14",
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test_inspected": false
+  },
+  "principles": {
+    "five_class_objective_preserved": true,
+    "removed_labels_become": "Ignore/Unknown (255)",
+    "new_semantic_labels_added": false,
+    "manual_qgis_required": false,
+    "dataset_v3_modified": false
+  },
+  "variants": [
+    {
+      "name": "v3_control",
+      "road_policy": "none",
+      "stable_bare": false
+    },
+    {
+      "name": "v31_stable_bare_only",
+      "road_policy": "none",
+      "stable_bare": true
+    },
+    {
+      "name": "v31_resolution_road_only",
+      "road_policy": "resolution_aware",
+      "stable_bare": false
+    },
+    {
+      "name": "v31_major_road_only",
+      "road_policy": "high_precision_major",
+      "stable_bare": false
+    },
+    {
+      "name": "v31_resolution_road_stable_bare",
+      "road_policy": "resolution_aware",
+      "stable_bare": true
+    },
+    {
+      "name": "v31_major_road_stable_bare",
+      "road_policy": "high_precision_major",
+      "stable_bare": true
+    }
+  ],
+  "road_policy_details_by_city": {
+    "DE01": {
+      "resolution_aware": {
+        "surface_feature_count": 258236,
+        "eligible_feature_count": 9087,
+        "eligible_rasterized_pixels": 34809,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 258236,
+        "eligible_feature_count": 4606,
+        "eligible_rasterized_pixels": 22246,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE02": {
+      "resolution_aware": {
+        "surface_feature_count": 259676,
+        "eligible_feature_count": 9694,
+        "eligible_rasterized_pixels": 30869,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 259676,
+        "eligible_feature_count": 4565,
+        "eligible_rasterized_pixels": 19116,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE03": {
+      "resolution_aware": {
+        "surface_feature_count": 206410,
+        "eligible_feature_count": 8037,
+        "eligible_rasterized_pixels": 27745,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 206410,
+        "eligible_feature_count": 4650,
+        "eligible_rasterized_pixels": 19330,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE04": {
+      "resolution_aware": {
+        "surface_feature_count": 379367,
+        "eligible_feature_count": 18304,
+        "eligible_rasterized_pixels": 48169,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 379367,
+        "eligible_feature_count": 9392,
+        "eligible_rasterized_pixels": 31452,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE05": {
+      "resolution_aware": {
+        "surface_feature_count": 360550,
+        "eligible_feature_count": 9294,
+        "eligible_rasterized_pixels": 32783,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 360550,
+        "eligible_feature_count": 5191,
+        "eligible_rasterized_pixels": 23300,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE06": {
+      "resolution_aware": {
+        "surface_feature_count": 235419,
+        "eligible_feature_count": 9941,
+        "eligible_rasterized_pixels": 30366,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 235419,
+        "eligible_feature_count": 4570,
+        "eligible_rasterized_pixels": 15211,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE07": {
+      "resolution_aware": {
+        "surface_feature_count": 326329,
+        "eligible_feature_count": 13253,
+        "eligible_rasterized_pixels": 42037,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 326329,
+        "eligible_feature_count": 6492,
+        "eligible_rasterized_pixels": 28556,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE08": {
+      "resolution_aware": {
+        "surface_feature_count": 382720,
+        "eligible_feature_count": 13274,
+        "eligible_rasterized_pixels": 43425,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 382720,
+        "eligible_feature_count": 5803,
+        "eligible_rasterized_pixels": 23830,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE09": {
+      "resolution_aware": {
+        "surface_feature_count": 403087,
+        "eligible_feature_count": 11609,
+        "eligible_rasterized_pixels": 33684,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 403087,
+        "eligible_feature_count": 5932,
+        "eligible_rasterized_pixels": 21463,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE10": {
+      "resolution_aware": {
+        "surface_feature_count": 441975,
+        "eligible_feature_count": 9179,
+        "eligible_rasterized_pixels": 26105,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 441975,
+        "eligible_feature_count": 2375,
+        "eligible_rasterized_pixels": 9697,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE11": {
+      "resolution_aware": {
+        "surface_feature_count": 450630,
+        "eligible_feature_count": 15376,
+        "eligible_rasterized_pixels": 45194,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 450630,
+        "eligible_feature_count": 8393,
+        "eligible_rasterized_pixels": 28612,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE12": {
+      "resolution_aware": {
+        "surface_feature_count": 212914,
+        "eligible_feature_count": 7047,
+        "eligible_rasterized_pixels": 22287,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 212914,
+        "eligible_feature_count": 2471,
+        "eligible_rasterized_pixels": 8694,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE13": {
+      "resolution_aware": {
+        "surface_feature_count": 232919,
+        "eligible_feature_count": 7472,
+        "eligible_rasterized_pixels": 27058,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 232919,
+        "eligible_feature_count": 2566,
+        "eligible_rasterized_pixels": 12049,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE14": {
+      "resolution_aware": {
+        "surface_feature_count": 643528,
+        "eligible_feature_count": 31511,
+        "eligible_rasterized_pixels": 70003,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 643528,
+        "eligible_feature_count": 11864,
+        "eligible_rasterized_pixels": 30414,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE15": {
+      "resolution_aware": {
+        "surface_feature_count": 214701,
+        "eligible_feature_count": 11197,
+        "eligible_rasterized_pixels": 35437,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 214701,
+        "eligible_feature_count": 4100,
+        "eligible_rasterized_pixels": 13487,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE16": {
+      "resolution_aware": {
+        "surface_feature_count": 293485,
+        "eligible_feature_count": 19776,
+        "eligible_rasterized_pixels": 53095,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 293485,
+        "eligible_feature_count": 4906,
+        "eligible_rasterized_pixels": 15960,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    },
+    "DE17": {
+      "resolution_aware": {
+        "surface_feature_count": 176656,
+        "eligible_feature_count": 4720,
+        "eligible_rasterized_pixels": 17399,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "residential",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ]
+      },
+      "high_precision_major": {
+        "surface_feature_count": 176656,
+        "eligible_feature_count": 2393,
+        "eligible_rasterized_pixels": 9571,
+        "minimum_width_m": 10.0,
+        "allowed_highway_classes": [
+          "motorway",
+          "motorway_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      }
+    }
+  },
+  "stable_bare_retained_ua_codes": [
+    13100,
+    33000
+  ],
+  "record_counts": {
+    "city_summary_rows": 102,
+    "candidate_tile_rows": 14688,
+    "aggregate_rows": 12
+  },
+  "inputs": {
+    "config\\dataset_v3_city_registry.json": "aff64a8dff37c6cc528d7c6ae228513f996ae647f25f5f2cecc49b31eefdae08",
+    "config\\road_widths.yaml": "879824c0b9df7a93e21939433c0a5acfdbc70e0b4d4617ebd1a025efab468292",
+    "config\\dataset_v31_policy.yaml": "e796fb07b9a7659768c02126156fa1492515f66f5653e18b8c991d7eda694bb5",
+    "metadata\\dataset_v3\\candidates\\dataset_v3_candidate_tiles.csv": "12e160c0b551ba06a73364d5938e7b083e37a6717a1b3224c83244b576279d9c",
+    "metadata\\dataset_v3\\selection\\dataset_v3_selected_candidates.csv": "39cf3f7a48c7154303efb5f2996129aef7fe4e1a2b2fe40d0f353583561a4693"
+  },
+  "outputs": {
+    "city": "metadata\\dataset_v3_1\\policy_simulation\\dataset_v31_policy_city_summary.csv",
+    "tiles": "metadata\\dataset_v3_1\\policy_simulation\\dataset_v31_policy_candidate_tiles.csv",
+    "aggregate": "metadata\\dataset_v3_1\\policy_simulation\\dataset_v31_policy_aggregate_summary.csv"
+  },
+  "safety": {
+    "labels_written": false,
+    "tiles_written": false,
+    "dataset_v3_modified": false,
+    "output_scope": "metadata\\dataset_v3_1\\policy_simulation"
+  },
+  "next_gate": "select_one_v31_policy_then_materialize_additively"
+}

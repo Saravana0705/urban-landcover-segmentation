@@ -1,0 +1,151 @@
+{
+  "schema_version": "dataset-v3.1-label-policy-0.1",
+  "generated_at_utc": "2026-08-31T21:11:07.167765+00:00",
+  "status": "PASS",
+  "city_id": "DE14",
+  "city_name": "Berlin",
+  "split": "train",
+  "policy": {
+    "schema_version": "dataset-v3.1-frozen-label-policy-0.1",
+    "dataset_version": "v3.1",
+    "parent_dataset_version": "v3",
+    "ignore_index": 255,
+    "road_policy": {
+      "name": "priority_classes_min_6m",
+      "minimum_width_m": 6.0,
+      "allowed_highway_classes": [
+        "motorway",
+        "motorway_link",
+        "trunk",
+        "trunk_link",
+        "primary",
+        "primary_link",
+        "secondary",
+        "secondary_link",
+        "tertiary",
+        "tertiary_link",
+        "residential",
+        "unclassified"
+      ]
+    },
+    "bare_land_policy": {
+      "name": "stable_urban_atlas_bare",
+      "retain_urban_atlas_codes": [
+        13100,
+        33000
+      ]
+    },
+    "removed_label_policy": "ignore_255",
+    "new_labels_added": false,
+    "class_taxonomy_changed": false,
+    "decision_evidence": {
+      "simulation_scope": "train_and_validation_only",
+      "test_metrics_inspected": false,
+      "training_road_pixel_retention": 0.6553389820549281,
+      "validation_road_pixel_retention": 0.6523864355676973,
+      "training_valid_pixel_retention": 0.9740443539373842,
+      "validation_valid_pixel_retention": 0.9840116859541095,
+      "training_road_rich_candidates_ge_5pct": 605,
+      "validation_road_rich_candidates_ge_5pct": 76,
+      "rationale": "Removes low-priority and very narrow OSM road labels while retaining a learnable road population across every development city. Construction class 13300 is excluded from bare land because Urban Atlas 2021 and the Sentinel-1 2025 acquisition are temporally mismatched."
+    }
+  },
+  "road_policy_details": {
+    "surface_feature_count": 643528,
+    "eligible_feature_count": 265618,
+    "eligible_rasterized_pixels": 440926,
+    "minimum_width_m": 6.0,
+    "allowed_highway_classes": [
+      "motorway",
+      "motorway_link",
+      "primary",
+      "primary_link",
+      "residential",
+      "secondary",
+      "secondary_link",
+      "tertiary",
+      "tertiary_link",
+      "trunk",
+      "trunk_link",
+      "unclassified"
+    ]
+  },
+  "counts": {
+    "buildings_pixels": 1036023,
+    "roads_pixels": 440598,
+    "vegetation_pixels": 2789508,
+    "bare_land_pixels": 7154,
+    "water_pixels": 256938,
+    "ignore_pixels": 4469779,
+    "valid_pixels": 4530221,
+    "total_pixels": 9000000
+  },
+  "removed": {
+    "road_pixels": 266926,
+    "bare_land_pixels": 2983,
+    "total_pixels": 269909
+  },
+  "retention": {
+    "valid": 0.9437704812161337,
+    "roads": 0.6227322324048371,
+    "bare_land": 0.705731478741245
+  },
+  "inputs": {
+    "sar": {
+      "path": "data\\processed\\sar\\DE14_Berlin\\DE14_Berlin_S1_VV_VH.tif",
+      "sha256": "7bfa46de8e038de3e5e18512e0cd0c533ba47a5d4c02019b9387f1303c60760d"
+    },
+    "ua_code": {
+      "path": "data\\interim\\labels_v3\\urban_atlas\\DE14\\DE14_urban_atlas_2021_code.tif",
+      "sha256": "76b9abd35886043729bed98da55108b601b1409a705efdfa1bca59d7ac909743"
+    },
+    "semantic": {
+      "path": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_semantic.tif",
+      "sha256": "0589e72c693535ba7c66bd7333506d13db688250a68fa82958c58dffcbbb897b"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_validity.tif",
+      "sha256": "fc1d1d4840ed63ece3b6a7d55ac3f5c27719df003505dfe8997e74f6b2adcdcf"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_provenance.tif",
+      "sha256": "356ed038998785ac0ec4a0723d698be416b028d3ca1e7b161915ed44f0695449"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_support_count.tif",
+      "sha256": "b0bae3c3962741f468606ecd82bdbfe4cbc3c2deb9c2eac4893329cbf69b0041"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3\\fused\\DE14\\DE14_v3_source_conflict.tif",
+      "sha256": "4cac4e0cb608f003ceedc02749e6807456bf14265813cb742865a8d4283a9327"
+    }
+  },
+  "outputs": {
+    "semantic": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE14\\DE14_v31_semantic.tif",
+      "sha256": "61d521e72b09a4cc74301850edf3b4e5ba67c0d7efebeec72374ebacf84eccb0"
+    },
+    "validity": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE14\\DE14_v31_validity.tif",
+      "sha256": "76d422061ae3491aa3b68bf5da9a611a4f4e7fb381228ddc7605058d96729f86"
+    },
+    "provenance": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE14\\DE14_v31_provenance.tif",
+      "sha256": "1f91cfa9a776e7141573b45a4d6fdc8cbd25fcf25d19bac59fea5a3bdf8f2754"
+    },
+    "support": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE14\\DE14_v31_support_count.tif",
+      "sha256": "5aea18de96e666d64cff5ff49c1b5a9c62807fa24aaac0e50f8ae9eeafb2fe84"
+    },
+    "conflict": {
+      "path": "data\\interim\\labels_v3_1\\fused\\DE14\\DE14_v31_source_conflict.tif",
+      "sha256": "e7e3c8fc88aaa48502d030b638813f5055395a09a69b6c4b7a6009e53c80c451"
+    }
+  },
+  "class_distribution_csv": "metadata\\dataset_v3_1\\fusion\\DE14_v31_class_distribution.csv",
+  "safety": {
+    "parent_v3_modified": false,
+    "new_labels_added": false,
+    "removed_labels_become": "Ignore/Unknown (255)"
+  }
+}
