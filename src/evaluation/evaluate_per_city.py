@@ -892,9 +892,12 @@ def main() -> None:
         dataset_config.get("dataset_version", "")
     )
 
-    if dataset_version.lower() != "v3":
+    supported_dataset_versions = {"v3", "v3.1"}
+
+    if dataset_version.lower() not in supported_dataset_versions:
         raise RuntimeError(
-            "This diagnostic is restricted to frozen Dataset V3. "
+            "This diagnostic is restricted to supported frozen datasets "
+            f"{sorted(supported_dataset_versions)}. "
             f"Received dataset_version={dataset_version!r}."
         )
 
@@ -1000,8 +1003,10 @@ def main() -> None:
         device,
     )
 
-    print("\nDataset V3 per-city validation")
-    print("------------------------------")
+    print(
+        f"\nDataset {dataset_version} per-city validation"
+    )
+    print("--------------------------------")
     print(f"Experiment: {experiment_id}")
     print(f"Configuration: {args.config}")
     print(f"Checkpoint: {args.checkpoint}")
@@ -1208,7 +1213,7 @@ def main() -> None:
             ]["total_supervised_pixels"],
         },
         "safety_checks": {
-            "dataset_version_is_v3": True,
+            "dataset_version_supported": True,
             "validation_city_set_exact": True,
             "train_validation_city_overlap": False,
             "test_validation_city_overlap": False,
@@ -1317,7 +1322,7 @@ def main() -> None:
     print(f"\nOutput directory: {output_directory}")
     print(f"Summary: {summary_path}")
     print(
-        "\nResult: Dataset V3 per-city validation "
+        f"\nResult: Dataset {dataset_version} per-city validation "
         "completed successfully."
     )
 
