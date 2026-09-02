@@ -1,0 +1,40 @@
+{
+  "schema_version": "dataset-v3-mt-f1-ratio-normalization-0.1",
+  "generated_at_utc": "2026-09-02T04:20:26.479517+00:00",
+  "status": "PASS",
+  "dataset_variant": "v3-mt-f1",
+  "training_tile_count": 974,
+  "validation_and_test_used": false,
+  "band_order": [
+    "CR_Q1",
+    "CR_Q2",
+    "CR_Q3",
+    "CR_Q4"
+  ],
+  "bands": {
+    "CR_Q1": {
+      "clip_lower_db": -16.67958797454834,
+      "clip_upper_db": -1.229756412506104,
+      "mean_db": -7.135774514976907,
+      "std_db": 2.75588456743339
+    },
+    "CR_Q2": {
+      "clip_lower_db": -16.14590570449829,
+      "clip_upper_db": -1.4123139619827314,
+      "mean_db": -6.616211281977988,
+      "std_db": 2.2961312968386887
+    },
+    "CR_Q3": {
+      "clip_lower_db": -16.12136220932007,
+      "clip_upper_db": -1.4836735653877444,
+      "mean_db": -6.91637677499694,
+      "std_db": 2.203094142410584
+    },
+    "CR_Q4": {
+      "clip_lower_db": -16.647994899749754,
+      "clip_upper_db": -1.3986384487152614,
+      "mean_db": -6.910081118940377,
+      "std_db": 2.507898558805343
+    }
+  }
+}

@@ -317,9 +317,8 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
         self.tile_size = int(
             self.config["input"]["tile_size"]
         )
-        self.channel_count = int(
-            self.config["input"]["channel_count"]
-        )
+        input_config = self.config["input"]
+        self.channel_count = int(input_config["channel_count"])
 
         (
             self.channel_names,
@@ -331,6 +330,66 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
         ) = _normalization_arrays(self.config)
         if len(self.channel_names) != self.channel_count:
             raise ValueError("Frozen channel metadata is internally inconsistent.")
+        source_channels_raw = input_config.get(
+            "source_channels",
+            self.channel_names,
+        )
+        if not isinstance(source_channels_raw, (list, tuple)):
+            raise ValueError("input.source_channels must be an ordered list.")
+        self.source_channel_names = [
+            str(value).strip() for value in source_channels_raw
+        ]
+        self.source_channel_count = int(
+            input_config.get(
+                "source_channel_count",
+                len(self.source_channel_names),
+            )
+        )
+        if (
+            len(self.source_channel_names) != self.source_channel_count
+            or any(not value for value in self.source_channel_names)
+            or len(set(self.source_channel_names))
+            != len(self.source_channel_names)
+        ):
+            raise ValueError("Frozen source-channel metadata is inconsistent.")
+        if self.source_channel_count > self.channel_count:
+            raise ValueError("Source channel count cannot exceed model channel count.")
+
+        features = input_config.get("derived_features", {})
+        if not isinstance(features, Mapping):
+            raise ValueError("input.derived_features must be a mapping.")
+        ratio_config = features.get("cross_ratio", {})
+        if not isinstance(ratio_config, Mapping):
+            raise ValueError("derived_features.cross_ratio must be a mapping.")
+        self.cross_ratio_enabled = bool(ratio_config.get("enabled", False))
+        ratio_names_raw = ratio_config.get("names", [])
+        if not isinstance(ratio_names_raw, (list, tuple)):
+            raise ValueError("cross_ratio.names must be an ordered list.")
+        self.cross_ratio_names = [str(value).strip() for value in ratio_names_raw]
+        if self.cross_ratio_enabled:
+            expected_sources = [
+                "VV_Q1", "VH_Q1", "VV_Q2", "VH_Q2",
+                "VV_Q3", "VH_Q3", "VV_Q4", "VH_Q4",
+            ]
+            expected_ratios = ["CR_Q1", "CR_Q2", "CR_Q3", "CR_Q4"]
+            if self.source_channel_names != expected_sources:
+                raise ValueError(
+                    "Quarterly cross-ratio features require the canonical "
+                    "eight-band V3-MT source order."
+                )
+            if self.cross_ratio_names != expected_ratios:
+                raise ValueError(
+                    "Quarterly cross-ratio names must be CR_Q1 through CR_Q4."
+                )
+            if self.channel_names != expected_sources + expected_ratios:
+                raise ValueError(
+                    "Model channel order must be eight source bands followed "
+                    "by CR_Q1 through CR_Q4."
+                )
+        elif self.source_channel_names != self.channel_names:
+            raise ValueError(
+                "Source and model channels differ but no derived feature is enabled."
+            )
         self.enforce_band_descriptions = bool(
             self.config["input"].get("enforce_band_descriptions", False)
         )
@@ -523,7 +582,7 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
             )
 
             if image.shape != (
-                self.channel_count,
+                self.source_channel_count,
                 *expected_shape,
             ):
                 raise ValueError(
@@ -532,12 +591,12 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
                 )
 
             if self.enforce_band_descriptions and image_descriptions != tuple(
-                self.channel_names
+                self.source_channel_names
             ):
                 raise ValueError(
                     f"Unexpected image band order {image_descriptions} "
                     f"for tile {record['tile_id']}; expected "
-                    f"{tuple(self.channel_names)}."
+                    f"{tuple(self.source_channel_names)}."
                 )
 
             if semantic_shape != expected_shape:
@@ -587,8 +646,8 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
 
         return image, semantic, validity, metadata
 
-    def _normalize_image(self, image: np.ndarray) -> np.ndarray:
-        """Apply the frozen training-only normalization policy."""
+    def _model_input_db(self, image: np.ndarray) -> np.ndarray:
+        """Convert source sigma0 to dB and append configured derived channels."""
         finite = np.isfinite(image)
         positive = image > self.epsilon
         usable = finite & positive
@@ -609,14 +668,38 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
             )
         ).astype(np.float32)
 
-        db = np.clip(
-            db,
+        model_db = db
+        if self.cross_ratio_enabled:
+            ratios = []
+            for quarter in range(4):
+                vv = db[quarter * 2]
+                vh = db[quarter * 2 + 1]
+                ratio = (vh - vv).astype(np.float32, copy=False)
+                ratio[~(np.isfinite(vv) & np.isfinite(vh))] = np.nan
+                ratios.append(ratio)
+            model_db = np.concatenate(
+                [db, np.stack(ratios, axis=0)],
+                axis=0,
+            ).astype(np.float32, copy=False)
+
+        if model_db.shape[0] != self.channel_count:
+            raise ValueError(
+                f"Derived model input has {model_db.shape[0]} channels; "
+                f"expected {self.channel_count}."
+            )
+        return model_db
+
+    def _normalize_image(self, image: np.ndarray) -> np.ndarray:
+        """Derive configured channels and apply training-only normalization."""
+        model_db = self._model_input_db(image)
+        clipped = np.clip(
+            model_db,
             self.clip_lower,
             self.clip_upper,
         )
 
         normalized = (
-            (db - self.mean)
+            (clipped - self.mean)
             / self.std
         ).astype(np.float32)
 

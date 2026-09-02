@@ -1,0 +1,30 @@
+{
+  "schema_version": "dataset-v3-mt-f1-provenance-0.1",
+  "generated_at_utc": "2026-09-02T04:20:26.479517+00:00",
+  "status": "PASS",
+  "parent_manifest_path": "metadata\\dataset_v3_mt\\dataset_manifest.csv",
+  "parent_manifest_sha256": "6f342ae5341b0c59ca6e2eb88e12192ecad1ee676eef47fe4536d8d20937f3de",
+  "parent_config_path": "metadata\\dataset_v3_mt\\freeze\\dataset_config.json",
+  "parent_config_sha256": "eeb4328bc35032bfbb46f450358338fe2092482b09c1cdf25088b6ab47caf68c",
+  "training_tile_count": 974,
+  "training_city_ids": [
+    "DE01",
+    "DE02",
+    "DE03",
+    "DE04",
+    "DE05",
+    "DE06",
+    "DE07",
+    "DE08",
+    "DE09",
+    "DE10",
+    "DE11",
+    "DE12",
+    "DE13",
+    "DE14"
+  ],
+  "validation_and_test_used": false,
+  "sample_per_tile_per_ratio": 4096,
+  "seed": 20260902,
+  "epsilon": 1e-10
+}
