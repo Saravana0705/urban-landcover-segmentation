@@ -892,7 +892,7 @@ def main() -> None:
         dataset_config.get("dataset_version", "")
     )
 
-    supported_dataset_versions = {"v3", "v3.1"}
+    supported_dataset_versions = {"v3", "v3.1", "v3-mt"}
 
     if dataset_version.lower() not in supported_dataset_versions:
         raise RuntimeError(
