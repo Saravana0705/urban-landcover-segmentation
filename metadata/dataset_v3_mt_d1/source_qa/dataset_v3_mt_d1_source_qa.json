@@ -1,0 +1,4717 @@
+{
+  "schema_version": "dataset-v3-mt-d1-source-qa-0.1",
+  "generated_at_utc": "2026-09-02T17:39:04.218136+00:00",
+  "status": "PASS",
+  "city_count": 20,
+  "expected_band_order": [
+    "VV_M01",
+    "VH_M01",
+    "VV_M02",
+    "VH_M02",
+    "VV_M03",
+    "VH_M03",
+    "VV_M04",
+    "VH_M04",
+    "VV_M05",
+    "VH_M05",
+    "VV_M06",
+    "VH_M06",
+    "VV_M07",
+    "VH_M07",
+    "VV_M08",
+    "VH_M08",
+    "VV_M09",
+    "VH_M09",
+    "VV_M10",
+    "VH_M10",
+    "VV_M11",
+    "VH_M11",
+    "VV_M12",
+    "VH_M12"
+  ],
+  "minimum_valid_fraction": 0.98,
+  "labels_modified": false,
+  "split_assignments_modified": false,
+  "cities": [
+    {
+      "city_id": "DE01",
+      "city_name": "Mannheim",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE01_Mannheim\\DE01_Mannheim_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "a5cd7347ebc4de49e6668dceef4785729841a2f353b28536b3cda8df8129b09e",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.1162122468231246e-05,
+            "maximum_positive": 2802.552978515625,
+            "mean_positive": 0.2586941123008728
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2365115253487602e-05,
+            "maximum_positive": 337.1793212890625,
+            "mean_positive": 0.03712870553135872
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.0278842536499724e-05,
+            "maximum_positive": 4630.70849609375,
+            "mean_positive": 0.24430349469184875
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.735037565405946e-06,
+            "maximum_positive": 86.87689208984375,
+            "mean_positive": 0.03491811081767082
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.85633689397946e-05,
+            "maximum_positive": 5233.234375,
+            "mean_positive": 0.23680205643177032
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2582624549395405e-05,
+            "maximum_positive": 91.39501190185547,
+            "mean_positive": 0.034562431275844574
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2894143765151966e-05,
+            "maximum_positive": 5393.720703125,
+            "mean_positive": 0.2301841676235199
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.931112122605555e-06,
+            "maximum_positive": 75.05438232421875,
+            "mean_positive": 0.03501741588115692
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.771240906440653e-05,
+            "maximum_positive": 4764.703125,
+            "mean_positive": 0.21652305126190186
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2696472367679235e-05,
+            "maximum_positive": 69.31306457519531,
+            "mean_positive": 0.03469996526837349
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00019208085723221302,
+            "maximum_positive": 4556.6259765625,
+            "mean_positive": 0.23573946952819824
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.411540597473504e-05,
+            "maximum_positive": 74.90995788574219,
+            "mean_positive": 0.03957683965563774
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00024721372756175697,
+            "maximum_positive": 3865.43408203125,
+            "mean_positive": 0.23039080202579498
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3592936738859862e-05,
+            "maximum_positive": 74.48074340820312,
+            "mean_positive": 0.0371909961104393
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.038682088023052e-05,
+            "maximum_positive": 4460.64599609375,
+            "mean_positive": 0.2238835245370865
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2738626537611708e-05,
+            "maximum_positive": 78.14543914794922,
+            "mean_positive": 0.035279471427202225
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003703395195771009,
+            "maximum_positive": 4133.916015625,
+            "mean_positive": 0.2573379874229431
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.284746394958347e-05,
+            "maximum_positive": 73.24406433105469,
+            "mean_positive": 0.03787798061966896
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002165926416637376,
+            "maximum_positive": 3564.56201171875,
+            "mean_positive": 0.25801506638526917
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2736901226162445e-05,
+            "maximum_positive": 137.97352600097656,
+            "mean_positive": 0.03762206435203552
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00017230591038241982,
+            "maximum_positive": 2927.76171875,
+            "mean_positive": 0.261279821395874
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4148935406410601e-05,
+            "maximum_positive": 74.65940856933594,
+            "mean_positive": 0.038309093564748764
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.470646960427985e-05,
+            "maximum_positive": 3249.691162109375,
+            "mean_positive": 0.2511601448059082
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2700550541921984e-05,
+            "maximum_positive": 86.6942367553711,
+            "mean_positive": 0.036605313420295715
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE02",
+      "city_name": "Heidelberg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE02_Heidelberg\\DE02_Heidelberg_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "d493cf5c080807357f76105d4b245859270998c5a48479742f17acbd1dc6e686",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.8440106183988973e-05,
+            "maximum_positive": 2376.526123046875,
+            "mean_positive": 0.2411523312330246
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2236314432811923e-05,
+            "maximum_positive": 99.9706802368164,
+            "mean_positive": 0.03984630107879639
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000221792928641662,
+            "maximum_positive": 3013.1044921875,
+            "mean_positive": 0.2272726148366928
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.202733053825796e-06,
+            "maximum_positive": 81.33012390136719,
+            "mean_positive": 0.03726308420300484
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2888930541521404e-05,
+            "maximum_positive": 2737.40576171875,
+            "mean_positive": 0.22289785742759705
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2230448191985488e-05,
+            "maximum_positive": 68.59790802001953,
+            "mean_positive": 0.03832286596298218
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2894143765151966e-05,
+            "maximum_positive": 2170.845703125,
+            "mean_positive": 0.22111399471759796
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.103544855141081e-05,
+            "maximum_positive": 75.05438232421875,
+            "mean_positive": 0.03953506052494049
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001371173857478425,
+            "maximum_positive": 1633.0609130859375,
+            "mean_positive": 0.20883727073669434
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2226999388076365e-05,
+            "maximum_positive": 69.31306457519531,
+            "mean_positive": 0.035861242562532425
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.473510777344927e-05,
+            "maximum_positive": 3166.211669921875,
+            "mean_positive": 0.23178577423095703
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3663488061865792e-05,
+            "maximum_positive": 65.86956024169922,
+            "mean_positive": 0.04176882281899452
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003141511115245521,
+            "maximum_positive": 2382.397216796875,
+            "mean_positive": 0.22632765769958496
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.358102417725604e-05,
+            "maximum_positive": 64.35313415527344,
+            "mean_positive": 0.038902297616004944
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.419012061087415e-05,
+            "maximum_positive": 2465.329833984375,
+            "mean_positive": 0.21556903421878815
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2337272892182227e-05,
+            "maximum_positive": 64.42436981201172,
+            "mean_positive": 0.03559086099267006
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00031295762164518237,
+            "maximum_positive": 2263.265869140625,
+            "mean_positive": 0.2379714995622635
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2847242032876238e-05,
+            "maximum_positive": 68.48506927490234,
+            "mean_positive": 0.03761238232254982
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00020262344332877547,
+            "maximum_positive": 2833.07861328125,
+            "mean_positive": 0.24062605202198029
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2252371561771724e-05,
+            "maximum_positive": 66.35237121582031,
+            "mean_positive": 0.038607362657785416
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00017230591038241982,
+            "maximum_positive": 3274.44775390625,
+            "mean_positive": 0.242817223072052
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2843289368902333e-05,
+            "maximum_positive": 74.0403823852539,
+            "mean_positive": 0.04111708700656891
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.193983376258984e-05,
+            "maximum_positive": 3218.0322265625,
+            "mean_positive": 0.24108527600765228
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.253880236617988e-05,
+            "maximum_positive": 72.92225646972656,
+            "mean_positive": 0.04086175933480263
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE03",
+      "city_name": "Karlsruhe",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE03_Karlsruhe\\DE03_Karlsruhe_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "6428270314969ebec4da1fee332da1a0f9d7a2cc0383fe0856a7d3ab5ff35bd7",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005919605027884245,
+            "maximum_positive": 1608.2598876953125,
+            "mean_positive": 0.2233981341123581
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2392170901875943e-05,
+            "maximum_positive": 512.0787353515625,
+            "mean_positive": 0.039239685982465744
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00021084891341160983,
+            "maximum_positive": 1671.0780029296875,
+            "mean_positive": 0.20695824921131134
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.545780833112076e-05,
+            "maximum_positive": 540.1458129882812,
+            "mean_positive": 0.035921115428209305
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00016314259846694767,
+            "maximum_positive": 1353.68359375,
+            "mean_positive": 0.1952938288450241
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4807459592702799e-05,
+            "maximum_positive": 690.8173217773438,
+            "mean_positive": 0.03899835795164108
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000781608687248081,
+            "maximum_positive": 1405.4417724609375,
+            "mean_positive": 0.18461526930332184
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5405143130919896e-05,
+            "maximum_positive": 684.3182983398438,
+            "mean_positive": 0.03539140149950981
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008090570336207747,
+            "maximum_positive": 1455.001953125,
+            "mean_positive": 0.1620882749557495
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.657235563674476e-05,
+            "maximum_positive": 835.823486328125,
+            "mean_positive": 0.02939922921359539
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007878677570261061,
+            "maximum_positive": 1645.388916015625,
+            "mean_positive": 0.17829374969005585
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.037800550169777e-05,
+            "maximum_positive": 722.8621215820312,
+            "mean_positive": 0.034271690994501114
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010264716111123562,
+            "maximum_positive": 1480.903076171875,
+            "mean_positive": 0.16886314749717712
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7243890397367068e-05,
+            "maximum_positive": 733.4381103515625,
+            "mean_positive": 0.0321962796151638
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008304974180646241,
+            "maximum_positive": 992.9601440429688,
+            "mean_positive": 0.17516762018203735
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.544362930872012e-05,
+            "maximum_positive": 697.0691528320312,
+            "mean_positive": 0.03253592923283577
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001603654003702104,
+            "maximum_positive": 1293.256103515625,
+            "mean_positive": 0.18690024316310883
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7410153304808773e-05,
+            "maximum_positive": 586.9099731445312,
+            "mean_positive": 0.032424066215753555
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009454764076508582,
+            "maximum_positive": 1488.617431640625,
+            "mean_positive": 0.18545202910900116
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7187685443786904e-05,
+            "maximum_positive": 604.6870727539062,
+            "mean_positive": 0.03302180767059326
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007761489832773805,
+            "maximum_positive": 1398.0635986328125,
+            "mean_positive": 0.19131158292293549
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.164093504892662e-05,
+            "maximum_positive": 563.63427734375,
+            "mean_positive": 0.03558066859841347
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009017543634399772,
+            "maximum_positive": 1435.9505615234375,
+            "mean_positive": 0.18994039297103882
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.6590769013855606e-05,
+            "maximum_positive": 700.6593017578125,
+            "mean_positive": 0.036163683980703354
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE04",
+      "city_name": "Stuttgart",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE04_Stuttgart\\DE04_Stuttgart_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "ec37e06fcb61570ebd909dbd87997689d2b826984b4a603cef8a7b3b82c9b87f",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018277551280334592,
+            "maximum_positive": 1199.13232421875,
+            "mean_positive": 0.2985057830810547
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.944577317975927e-05,
+            "maximum_positive": 194.31625366210938,
+            "mean_positive": 0.05064283311367035
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008528587059117854,
+            "maximum_positive": 1045.051025390625,
+            "mean_positive": 0.2797366678714752
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.443195651518181e-05,
+            "maximum_positive": 192.97547912597656,
+            "mean_positive": 0.0474017933011055
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016640006797388196,
+            "maximum_positive": 1388.9188232421875,
+            "mean_positive": 0.26867708563804626
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4433296200877521e-05,
+            "maximum_positive": 175.39117431640625,
+            "mean_positive": 0.050137653946876526
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018739720107987523,
+            "maximum_positive": 1470.1982421875,
+            "mean_positive": 0.25860410928726196
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.431603141099913e-05,
+            "maximum_positive": 207.05552673339844,
+            "mean_positive": 0.048085328191518784
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014247241197153926,
+            "maximum_positive": 1201.0086669921875,
+            "mean_positive": 0.23041212558746338
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.697773980908096e-05,
+            "maximum_positive": 193.0865478515625,
+            "mean_positive": 0.040024757385253906
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017679297598078847,
+            "maximum_positive": 1104.2940673828125,
+            "mean_positive": 0.26297155022621155
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.728658627253026e-05,
+            "maximum_positive": 184.64852905273438,
+            "mean_positive": 0.047492388635873795
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001799253048375249,
+            "maximum_positive": 1291.270263671875,
+            "mean_positive": 0.2507430613040924
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.605689850402996e-05,
+            "maximum_positive": 209.4868927001953,
+            "mean_positive": 0.04486570507287979
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001104209222830832,
+            "maximum_positive": 1180.2529296875,
+            "mean_positive": 0.25380584597587585
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.853892409708351e-05,
+            "maximum_positive": 183.7082061767578,
+            "mean_positive": 0.04480551928281784
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001978668151423335,
+            "maximum_positive": 1231.297119140625,
+            "mean_positive": 0.2728763520717621
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.206448597367853e-05,
+            "maximum_positive": 162.4266357421875,
+            "mean_positive": 0.04555054008960724
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013816457940265536,
+            "maximum_positive": 1040.7913818359375,
+            "mean_positive": 0.27206388115882874
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001378877932438627,
+            "maximum_positive": 192.1246795654297,
+            "mean_positive": 0.04555764049291611
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0019448173698037863,
+            "maximum_positive": 1089.1632080078125,
+            "mean_positive": 0.27023354172706604
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00016037469322327524,
+            "maximum_positive": 163.02154541015625,
+            "mean_positive": 0.04750944301486015
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0015464823227375746,
+            "maximum_positive": 1128.8887939453125,
+            "mean_positive": 0.26476600766181946
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001669277553446591,
+            "maximum_positive": 273.7027587890625,
+            "mean_positive": 0.04663636162877083
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE05",
+      "city_name": "Munich",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE05_Munich\\DE05_Munich_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "3b7612268fb43e7c674eb95b692ffd1495ee31c1df425f89b896d943c8614226",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001582396507728845,
+            "maximum_positive": 2989.702392578125,
+            "mean_positive": 0.2825915515422821
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2969706403964665e-05,
+            "maximum_positive": 803.2949829101562,
+            "mean_positive": 0.04948776960372925
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.057174272835255e-05,
+            "maximum_positive": 2785.003173828125,
+            "mean_positive": 0.28103458881378174
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.0130971531907562e-05,
+            "maximum_positive": 735.49658203125,
+            "mean_positive": 0.04823527857661247
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.58317653182894e-05,
+            "maximum_positive": 2965.705078125,
+            "mean_positive": 0.30281493067741394
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5420393538079225e-05,
+            "maximum_positive": 799.6647338867188,
+            "mean_positive": 0.05310450866818428
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002785844844765961,
+            "maximum_positive": 2250.351318359375,
+            "mean_positive": 0.2562962770462036
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5419778719660826e-05,
+            "maximum_positive": 622.961181640625,
+            "mean_positive": 0.04963691160082817
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002445780555717647,
+            "maximum_positive": 2474.220458984375,
+            "mean_positive": 0.2389126718044281
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.542650534247514e-05,
+            "maximum_positive": 706.5504150390625,
+            "mean_positive": 0.04393434897065163
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000602710759267211,
+            "maximum_positive": 2590.1064453125,
+            "mean_positive": 0.26274406909942627
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.6784069885034114e-05,
+            "maximum_positive": 732.5913696289062,
+            "mean_positive": 0.05051662400364876
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00039298521005548537,
+            "maximum_positive": 2243.240966796875,
+            "mean_positive": 0.2533072829246521
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7085902072722092e-05,
+            "maximum_positive": 641.0823364257812,
+            "mean_positive": 0.047201208770275116
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00042968359775841236,
+            "maximum_positive": 2507.870361328125,
+            "mean_positive": 0.2657727003097534
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.551828427182045e-05,
+            "maximum_positive": 712.2378540039062,
+            "mean_positive": 0.04802244156599045
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005203515174798667,
+            "maximum_positive": 2396.97216796875,
+            "mean_positive": 0.25817960500717163
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.708982563286554e-05,
+            "maximum_positive": 672.5316772460938,
+            "mean_positive": 0.046875763684511185
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00031457343720830977,
+            "maximum_positive": 2544.960205078125,
+            "mean_positive": 0.2648337781429291
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5506668205489404e-05,
+            "maximum_positive": 688.3616333007812,
+            "mean_positive": 0.04650162532925606
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00026917600189335644,
+            "maximum_positive": 2272.53515625,
+            "mean_positive": 0.2788662910461426
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7127444152720273e-05,
+            "maximum_positive": 646.1326293945312,
+            "mean_positive": 0.05021969601511955
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00032187195029109716,
+            "maximum_positive": 2495.995849609375,
+            "mean_positive": 0.27359965443611145
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.390876215940807e-05,
+            "maximum_positive": 697.7867431640625,
+            "mean_positive": 0.04935908690094948
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE06",
+      "city_name": "Nuremberg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE06_Nuremberg\\DE06_Nuremberg_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "f13588736238521963f8af5fb6d52cdabc41662c0ced09db6ac50d676744addd",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001253920840099454,
+            "maximum_positive": 4350.8154296875,
+            "mean_positive": 0.2524051070213318
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5008683476480655e-05,
+            "maximum_positive": 346.3207702636719,
+            "mean_positive": 0.03695216029882431
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009136968292295933,
+            "maximum_positive": 7729.5205078125,
+            "mean_positive": 0.2579462230205536
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4099329746386502e-05,
+            "maximum_positive": 172.65097045898438,
+            "mean_positive": 0.03466290980577469
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000680557219311595,
+            "maximum_positive": 4399.54736328125,
+            "mean_positive": 0.2328503429889679
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4827660379523877e-05,
+            "maximum_positive": 135.2393035888672,
+            "mean_positive": 0.03211979940533638
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009258217760361731,
+            "maximum_positive": 8679.283203125,
+            "mean_positive": 0.20852339267730713
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.225783439120278e-05,
+            "maximum_positive": 113.086669921875,
+            "mean_positive": 0.031711868941783905
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007791719399392605,
+            "maximum_positive": 6347.3291015625,
+            "mean_positive": 0.23016105592250824
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.613885175785981e-05,
+            "maximum_positive": 206.04574584960938,
+            "mean_positive": 0.03354606032371521
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014224527403712273,
+            "maximum_positive": 8479.2275390625,
+            "mean_positive": 0.23538833856582642
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.8405509510776028e-05,
+            "maximum_positive": 128.74017333984375,
+            "mean_positive": 0.03705982118844986
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014787098625674844,
+            "maximum_positive": 6595.70068359375,
+            "mean_positive": 0.2465699464082718
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001039080016198568,
+            "maximum_positive": 162.20635986328125,
+            "mean_positive": 0.03886043280363083
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009382732678204775,
+            "maximum_positive": 7759.31201171875,
+            "mean_positive": 0.23244430124759674
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.696522485872265e-05,
+            "maximum_positive": 157.3358154296875,
+            "mean_positive": 0.0351925753057003
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011256053112447262,
+            "maximum_positive": 7828.841796875,
+            "mean_positive": 0.2361723631620407
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.419295146362856e-05,
+            "maximum_positive": 140.01248168945312,
+            "mean_positive": 0.034847501665353775
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013600739184767008,
+            "maximum_positive": 7243.7451171875,
+            "mean_positive": 0.24219897389411926
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.0136580133112147e-05,
+            "maximum_positive": 194.71705627441406,
+            "mean_positive": 0.0344357006251812
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001235359231941402,
+            "maximum_positive": 7182.50634765625,
+            "mean_positive": 0.22890661656856537
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.195536894258112e-05,
+            "maximum_positive": 147.1092987060547,
+            "mean_positive": 0.03374366834759712
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020685172639787197,
+            "maximum_positive": 6748.9833984375,
+            "mean_positive": 0.23947010934352875
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7577547623659484e-05,
+            "maximum_positive": 145.54551696777344,
+            "mean_positive": 0.03475058823823929
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE07",
+      "city_name": "Frankfurt",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE07_Frankfurt\\DE07_Frankfurt_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "6fc63537a339b9d777faa0830ff36146e43c571d9ad2439b4267960c87a3b77e",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010335793922422454,
+            "maximum_positive": 10521.0478515625,
+            "mean_positive": 0.32676827907562256
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.253955178981414e-05,
+            "maximum_positive": 3728.151611328125,
+            "mean_positive": 0.06046208366751671
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001780946331564337,
+            "maximum_positive": 9166.7265625,
+            "mean_positive": 0.29508060216903687
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.534282980894204e-06,
+            "maximum_positive": 2580.35107421875,
+            "mean_positive": 0.05520883947610855
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.304916339810006e-05,
+            "maximum_positive": 10589.3203125,
+            "mean_positive": 0.29093581438064575
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2548027370939963e-05,
+            "maximum_positive": 3715.802490234375,
+            "mean_positive": 0.0556182935833931
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00015870989591348916,
+            "maximum_positive": 10589.673828125,
+            "mean_positive": 0.2833963632583618
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.0642834240570664e-05,
+            "maximum_positive": 3397.625732421875,
+            "mean_positive": 0.05666995793581009
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00033976626582443714,
+            "maximum_positive": 9841.2138671875,
+            "mean_positive": 0.2586365342140198
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2565647921292111e-05,
+            "maximum_positive": 2234.026123046875,
+            "mean_positive": 0.05030110478401184
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0006788598839193583,
+            "maximum_positive": 9075.7939453125,
+            "mean_positive": 0.28124597668647766
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.400253222527681e-05,
+            "maximum_positive": 1839.6116943359375,
+            "mean_positive": 0.05656184256076813
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007227922906167805,
+            "maximum_positive": 6538.99609375,
+            "mean_positive": 0.26874247193336487
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.328691178059671e-05,
+            "maximum_positive": 1114.9691162109375,
+            "mean_positive": 0.05212506279349327
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00016860502364579588,
+            "maximum_positive": 5758.712890625,
+            "mean_positive": 0.26603907346725464
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2571380466397386e-05,
+            "maximum_positive": 1022.07861328125,
+            "mean_positive": 0.0500933974981308
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00033122068271040916,
+            "maximum_positive": 10506.6123046875,
+            "mean_positive": 0.2968056797981262
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3892808055970818e-05,
+            "maximum_positive": 3037.532470703125,
+            "mean_positive": 0.054264821112155914
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0004447616229299456,
+            "maximum_positive": 10591.1015625,
+            "mean_positive": 0.305631548166275
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2569991667987779e-05,
+            "maximum_positive": 3619.77685546875,
+            "mean_positive": 0.055775608867406845
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002811399463098496,
+            "maximum_positive": 11618.578125,
+            "mean_positive": 0.30513516068458557
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.400470227963524e-05,
+            "maximum_positive": 3604.177978515625,
+            "mean_positive": 0.058598555624485016
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00045414475607685745,
+            "maximum_positive": 10586.279296875,
+            "mean_positive": 0.2996061146259308
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2594767213158775e-05,
+            "maximum_positive": 3052.515380859375,
+            "mean_positive": 0.05778317525982857
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE08",
+      "city_name": "Cologne",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE08_Cologne\\DE08_Cologne_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "02c736f09912e8f883520c646f360b5c6d7f7fcf49df33255d7028b4a8b78e57",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.980876787565649e-05,
+            "maximum_positive": 3050.589111328125,
+            "mean_positive": 0.3480917811393738
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5208088370854966e-05,
+            "maximum_positive": 239.97100830078125,
+            "mean_positive": 0.05216251313686371
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00027902459260076284,
+            "maximum_positive": 2537.39404296875,
+            "mean_positive": 0.3127605617046356
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3879154721507803e-05,
+            "maximum_positive": 265.3484191894531,
+            "mean_positive": 0.0508403405547142
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.778412767336704e-05,
+            "maximum_positive": 2570.6142578125,
+            "mean_positive": 0.291655957698822
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5211818208626937e-05,
+            "maximum_positive": 248.17735290527344,
+            "mean_positive": 0.04790111631155014
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.799432205501944e-05,
+            "maximum_positive": 2743.585693359375,
+            "mean_positive": 0.2994650602340698
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5124443962122314e-05,
+            "maximum_positive": 268.7139892578125,
+            "mean_positive": 0.049823205918073654
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002767649421002716,
+            "maximum_positive": 2778.84130859375,
+            "mean_positive": 0.26923882961273193
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.530856388853863e-05,
+            "maximum_positive": 243.48451232910156,
+            "mean_positive": 0.04379783198237419
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00041852935100905597,
+            "maximum_positive": 2465.61669921875,
+            "mean_positive": 0.2875955104827881
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.6934931409195997e-05,
+            "maximum_positive": 236.0747833251953,
+            "mean_positive": 0.0489293597638607
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0006957202567718923,
+            "maximum_positive": 2148.99755859375,
+            "mean_positive": 0.28026673197746277
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7083886632462963e-05,
+            "maximum_positive": 214.46051025390625,
+            "mean_positive": 0.045924924314022064
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00020782103820238262,
+            "maximum_positive": 2399.506591796875,
+            "mean_positive": 0.2696009576320648
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5422774595208466e-05,
+            "maximum_positive": 196.63470458984375,
+            "mean_positive": 0.043697748333215714
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00048067615716718137,
+            "maximum_positive": 2023.8544921875,
+            "mean_positive": 0.27370554208755493
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.6389571101171896e-05,
+            "maximum_positive": 221.07725524902344,
+            "mean_positive": 0.04375966265797615
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00037168723065406084,
+            "maximum_positive": 2238.925537109375,
+            "mean_positive": 0.30771178007125854
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5241821529343724e-05,
+            "maximum_positive": 200.31637573242188,
+            "mean_positive": 0.04818286374211311
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0004943456733599305,
+            "maximum_positive": 2209.8525390625,
+            "mean_positive": 0.2998661994934082
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7009784642141312e-05,
+            "maximum_positive": 230.17575073242188,
+            "mean_positive": 0.049974799156188965
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00028517641476355493,
+            "maximum_positive": 2321.69091796875,
+            "mean_positive": 0.31103280186653137
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5363790225819685e-05,
+            "maximum_positive": 224.53067016601562,
+            "mean_positive": 0.051435697823762894
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE09",
+      "city_name": "Dusseldorf",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE09_Dusseldorf\\DE09_Dusseldorf_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "8cd99d10d88331cdf7510daddd20088adb187a7e71103506d54d6818ab7fd2b1",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0006794905057176948,
+            "maximum_positive": 2381.433349609375,
+            "mean_positive": 0.3218458294868469
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5649571651010774e-05,
+            "maximum_positive": 272.867919921875,
+            "mean_positive": 0.04914083331823349
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014585764147341251,
+            "maximum_positive": 1779.3621826171875,
+            "mean_positive": 0.2777037024497986
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5800118490005843e-05,
+            "maximum_positive": 285.4011535644531,
+            "mean_positive": 0.04636488854885101
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007445535156875849,
+            "maximum_positive": 5100.421875,
+            "mean_positive": 0.2571816146373749
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.573134068166837e-05,
+            "maximum_positive": 234.2386016845703,
+            "mean_positive": 0.042569924145936966
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007547058630734682,
+            "maximum_positive": 3736.794677734375,
+            "mean_positive": 0.272169291973114
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.634583531995304e-05,
+            "maximum_positive": 257.9492492675781,
+            "mean_positive": 0.044858336448669434
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011277914745733142,
+            "maximum_positive": 4121.2177734375,
+            "mean_positive": 0.2396734654903412
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.0202211089781485e-05,
+            "maximum_positive": 226.0022735595703,
+            "mean_positive": 0.03959356248378754
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010012793354690075,
+            "maximum_positive": 4738.2607421875,
+            "mean_positive": 0.25891056656837463
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00015307837747968733,
+            "maximum_positive": 217.73184204101562,
+            "mean_positive": 0.04485602676868439
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018283696845173836,
+            "maximum_positive": 3013.980224609375,
+            "mean_positive": 0.25538045167922974
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00018624872609507293,
+            "maximum_positive": 218.45407104492188,
+            "mean_positive": 0.0426192507147789
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00046228335122577846,
+            "maximum_positive": 3072.418212890625,
+            "mean_positive": 0.24428915977478027
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.1219224436208606e-05,
+            "maximum_positive": 198.74969482421875,
+            "mean_positive": 0.04011126235127449
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000894856930244714,
+            "maximum_positive": 6087.5166015625,
+            "mean_positive": 0.2536957263946533
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00014155515236780047,
+            "maximum_positive": 184.3456573486328,
+            "mean_positive": 0.04087309539318085
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014576971298083663,
+            "maximum_positive": 4582.837890625,
+            "mean_positive": 0.2826319932937622
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.256199362222105e-05,
+            "maximum_positive": 193.51925659179688,
+            "mean_positive": 0.04421558231115341
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011733309365808964,
+            "maximum_positive": 3728.5107421875,
+            "mean_positive": 0.27101677656173706
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.190740557736717e-05,
+            "maximum_positive": 192.84176635742188,
+            "mean_positive": 0.04567031189799309
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001280519412830472,
+            "maximum_positive": 2611.32568359375,
+            "mean_positive": 0.2779529094696045
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011052322952309623,
+            "maximum_positive": 244.2351531982422,
+            "mean_positive": 0.04679315537214279
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE10",
+      "city_name": "Dortmund",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE10_Dortmund\\DE10_Dortmund_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "5f3fc9b1238c469bf42fc1feb0f4671934c964f58bc5a3ad3f3211aac4c5c74f",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00017530510376673192,
+            "maximum_positive": 1353.198974609375,
+            "mean_positive": 0.25481757521629333
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4993698641774245e-05,
+            "maximum_positive": 232.37530517578125,
+            "mean_positive": 0.044151272624731064
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005061570554971695,
+            "maximum_positive": 4526.017578125,
+            "mean_positive": 0.23999950289726257
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.1435661690484267e-05,
+            "maximum_positive": 324.15289306640625,
+            "mean_positive": 0.04173605516552925
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010342756286263466,
+            "maximum_positive": 6706.2265625,
+            "mean_positive": 0.22896593809127808
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.482181869505439e-05,
+            "maximum_positive": 327.5213928222656,
+            "mean_positive": 0.04013543203473091
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.337267404887825e-05,
+            "maximum_positive": 3017.75,
+            "mean_positive": 0.2343938648700714
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4817400369793177e-05,
+            "maximum_positive": 278.70343017578125,
+            "mean_positive": 0.042101286351680756
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.58958374010399e-05,
+            "maximum_positive": 4803.32958984375,
+            "mean_positive": 0.20972183346748352
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5270672520273365e-05,
+            "maximum_positive": 260.18743896484375,
+            "mean_positive": 0.03581096604466438
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002960790880024433,
+            "maximum_positive": 5515.830078125,
+            "mean_positive": 0.2257118821144104
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.6994810721371323e-05,
+            "maximum_positive": 270.63580322265625,
+            "mean_positive": 0.04032672196626663
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008257080335170031,
+            "maximum_positive": 4813.00048828125,
+            "mean_positive": 0.22256329655647278
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.6997493730741553e-05,
+            "maximum_positive": 209.45945739746094,
+            "mean_positive": 0.03874368220567703
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005301002529449761,
+            "maximum_positive": 4310.8115234375,
+            "mean_positive": 0.20847171545028687
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5097305549716111e-05,
+            "maximum_positive": 215.08221435546875,
+            "mean_positive": 0.03525051474571228
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005974863306619227,
+            "maximum_positive": 1943.5390625,
+            "mean_positive": 0.21647991240024567
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.699963104329072e-05,
+            "maximum_positive": 224.8140411376953,
+            "mean_positive": 0.036090534180402756
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008491342887282372,
+            "maximum_positive": 1526.0167236328125,
+            "mean_positive": 0.24325339496135712
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.525588595541194e-05,
+            "maximum_positive": 243.27398681640625,
+            "mean_positive": 0.04026802256703377
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003610425628721714,
+            "maximum_positive": 1830.6981201171875,
+            "mean_positive": 0.23734372854232788
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.6983714886009693e-05,
+            "maximum_positive": 230.17575073242188,
+            "mean_positive": 0.04218360036611557
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002601168234832585,
+            "maximum_positive": 1799.0111083984375,
+            "mean_positive": 0.2422523945569992
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5281659216270782e-05,
+            "maximum_positive": 261.0647277832031,
+            "mean_positive": 0.04352767392992973
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE11",
+      "city_name": "Hamburg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE11_Hamburg\\DE11_Hamburg_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "ca54b60890d4ba34557789a09645ea8e505255a7e5efcae67556ffc0dd8ed730",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.9721337594091892e-05,
+            "maximum_positive": 6226.54296875,
+            "mean_positive": 0.33626750111579895
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.1159670066263061e-05,
+            "maximum_positive": 433.77752685546875,
+            "mean_positive": 0.04502358287572861
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5432757209055126e-05,
+            "maximum_positive": 12433.4794921875,
+            "mean_positive": 0.3325749933719635
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4948805983294733e-05,
+            "maximum_positive": 944.3897094726562,
+            "mean_positive": 0.04413082078099251
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.54087865666952e-05,
+            "maximum_positive": 12204.134765625,
+            "mean_positive": 0.2828757166862488
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4947379895602353e-05,
+            "maximum_positive": 534.8688354492188,
+            "mean_positive": 0.04030154272913933
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00012000965944025666,
+            "maximum_positive": 12429.1142578125,
+            "mean_positive": 0.3064098358154297
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4879825357638765e-05,
+            "maximum_positive": 905.4721069335938,
+            "mean_positive": 0.04411899298429489
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00020343309734016657,
+            "maximum_positive": 12431.34765625,
+            "mean_positive": 0.2674318552017212
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4965003174438607e-05,
+            "maximum_positive": 435.02166748046875,
+            "mean_positive": 0.03567377105355263
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010505846148589626,
+            "maximum_positive": 12377.94140625,
+            "mean_positive": 0.30333182215690613
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4955458937038202e-05,
+            "maximum_positive": 746.9645385742188,
+            "mean_positive": 0.04147588834166527
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003299061208963394,
+            "maximum_positive": 7731.474609375,
+            "mean_positive": 0.28959497809410095
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.538150172564201e-05,
+            "maximum_positive": 236.3274688720703,
+            "mean_positive": 0.040517374873161316
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00035030068829655647,
+            "maximum_positive": 12432.5634765625,
+            "mean_positive": 0.2867377698421478
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4986409951234236e-05,
+            "maximum_positive": 674.4616088867188,
+            "mean_positive": 0.0394243486225605
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013899906480219215,
+            "maximum_positive": 12433.9609375,
+            "mean_positive": 0.29060670733451843
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.496275763201993e-05,
+            "maximum_positive": 550.991455078125,
+            "mean_positive": 0.03823018819093704
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001192752388305962,
+            "maximum_positive": 8903.794921875,
+            "mean_positive": 0.308877557516098
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.539926597615704e-05,
+            "maximum_positive": 293.005859375,
+            "mean_positive": 0.040552157908678055
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002040199178736657,
+            "maximum_positive": 13088.1357421875,
+            "mean_positive": 0.32988306879997253
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5795434592291713e-05,
+            "maximum_positive": 820.629638671875,
+            "mean_positive": 0.04448753595352173
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00025893852580338717,
+            "maximum_positive": 12223.9189453125,
+            "mean_positive": 0.31768423318862915
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5397852621390484e-05,
+            "maximum_positive": 551.57568359375,
+            "mean_positive": 0.04448455199599266
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE12",
+      "city_name": "Bremen",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE12_Bremen\\DE12_Bremen_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "ecd10ae447b28d681594ca061b7355c012c52fdfd020cd9c916109b8640dbf5c",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3882920029573143e-05,
+            "maximum_positive": 11637.34375,
+            "mean_positive": 0.21999491751194
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.370101745123975e-05,
+            "maximum_positive": 62.44596862792969,
+            "mean_positive": 0.03031475655734539
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.9709164917003363e-05,
+            "maximum_positive": 6663.9404296875,
+            "mean_positive": 0.19126500189304352
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.0436780939926393e-05,
+            "maximum_positive": 62.54533386230469,
+            "mean_positive": 0.027335150167346
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3749358913628384e-05,
+            "maximum_positive": 11656.3095703125,
+            "mean_positive": 0.19651013612747192
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2594184227054939e-05,
+            "maximum_positive": 60.52301025390625,
+            "mean_positive": 0.02566744014620781
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.528291068098042e-05,
+            "maximum_positive": 11601.11328125,
+            "mean_positive": 0.1707821935415268
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.356945085717598e-05,
+            "maximum_positive": 62.39230728149414,
+            "mean_positive": 0.025182517245411873
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001186840672744438,
+            "maximum_positive": 11654.427734375,
+            "mean_positive": 0.17552438378334045
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3704143384529743e-05,
+            "maximum_positive": 57.13404846191406,
+            "mean_positive": 0.024460813030600548
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005747096729464829,
+            "maximum_positive": 11651.328125,
+            "mean_positive": 0.19186890125274658
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.464377055526711e-05,
+            "maximum_positive": 62.746185302734375,
+            "mean_positive": 0.028917735442519188
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0004223657015245408,
+            "maximum_positive": 2002.52587890625,
+            "mean_positive": 0.1766013652086258
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.457014604966389e-05,
+            "maximum_positive": 68.20894622802734,
+            "mean_positive": 0.029257172718644142
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.525958062615246e-05,
+            "maximum_positive": 861.3998413085938,
+            "mean_positive": 0.16210001707077026
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.372565657220548e-05,
+            "maximum_positive": 63.8554573059082,
+            "mean_positive": 0.025737298652529716
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00021083164028823376,
+            "maximum_positive": 1454.810302734375,
+            "mean_positive": 0.16831013560295105
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3802707144350279e-05,
+            "maximum_positive": 68.75375366210938,
+            "mean_positive": 0.025779159739613533
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007678520050831139,
+            "maximum_positive": 2120.962158203125,
+            "mean_positive": 0.2021130472421646
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.374319526803447e-05,
+            "maximum_positive": 69.04579162597656,
+            "mean_positive": 0.029270054772496223
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013439450412988663,
+            "maximum_positive": 11655.544921875,
+            "mean_positive": 0.2258746176958084
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4171343536872882e-05,
+            "maximum_positive": 66.35765838623047,
+            "mean_positive": 0.029757261276245117
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00017518037930130959,
+            "maximum_positive": 11652.9287109375,
+            "mean_positive": 0.21098974347114563
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3744822354055941e-05,
+            "maximum_positive": 59.94099426269531,
+            "mean_positive": 0.029758187010884285
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE13",
+      "city_name": "Hanover",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE13_Hanover\\DE13_Hanover_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "8dd9307244bb6af691af2912e32c42420c5e6659602b586dddd659c119e82de0",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 0.980002,
+            "minimum_positive": 3.6248475225875154e-05,
+            "maximum_positive": 2238.2255859375,
+            "mean_positive": 0.2278355360031128
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 0.980002,
+            "minimum_positive": 6.513861990242731e-06,
+            "maximum_positive": 266.6982116699219,
+            "mean_positive": 0.035894837230443954
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 0.9832008888888889,
+            "minimum_positive": 9.15761265787296e-05,
+            "maximum_positive": 1765.811279296875,
+            "mean_positive": 0.21015028655529022
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 0.9832008888888889,
+            "minimum_positive": 1.781739058515086e-07,
+            "maximum_positive": 329.5206298828125,
+            "mean_positive": 0.03242209181189537
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 0.9811462222222223,
+            "minimum_positive": 1.88727026397828e-05,
+            "maximum_positive": 1526.3333740234375,
+            "mean_positive": 0.19093485176563263
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 0.9811462222222223,
+            "minimum_positive": 1.5772485539855552e-06,
+            "maximum_positive": 299.0164489746094,
+            "mean_positive": 0.03117132931947708
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 0.9801033333333333,
+            "minimum_positive": 1.9783867173828185e-05,
+            "maximum_positive": 2144.96240234375,
+            "mean_positive": 0.18547585606575012
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 0.9801033333333333,
+            "minimum_positive": 1.8944567159451253e-07,
+            "maximum_positive": 329.3822937011719,
+            "mean_positive": 0.03200694918632507
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 0.9851744444444445,
+            "minimum_positive": 3.48489334101032e-06,
+            "maximum_positive": 1634.672607421875,
+            "mean_positive": 0.1650758981704712
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 0.9851744444444445,
+            "minimum_positive": 3.347412871335109e-07,
+            "maximum_positive": 281.559814453125,
+            "mean_positive": 0.028720797970891
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 0.9810852222222223,
+            "minimum_positive": 5.4434760386357084e-05,
+            "maximum_positive": 1538.6925048828125,
+            "mean_positive": 0.1763705164194107
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 0.9810852222222223,
+            "minimum_positive": 9.882071935862768e-06,
+            "maximum_positive": 278.96978759765625,
+            "mean_positive": 0.03313562646508217
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 0.9824101111111111,
+            "minimum_positive": 1.9421449906076305e-05,
+            "maximum_positive": 1553.9747314453125,
+            "mean_positive": 0.19316783547401428
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 0.9824101111111111,
+            "minimum_positive": 1.8341114582653972e-07,
+            "maximum_positive": 292.5788269042969,
+            "mean_positive": 0.033848024904727936
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 0.9809067777777778,
+            "minimum_positive": 9.294942174165044e-06,
+            "maximum_positive": 1603.1802978515625,
+            "mean_positive": 0.17765319347381592
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 0.9809067777777778,
+            "minimum_positive": 4.5299921680452826e-07,
+            "maximum_positive": 291.6256408691406,
+            "mean_positive": 0.029950568452477455
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 0.9827843333333334,
+            "minimum_positive": 0.00016753835370764136,
+            "maximum_positive": 1529.93603515625,
+            "mean_positive": 0.18418851494789124
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 0.9827843333333334,
+            "minimum_positive": 1.3111583939462435e-05,
+            "maximum_positive": 309.7962951660156,
+            "mean_positive": 0.030087631195783615
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 0.9822578888888889,
+            "minimum_positive": 0.0005999372806400061,
+            "maximum_positive": 1673.760498046875,
+            "mean_positive": 0.22226457297801971
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 0.9822578888888889,
+            "minimum_positive": 4.134304163017077e-06,
+            "maximum_positive": 268.89794921875,
+            "mean_positive": 0.033677197992801666
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 0.9837888888888889,
+            "minimum_positive": 0.00016816651623230428,
+            "maximum_positive": 1719.788330078125,
+            "mean_positive": 0.2193351686000824
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 0.9837888888888889,
+            "minimum_positive": 1.3403639968601055e-05,
+            "maximum_positive": 311.0375671386719,
+            "mean_positive": 0.034768376499414444
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 0.982947,
+            "minimum_positive": 0.00031917073647491634,
+            "maximum_positive": 1585.986083984375,
+            "mean_positive": 0.2192876785993576
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 0.982947,
+            "minimum_positive": 2.57172223427915e-06,
+            "maximum_positive": 314.7122802734375,
+            "mean_positive": 0.034572798758745193
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE14",
+      "city_name": "Berlin",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE14_Berlin\\DE14_Berlin_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "1484f04c5f0548d28d7ce389d34ddc2d8e6cacbfbd3a8370b5e372f05f861837",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.777855353197083e-05,
+            "maximum_positive": 2893.681396484375,
+            "mean_positive": 0.40666285157203674
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.1723012903530616e-05,
+            "maximum_positive": 967.9068603515625,
+            "mean_positive": 0.06935658305883408
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.7051848519477062e-05,
+            "maximum_positive": 2764.3291015625,
+            "mean_positive": 0.3691495358943939
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.1843907486763783e-05,
+            "maximum_positive": 639.3624267578125,
+            "mean_positive": 0.06474645435810089
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3923176993557718e-05,
+            "maximum_positive": 3064.61865234375,
+            "mean_positive": 0.37879660725593567
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3813704754284117e-05,
+            "maximum_positive": 1179.37841796875,
+            "mean_positive": 0.06741226464509964
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00016829418018460274,
+            "maximum_positive": 2403.381103515625,
+            "mean_positive": 0.33903738856315613
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.387036627420457e-05,
+            "maximum_positive": 898.4579467773438,
+            "mean_positive": 0.060884952545166016
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00024228189431596547,
+            "maximum_positive": 2377.694580078125,
+            "mean_positive": 0.3457290828227997
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3822502296534367e-05,
+            "maximum_positive": 831.2815551757812,
+            "mean_positive": 0.06108909845352173
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009915713453665376,
+            "maximum_positive": 2451.439208984375,
+            "mean_positive": 0.35062289237976074
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5348277884186246e-05,
+            "maximum_positive": 607.349365234375,
+            "mean_positive": 0.06270884722471237
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007268006447702646,
+            "maximum_positive": 2355.47802734375,
+            "mean_positive": 0.36760401725769043
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.645659540372435e-05,
+            "maximum_positive": 953.5374755859375,
+            "mean_positive": 0.06474513560533524
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00020064652198925614,
+            "maximum_positive": 2583.518798828125,
+            "mean_positive": 0.3439829647541046
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3882115126762073e-05,
+            "maximum_positive": 969.5242919921875,
+            "mean_positive": 0.06077716499567032
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003689965815283358,
+            "maximum_positive": 2537.13818359375,
+            "mean_positive": 0.35562872886657715
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3923488040745724e-05,
+            "maximum_positive": 1560.3131103515625,
+            "mean_positive": 0.06145321577787399
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00042407953878864646,
+            "maximum_positive": 3263.118896484375,
+            "mean_positive": 0.3675520420074463
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3871364899387117e-05,
+            "maximum_positive": 1964.5555419921875,
+            "mean_positive": 0.06399084627628326
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013855964061804116,
+            "maximum_positive": 3595.95849609375,
+            "mean_positive": 0.3782646059989929
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5356541553046554e-05,
+            "maximum_positive": 2018.04150390625,
+            "mean_positive": 0.06763532757759094
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.914413041959051e-05,
+            "maximum_positive": 2610.004638671875,
+            "mean_positive": 0.3754408359527588
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.387467455060687e-05,
+            "maximum_positive": 1055.8050537109375,
+            "mean_positive": 0.06620502471923828
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE15",
+      "city_name": "Leipzig",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE15_Leipzig\\DE15_Leipzig_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "c9b47e328e600c2f58c51c6f0d51cafa26d6ff6e6bfc885b7368d89047e1654d",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5736632121843286e-05,
+            "maximum_positive": 4181.7822265625,
+            "mean_positive": 0.20862674713134766
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3065995517536066e-05,
+            "maximum_positive": 294.6941223144531,
+            "mean_positive": 0.027835579589009285
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3812476026942022e-05,
+            "maximum_positive": 4015.408203125,
+            "mean_positive": 0.19429168105125427
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.0276129614794627e-05,
+            "maximum_positive": 273.2041015625,
+            "mean_positive": 0.025229576975107193
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3852258234692272e-05,
+            "maximum_positive": 4068.1015625,
+            "mean_positive": 0.18171024322509766
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3732213119510561e-05,
+            "maximum_positive": 108.457763671875,
+            "mean_positive": 0.024638665840029716
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.4906545149860904e-05,
+            "maximum_positive": 3963.677001953125,
+            "mean_positive": 0.1562531441450119
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.372880615235772e-05,
+            "maximum_positive": 100.02506256103516,
+            "mean_positive": 0.022207308560609818
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00012280201190151274,
+            "maximum_positive": 3865.573486328125,
+            "mean_positive": 0.16389866173267365
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3769782526651397e-05,
+            "maximum_positive": 102.6435317993164,
+            "mean_positive": 0.02375040575861931
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.05202401150018e-05,
+            "maximum_positive": 4013.832763671875,
+            "mean_positive": 0.17733582854270935
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3802909961668774e-05,
+            "maximum_positive": 89.42443084716797,
+            "mean_positive": 0.029331455007195473
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00026506773428991437,
+            "maximum_positive": 4079.285400390625,
+            "mean_positive": 0.17889395356178284
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3738021152676083e-05,
+            "maximum_positive": 91.09429168701172,
+            "mean_positive": 0.025119660422205925
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.943015715572983e-05,
+            "maximum_positive": 3943.921630859375,
+            "mean_positive": 0.1685597151517868
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.381509628117783e-05,
+            "maximum_positive": 92.03669738769531,
+            "mean_positive": 0.02217865362763405
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.131860184017569e-05,
+            "maximum_positive": 4377.896484375,
+            "mean_positive": 0.1776932328939438
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3796962775813881e-05,
+            "maximum_positive": 93.38127136230469,
+            "mean_positive": 0.022632308304309845
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00033724887180142105,
+            "maximum_positive": 4294.1943359375,
+            "mean_positive": 0.19979308545589447
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4491050933429506e-05,
+            "maximum_positive": 104.49626159667969,
+            "mean_positive": 0.024724643677473068
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.70374497026205e-05,
+            "maximum_positive": 4160.80126953125,
+            "mean_positive": 0.19811128079891205
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3800474334857427e-05,
+            "maximum_positive": 74.33479309082031,
+            "mean_positive": 0.025227874517440796
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.305053102551028e-05,
+            "maximum_positive": 4434.41015625,
+            "mean_positive": 0.1924244463443756
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3752317499893252e-05,
+            "maximum_positive": 81.58819580078125,
+            "mean_positive": 0.024443017318844795
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE16",
+      "city_name": "Dresden",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE16_Dresden\\DE16_Dresden_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "8a43e0f6658af1a39aa1f7794c874dd57097ece1231ca514a373321401006ac0",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 0.9999276666666667,
+            "minimum_positive": 0.0008834368782117963,
+            "maximum_positive": 912.6809692382812,
+            "mean_positive": 0.16550302505493164
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 0.9999276666666667,
+            "minimum_positive": 1.1743003597075585e-05,
+            "maximum_positive": 63.551185607910156,
+            "mean_positive": 0.03015288896858692
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00034821609733626246,
+            "maximum_positive": 715.2627563476562,
+            "mean_positive": 0.14256560802459717
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.000881396379555e-06,
+            "maximum_positive": 74.5288314819336,
+            "mean_positive": 0.02518383413553238
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.392149902647361e-05,
+            "maximum_positive": 752.1463623046875,
+            "mean_positive": 0.14490914344787598
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3954230780655053e-05,
+            "maximum_positive": 58.0684700012207,
+            "mean_positive": 0.02869368903338909
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007155241328291595,
+            "maximum_positive": 588.5228881835938,
+            "mean_positive": 0.1396157592535019
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4539241419697646e-05,
+            "maximum_positive": 59.42573547363281,
+            "mean_positive": 0.028166480362415314
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008252201369032264,
+            "maximum_positive": 839.281005859375,
+            "mean_positive": 0.1366310864686966
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4889823432895355e-05,
+            "maximum_positive": 64.58442687988281,
+            "mean_positive": 0.025780558586120605
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0004044136148877442,
+            "maximum_positive": 689.7427368164062,
+            "mean_positive": 0.15796516835689545
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4930227735021617e-05,
+            "maximum_positive": 67.6102066040039,
+            "mean_positive": 0.03248145431280136
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003915367997251451,
+            "maximum_positive": 560.2886352539062,
+            "mean_positive": 0.16164952516555786
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.640184382267762e-05,
+            "maximum_positive": 83.28750610351562,
+            "mean_positive": 0.0308143962174654
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007400932372547686,
+            "maximum_positive": 736.1415405273438,
+            "mean_positive": 0.15218907594680786
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.538670767331496e-05,
+            "maximum_positive": 58.20623016357422,
+            "mean_positive": 0.027756059542298317
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0006142870988696814,
+            "maximum_positive": 511.39776611328125,
+            "mean_positive": 0.1597777009010315
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.641954804654233e-05,
+            "maximum_positive": 68.19540405273438,
+            "mean_positive": 0.029197651892900467
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007788038346916437,
+            "maximum_positive": 482.77410888671875,
+            "mean_positive": 0.16505135595798492
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4820102478552144e-05,
+            "maximum_positive": 65.52277374267578,
+            "mean_positive": 0.028521452099084854
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0004268449265509844,
+            "maximum_positive": 625.1116943359375,
+            "mean_positive": 0.15925565361976624
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.64886823768029e-05,
+            "maximum_positive": 53.79417037963867,
+            "mean_positive": 0.02940939925611019
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009296665666624904,
+            "maximum_positive": 575.5667114257812,
+            "mean_positive": 0.1571529507637024
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.573246299813036e-05,
+            "maximum_positive": 66.04420471191406,
+            "mean_positive": 0.028654566034674644
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE17",
+      "city_name": "Munster",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE17_Munster\\DE17_Munster_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "72b703a7f19539bf749ef835d440f311efdc85aa8c9048049799a8965acf56d2",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00018583850760478526,
+            "maximum_positive": 3122.730712890625,
+            "mean_positive": 0.17176774144172668
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4917647604306694e-05,
+            "maximum_positive": 433.33001708984375,
+            "mean_positive": 0.03115406632423401
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013292491203173995,
+            "maximum_positive": 3017.4775390625,
+            "mean_positive": 0.14756697416305542
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4825464859313797e-05,
+            "maximum_positive": 434.126953125,
+            "mean_positive": 0.0261167474091053
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003264257684350014,
+            "maximum_positive": 3114.2138671875,
+            "mean_positive": 0.12804731726646423
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4753122741240077e-05,
+            "maximum_positive": 448.7265319824219,
+            "mean_positive": 0.02271602861583233
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00036370643647387624,
+            "maximum_positive": 3041.7314453125,
+            "mean_positive": 0.1361142247915268
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3376255083130673e-05,
+            "maximum_positive": 446.4515380859375,
+            "mean_positive": 0.02515813335776329
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000751740240957588,
+            "maximum_positive": 3171.8212890625,
+            "mean_positive": 0.11813849955797195
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5069773326104041e-05,
+            "maximum_positive": 445.4471740722656,
+            "mean_positive": 0.02040322870016098
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016443984350189567,
+            "maximum_positive": 2977.738037109375,
+            "mean_positive": 0.13583870232105255
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.2961363356444053e-05,
+            "maximum_positive": 418.14752197265625,
+            "mean_positive": 0.026461120694875717
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011430801823735237,
+            "maximum_positive": 2895.598388671875,
+            "mean_positive": 0.13446682691574097
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.903248216374777e-05,
+            "maximum_positive": 421.845458984375,
+            "mean_positive": 0.024972055107355118
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008654987323097885,
+            "maximum_positive": 3468.764404296875,
+            "mean_positive": 0.13231919705867767
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5007271940703504e-05,
+            "maximum_positive": 482.38702392578125,
+            "mean_positive": 0.02330237440764904
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008585133473388851,
+            "maximum_positive": 2924.77587890625,
+            "mean_positive": 0.14281065762043
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.218905501649715e-05,
+            "maximum_positive": 409.62548828125,
+            "mean_positive": 0.024875614792108536
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017122648423537612,
+            "maximum_positive": 2938.98193359375,
+            "mean_positive": 0.1693188101053238
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4996358004282229e-05,
+            "maximum_positive": 437.34326171875,
+            "mean_positive": 0.02842816710472107
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009877533884719014,
+            "maximum_positive": 2525.966552734375,
+            "mean_positive": 0.16110917925834656
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.2648177036899142e-05,
+            "maximum_positive": 347.226806640625,
+            "mean_positive": 0.029225381091237068
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013382754987105727,
+            "maximum_positive": 3139.3759765625,
+            "mean_positive": 0.16318529844284058
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.875068664958235e-05,
+            "maximum_positive": 444.57769775390625,
+            "mean_positive": 0.030076829716563225
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE18",
+      "city_name": "Freiburg",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE18_Freiburg\\DE18_Freiburg_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "1cafb2ae55018f5119e5664e1baf436821f5ea5b091cef4ad690dbc4cb2e778e",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005687562515959144,
+            "maximum_positive": 2297.30712890625,
+            "mean_positive": 0.17790375649929047
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2851416613557376e-05,
+            "maximum_positive": 131.76287841796875,
+            "mean_positive": 0.032908760011196136
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.040231477934867e-05,
+            "maximum_positive": 2565.369384765625,
+            "mean_positive": 0.16774538159370422
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.1489510143292136e-05,
+            "maximum_positive": 146.27578735351562,
+            "mean_positive": 0.0295376218855381
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013191385369282216,
+            "maximum_positive": 2708.0810546875,
+            "mean_positive": 0.17040438950061798
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2854718988819513e-05,
+            "maximum_positive": 148.42880249023438,
+            "mean_positive": 0.03259585425257683
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.693382940487936e-05,
+            "maximum_positive": 2428.88720703125,
+            "mean_positive": 0.17206791043281555
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.855442840489559e-06,
+            "maximum_positive": 159.64566040039062,
+            "mean_positive": 0.034695982933044434
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.27900439617224e-05,
+            "maximum_positive": 2182.08203125,
+            "mean_positive": 0.16650861501693726
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3369798580242787e-05,
+            "maximum_positive": 155.270263671875,
+            "mean_positive": 0.03138161078095436
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00027987276553176343,
+            "maximum_positive": 2233.76171875,
+            "mean_positive": 0.18003159761428833
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4648714568465948e-05,
+            "maximum_positive": 153.57955932617188,
+            "mean_positive": 0.03610673546791077
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00038171029882505536,
+            "maximum_positive": 2300.07177734375,
+            "mean_positive": 0.17721407115459442
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.698401269502938e-05,
+            "maximum_positive": 152.5692138671875,
+            "mean_positive": 0.03449065983295441
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0004229059850331396,
+            "maximum_positive": 2179.299072265625,
+            "mean_positive": 0.17301374673843384
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.340767448709812e-05,
+            "maximum_positive": 141.86473083496094,
+            "mean_positive": 0.03248712420463562
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007125703850761056,
+            "maximum_positive": 2442.72412109375,
+            "mean_positive": 0.1842973679304123
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5107145372894593e-05,
+            "maximum_positive": 152.55523681640625,
+            "mean_positive": 0.03429044410586357
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00039690802805125713,
+            "maximum_positive": 2081.88427734375,
+            "mean_positive": 0.17864060401916504
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3561389096139465e-05,
+            "maximum_positive": 129.7190704345703,
+            "mean_positive": 0.03358982875943184
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00018905135220848024,
+            "maximum_positive": 2608.33154296875,
+            "mean_positive": 0.17643341422080994
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5095265553100035e-05,
+            "maximum_positive": 136.25364685058594,
+            "mean_positive": 0.03488793224096298
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.166528328321874e-05,
+            "maximum_positive": 2223.916259765625,
+            "mean_positive": 0.17991910874843597
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2852357940573711e-05,
+            "maximum_positive": 126.70586395263672,
+            "mean_positive": 0.03521948680281639
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE19",
+      "city_name": "Kiel",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE19_Kiel\\DE19_Kiel_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "575392e2be2f696050b80268a44d0fb8a064257de08a9e6fef0d9e8b8986732d",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2661294931604061e-05,
+            "maximum_positive": 497.5483093261719,
+            "mean_positive": 0.15082499384880066
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2080659871571697e-05,
+            "maximum_positive": 57.12052536010742,
+            "mean_positive": 0.0256530549377203
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.029386764159426e-05,
+            "maximum_positive": 462.63397216796875,
+            "mean_positive": 0.1334550529718399
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.344131972786272e-06,
+            "maximum_positive": 43.90730285644531,
+            "mean_positive": 0.02090962789952755
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011804495443357155,
+            "maximum_positive": 519.6407470703125,
+            "mean_positive": 0.1296418309211731
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.915456419344991e-06,
+            "maximum_positive": 57.0245361328125,
+            "mean_positive": 0.0227640513330698
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5105952115845867e-05,
+            "maximum_positive": 489.9096374511719,
+            "mean_positive": 0.1138395145535469
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.50059849047102e-06,
+            "maximum_positive": 54.66521072387695,
+            "mean_positive": 0.022271249443292618
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3940899407316465e-05,
+            "maximum_positive": 670.4943237304688,
+            "mean_positive": 0.10255599766969681
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2398715625749901e-05,
+            "maximum_positive": 54.68901443481445,
+            "mean_positive": 0.01899772137403488
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00039058932452462614,
+            "maximum_positive": 681.4031982421875,
+            "mean_positive": 0.13100330531597137
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.247816180693917e-05,
+            "maximum_positive": 54.481109619140625,
+            "mean_positive": 0.026107409968972206
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00030980893643572927,
+            "maximum_positive": 490.5129089355469,
+            "mean_positive": 0.13246729969978333
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.247909040102968e-05,
+            "maximum_positive": 52.283660888671875,
+            "mean_positive": 0.027050890028476715
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.3089811040554196e-05,
+            "maximum_positive": 701.1802978515625,
+            "mean_positive": 0.11920415610074997
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2366553164611105e-05,
+            "maximum_positive": 48.760807037353516,
+            "mean_positive": 0.020529212430119514
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.927343929419294e-05,
+            "maximum_positive": 496.8818359375,
+            "mean_positive": 0.14371849596500397
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2499510376073886e-05,
+            "maximum_positive": 46.04041290283203,
+            "mean_positive": 0.023703331127762794
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008236430585384369,
+            "maximum_positive": 501.54241943359375,
+            "mean_positive": 0.16287009418010712
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2401802450767718e-05,
+            "maximum_positive": 50.53961944580078,
+            "mean_positive": 0.024568531662225723
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00015796117077115923,
+            "maximum_positive": 506.3634948730469,
+            "mean_positive": 0.15925846993923187
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2459541721909773e-05,
+            "maximum_positive": 51.81471633911133,
+            "mean_positive": 0.02705417387187481
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000344840285833925,
+            "maximum_positive": 476.3611755371094,
+            "mean_positive": 0.15680941939353943
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2370385775284376e-05,
+            "maximum_positive": 54.167816162109375,
+            "mean_positive": 0.02658330835402012
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE20",
+      "city_name": "Rostock",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d1\\DE20_Rostock\\DE20_Rostock_S1_MT_D1_MONTHLY_2025.tif",
+        "sha256": "003588071cd393546dbd039191608de25b9284eec9bbcf431f5d73572e65a9f3",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_M01",
+          "VH_M01",
+          "VV_M02",
+          "VH_M02",
+          "VV_M03",
+          "VH_M03",
+          "VV_M04",
+          "VH_M04",
+          "VV_M05",
+          "VH_M05",
+          "VV_M06",
+          "VH_M06",
+          "VV_M07",
+          "VH_M07",
+          "VV_M08",
+          "VH_M08",
+          "VV_M09",
+          "VH_M09",
+          "VV_M10",
+          "VH_M10",
+          "VV_M11",
+          "VH_M11",
+          "VV_M12",
+          "VH_M12"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.853402788285166e-05,
+            "maximum_positive": 2241.576171875,
+            "mean_positive": 0.16874772310256958
+          },
+          {
+            "band": "VH_M01",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2767673979396932e-05,
+            "maximum_positive": 115.79759216308594,
+            "mean_positive": 0.026530658826231956
+          },
+          {
+            "band": "VV_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005220683524385095,
+            "maximum_positive": 1866.2099609375,
+            "mean_positive": 0.1411450058221817
+          },
+          {
+            "band": "VH_M02",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.285751053132117e-06,
+            "maximum_positive": 111.03605651855469,
+            "mean_positive": 0.02182161808013916
+          },
+          {
+            "band": "VV_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.224274380248971e-05,
+            "maximum_positive": 441.3163146972656,
+            "mean_positive": 0.12203891575336456
+          },
+          {
+            "band": "VH_M03",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2748627341352403e-05,
+            "maximum_positive": 115.39908599853516,
+            "mean_positive": 0.02027074620127678
+          },
+          {
+            "band": "VV_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000828187505248934,
+            "maximum_positive": 1016.2554931640625,
+            "mean_positive": 0.09932421892881393
+          },
+          {
+            "band": "VH_M04",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2832826541853137e-05,
+            "maximum_positive": 98.48001098632812,
+            "mean_positive": 0.01998959109187126
+          },
+          {
+            "band": "VV_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0006256535416468978,
+            "maximum_positive": 1157.9317626953125,
+            "mean_positive": 0.09840770810842514
+          },
+          {
+            "band": "VH_M05",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.27991042973008e-05,
+            "maximum_positive": 126.51988983154297,
+            "mean_positive": 0.019455531612038612
+          },
+          {
+            "band": "VV_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007400597678497434,
+            "maximum_positive": 890.952880859375,
+            "mean_positive": 0.12769261002540588
+          },
+          {
+            "band": "VH_M06",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2988886737730354e-05,
+            "maximum_positive": 113.31462097167969,
+            "mean_positive": 0.028138048946857452
+          },
+          {
+            "band": "VV_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009140417096205056,
+            "maximum_positive": 1242.2628173828125,
+            "mean_positive": 0.12934544682502747
+          },
+          {
+            "band": "VH_M07",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4356524843606167e-05,
+            "maximum_positive": 116.02677917480469,
+            "mean_positive": 0.027155637741088867
+          },
+          {
+            "band": "VV_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000347564258845523,
+            "maximum_positive": 607.6612548828125,
+            "mean_positive": 0.11617418378591537
+          },
+          {
+            "band": "VH_M08",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.282051107409643e-05,
+            "maximum_positive": 105.70079040527344,
+            "mean_positive": 0.01929735764861107
+          },
+          {
+            "band": "VV_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002306825917912647,
+            "maximum_positive": 1357.1502685546875,
+            "mean_positive": 0.12775005400180817
+          },
+          {
+            "band": "VH_M09",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3775923434877768e-05,
+            "maximum_positive": 113.2440185546875,
+            "mean_positive": 0.01994493044912815
+          },
+          {
+            "band": "VV_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016837799921631813,
+            "maximum_positive": 1282.5679931640625,
+            "mean_positive": 0.16519713401794434
+          },
+          {
+            "band": "VH_M10",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2823627912439406e-05,
+            "maximum_positive": 121.61566925048828,
+            "mean_positive": 0.024106673896312714
+          },
+          {
+            "band": "VV_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005154454265721142,
+            "maximum_positive": 2107.966064453125,
+            "mean_positive": 0.1622925102710724
+          },
+          {
+            "band": "VH_M11",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3141428098606411e-05,
+            "maximum_positive": 122.33826446533203,
+            "mean_positive": 0.026591291651129723
+          },
+          {
+            "band": "VV_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001337917521595955,
+            "maximum_positive": 1541.0408935546875,
+            "mean_positive": 0.15037105977535248
+          },
+          {
+            "band": "VH_M12",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.284435438719811e-05,
+            "maximum_positive": 114.45771026611328,
+            "mean_positive": 0.025000177323818207
+          }
+        ]
+      }
+    }
+  ]
+}

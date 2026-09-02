@@ -1,0 +1,8 @@
+{
+  "dataset_version": "v3-mt-d1",
+  "status": "FROZEN",
+  "frozen_at_utc": "2026-09-02T21:43:52.556189+00:00",
+  "freeze_record": "metadata\\dataset_v3_mt_d1\\freeze\\dataset_v3_mt_d1_freeze.json",
+  "freeze_record_sha256": "957c7c746fe22b9765b30b3aa47c0a97d0c631591732aafa911e569789c3bcbc",
+  "manifest_sha256": "1daa51177702c256cb831b0dd8a00c12d5df869dce3526332beeb166e9535b78"
+}

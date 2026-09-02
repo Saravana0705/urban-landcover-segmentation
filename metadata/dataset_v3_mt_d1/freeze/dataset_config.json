@@ -1,0 +1,341 @@
+{
+  "dataset_version": "v3-mt-d1",
+  "parent_dataset": "v3-mt",
+  "parent_label_dataset": "v3",
+  "freeze_status": "FROZEN",
+  "manifest_path": "metadata\\dataset_v3_mt_d1\\dataset_manifest.csv",
+  "manifest_sha256": "1daa51177702c256cb831b0dd8a00c12d5df869dce3526332beeb166e9535b78",
+  "input": {
+    "channels": [
+      "VV_M01",
+      "VH_M01",
+      "VV_M02",
+      "VH_M02",
+      "VV_M03",
+      "VH_M03",
+      "VV_M04",
+      "VH_M04",
+      "VV_M05",
+      "VH_M05",
+      "VV_M06",
+      "VH_M06",
+      "VV_M07",
+      "VH_M07",
+      "VV_M08",
+      "VH_M08",
+      "VV_M09",
+      "VH_M09",
+      "VV_M10",
+      "VH_M10",
+      "VV_M11",
+      "VH_M11",
+      "VV_M12",
+      "VH_M12"
+    ],
+    "channel_count": 24,
+    "enforce_band_descriptions": true,
+    "source_domain": "linear_sigma0",
+    "conversion": "10 * log10(max(linear_sigma0, epsilon))",
+    "tile_size": 256,
+    "spatial_resolution_m": 10,
+    "temporal_composites": [
+      "M01_2025",
+      "M02_2025",
+      "M03_2025",
+      "M04_2025",
+      "M05_2025",
+      "M06_2025",
+      "M07_2025",
+      "M08_2025",
+      "M09_2025",
+      "M10_2025",
+      "M11_2025",
+      "M12_2025"
+    ]
+  },
+  "normalization": {
+    "scope": "full_rasters_of_training_cities_only",
+    "validation_and_test_used": false,
+    "epsilon": 1e-10,
+    "bands": {
+      "VV_M01": {
+        "clip_lower_db": -19.283422355651854,
+        "clip_upper_db": 4.0769976997375394,
+        "mean_db": -8.839496916244487,
+        "std_db": 3.7242281832905206
+      },
+      "VH_M01": {
+        "clip_lower_db": -26.661636734008788,
+        "clip_upper_db": -4.842015762329112,
+        "mean_db": -15.871256257177716,
+        "std_db": 3.7498943706318877
+      },
+      "VV_M02": {
+        "clip_lower_db": -18.750726375579834,
+        "clip_upper_db": 3.889307205677023,
+        "mean_db": -9.27905259358199,
+        "std_db": 3.7669999215284253
+      },
+      "VH_M02": {
+        "clip_lower_db": -27.422382354736328,
+        "clip_upper_db": -4.844146146774369,
+        "mean_db": -16.48971916650478,
+        "std_db": 4.092173858884926
+      },
+      "VV_M03": {
+        "clip_lower_db": -19.93239097595215,
+        "clip_upper_db": 3.6902210068702552,
+        "mean_db": -9.599869616842287,
+        "std_db": 3.959346835457953
+      },
+      "VH_M03": {
+        "clip_lower_db": -28.3596813583374,
+        "clip_upper_db": -4.937134656906151,
+        "mean_db": -16.760226289567726,
+        "std_db": 4.479697459764419
+      },
+      "VV_M04": {
+        "clip_lower_db": -20.29702388763428,
+        "clip_upper_db": 3.5852798604964162,
+        "mean_db": -10.022957531163641,
+        "std_db": 4.294005426290182
+      },
+      "VH_M04": {
+        "clip_lower_db": -28.26105354309082,
+        "clip_upper_db": -4.955935759544409,
+        "mean_db": -16.773168186632134,
+        "std_db": 4.492347859031937
+      },
+      "VV_M05": {
+        "clip_lower_db": -21.245697593688966,
+        "clip_upper_db": 3.2429957747459084,
+        "mean_db": -10.410278453882087,
+        "std_db": 4.534673626769763
+      },
+      "VH_M05": {
+        "clip_lower_db": -28.169217109680176,
+        "clip_upper_db": -5.281630258560186,
+        "mean_db": -17.188070077017045,
+        "std_db": 4.34744742961737
+      },
+      "VV_M06": {
+        "clip_lower_db": -19.976364574432374,
+        "clip_upper_db": 3.350447883605952,
+        "mean_db": -9.483168058038249,
+        "std_db": 3.961083799923019
+      },
+      "VH_M06": {
+        "clip_lower_db": -26.71125280380249,
+        "clip_upper_db": -5.1528881502151735,
+        "mean_db": -16.008975809398105,
+        "std_db": 3.6888975308972185
+      },
+      "VV_M07": {
+        "clip_lower_db": -20.186214084625245,
+        "clip_upper_db": 3.3078341364860377,
+        "mean_db": -9.39269837655683,
+        "std_db": 3.821954583901412
+      },
+      "VH_M07": {
+        "clip_lower_db": -26.766084327697754,
+        "clip_upper_db": -5.254796876907394,
+        "mean_db": -16.140250439053283,
+        "std_db": 3.6472192102881578
+      },
+      "VV_M08": {
+        "clip_lower_db": -20.338528690338133,
+        "clip_upper_db": 3.2858586597442567,
+        "mean_db": -9.677576161982088,
+        "std_db": 3.9123313250198093
+      },
+      "VH_M08": {
+        "clip_lower_db": -27.375618934631348,
+        "clip_upper_db": -5.256173343658453,
+        "mean_db": -16.69529307827555,
+        "std_db": 3.979168939373217
+      },
+      "VV_M09": {
+        "clip_lower_db": -20.205715713500975,
+        "clip_upper_db": 3.3629901146888312,
+        "mean_db": -9.315469714515158,
+        "std_db": 3.763919737687688
+      },
+      "VH_M09": {
+        "clip_lower_db": -27.07988363265991,
+        "clip_upper_db": -5.276714115142827,
+        "mean_db": -16.41135647115654,
+        "std_db": 3.6635429776374497
+      },
+      "VV_M10": {
+        "clip_lower_db": -19.411527652740478,
+        "clip_upper_db": 3.6874340939521706,
+        "mean_db": -9.01220324876561,
+        "std_db": 3.6391987443505935
+      },
+      "VH_M10": {
+        "clip_lower_db": -26.740051670074465,
+        "clip_upper_db": -5.167128038406384,
+        "mean_db": -16.100341928970092,
+        "std_db": 3.5048142418846417
+      },
+      "VV_M11": {
+        "clip_lower_db": -20.526601409912107,
+        "clip_upper_db": 3.716729283332806,
+        "mean_db": -9.001396607852143,
+        "std_db": 3.6724040872892525
+      },
+      "VH_M11": {
+        "clip_lower_db": -26.789912452697752,
+        "clip_upper_db": -5.055969386100862,
+        "mean_db": -15.892871483677554,
+        "std_db": 3.5822765742375893
+      },
+      "VV_M12": {
+        "clip_lower_db": -19.961460609436035,
+        "clip_upper_db": 3.723563423156728,
+        "mean_db": -9.046529368506345,
+        "std_db": 3.6887535840132277
+      },
+      "VH_M12": {
+        "clip_lower_db": -26.739242553710938,
+        "clip_upper_db": -5.057099990844755,
+        "mean_db": -15.96227383990913,
+        "std_db": 3.7009935250930224
+      }
+    }
+  },
+  "labels": {
+    "semantic_nodata": 255,
+    "validity_valid": 1,
+    "validity_invalid": 0,
+    "classes": [
+      {
+        "class_id": 1,
+        "class_name": "buildings"
+      },
+      {
+        "class_id": 2,
+        "class_name": "roads"
+      },
+      {
+        "class_id": 3,
+        "class_name": "vegetation"
+      },
+      {
+        "class_id": 4,
+        "class_name": "bare_land"
+      },
+      {
+        "class_id": 5,
+        "class_name": "water"
+      }
+    ],
+    "reused_unchanged_from": "v3"
+  },
+  "splits": {
+    "train_city_ids": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14"
+    ],
+    "validation_city_ids": [
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test_city_ids": [
+      "DE18",
+      "DE19",
+      "DE20"
+    ],
+    "train_tile_count": 974,
+    "validation_tile_count": 351,
+    "test_tile_count": 339
+  },
+  "class_distribution": {
+    "train": {
+      "buildings": {
+        "pixel_count": 6143700,
+        "fraction_valid": 0.15577124909541012
+      },
+      "roads": {
+        "pixel_count": 4164241,
+        "fraction_valid": 0.10558279572640589
+      },
+      "vegetation": {
+        "pixel_count": 26526359,
+        "fraction_valid": 0.6725660555338435
+      },
+      "bare_land": {
+        "pixel_count": 294435,
+        "fraction_valid": 0.007465290904081756
+      },
+      "water": {
+        "pixel_count": 2311791,
+        "fraction_valid": 0.058614608740258686
+      }
+    },
+    "val": {
+      "buildings": {
+        "pixel_count": 855490,
+        "fraction_valid": 0.047780525368516145
+      },
+      "roads": {
+        "pixel_count": 814870,
+        "fraction_valid": 0.045511831473240776
+      },
+      "vegetation": {
+        "pixel_count": 15703372,
+        "fraction_valid": 0.877059187386464
+      },
+      "bare_land": {
+        "pixel_count": 55482,
+        "fraction_valid": 0.003098761070843625
+      },
+      "water": {
+        "pixel_count": 475361,
+        "fraction_valid": 0.026549694700935374
+      }
+    },
+    "test": {
+      "buildings": {
+        "pixel_count": 546980,
+        "fraction_valid": 0.0302773679912457
+      },
+      "roads": {
+        "pixel_count": 528487,
+        "fraction_valid": 0.029253711977749584
+      },
+      "vegetation": {
+        "pixel_count": 16087762,
+        "fraction_valid": 0.8905171856915772
+      },
+      "bare_land": {
+        "pixel_count": 23114,
+        "fraction_valid": 0.0012794454710403547
+      },
+      "water": {
+        "pixel_count": 879296,
+        "fraction_valid": 0.048672288868387106
+      }
+    }
+  },
+  "training_policy": {
+    "ignore_index": 255,
+    "use_validity_mask": true,
+    "training_selection": "identical to frozen Dataset V3-MT",
+    "validation_test_selection": "identical to frozen Dataset V3-MT",
+    "test_split_locked": true
+  }
+}

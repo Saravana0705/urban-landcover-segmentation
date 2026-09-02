@@ -1,0 +1,18 @@
+{
+  "schema_version": "dataset-v3-mt-d1-tile-qa-0.1",
+  "generated_at_utc": "2026-09-02T19:36:36.938653+00:00",
+  "status": "PASS",
+  "tile_count": 1664,
+  "passed_tile_count": 1664,
+  "failed_tile_count": 0,
+  "split_tile_counts": {
+    "test": 339,
+    "train": 974,
+    "val": 351
+  },
+  "manifest_sha256": "1daa51177702c256cb831b0dd8a00c12d5df869dce3526332beeb166e9535b78",
+  "failures": [],
+  "parent_dataset": "v3-mt",
+  "labels_reused_from": "v3",
+  "validation_policy": "V3-MT validity intersect all-24-band validity"
+}

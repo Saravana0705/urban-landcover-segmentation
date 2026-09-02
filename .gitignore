@@ -89,6 +89,9 @@ metadata/*_20*.csv
 kaggle_dataset_v3.zip
 kaggle_dataset_v3/
 
+# Locally packaged Kaggle datasets
+/data/kaggle/
+
 # Generated Dataset V3 archives
 metadata/dataset_v3/*.zip
 

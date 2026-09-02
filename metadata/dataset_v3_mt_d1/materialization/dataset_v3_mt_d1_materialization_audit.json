@@ -1,0 +1,37 @@
+{
+  "schema_version": "dataset-v3-mt-d1-materialization-audit-0.1",
+  "generated_at_utc": "2026-09-02T19:16:50.554456+00:00",
+  "status": "PASS",
+  "dataset_variant": "v3-mt-d1",
+  "parent_dataset": "v3-mt",
+  "labels_reused_from": "v3",
+  "parent_manifest": "metadata\\dataset_v3_mt\\dataset_manifest.csv",
+  "parent_manifest_sha256": "6f342ae5341b0c59ca6e2eb88e12192ecad1ee676eef47fe4536d8d20937f3de",
+  "accepted_parent_manifest_sha256": [
+    "8a6c3266609fbb6e060f754c9f53dd55a3b4e3681e8adafe1a88b72bda9a38b0",
+    "6f342ae5341b0c59ca6e2eb88e12192ecad1ee676eef47fe4536d8d20937f3de"
+  ],
+  "source_qa_sha256": "3e7e3846ce1e6edce3f5f10f5e111a1f86699b6a7a83005367284582980a1049",
+  "normalization_sha256": "72bdb6a26d79a4a28d76b64c481ebc227ee0f5cc93ea99e041419d8e271d8f68",
+  "normalization_provenance_sha256": "865ac440f4f7fef97ae4ad916f8ac56497cfc36a217421c15b70042b7418af42",
+  "tile_count": 1664,
+  "split_tile_counts": {
+    "test": 339,
+    "train": 974,
+    "val": 351
+  },
+  "raster_file_count": 4992,
+  "written_tile_count_this_run": 1664,
+  "resumed_tile_count": 0,
+  "parent_valid_pixel_count": 75410740,
+  "valid_pixel_count": 75410740,
+  "temporal_removed_valid_pixel_count": 0,
+  "temporal_retained_fraction_parent_valid": 1.0,
+  "de13_retained_fraction_parent_valid": 1.0,
+  "manifest": "metadata\\dataset_v3_mt_d1\\dataset_manifest.csv",
+  "manifest_sha256": "1daa51177702c256cb831b0dd8a00c12d5df869dce3526332beeb166e9535b78",
+  "city_summary": "metadata\\dataset_v3_mt_d1\\materialization\\dataset_v3_mt_d1_materialization_city_summary.csv",
+  "city_summary_sha256": "ff9d725e88077a633107c8270d3d3f789e9ed7427f4d1faccdd0be659f5e9fa8",
+  "legacy_dataset_artifacts_modified": false,
+  "qa_status": "PENDING_INDEPENDENT_TILE_QA"
+}
