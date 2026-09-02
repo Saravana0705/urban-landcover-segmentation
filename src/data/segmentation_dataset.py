@@ -38,6 +38,15 @@ import torch
 from torch import Tensor
 from torch.utils.data import Dataset
 
+from src.data.v3_mt_derived_features import (
+    F1_BANDS,
+    F2_BANDS,
+    LOCAL_BANDS,
+    RATIO_BANDS,
+    SOURCE_BANDS,
+    build_model_input_db,
+)
+
 
 DEFAULT_IGNORE_INDEX = 255
 
@@ -366,26 +375,56 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
         if not isinstance(ratio_names_raw, (list, tuple)):
             raise ValueError("cross_ratio.names must be an ordered list.")
         self.cross_ratio_names = [str(value).strip() for value in ratio_names_raw]
+        local_config = features.get("local_spatial", {})
+        if not isinstance(local_config, Mapping):
+            raise ValueError("derived_features.local_spatial must be a mapping.")
+        self.local_spatial_enabled = bool(local_config.get("enabled", False))
+        local_names_raw = local_config.get("names", [])
+        if not isinstance(local_names_raw, (list, tuple)):
+            raise ValueError("local_spatial.names must be an ordered list.")
+        self.local_spatial_names = [
+            str(value).strip() for value in local_names_raw
+        ]
+        self.local_window_size = int(local_config.get("window_size", 5))
+        normalization_bands = self.config["normalization"].get("bands", {})
+        self.local_fill_values_db = {
+            band_name: float(normalization_bands[band_name]["mean_db"])
+            for band_name in ("VH_Q1", "VH_Q2", "VH_Q3", "VH_Q4")
+            if band_name in normalization_bands
+        }
         if self.cross_ratio_enabled:
-            expected_sources = [
-                "VV_Q1", "VH_Q1", "VV_Q2", "VH_Q2",
-                "VV_Q3", "VH_Q3", "VV_Q4", "VH_Q4",
-            ]
-            expected_ratios = ["CR_Q1", "CR_Q2", "CR_Q3", "CR_Q4"]
-            if self.source_channel_names != expected_sources:
+            if self.source_channel_names != list(SOURCE_BANDS):
                 raise ValueError(
                     "Quarterly cross-ratio features require the canonical "
                     "eight-band V3-MT source order."
                 )
-            if self.cross_ratio_names != expected_ratios:
+            if self.cross_ratio_names != list(RATIO_BANDS):
                 raise ValueError(
                     "Quarterly cross-ratio names must be CR_Q1 through CR_Q4."
                 )
-            if self.channel_names != expected_sources + expected_ratios:
+            expected_channels = list(F1_BANDS)
+            if self.local_spatial_enabled:
+                if self.local_spatial_names != list(LOCAL_BANDS):
+                    raise ValueError(
+                        "Local spatial feature names/order do not match "
+                        "the canonical V3-MT-F2 schema."
+                    )
+                if self.local_window_size != 5:
+                    raise ValueError("V3-MT-F2 requires a fixed 5x5 window.")
+                if len(self.local_fill_values_db) != 4:
+                    raise ValueError(
+                        "V3-MT-F2 requires frozen means for VH_Q1 through VH_Q4."
+                    )
+                expected_channels = list(F2_BANDS)
+            if self.channel_names != expected_channels:
                 raise ValueError(
-                    "Model channel order must be eight source bands followed "
-                    "by CR_Q1 through CR_Q4."
+                    "Model channel order does not match the configured "
+                    "V3-MT derived-feature schema."
                 )
+        elif self.local_spatial_enabled:
+            raise ValueError(
+                "V3-MT-F2 local features require cross-ratio features enabled."
+            )
         elif self.source_channel_names != self.channel_names:
             raise ValueError(
                 "Source and model channels differ but no derived feature is enabled."
@@ -648,39 +687,21 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
 
     def _model_input_db(self, image: np.ndarray) -> np.ndarray:
         """Convert source sigma0 to dB and append configured derived channels."""
-        finite = np.isfinite(image)
-        positive = image > self.epsilon
-        usable = finite & positive
-
-        db = np.full_like(
-            image,
-            fill_value=np.nan,
-            dtype=np.float32,
-        )
-
-        db[usable] = (
-            10.0
-            * np.log10(
-                np.maximum(
-                    image[usable],
-                    self.epsilon,
-                )
+        if not self.cross_ratio_enabled and not self.local_spatial_enabled:
+            usable = np.isfinite(image) & (image > self.epsilon)
+            model_db = np.full_like(image, np.nan, dtype=np.float32)
+            model_db[usable] = (
+                10.0 * np.log10(np.maximum(image[usable], self.epsilon))
+            ).astype(np.float32)
+        else:
+            model_db = build_model_input_db(
+                image,
+                epsilon=self.epsilon,
+                include_cross_ratio=self.cross_ratio_enabled,
+                include_local_spatial=self.local_spatial_enabled,
+                local_fill_values_db=self.local_fill_values_db,
+                local_window_size=self.local_window_size,
             )
-        ).astype(np.float32)
-
-        model_db = db
-        if self.cross_ratio_enabled:
-            ratios = []
-            for quarter in range(4):
-                vv = db[quarter * 2]
-                vh = db[quarter * 2 + 1]
-                ratio = (vh - vv).astype(np.float32, copy=False)
-                ratio[~(np.isfinite(vv) & np.isfinite(vh))] = np.nan
-                ratios.append(ratio)
-            model_db = np.concatenate(
-                [db, np.stack(ratios, axis=0)],
-                axis=0,
-            ).astype(np.float32, copy=False)
 
         if model_db.shape[0] != self.channel_count:
             raise ValueError(

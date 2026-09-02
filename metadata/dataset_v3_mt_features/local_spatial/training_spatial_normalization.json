@@ -1,0 +1,124 @@
+{
+  "schema_version": "dataset-v3-mt-f2-spatial-normalization-0.1",
+  "generated_at_utc": "2026-09-02T05:38:50.886145+00:00",
+  "status": "PASS",
+  "dataset_variant": "v3-mt-f2",
+  "training_tile_count": 974,
+  "validation_and_test_used": false,
+  "band_order": [
+    "VH_Q1_MEDIAN_5X5",
+    "VH_Q1_MIN_5X5",
+    "VH_Q1_MAX_5X5",
+    "VH_Q1_RANGE_5X5",
+    "VH_Q2_MEDIAN_5X5",
+    "VH_Q2_MIN_5X5",
+    "VH_Q2_MAX_5X5",
+    "VH_Q2_RANGE_5X5",
+    "VH_Q3_MEDIAN_5X5",
+    "VH_Q3_MIN_5X5",
+    "VH_Q3_MAX_5X5",
+    "VH_Q3_RANGE_5X5",
+    "VH_Q4_MEDIAN_5X5",
+    "VH_Q4_MIN_5X5",
+    "VH_Q4_MAX_5X5",
+    "VH_Q4_RANGE_5X5"
+  ],
+  "bands": {
+    "VH_Q1_MEDIAN_5X5": {
+      "clip_lower_db": -27.8931884765625,
+      "clip_upper_db": -5.355997323989868,
+      "mean_db": -16.700027889643874,
+      "std_db": 4.032492087307142
+    },
+    "VH_Q1_MIN_5X5": {
+      "clip_lower_db": -32.699100494384766,
+      "clip_upper_db": -10.930665254592896,
+      "mean_db": -19.6794796417778,
+      "std_db": 4.058612796671909
+    },
+    "VH_Q1_MAX_5X5": {
+      "clip_lower_db": -25.032596111297607,
+      "clip_upper_db": 1.8798953890800476,
+      "mean_db": -13.721147675912746,
+      "std_db": 4.724933605566804
+    },
+    "VH_Q1_RANGE_5X5": {
+      "clip_lower_db": 2.182751178741455,
+      "clip_upper_db": 17.177999019622803,
+      "mean_db": 5.969268066089791,
+      "std_db": 2.9572105007600467
+    },
+    "VH_Q2_MEDIAN_5X5": {
+      "clip_lower_db": -28.380657196044922,
+      "clip_upper_db": -5.603546738624573,
+      "mean_db": -16.905612553808922,
+      "std_db": 4.016074970188477
+    },
+    "VH_Q2_MIN_5X5": {
+      "clip_lower_db": -32.0167932510376,
+      "clip_upper_db": -10.984779596328735,
+      "mean_db": -19.6154033214326,
+      "std_db": 3.843119991119576
+    },
+    "VH_Q2_MAX_5X5": {
+      "clip_lower_db": -25.938934326171875,
+      "clip_upper_db": 1.5284750163555145,
+      "mean_db": -14.07434322974263,
+      "std_db": 4.778695176905162
+    },
+    "VH_Q2_RANGE_5X5": {
+      "clip_lower_db": 1.8924899101257324,
+      "clip_upper_db": 16.7069993019104,
+      "mean_db": 5.542488796797115,
+      "std_db": 2.9770317042878025
+    },
+    "VH_Q3_MEDIAN_5X5": {
+      "clip_lower_db": -28.328310012817383,
+      "clip_upper_db": -5.642376184463501,
+      "mean_db": -16.71189839896413,
+      "std_db": 3.778707936265949
+    },
+    "VH_Q3_MIN_5X5": {
+      "clip_lower_db": -31.527446746826172,
+      "clip_upper_db": -11.064177513122559,
+      "mean_db": -19.26727812247545,
+      "std_db": 3.583368709311719
+    },
+    "VH_Q3_MAX_5X5": {
+      "clip_lower_db": -26.152772903442383,
+      "clip_upper_db": 1.5129104554653168,
+      "mean_db": -14.010496169036138,
+      "std_db": 4.5942892085804035
+    },
+    "VH_Q3_RANGE_5X5": {
+      "clip_lower_db": 1.7037849426269531,
+      "clip_upper_db": 16.588661670684814,
+      "mean_db": 5.256819361920932,
+      "std_db": 3.0008809146058164
+    },
+    "VH_Q4_MEDIAN_5X5": {
+      "clip_lower_db": -28.15139675140381,
+      "clip_upper_db": -5.494052886962891,
+      "mean_db": -16.1970844370338,
+      "std_db": 3.6649545091199225
+    },
+    "VH_Q4_MIN_5X5": {
+      "clip_lower_db": -31.40613079071045,
+      "clip_upper_db": -11.033508777618408,
+      "mean_db": -18.703959364413727,
+      "std_db": 3.5271783556568046
+    },
+    "VH_Q4_MAX_5X5": {
+      "clip_lower_db": -25.967758178710938,
+      "clip_upper_db": 1.8149644136428833,
+      "mean_db": -13.518807037553474,
+      "std_db": 4.445847236728432
+    },
+    "VH_Q4_RANGE_5X5": {
+      "clip_lower_db": 1.7501163482666016,
+      "clip_upper_db": 16.718520164489746,
+      "mean_db": 5.184460276496718,
+      "std_db": 2.9901911357973714
+    }
+  }
+}
