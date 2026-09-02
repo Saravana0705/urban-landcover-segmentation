@@ -1,0 +1,162 @@
+{
+  "schema_version": "dataset-v3-mt-freeze-0.1",
+  "dataset_version": "v3-mt",
+  "parent_label_dataset": "v3",
+  "freeze_status": "FROZEN",
+  "frozen_at_utc": "2026-09-02T00:06:39.809367+00:00",
+  "city_count": 20,
+  "tile_count": 1664,
+  "raster_file_count": 4992,
+  "split_tile_counts": {
+    "train": 974,
+    "val": 351,
+    "test": 339
+  },
+  "split_city_ids": {
+    "train": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14"
+    ],
+    "val": [
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test": [
+      "DE18",
+      "DE19",
+      "DE20"
+    ]
+  },
+  "valid_pixel_counts": {
+    "train": 39440526,
+    "val": 17904575,
+    "test": 18065639
+  },
+  "class_distribution": {
+    "train": {
+      "buildings": {
+        "pixel_count": 6143700,
+        "fraction_valid": 0.15577124909541012
+      },
+      "roads": {
+        "pixel_count": 4164241,
+        "fraction_valid": 0.10558279572640589
+      },
+      "vegetation": {
+        "pixel_count": 26526359,
+        "fraction_valid": 0.6725660555338435
+      },
+      "bare_land": {
+        "pixel_count": 294435,
+        "fraction_valid": 0.007465290904081756
+      },
+      "water": {
+        "pixel_count": 2311791,
+        "fraction_valid": 0.058614608740258686
+      }
+    },
+    "val": {
+      "buildings": {
+        "pixel_count": 855490,
+        "fraction_valid": 0.047780525368516145
+      },
+      "roads": {
+        "pixel_count": 814870,
+        "fraction_valid": 0.045511831473240776
+      },
+      "vegetation": {
+        "pixel_count": 15703372,
+        "fraction_valid": 0.877059187386464
+      },
+      "bare_land": {
+        "pixel_count": 55482,
+        "fraction_valid": 0.003098761070843625
+      },
+      "water": {
+        "pixel_count": 475361,
+        "fraction_valid": 0.026549694700935374
+      }
+    },
+    "test": {
+      "buildings": {
+        "pixel_count": 546980,
+        "fraction_valid": 0.0302773679912457
+      },
+      "roads": {
+        "pixel_count": 528487,
+        "fraction_valid": 0.029253711977749584
+      },
+      "vegetation": {
+        "pixel_count": 16087762,
+        "fraction_valid": 0.8905171856915772
+      },
+      "bare_land": {
+        "pixel_count": 23114,
+        "fraction_valid": 0.0012794454710403547
+      },
+      "water": {
+        "pixel_count": 879296,
+        "fraction_valid": 0.048672288868387106
+      }
+    }
+  },
+  "manifest_path": "metadata\\dataset_v3_mt\\dataset_manifest.csv",
+  "manifest_sha256": "8a6c3266609fbb6e060f754c9f53dd55a3b4e3681e8adafe1a88b72bda9a38b0",
+  "dataset_config_path": "metadata\\dataset_v3_mt\\freeze\\dataset_config.json",
+  "dataset_config_sha256": "eeb4328bc35032bfbb46f450358338fe2092482b09c1cdf25088b6ab47caf68c",
+  "metadata_checksums_path": "metadata\\dataset_v3_mt\\freeze\\metadata_checksums.json",
+  "mandatory_checks": {
+    "manifest_has_1664_unique_tiles": true,
+    "manifest_hash_is_authoritative": true,
+    "split_tile_counts_match": true,
+    "split_city_counts_match": true,
+    "city_splits_disjoint": true,
+    "training_city_ids_match": true,
+    "evaluation_city_ids_match": true,
+    "tile_qa_passed": true,
+    "tile_qa_manifest_hash_matches": true,
+    "tile_qa_split_counts_match": true,
+    "materialization_passed": true,
+    "materialization_manifest_hash_matches": true,
+    "materialization_split_counts_match": true,
+    "source_qa_passed": true,
+    "source_qa_hash_matches_materialization": true,
+    "normalization_passed": true,
+    "normalization_hash_matches_materialization": true,
+    "normalization_provenance_passed": true,
+    "normalization_provenance_hash_matches_materialization": true,
+    "class_pixels_reconcile_to_valid_pixels": true,
+    "all_manifest_rows_pass_qa": true,
+    "all_manifest_rows_materialized": true,
+    "all_image_paths_are_v3_mt": true,
+    "legacy_dataset_artifacts_unmodified": true
+  },
+  "all_checks_passed": true,
+  "experimental_control": {
+    "intervention": "replace two-band single-date SAR with eight-band quarterly SAR",
+    "labels_tiles_splits_unchanged_from_v3": true,
+    "paired_baseline": "unet_v3_e0_paired_50ep",
+    "primary_metric": "validation mean IoU"
+  },
+  "freeze_policy": {
+    "do_not_modify_or_regenerate_tiles": true,
+    "do_not_change_city_splits": true,
+    "do_not_recompute_normalization": true,
+    "future_data_changes_require_a_new_dataset_version": true,
+    "models_must_use_frozen_dataset_config": true,
+    "test_split_remains_locked_until_final_evaluation": true
+  }
+}

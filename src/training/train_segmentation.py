@@ -178,6 +178,65 @@ def build_segmentation_model(config: Mapping[str, Any]) -> nn.Module:
     """Construct the configured architecture through the model factory."""
     return build_model(config)
 
+
+def validate_model_dataset_contract(
+    config: Mapping[str, Any],
+    loaders: Mapping[str, DataLoader],
+) -> None:
+    """Fail before training if frozen data and model shapes disagree."""
+    model_channels = int(
+        nested_get(config, "model.input_channels", default=2)
+    )
+    declared_dataset_channels = int(
+        nested_get(
+            config,
+            "dataset.input_channels",
+            default=model_channels,
+        )
+    )
+    model_classes = int(
+        nested_get(config, "model.num_classes", default=len(CLASS_NAMES))
+    )
+    declared_dataset_classes = int(
+        nested_get(
+            config,
+            "dataset.num_classes",
+            default=model_classes,
+        )
+    )
+    if model_channels != declared_dataset_channels:
+        raise ValueError(
+            "YAML channel mismatch: model.input_channels="
+            f"{model_channels}, dataset.input_channels="
+            f"{declared_dataset_channels}."
+        )
+    if model_classes != declared_dataset_classes:
+        raise ValueError(
+            "YAML class mismatch: model.num_classes="
+            f"{model_classes}, dataset.num_classes="
+            f"{declared_dataset_classes}."
+        )
+
+    for split in ("train", "val"):
+        loader = loaders[split]
+        dataset = loader.dataset
+        actual_channels = int(getattr(dataset, "channel_count", -1))
+        actual_classes = int(getattr(dataset, "num_classes", -1))
+        if actual_channels != model_channels:
+            raise ValueError(
+                f"{split} dataset/model channel mismatch: "
+                f"dataset={actual_channels}, model={model_channels}."
+            )
+        if actual_classes != model_classes:
+            raise ValueError(
+                f"{split} dataset/model class mismatch: "
+                f"dataset={actual_classes}, model={model_classes}."
+            )
+
+    print("Dataset/model contract: PASS")
+    print(f"Input channels: {model_channels}")
+    print(f"Semantic classes: {model_classes}")
+
 def _call_supported(
     function: Callable[..., Any],
     candidate_kwargs: Mapping[str, Any],
@@ -1132,6 +1191,8 @@ def build_components(
         integration_check=integration_check,
     )
 
+    validate_model_dataset_contract(config, loaders)
+
     train_loader: Any = loaders["train"]
     validation_loader: Any = loaders["val"]
 
@@ -1248,7 +1309,8 @@ def build_components(
     print("-------------------------------")
     print(f"Loss: {loss_config.name}")
     print(f"CE weight: {loss_config.ce_weight}")
-    print(f"Dice weight: {loss_config.dice_weight}")
+    if loss_config.name in {"dice", "ce_dice"}:
+        print(f"Dice weight: {loss_config.dice_weight}")
 
     if loss_config.name in {"tversky", "ce_tversky"}:
         print(f"Tversky weight: {loss_config.tversky_weight}")
@@ -1759,7 +1821,7 @@ def main() -> None:
 
     if args.integration_check:
         print(
-            f"\nResult: real Dataset V1 → {display_name} integration "
+            f"\nResult: real configured dataset → {display_name} integration "
             "check completed successfully."
         )
         print(

@@ -1,0 +1,128 @@
+// Generated Dataset V3-MT full exporter. Do not edit city grids manually.
+var EXPORT_FOLDER = 'S1_MT_V3_ALL_CITIES_2025';
+var NODATA = -9999;
+var GRID_INSET_METRES = 1;
+
+var QUARTERS = __QUARTERS__;
+var CITIES = __CITIES__;
+
+// DE01 and DE15 already passed the pilot QA and are deliberately skipped.
+var RUN_CITY_IDS = __RUN_CITY_IDS__;
+
+function baseCollection(region) {
+  return ee.ImageCollection('COPERNICUS/S1_GRD')
+    .filterBounds(region)
+    .filter(ee.Filter.eq('instrumentMode', 'IW'))
+    .filter(ee.Filter.eq('resolution_meters', 10))
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+    .select(['VV', 'VH']);
+}
+
+function dbToLinear(image) {
+  return ee.Image(10).pow(image.divide(10))
+    .copyProperties(image, image.propertyNames());
+}
+
+function prepareCity(city) {
+  var region = ee.Geometry.Rectangle(city.bounds, city.crs, false);
+  var exportRegion = ee.Geometry.Rectangle([
+    city.bounds[0] + GRID_INSET_METRES,
+    city.bounds[1] + GRID_INSET_METRES,
+    city.bounds[2] - GRID_INSET_METRES,
+    city.bounds[3] - GRID_INSET_METRES
+  ], city.crs, false);
+  var collection = baseCollection(region);
+  var anchorDate = ee.Date(city.anchorTime);
+  var anchorCandidates = collection
+    .filterDate(anchorDate.advance(-12, 'hour'),
+                anchorDate.advance(12, 'hour'))
+    .map(function(image) {
+      var difference = ee.Number(image.get('system:time_start'))
+        .subtract(anchorDate.millis()).abs();
+      return image.set('anchor_time_difference_ms', difference);
+    })
+    .sort('anchor_time_difference_ms');
+  var anchor = ee.Image(anchorCandidates.first());
+  var orbitPass = anchor.get('orbitProperties_pass');
+  var relativeOrbit = anchor.get('relativeOrbitNumber_start');
+  var matched = collection
+    .filter(ee.Filter.eq('orbitProperties_pass', orbitPass))
+    .filter(ee.Filter.eq('relativeOrbitNumber_start', relativeOrbit));
+  var quarterlyCollections = QUARTERS.map(function(quarter) {
+    return matched.filterDate(quarter.start, quarter.end);
+  });
+  return {
+    region: region,
+    exportRegion: exportRegion,
+    anchor: anchor,
+    anchorCandidates: anchorCandidates,
+    orbitPass: orbitPass,
+    relativeOrbit: relativeOrbit,
+    quarterlyCollections: quarterlyCollections
+  };
+}
+
+function auditFeature(city, context) {
+  return ee.Feature(null, {
+    city_id: city.cityId,
+    city_name: city.cityName,
+    split: city.split,
+    registry_anchor_time: city.anchorTime,
+    anchor_candidate_count: context.anchorCandidates.size(),
+    selected_anchor_product: context.anchor.get('system:index'),
+    selected_anchor_time_ms: context.anchor.get('system:time_start'),
+    orbit_pass: context.orbitPass,
+    relative_orbit: context.relativeOrbit,
+    q1_observation_count: context.quarterlyCollections[0].size(),
+    q2_observation_count: context.quarterlyCollections[1].size(),
+    q3_observation_count: context.quarterlyCollections[2].size(),
+    q4_observation_count: context.quarterlyCollections[3].size()
+  });
+}
+
+function exportCity(city, context) {
+  var quarterlyImages = QUARTERS.map(function(quarter, index) {
+    return context.quarterlyCollections[index]
+      .map(dbToLinear)
+      .median()
+      .rename(['VV_' + quarter.name, 'VH_' + quarter.name]);
+  });
+  var output = ee.Image.cat(quarterlyImages)
+    .toFloat()
+    .unmask(NODATA, false)
+    .clip(context.region);
+  var description = city.cityId + '_' + city.cityName +
+    '_S1_MT_Q1Q4_2025';
+  Export.image.toDrive({
+    image: output,
+    description: description,
+    folder: EXPORT_FOLDER,
+    fileNamePrefix: description,
+    region: context.exportRegion,
+    crs: city.crs,
+    crsTransform: city.crsTransform,
+    maxPixels: 1e9,
+    fileFormat: 'GeoTIFF',
+    formatOptions: {cloudOptimized: true, noData: NODATA}
+  });
+}
+
+var auditFeatures = [];
+CITIES.forEach(function(city) {
+  var context = prepareCity(city);
+  auditFeatures.push(auditFeature(city, context));
+  if (RUN_CITY_IDS.indexOf(city.cityId) !== -1) {
+    exportCity(city, context);
+  }
+});
+
+var acquisitionAudit = ee.FeatureCollection(auditFeatures);
+print('Dataset V3-MT acquisition audit (20 cities):', acquisitionAudit);
+Export.table.toDrive({
+  collection: acquisitionAudit,
+  description: 'dataset_v3_mt_acquisition_audit_2025',
+  folder: EXPORT_FOLDER,
+  fileNamePrefix: 'dataset_v3_mt_acquisition_audit_2025',
+  fileFormat: 'CSV'
+});

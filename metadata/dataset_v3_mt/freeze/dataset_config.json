@@ -1,0 +1,220 @@
+{
+  "dataset_version": "v3-mt",
+  "parent_label_dataset": "v3",
+  "freeze_status": "FROZEN",
+  "manifest_path": "metadata\\dataset_v3_mt\\dataset_manifest.csv",
+  "manifest_sha256": "8a6c3266609fbb6e060f754c9f53dd55a3b4e3681e8adafe1a88b72bda9a38b0",
+  "input": {
+    "channels": [
+      "VV_Q1",
+      "VH_Q1",
+      "VV_Q2",
+      "VH_Q2",
+      "VV_Q3",
+      "VH_Q3",
+      "VV_Q4",
+      "VH_Q4"
+    ],
+    "channel_count": 8,
+    "enforce_band_descriptions": true,
+    "source_domain": "linear_sigma0",
+    "conversion": "10 * log10(max(linear_sigma0, epsilon))",
+    "tile_size": 256,
+    "spatial_resolution_m": 10,
+    "temporal_composites": [
+      "Q1_2025",
+      "Q2_2025",
+      "Q3_2025",
+      "Q4_2025"
+    ]
+  },
+  "normalization": {
+    "scope": "full_rasters_of_training_cities_only",
+    "validation_and_test_used": false,
+    "epsilon": 1e-10,
+    "bands": {
+      "VV_Q1": {
+        "clip_lower_db": -19.524761657714844,
+        "clip_upper_db": 3.592692234516067,
+        "mean_db": -9.338844775646937,
+        "std_db": 3.6594868443141535
+      },
+      "VH_Q1": {
+        "clip_lower_db": -26.633608131408693,
+        "clip_upper_db": -5.090638089180026,
+        "mean_db": -16.472445073288714,
+        "std_db": 3.921795454641337
+      },
+      "VV_Q2": {
+        "clip_lower_db": -20.28183982849121,
+        "clip_upper_db": 3.2179009437560566,
+        "mean_db": -9.955764190331031,
+        "std_db": 4.097385833318606
+      },
+      "VH_Q2": {
+        "clip_lower_db": -26.89206142425537,
+        "clip_upper_db": -5.333954539299039,
+        "mean_db": -16.5986628094515,
+        "std_db": 3.8742420239922657
+      },
+      "VV_Q3": {
+        "clip_lower_db": -20.34722583770752,
+        "clip_upper_db": 3.1866550540923964,
+        "mean_db": -9.461845285036272,
+        "std_db": 3.705731589216475
+      },
+      "VH_Q3": {
+        "clip_lower_db": -26.846966609954833,
+        "clip_upper_db": -5.417927837371845,
+        "mean_db": -16.385470750942794,
+        "std_db": 3.5811179522319536
+      },
+      "VV_Q4": {
+        "clip_lower_db": -20.11590353012085,
+        "clip_upper_db": 3.5338444066046777,
+        "mean_db": -9.014884868378159,
+        "std_db": 3.5532827088645615
+      },
+      "VH_Q4": {
+        "clip_lower_db": -26.703207588195802,
+        "clip_upper_db": -5.2078909301758145,
+        "mean_db": -15.966512537654557,
+        "std_db": 3.4400478744602987
+      }
+    }
+  },
+  "labels": {
+    "semantic_nodata": 255,
+    "validity_valid": 1,
+    "validity_invalid": 0,
+    "classes": [
+      {
+        "class_id": 1,
+        "class_name": "buildings"
+      },
+      {
+        "class_id": 2,
+        "class_name": "roads"
+      },
+      {
+        "class_id": 3,
+        "class_name": "vegetation"
+      },
+      {
+        "class_id": 4,
+        "class_name": "bare_land"
+      },
+      {
+        "class_id": 5,
+        "class_name": "water"
+      }
+    ],
+    "reused_unchanged_from": "v3"
+  },
+  "splits": {
+    "train_city_ids": [
+      "DE01",
+      "DE02",
+      "DE03",
+      "DE04",
+      "DE05",
+      "DE06",
+      "DE07",
+      "DE08",
+      "DE09",
+      "DE10",
+      "DE11",
+      "DE12",
+      "DE13",
+      "DE14"
+    ],
+    "validation_city_ids": [
+      "DE15",
+      "DE16",
+      "DE17"
+    ],
+    "test_city_ids": [
+      "DE18",
+      "DE19",
+      "DE20"
+    ],
+    "train_tile_count": 974,
+    "validation_tile_count": 351,
+    "test_tile_count": 339
+  },
+  "class_distribution": {
+    "train": {
+      "buildings": {
+        "pixel_count": 6143700,
+        "fraction_valid": 0.15577124909541012
+      },
+      "roads": {
+        "pixel_count": 4164241,
+        "fraction_valid": 0.10558279572640589
+      },
+      "vegetation": {
+        "pixel_count": 26526359,
+        "fraction_valid": 0.6725660555338435
+      },
+      "bare_land": {
+        "pixel_count": 294435,
+        "fraction_valid": 0.007465290904081756
+      },
+      "water": {
+        "pixel_count": 2311791,
+        "fraction_valid": 0.058614608740258686
+      }
+    },
+    "val": {
+      "buildings": {
+        "pixel_count": 855490,
+        "fraction_valid": 0.047780525368516145
+      },
+      "roads": {
+        "pixel_count": 814870,
+        "fraction_valid": 0.045511831473240776
+      },
+      "vegetation": {
+        "pixel_count": 15703372,
+        "fraction_valid": 0.877059187386464
+      },
+      "bare_land": {
+        "pixel_count": 55482,
+        "fraction_valid": 0.003098761070843625
+      },
+      "water": {
+        "pixel_count": 475361,
+        "fraction_valid": 0.026549694700935374
+      }
+    },
+    "test": {
+      "buildings": {
+        "pixel_count": 546980,
+        "fraction_valid": 0.0302773679912457
+      },
+      "roads": {
+        "pixel_count": 528487,
+        "fraction_valid": 0.029253711977749584
+      },
+      "vegetation": {
+        "pixel_count": 16087762,
+        "fraction_valid": 0.8905171856915772
+      },
+      "bare_land": {
+        "pixel_count": 23114,
+        "fraction_valid": 0.0012794454710403547
+      },
+      "water": {
+        "pixel_count": 879296,
+        "fraction_valid": 0.048672288868387106
+      }
+    }
+  },
+  "training_policy": {
+    "ignore_index": 255,
+    "use_validity_mask": true,
+    "training_selection": "identical to frozen Dataset V3",
+    "validation_test_selection": "identical to frozen Dataset V3",
+    "test_split_locked": true
+  }
+}

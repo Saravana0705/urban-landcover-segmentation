@@ -1,4 +1,4 @@
-"""PyTorch Dataset for frozen Sentinel-1 Dataset Version 1.
+"""PyTorch Dataset for frozen Sentinel-1 segmentation datasets.
 
 The loader preserves the geospatial source files and performs all model-facing
 transformations in memory.
@@ -65,6 +65,90 @@ PATH_COLUMN_CANDIDATES = {
 }
 
 
+def _normalization_key(channel_name: str) -> str:
+    """Map legacy channel labels to their two-band normalization keys."""
+    normalized = str(channel_name).strip()
+    aliases = {
+        "Sigma0_VV": "VV",
+        "Sigma0_VH": "VH",
+        "sigma0_vv": "VV",
+        "sigma0_vh": "VH",
+    }
+    return aliases.get(normalized, normalized)
+
+
+def _normalization_arrays(
+    config: Mapping[str, Any],
+) -> tuple[list[str], np.ndarray, np.ndarray, np.ndarray, np.ndarray, float]:
+    """Return ordered frozen normalization arrays.
+
+    Legacy two-band freezes store ``normalization.VV`` and
+    ``normalization.VH``. Dataset V3-MT stores an explicit ordered channel
+    list and ``normalization.bands.<band>``. Supporting both layouts keeps
+    all earlier frozen datasets reproducible.
+    """
+    input_config = config.get("input")
+    if not isinstance(input_config, Mapping):
+        raise ValueError("Dataset configuration is missing input settings.")
+
+    channel_count = int(input_config.get("channel_count", 0))
+    channels_raw = input_config.get("channels")
+    if channels_raw is None and channel_count == 2:
+        # Earliest V1 freezes predate the explicit ordered channel list.
+        channels_raw = ["Sigma0_VV", "Sigma0_VH"]
+    if not isinstance(channels_raw, (list, tuple)):
+        raise ValueError("input.channels must be an ordered list.")
+    channels = [str(value).strip() for value in channels_raw]
+    if channel_count <= 0 or len(channels) != channel_count:
+        raise ValueError(
+            "input.channel_count must equal the length of input.channels."
+        )
+    if any(not value for value in channels) or len(set(channels)) != len(channels):
+        raise ValueError("input.channels must contain unique non-empty names.")
+
+    normalization = config.get("normalization")
+    if not isinstance(normalization, Mapping):
+        raise ValueError("Dataset configuration is missing normalization settings.")
+    bands_raw = normalization.get("bands")
+    bands = bands_raw if isinstance(bands_raw, Mapping) else normalization
+
+    constants: list[tuple[float, float, float, float]] = []
+    missing: list[str] = []
+    for channel in channels:
+        key = _normalization_key(channel)
+        entry = bands.get(key) if isinstance(bands, Mapping) else None
+        if not isinstance(entry, Mapping):
+            missing.append(key)
+            continue
+        constants.append(
+            (
+                float(entry["clip_lower_db"]),
+                float(entry["clip_upper_db"]),
+                float(entry["mean_db"]),
+                float(entry["std_db"]),
+            )
+        )
+    if missing:
+        raise ValueError(
+            "Frozen normalization is missing channels: " + ", ".join(missing)
+        )
+
+    values = np.asarray(constants, dtype=np.float32)
+    if values.shape != (channel_count, 4) or not np.isfinite(values).all():
+        raise ValueError("Frozen normalization constants must be finite per band.")
+    if np.any(values[:, 0] >= values[:, 1]):
+        raise ValueError("Each normalization clip lower bound must be below its upper bound.")
+    if np.any(values[:, 3] <= 0):
+        raise ValueError("Frozen normalization standard deviations must be positive.")
+
+    epsilon = float(normalization.get("epsilon", 1e-10))
+    if not np.isfinite(epsilon) or epsilon <= 0:
+        raise ValueError("normalization.epsilon must be finite and positive.")
+
+    shaped = [values[:, index, None, None] for index in range(4)]
+    return channels, shaped[0], shaped[1], shaped[2], shaped[3], epsilon
+
+
 def _require_file(path: Path, label: str) -> None:
     """Require a non-empty file."""
     if not path.exists():
@@ -127,7 +211,7 @@ def _as_bool(value: Any) -> bool:
 
 
 class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
-    """Frozen Dataset V1 loader for semantic segmentation.
+    """Frozen Sentinel-1 dataset loader for semantic segmentation.
 
     Parameters
     ----------
@@ -227,7 +311,7 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
 
         if self.ignore_index != DEFAULT_IGNORE_INDEX:
             raise ValueError(
-                "Dataset V1 expects semantic ignore index 255."
+                "Frozen Sentinel-1 datasets expect semantic ignore index 255."
             )
 
         self.tile_size = int(
@@ -237,50 +321,19 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
             self.config["input"]["channel_count"]
         )
 
-        if self.channel_count != 2:
-            raise ValueError(
-                "Dataset V1 must contain exactly VV and VH."
-            )
-
-        normalization = self.config["normalization"]
-        self.epsilon = 1e-10
-
-        self.clip_lower = np.asarray(
-            [
-                normalization["VV"]["clip_lower_db"],
-                normalization["VH"]["clip_lower_db"],
-            ],
-            dtype=np.float32,
-        )[:, None, None]
-
-        self.clip_upper = np.asarray(
-            [
-                normalization["VV"]["clip_upper_db"],
-                normalization["VH"]["clip_upper_db"],
-            ],
-            dtype=np.float32,
-        )[:, None, None]
-
-        self.mean = np.asarray(
-            [
-                normalization["VV"]["mean_db"],
-                normalization["VH"]["mean_db"],
-            ],
-            dtype=np.float32,
-        )[:, None, None]
-
-        self.std = np.asarray(
-            [
-                normalization["VV"]["std_db"],
-                normalization["VH"]["std_db"],
-            ],
-            dtype=np.float32,
-        )[:, None, None]
-
-        if np.any(~np.isfinite(self.std)) or np.any(self.std <= 0):
-            raise ValueError(
-                "Frozen normalization standard deviations must be positive."
-            )
+        (
+            self.channel_names,
+            self.clip_lower,
+            self.clip_upper,
+            self.mean,
+            self.std,
+            self.epsilon,
+        ) = _normalization_arrays(self.config)
+        if len(self.channel_names) != self.channel_count:
+            raise ValueError("Frozen channel metadata is internally inconsistent.")
+        self.enforce_band_descriptions = bool(
+            self.config["input"].get("enforce_band_descriptions", False)
+        )
 
         classes = self.config["labels"]["classes"]
         self.class_names = [
@@ -295,7 +348,7 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
 
         if self.num_classes != 5:
             raise ValueError(
-                "Dataset V1 must contain exactly five semantic classes."
+                "The dataset must contain exactly five semantic classes."
             )
 
         manifest = pd.read_csv(self.manifest_path)
@@ -440,6 +493,10 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
                 image_dataset.height,
                 image_dataset.width,
             )
+            image_descriptions = tuple(
+                str(value).strip() if value is not None else ""
+                for value in image_dataset.descriptions
+            )
 
         with rasterio.open(semantic_path) as semantic_dataset:
             semantic = semantic_dataset.read(1)
@@ -472,6 +529,15 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
                 raise ValueError(
                     f"Unexpected image shape {image.shape} "
                     f"for tile {record['tile_id']}."
+                )
+
+            if self.enforce_band_descriptions and image_descriptions != tuple(
+                self.channel_names
+            ):
+                raise ValueError(
+                    f"Unexpected image band order {image_descriptions} "
+                    f"for tile {record['tile_id']}; expected "
+                    f"{tuple(self.channel_names)}."
                 )
 
             if semantic_shape != expected_shape:
@@ -516,6 +582,7 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
             "validity_path": str(validity_path),
             "transform": image_transform,
             "crs": str(image_crs),
+            "band_descriptions": image_descriptions,
         }
 
         return image, semantic, validity, metadata
@@ -689,6 +756,7 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
             "city_ids": city_ids,
             "tile_size": self.tile_size,
             "channel_count": self.channel_count,
+            "channel_names": list(self.channel_names),
             "class_names": self.class_names,
             "num_classes": self.num_classes,
             "ignore_index": self.ignore_index,

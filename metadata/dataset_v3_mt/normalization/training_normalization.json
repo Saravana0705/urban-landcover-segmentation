@@ -1,0 +1,256 @@
+{
+  "schema_version": "dataset-v3-mt-training-normalization-0.1",
+  "generated_at_utc": "2026-09-01T22:14:19.032779+00:00",
+  "status": "PASS",
+  "dataset_variant": "v3-mt",
+  "parent_label_dataset": "v3",
+  "training_city_ids": [
+    "DE01",
+    "DE02",
+    "DE03",
+    "DE04",
+    "DE05",
+    "DE06",
+    "DE07",
+    "DE08",
+    "DE09",
+    "DE10",
+    "DE11",
+    "DE12",
+    "DE13",
+    "DE14"
+  ],
+  "validation_and_test_used": false,
+  "source_domain": "linear_sigma0",
+  "conversion": "10 * log10(max(linear_sigma0, 1e-10))",
+  "clipping": "training-only sampled p01/p99 per temporal band",
+  "standardization": "exact clipped training-pixel mean/std per band",
+  "band_order": [
+    "VV_Q1",
+    "VH_Q1",
+    "VV_Q2",
+    "VH_Q2",
+    "VV_Q3",
+    "VH_Q3",
+    "VV_Q4",
+    "VH_Q4"
+  ],
+  "bands": {
+    "VV_Q1": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125848808,
+        "mean": 0.2532367405256347,
+        "std_population": 5.8577189308285025,
+        "minimum": 0.00018740924133453518,
+        "maximum": 12359.0732421875
+      },
+      "db": {
+        "valid_pixel_count": 125848808,
+        "mean": -9.321501515190853,
+        "std_population": 3.867655715423421,
+        "minimum": -37.272090911865234,
+        "maximum": 40.919857025146484
+      },
+      "sampled_db_quantiles": {
+        "p01": -19.524761657714844,
+        "p50": -9.621971130371094,
+        "p99": 3.592692234516067
+      },
+      "model_input": {
+        "clip_lower_db": -19.524761657714844,
+        "clip_upper_db": 3.592692234516067,
+        "mean_db": -9.338844775646937,
+        "std_db": 3.6594868443141535
+      }
+    },
+    "VH_Q1": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125848808,
+        "mean": 0.041777453674921874,
+        "std_population": 0.793717828040667,
+        "minimum": 1.781739058515086e-07,
+        "maximum": 3274.330322265625
+      },
+      "db": {
+        "valid_pixel_count": 125848808,
+        "mean": -16.464645692713415,
+        "std_population": 4.1031117214685136,
+        "minimum": -67.49156188964844,
+        "maximum": 35.151222229003906
+      },
+      "sampled_db_quantiles": {
+        "p01": -26.633608131408693,
+        "p50": -16.20261001586914,
+        "p99": -5.090638089180026
+      },
+      "model_input": {
+        "clip_lower_db": -26.633608131408693,
+        "clip_upper_db": -5.090638089180026,
+        "mean_db": -16.472445073288714,
+        "std_db": 3.921795454641337
+      }
+    },
+    "VV_Q2": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125866570,
+        "mean": 0.2325838408830297,
+        "std_population": 5.294877549202464,
+        "minimum": 3.48489334101032e-06,
+        "maximum": 12360.1611328125
+      },
+      "db": {
+        "valid_pixel_count": 125866570,
+        "mean": -9.938605234762711,
+        "std_population": 4.2829504569490275,
+        "minimum": -54.578102111816406,
+        "maximum": 40.92024230957031
+      },
+      "sampled_db_quantiles": {
+        "p01": -20.28183982849121,
+        "p50": -9.84461259841919,
+        "p99": 3.2179009437560566
+      },
+      "model_input": {
+        "clip_lower_db": -20.28183982849121,
+        "clip_upper_db": 3.2179009437560566,
+        "mean_db": -9.955764190331031,
+        "std_db": 4.097385833318606
+      }
+    },
+    "VH_Q2": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125866570,
+        "mean": 0.03996748724973561,
+        "std_population": 0.5953295613844728,
+        "minimum": 3.347412871335109e-07,
+        "maximum": 2252.35205078125
+      },
+      "db": {
+        "valid_pixel_count": 125866570,
+        "mean": -16.589134588259874,
+        "std_population": 4.048037050587672,
+        "minimum": -64.7529067993164,
+        "maximum": 33.526363372802734
+      },
+      "sampled_db_quantiles": {
+        "p01": -26.89206142425537,
+        "p50": -16.277528762817383,
+        "p99": -5.333954539299039
+      },
+      "model_input": {
+        "clip_lower_db": -26.89206142425537,
+        "clip_upper_db": -5.333954539299039,
+        "mean_db": -16.5986628094515,
+        "std_db": 3.8742420239922657
+      }
+    },
+    "VV_Q3": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125845059,
+        "mean": 0.2374533910714547,
+        "std_population": 4.146192965612311,
+        "minimum": 0.00016753835370764136,
+        "maximum": 12184.9912109375
+      },
+      "db": {
+        "valid_pixel_count": 125845059,
+        "mean": -9.445418121598781,
+        "std_population": 3.9112191246582597,
+        "minimum": -37.75885772705078,
+        "maximum": 40.858253479003906
+      },
+      "sampled_db_quantiles": {
+        "p01": -20.34722583770752,
+        "p50": -9.604747772216797,
+        "p99": 3.1866550540923964
+      },
+      "model_input": {
+        "clip_lower_db": -20.34722583770752,
+        "clip_upper_db": 3.1866550540923964,
+        "mean_db": -9.461845285036272,
+        "std_db": 3.705731589216475
+      }
+    },
+    "VH_Q3": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125845059,
+        "mean": 0.03988976191552944,
+        "std_population": 0.5292201181779423,
+        "minimum": 1.3111583939462435e-05,
+        "maximum": 1511.6976318359375
+      },
+      "db": {
+        "valid_pixel_count": 125845059,
+        "mean": -16.374373314734395,
+        "std_population": 3.763924757600978,
+        "minimum": -48.823448181152344,
+        "maximum": 31.794647216796875
+      },
+      "sampled_db_quantiles": {
+        "p01": -26.846966609954833,
+        "p50": -16.23419189453125,
+        "p99": -5.417927837371845
+      },
+      "model_input": {
+        "clip_lower_db": -26.846966609954833,
+        "clip_upper_db": -5.417927837371845,
+        "mean_db": -16.385470750942794,
+        "std_db": 3.5811179522319536
+      }
+    },
+    "VV_Q4": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125854100,
+        "mean": 0.25860371098288615,
+        "std_population": 5.1349143383128855,
+        "minimum": 0.0005056247464381158,
+        "maximum": 12320.7138671875
+      },
+      "db": {
+        "valid_pixel_count": 125854100,
+        "mean": -8.996962295940998,
+        "std_population": 3.766547880196828,
+        "minimum": -32.96171569824219,
+        "maximum": 40.90635681152344
+      },
+      "sampled_db_quantiles": {
+        "p01": -20.11590353012085,
+        "p50": -9.223442077636719,
+        "p99": 3.5338444066046777
+      },
+      "model_input": {
+        "clip_lower_db": -20.11590353012085,
+        "clip_upper_db": 3.5338444066046777,
+        "mean_db": -9.014884868378159,
+        "std_db": 3.5532827088645615
+      }
+    },
+    "VH_Q4": {
+      "linear_sigma0": {
+        "valid_pixel_count": 125854100,
+        "mean": 0.042649880605423074,
+        "std_population": 0.7644963250701651,
+        "minimum": 1.9041099221794866e-05,
+        "maximum": 3149.510986328125
+      },
+      "db": {
+        "valid_pixel_count": 125854100,
+        "mean": -15.955294856587232,
+        "std_population": 3.629977410352341,
+        "minimum": -47.20307922363281,
+        "maximum": 34.98242950439453
+      },
+      "sampled_db_quantiles": {
+        "p01": -26.703207588195802,
+        "p50": -15.865876197814941,
+        "p99": -5.2078909301758145
+      },
+      "model_input": {
+        "clip_lower_db": -26.703207588195802,
+        "clip_upper_db": -5.2078909301758145,
+        "mean_db": -15.966512537654557,
+        "std_db": 3.4400478744602987
+      }
+    }
+  }
+}

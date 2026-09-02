@@ -1,0 +1,1821 @@
+{
+  "schema_version": "dataset-v3-mt-source-qa-0.1",
+  "generated_at_utc": "2026-09-01T22:02:35.141163+00:00",
+  "status": "PASS",
+  "city_count": 20,
+  "expected_band_order": [
+    "VV_Q1",
+    "VH_Q1",
+    "VV_Q2",
+    "VH_Q2",
+    "VV_Q3",
+    "VH_Q3",
+    "VV_Q4",
+    "VH_Q4"
+  ],
+  "minimum_valid_fraction": 0.98,
+  "labels_modified": false,
+  "split_assignments_modified": false,
+  "cities": [
+    {
+      "city_id": "DE01",
+      "city_name": "Mannheim",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE01_Mannheim\\DE01_Mannheim_S1_MT_Q1Q4_2025.tif",
+        "sha256": "be4cf936d7e1557787cc855f4413aeb8747c261a067c49e47535cbc68c5b746b",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009091905085369945,
+            "maximum_positive": 3709.88720703125,
+            "mean_positive": 0.2338874191045761
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2827335922338534e-05,
+            "maximum_positive": 82.43665313720703,
+            "mean_positive": 0.033934567123651505
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005967653123661876,
+            "maximum_positive": 4896.9150390625,
+            "mean_positive": 0.21877413988113403
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4178787751006894e-05,
+            "maximum_positive": 73.72808837890625,
+            "mean_positive": 0.035665202885866165
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010659735416993499,
+            "maximum_positive": 4094.189697265625,
+            "mean_positive": 0.22627918422222137
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.101505277911201e-05,
+            "maximum_positive": 71.51937866210938,
+            "mean_positive": 0.0356442853808403
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009838438127189875,
+            "maximum_positive": 2955.392822265625,
+            "mean_positive": 0.2511242926120758
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.2638490160461515e-05,
+            "maximum_positive": 74.65940856933594,
+            "mean_positive": 0.03676765784621239
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE02",
+      "city_name": "Heidelberg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE02_Heidelberg\\DE02_Heidelberg_S1_MT_Q1Q4_2025.tif",
+        "sha256": "420baa9991dd0b02134373dba02f487406e483587695526ebd8b02153f5cd669",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0012151362607255578,
+            "maximum_positive": 2397.63134765625,
+            "mean_positive": 0.219406396150589
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.280169999517966e-05,
+            "maximum_positive": 64.81316375732422,
+            "mean_positive": 0.03684510663151741
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008605223847553134,
+            "maximum_positive": 2137.94482421875,
+            "mean_positive": 0.21309654414653778
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.645337710622698e-05,
+            "maximum_positive": 65.12387084960938,
+            "mean_positive": 0.037724338471889496
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010652709752321243,
+            "maximum_positive": 2297.902587890625,
+            "mean_positive": 0.2190626710653305
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.221526564331725e-05,
+            "maximum_positive": 58.22305679321289,
+            "mean_positive": 0.03651081398129463
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007947168196551502,
+            "maximum_positive": 2955.392822265625,
+            "mean_positive": 0.23699882626533508
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.478458767058328e-05,
+            "maximum_positive": 70.24256134033203,
+            "mean_positive": 0.03945525363087654
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE03",
+      "city_name": "Karlsruhe",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE03_Karlsruhe\\DE03_Karlsruhe_S1_MT_Q1Q4_2025.tif",
+        "sha256": "1c3bd1d7566735f548b3ff1eaa62301fe0c1bd82047d157e2e0e3501f4614ba9",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011049375170841813,
+            "maximum_positive": 1313.713623046875,
+            "mean_positive": 0.19061912596225739
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.875374699826352e-05,
+            "maximum_positive": 540.1458129882812,
+            "mean_positive": 0.035330694168806076
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017811462748795748,
+            "maximum_positive": 1570.0799560546875,
+            "mean_positive": 0.16881273686885834
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001819577009882778,
+            "maximum_positive": 722.8621215820312,
+            "mean_positive": 0.03169572353363037
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018441900610923767,
+            "maximum_positive": 1293.256103515625,
+            "mean_positive": 0.1728513538837433
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002650198293849826,
+            "maximum_positive": 697.0691528320312,
+            "mean_positive": 0.031795065850019455
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018619033508002758,
+            "maximum_positive": 1432.793701171875,
+            "mean_positive": 0.1822279393672943
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00021585010108537972,
+            "maximum_positive": 598.8829345703125,
+            "mean_positive": 0.03388047218322754
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE04",
+      "city_name": "Stuttgart",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE04_Stuttgart\\DE04_Stuttgart_S1_MT_Q1Q4_2025.tif",
+        "sha256": "22e0d549b1f262448b411c32fceb59c8b46eb216fd4bcc7b2eecdf6512ec52ac",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0026074901688843966,
+            "maximum_positive": 1115.02978515625,
+            "mean_positive": 0.26026034355163574
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010006475349655375,
+            "maximum_positive": 156.75393676757812,
+            "mean_positive": 0.04598517343401909
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0028491143602877855,
+            "maximum_positive": 1201.0086669921875,
+            "mean_positive": 0.24116158485412598
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00021849299082532525,
+            "maximum_positive": 193.0865478515625,
+            "mean_positive": 0.04311719909310341
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0029072125907987356,
+            "maximum_positive": 1231.297119140625,
+            "mean_positive": 0.252662718296051
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005050845211371779,
+            "maximum_positive": 183.7082061767578,
+            "mean_positive": 0.044151581823825836
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0029404854867607355,
+            "maximum_positive": 1101.778564453125,
+            "mean_positive": 0.26274511218070984
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000530492456164211,
+            "maximum_positive": 178.01002502441406,
+            "mean_positive": 0.04549732059240341
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE05",
+      "city_name": "Munich",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE05_Munich\\DE05_Munich_S1_MT_Q1Q4_2025.tif",
+        "sha256": "d39b3c56cd27f801fc600b81e34e7462ec809246282ba57a7f6fd3c3baf22847",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00049305654829368,
+            "maximum_positive": 2932.65380859375,
+            "mean_positive": 0.2770092487335205
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.542553582112305e-05,
+            "maximum_positive": 776.33203125,
+            "mean_positive": 0.048919130116701126
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009798844112083316,
+            "maximum_positive": 2474.220458984375,
+            "mean_positive": 0.24598991870880127
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.102409391431138e-05,
+            "maximum_positive": 706.5504150390625,
+            "mean_positive": 0.0465858057141304
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010909250704571605,
+            "maximum_positive": 2394.53564453125,
+            "mean_positive": 0.2542388439178467
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011467439617263153,
+            "maximum_positive": 672.5316772460938,
+            "mean_positive": 0.04667893797159195
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014441541861742735,
+            "maximum_positive": 2358.82275390625,
+            "mean_positive": 0.26554301381111145
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001419104664819315,
+            "maximum_positive": 651.147705078125,
+            "mean_positive": 0.04772932454943657
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE06",
+      "city_name": "Nuremberg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE06_Nuremberg\\DE06_Nuremberg_S1_MT_Q1Q4_2025.tif",
+        "sha256": "0bce09efc4daf72c8f85d53b4600ddc4797ce2d0b0222f34afeba4f6a39c2431",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0026992931962013245,
+            "maximum_positive": 4677.81787109375,
+            "mean_positive": 0.23319950699806213
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.347984450869262e-05,
+            "maximum_positive": 138.69052124023438,
+            "mean_positive": 0.03327330946922302
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001980240922421217,
+            "maximum_positive": 7849.9365234375,
+            "mean_positive": 0.21603608131408691
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00032345083309337497,
+            "maximum_positive": 124.56219482421875,
+            "mean_positive": 0.03325218707323074
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0024382753763347864,
+            "maximum_positive": 7419.02099609375,
+            "mean_positive": 0.23146814107894897
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002911763440351933,
+            "maximum_positive": 142.87786865234375,
+            "mean_positive": 0.035364795476198196
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002449191175401211,
+            "maximum_positive": 7088.9755859375,
+            "mean_positive": 0.2299497127532959
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00028989711427129805,
+            "maximum_positive": 150.93402099609375,
+            "mean_positive": 0.033671874552965164
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE07",
+      "city_name": "Frankfurt",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE07_Frankfurt\\DE07_Frankfurt_S1_MT_Q1Q4_2025.tif",
+        "sha256": "b7bcd0609a1405c3b6b9d00de64ea019f439c79a11207c954b18b78e4eeedba3",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001291787251830101,
+            "maximum_positive": 10268.716796875,
+            "mean_positive": 0.2892874479293823
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3637172742164694e-05,
+            "maximum_positive": 3274.330322265625,
+            "mean_positive": 0.0548541322350502
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017320895567536354,
+            "maximum_positive": 9301.251953125,
+            "mean_positive": 0.2651408612728119
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010803554323501885,
+            "maximum_positive": 2252.35205078125,
+            "mean_positive": 0.05257968604564667
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001411888631992042,
+            "maximum_positive": 8717.0078125,
+            "mean_positive": 0.26846370100975037
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011065394937759265,
+            "maximum_positive": 1511.6976318359375,
+            "mean_positive": 0.050949662923812866
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014458781806752086,
+            "maximum_positive": 10588.298828125,
+            "mean_positive": 0.2970859706401825
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001019662304315716,
+            "maximum_positive": 3149.510986328125,
+            "mean_positive": 0.05637313053011894
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE08",
+      "city_name": "Cologne",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE08_Cologne\\DE08_Cologne_S1_MT_Q1Q4_2025.tif",
+        "sha256": "994cf02055cf5ed350ec51539371beb092503c71b5abdbf072b118df2e757881",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009290673770010471,
+            "maximum_positive": 2443.998291015625,
+            "mean_positive": 0.29378461837768555
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.3258220608113334e-05,
+            "maximum_positive": 220.98580932617188,
+            "mean_positive": 0.04777992516756058
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008567286422476172,
+            "maximum_positive": 2486.167236328125,
+            "mean_positive": 0.27208077907562256
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.537633139989339e-05,
+            "maximum_positive": 222.4264373779297,
+            "mean_positive": 0.04542146995663643
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009462673915550113,
+            "maximum_positive": 2290.433349609375,
+            "mean_positive": 0.26893579959869385
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011655117123154923,
+            "maximum_positive": 207.53848266601562,
+            "mean_positive": 0.04369064420461655
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014991841744631529,
+            "maximum_positive": 2134.825927734375,
+            "mean_positive": 0.29755425453186035
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010408966045361012,
+            "maximum_positive": 202.6304168701172,
+            "mean_positive": 0.0487043559551239
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE09",
+      "city_name": "Dusseldorf",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE09_Dusseldorf\\DE09_Dusseldorf_S1_MT_Q1Q4_2025.tif",
+        "sha256": "7346eb3c8241783b028a11a43699ec21b3b61f312afc0017a63b58f44b0c91e0",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0028494768775999546,
+            "maximum_positive": 1458.1220703125,
+            "mean_positive": 0.25980430841445923
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00019875729049090296,
+            "maximum_positive": 248.95016479492188,
+            "mean_positive": 0.04335828498005867
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0021068076603114605,
+            "maximum_positive": 3940.584716796875,
+            "mean_positive": 0.24288871884346008
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003671117010526359,
+            "maximum_positive": 240.42486572265625,
+            "mean_positive": 0.04124478995800018
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0024940199218690395,
+            "maximum_positive": 2617.42919921875,
+            "mean_positive": 0.24394182860851288
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00042117928387597203,
+            "maximum_positive": 197.85836791992188,
+            "mean_positive": 0.040369320660829544
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00284402584657073,
+            "maximum_positive": 3717.010009765625,
+            "mean_positive": 0.2723359763622284
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005164045724086463,
+            "maximum_positive": 208.30506896972656,
+            "mean_positive": 0.04483674466609955
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE10",
+      "city_name": "Dortmund",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE10_Dortmund\\DE10_Dortmund_S1_MT_Q1Q4_2025.tif",
+        "sha256": "c5e9c77bbc2c743b1f682ca3b305e8f7627f4c6f3d1801f8bacb6032ad626844",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011975476518273354,
+            "maximum_positive": 5016.35693359375,
+            "mean_positive": 0.22802600264549255
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.511015868047252e-05,
+            "maximum_positive": 272.3543701171875,
+            "mean_positive": 0.03998228535056114
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008261424954980612,
+            "maximum_positive": 5121.6953125,
+            "mean_positive": 0.21299825608730316
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001484367239754647,
+            "maximum_positive": 262.433837890625,
+            "mean_positive": 0.037611257284879684
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001595972920767963,
+            "maximum_positive": 2723.690673828125,
+            "mean_positive": 0.210565447807312
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00012853555381298065,
+            "maximum_positive": 216.4348907470703,
+            "mean_positive": 0.03606800734996796
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014025219716131687,
+            "maximum_positive": 1799.0111083984375,
+            "mean_positive": 0.23468761146068573
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001658289402257651,
+            "maximum_positive": 226.37545776367188,
+            "mean_positive": 0.04105164483189583
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE11",
+      "city_name": "Hamburg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE11_Hamburg\\DE11_Hamburg_S1_MT_Q1Q4_2025.tif",
+        "sha256": "723faf63018df4ac564a1cfce1ced3343fd50f06263c7695eccb91ce9564d2cc",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00028207062860019505,
+            "maximum_positive": 12359.0732421875,
+            "mean_positive": 0.29837384819984436
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5390076441690326e-05,
+            "maximum_positive": 616.3851928710938,
+            "mean_positive": 0.04152211174368858
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010161376558244228,
+            "maximum_positive": 12360.1611328125,
+            "mean_positive": 0.28006094694137573
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7169997590826824e-05,
+            "maximum_positive": 735.6700439453125,
+            "mean_positive": 0.038621217012405396
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016181831015273929,
+            "maximum_positive": 12184.9912109375,
+            "mean_positive": 0.28076666593551636
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7609416318009607e-05,
+            "maximum_positive": 458.0710144042969,
+            "mean_positive": 0.03860142081975937
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020824556704610586,
+            "maximum_positive": 12320.7138671875,
+            "mean_positive": 0.3048000931739807
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.9041099221794866e-05,
+            "maximum_positive": 515.7515258789062,
+            "mean_positive": 0.041914284229278564
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE12",
+      "city_name": "Bremen",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE12_Bremen\\DE12_Bremen_S1_MT_Q1Q4_2025.tif",
+        "sha256": "d0ba89eb81202ace5b6fc45b56f146d82f6137ea07a43081cc00b13fb082dd24",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005038744420744479,
+            "maximum_positive": 11654.455078125,
+            "mean_positive": 0.1932561695575714
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3732470506511163e-05,
+            "maximum_positive": 60.990394592285156,
+            "mean_positive": 0.026219027116894722
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007890940178185701,
+            "maximum_positive": 11651.1337890625,
+            "mean_positive": 0.17297394573688507
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.9840721254004166e-05,
+            "maximum_positive": 58.2204475402832,
+            "mean_positive": 0.025414790958166122
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010054113809019327,
+            "maximum_positive": 890.71923828125,
+            "mean_positive": 0.1647963970899582
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.542892565950751e-05,
+            "maximum_positive": 67.62079620361328,
+            "mean_positive": 0.02641446888446808
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016000423347577453,
+            "maximum_positive": 11651.701171875,
+            "mean_positive": 0.20627154409885406
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.612476888927631e-05,
+            "maximum_positive": 66.35765838623047,
+            "mean_positive": 0.02891005203127861
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE13",
+      "city_name": "Hanover",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE13_Hanover\\DE13_Hanover_S1_MT_Q1Q4_2025.tif",
+        "sha256": "1d45c1029444856c4e11bb174d05002989513842daa6474bbb2a92ff11c1f909",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 0.9832008888888889,
+            "minimum_positive": 0.00018740924133453518,
+            "maximum_positive": 1514.982421875,
+            "mean_positive": 0.19481511414051056
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 0.9832008888888889,
+            "minimum_positive": 1.781739058515086e-07,
+            "maximum_positive": 296.2581481933594,
+            "mean_positive": 0.030999019742012024
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 0.9851744444444445,
+            "minimum_positive": 3.48489334101032e-06,
+            "maximum_positive": 1569.690673828125,
+            "mean_positive": 0.16694629192352295
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 0.9851744444444445,
+            "minimum_positive": 3.347412871335109e-07,
+            "maximum_positive": 287.06207275390625,
+            "mean_positive": 0.030050430446863174
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 0.9827843333333334,
+            "minimum_positive": 0.00016753835370764136,
+            "maximum_positive": 1515.4779052734375,
+            "mean_positive": 0.18038040399551392
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 0.9827843333333334,
+            "minimum_positive": 1.3111583939462435e-05,
+            "maximum_positive": 302.56634521484375,
+            "mean_positive": 0.030607283115386963
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 0.9837888888888889,
+            "minimum_positive": 0.0005056247464381158,
+            "maximum_positive": 1673.760498046875,
+            "mean_positive": 0.21440835297107697
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 0.9837888888888889,
+            "minimum_positive": 6.017101259203628e-05,
+            "maximum_positive": 295.1090393066406,
+            "mean_positive": 0.03353336080908775
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE14",
+      "city_name": "Berlin",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE14_Berlin\\DE14_Berlin_S1_MT_Q1Q4_2025.tif",
+        "sha256": "6b196b913eaf675be5297b1616ff1620f318f10e9f331357ba7f6d9dff0df213",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000799205619841814,
+            "maximum_positive": 2516.31201171875,
+            "mean_positive": 0.37260347604751587
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4114952136878856e-05,
+            "maximum_positive": 975.3384399414062,
+            "mean_positive": 0.06570051610469818
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001751561532728374,
+            "maximum_positive": 2403.381103515625,
+            "mean_positive": 0.3382398784160614
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.816783232148737e-05,
+            "maximum_positive": 790.3176879882812,
+            "mean_positive": 0.06041370704770088
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013563783140853047,
+            "maximum_positive": 2394.744873046875,
+            "mean_positive": 0.3489518463611603
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013835245044901967,
+            "maximum_positive": 990.43408203125,
+            "mean_positive": 0.061450570821762085
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013863001950085163,
+            "maximum_positive": 3254.666748046875,
+            "mean_positive": 0.3640028238296509
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.931602547410876e-05,
+            "maximum_positive": 1845.52978515625,
+            "mean_positive": 0.06462506204843521
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE15",
+      "city_name": "Leipzig",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE15_Leipzig\\DE15_Leipzig_S1_MT_Q1Q4_2025.tif",
+        "sha256": "e7dcf6104a6c41a64107b6a5e7193c3055cac8f15da72f65c1728d114408f01d",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00033176521537825465,
+            "maximum_positive": 3960.08984375,
+            "mean_positive": 0.18387506902217865
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3799919543089345e-05,
+            "maximum_positive": 242.86477661132812,
+            "mean_positive": 0.02475971169769764
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010112882591784,
+            "maximum_positive": 4013.51953125,
+            "mean_positive": 0.16014322638511658
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3827027942170389e-05,
+            "maximum_positive": 87.95056915283203,
+            "mean_positive": 0.023911166936159134
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0006949061062186956,
+            "maximum_positive": 3982.35302734375,
+            "mean_positive": 0.17076309025287628
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5487737982766703e-05,
+            "maximum_positive": 87.17678833007812,
+            "mean_positive": 0.022641148418188095
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009623403311707079,
+            "maximum_positive": 4198.77734375,
+            "mean_positive": 0.19144806265830994
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5466557670151815e-05,
+            "maximum_positive": 76.03987121582031,
+            "mean_positive": 0.02420395240187645
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE16",
+      "city_name": "Dresden",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE16_Dresden\\DE16_Dresden_S1_MT_Q1Q4_2025.tif",
+        "sha256": "6283ec9cac80ff22cb75744b453e670a7c010473c381ca81cd8405009443085f",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009748683660291135,
+            "maximum_positive": 748.4815673828125,
+            "mean_positive": 0.14290402829647064
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5682069715694524e-05,
+            "maximum_positive": 57.71534729003906,
+            "mean_positive": 0.026799317449331284
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016854031709954143,
+            "maximum_positive": 675.8794555664062,
+            "mean_positive": 0.14004680514335632
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010501933138584718,
+            "maximum_positive": 62.039974212646484,
+            "mean_positive": 0.027651458978652954
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0015147023368626833,
+            "maximum_positive": 561.64013671875,
+            "mean_positive": 0.1539793312549591
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.749779277015477e-05,
+            "maximum_positive": 54.10307312011719,
+            "mean_positive": 0.028547493740916252
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017934726784005761,
+            "maximum_positive": 481.86151123046875,
+            "mean_positive": 0.1562054455280304
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013820725143887103,
+            "maximum_positive": 56.69240188598633,
+            "mean_positive": 0.028208333998918533
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE17",
+      "city_name": "Munster",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE17_Munster\\DE17_Munster_S1_MT_Q1Q4_2025.tif",
+        "sha256": "0e048cd095e5262b3e0f5955f1c7d07cf693108b8e0aaffa667569f56d1f8894",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001889820909127593,
+            "maximum_positive": 3068.1962890625,
+            "mean_positive": 0.1355249434709549
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.4465924070682377e-05,
+            "maximum_positive": 431.50091552734375,
+            "mean_positive": 0.023828579112887383
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018529035151004791,
+            "maximum_positive": 3026.0810546875,
+            "mean_positive": 0.12385141849517822
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.738987187622115e-05,
+            "maximum_positive": 436.442138671875,
+            "mean_positive": 0.02275070920586586
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017444370314478874,
+            "maximum_positive": 3004.407470703125,
+            "mean_positive": 0.13216346502304077
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00021654166630469263,
+            "maximum_positive": 436.94091796875,
+            "mean_positive": 0.02386384643614292
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0023749342653900385,
+            "maximum_positive": 2994.66015625,
+            "mean_positive": 0.1612398624420166
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000215793916140683,
+            "maximum_positive": 433.9287109375,
+            "mean_positive": 0.028637729585170746
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE18",
+      "city_name": "Freiburg",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE18_Freiburg\\DE18_Freiburg_S1_MT_Q1Q4_2025.tif",
+        "sha256": "e3cb9c4bc542553009905a23eab722cac221979d1d0c248004662e3c4c3581e0",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0012598630273714662,
+            "maximum_positive": 2499.242919921875,
+            "mean_positive": 0.16598574817180634
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.303322733292589e-05,
+            "maximum_positive": 143.0997772216797,
+            "mean_positive": 0.030638903379440308
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005752042634412646,
+            "maximum_positive": 2191.460693359375,
+            "mean_positive": 0.16791655123233795
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.815806409576908e-05,
+            "maximum_positive": 156.22344970703125,
+            "mean_positive": 0.03293534368276596
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016054637962952256,
+            "maximum_positive": 2328.185302734375,
+            "mean_positive": 0.1745016723871231
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00012377623352222145,
+            "maximum_positive": 150.95834350585938,
+            "mean_positive": 0.03318982571363449
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011793336598202586,
+            "maximum_positive": 2427.821533203125,
+            "mean_positive": 0.1736806184053421
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.247985533671454e-05,
+            "maximum_positive": 129.7190704345703,
+            "mean_positive": 0.033786337822675705
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE19",
+      "city_name": "Kiel",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE19_Kiel\\DE19_Kiel_S1_MT_Q1Q4_2025.tif",
+        "sha256": "8d0e5c19b3de687c821b4a1bcffc670a8a4086cd0209fb4444a4cedeb1e76df1",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008273054845631123,
+            "maximum_positive": 442.572509765625,
+            "mean_positive": 0.1320018321275711
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2392618373269215e-05,
+            "maximum_positive": 55.56998825073242,
+            "mean_positive": 0.022411517798900604
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010340175358578563,
+            "maximum_positive": 636.4102783203125,
+            "mean_positive": 0.1114705428481102
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2483836144383531e-05,
+            "maximum_positive": 54.66521072387695,
+            "mean_positive": 0.02148984745144844
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010223190765827894,
+            "maximum_positive": 502.5638122558594,
+            "mean_positive": 0.1270931363105774
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3278182450449094e-05,
+            "maximum_positive": 41.56788635253906,
+            "mean_positive": 0.023120827972888947
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018941406160593033,
+            "maximum_positive": 501.54241943359375,
+            "mean_positive": 0.15612630546092987
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3913350812799763e-05,
+            "maximum_positive": 50.53961944580078,
+            "mean_positive": 0.02549530752003193
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE20",
+      "city_name": "Rostock",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt\\DE20_Rostock\\DE20_Rostock_S1_MT_Q1Q4_2025.tif",
+        "sha256": "fc0b583ebdeb3be750c36269f51ef97a72c70016e3295f4eec46a9d5c7f5de7f",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_Q1",
+          "VH_Q1",
+          "VV_Q2",
+          "VH_Q2",
+          "VV_Q3",
+          "VH_Q3",
+          "VV_Q4",
+          "VH_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020973070058971643,
+            "maximum_positive": 1420.083984375,
+            "mean_positive": 0.13882982730865479
+          },
+          {
+            "band": "VH_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2816461094189435e-05,
+            "maximum_positive": 109.239501953125,
+            "mean_positive": 0.021828660741448402
+          },
+          {
+            "band": "VV_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00253742141649127,
+            "maximum_positive": 1016.2554931640625,
+            "mean_positive": 0.10313583165407181
+          },
+          {
+            "band": "VH_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4289987120719161e-05,
+            "maximum_positive": 104.65472412109375,
+            "mean_positive": 0.020808666944503784
+          },
+          {
+            "band": "VV_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018138070590794086,
+            "maximum_positive": 1103.0050048828125,
+            "mean_positive": 0.119625024497509
+          },
+          {
+            "band": "VH_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.3936986660119146e-05,
+            "maximum_positive": 107.56224060058594,
+            "mean_positive": 0.02129928208887577
+          },
+          {
+            "band": "VV_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002660414669662714,
+            "maximum_positive": 1437.218017578125,
+            "mean_positive": 0.15394233167171478
+          },
+          {
+            "band": "VH_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.636931483517401e-05,
+            "maximum_positive": 109.87278747558594,
+            "mean_positive": 0.02439405582845211
+          }
+        ]
+      }
+    }
+  ]
+}
