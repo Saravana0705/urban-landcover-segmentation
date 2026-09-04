@@ -21,6 +21,18 @@ LOCAL_BANDS = tuple(
 F1_BANDS = SOURCE_BANDS + RATIO_BANDS
 F2_BANDS = F1_BANDS + LOCAL_BANDS
 
+D2_SOURCE_BANDS = (
+    "VV_ASC_Q1", "VH_ASC_Q1", "VV_ASC_Q2", "VH_ASC_Q2",
+    "VV_ASC_Q3", "VH_ASC_Q3", "VV_ASC_Q4", "VH_ASC_Q4",
+    "VV_DESC_Q1", "VH_DESC_Q1", "VV_DESC_Q2", "VH_DESC_Q2",
+    "VV_DESC_Q3", "VH_DESC_Q3", "VV_DESC_Q4", "VH_DESC_Q4",
+)
+D2_RATIO_BANDS = (
+    "CR_ASC_Q1", "CR_ASC_Q2", "CR_ASC_Q3", "CR_ASC_Q4",
+    "CR_DESC_Q1", "CR_DESC_Q2", "CR_DESC_Q3", "CR_DESC_Q4",
+)
+D2_F1_BANDS = D2_SOURCE_BANDS + D2_RATIO_BANDS
+
 
 def source_linear_to_db(image: np.ndarray, epsilon: float) -> np.ndarray:
     """Convert eight linear-sigma0 source bands to dB, preserving invalids."""
@@ -53,6 +65,25 @@ def quarterly_cross_ratios(source_db: np.ndarray) -> np.ndarray:
         ratio = (vh - vv).astype(np.float32, copy=False)
         ratio[~(np.isfinite(vv) & np.isfinite(vh))] = np.nan
         ratios.append(ratio)
+    return np.stack(ratios, axis=0).astype(np.float32, copy=False)
+
+
+def cross_orbit_quarterly_ratios(source_db: np.ndarray) -> np.ndarray:
+    """Return four ascending then four descending VH/VV log-ratios."""
+    source_db = np.asarray(source_db, dtype=np.float32)
+    if source_db.ndim != 3 or source_db.shape[0] != len(D2_SOURCE_BANDS):
+        raise ValueError(
+            "Cross-orbit ratios require the canonical 16-band D2 source dB."
+        )
+
+    ratios: list[np.ndarray] = []
+    for orbit_offset in (0, 8):
+        for quarter in range(4):
+            vv = source_db[orbit_offset + quarter * 2]
+            vh = source_db[orbit_offset + quarter * 2 + 1]
+            ratio = (vh - vv).astype(np.float32, copy=False)
+            ratio[~(np.isfinite(vv) & np.isfinite(vh))] = np.nan
+            ratios.append(ratio)
     return np.stack(ratios, axis=0).astype(np.float32, copy=False)
 
 
@@ -134,3 +165,29 @@ def build_model_input_db(
         ))
     return np.concatenate(parts, axis=0).astype(np.float32, copy=False)
 
+
+def build_d2_model_input_db(
+    image: np.ndarray,
+    *,
+    epsilon: float,
+    include_cross_ratio: bool,
+) -> np.ndarray:
+    """Build the canonical D2 source plus orbit-specific ratio channels."""
+    image = np.asarray(image, dtype=np.float32)
+    if image.ndim != 3 or image.shape[0] != len(D2_SOURCE_BANDS):
+        raise ValueError(
+            f"Expected D2 source image shaped (16, H, W), received {image.shape}."
+        )
+    if not np.isfinite(epsilon) or epsilon <= 0:
+        raise ValueError("epsilon must be finite and positive.")
+
+    usable = np.isfinite(image) & (image > epsilon)
+    source_db = np.full_like(image, np.nan, dtype=np.float32)
+    source_db[usable] = (
+        10.0 * np.log10(np.maximum(image[usable], epsilon))
+    ).astype(np.float32)
+    if not include_cross_ratio:
+        return source_db
+    return np.concatenate(
+        (source_db, cross_orbit_quarterly_ratios(source_db)), axis=0
+    ).astype(np.float32, copy=False)

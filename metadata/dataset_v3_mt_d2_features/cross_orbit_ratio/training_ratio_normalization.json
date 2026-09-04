@@ -1,0 +1,68 @@
+{
+  "schema_version": "dataset-v3-mt-d2-f1-ratio-normalization-0.1",
+  "generated_at_utc": "2026-09-04T14:41:06.518763+00:00",
+  "status": "PASS",
+  "dataset_variant": "v3-mt-d2-f1",
+  "training_tile_count": 974,
+  "validation_and_test_used": false,
+  "band_order": [
+    "CR_ASC_Q1",
+    "CR_ASC_Q2",
+    "CR_ASC_Q3",
+    "CR_ASC_Q4",
+    "CR_DESC_Q1",
+    "CR_DESC_Q2",
+    "CR_DESC_Q3",
+    "CR_DESC_Q4"
+  ],
+  "bands": {
+    "CR_ASC_Q1": {
+      "clip_lower_db": -17.286615905761717,
+      "clip_upper_db": -1.328267066478756,
+      "mean_db": -7.15148882095683,
+      "std_db": 2.900664837043594
+    },
+    "CR_ASC_Q2": {
+      "clip_lower_db": -16.654432373046873,
+      "clip_upper_db": -1.5140388679504628,
+      "mean_db": -6.6865831830230755,
+      "std_db": 2.385317627783774
+    },
+    "CR_ASC_Q3": {
+      "clip_lower_db": -16.570012092590332,
+      "clip_upper_db": -1.5953854823112585,
+      "mean_db": -7.034317177133753,
+      "std_db": 2.343458026460645
+    },
+    "CR_ASC_Q4": {
+      "clip_lower_db": -17.286920261383056,
+      "clip_upper_db": -1.5327311706542979,
+      "mean_db": -7.037791094412637,
+      "std_db": 2.61797125182983
+    },
+    "CR_DESC_Q1": {
+      "clip_lower_db": -16.84031805038452,
+      "clip_upper_db": -1.2577037715911947,
+      "mean_db": -7.154769949130726,
+      "std_db": 2.7542549800881173
+    },
+    "CR_DESC_Q2": {
+      "clip_lower_db": -16.411174793243408,
+      "clip_upper_db": -1.3797819232940691,
+      "mean_db": -6.6499871362623,
+      "std_db": 2.339530058036344
+    },
+    "CR_DESC_Q3": {
+      "clip_lower_db": -16.274775161743165,
+      "clip_upper_db": -1.5272343385219598,
+      "mean_db": -6.949254418504257,
+      "std_db": 2.2199624261179807
+    },
+    "CR_DESC_Q4": {
+      "clip_lower_db": -16.849939937591554,
+      "clip_upper_db": -1.4648599815368986,
+      "mean_db": -6.949351986418013,
+      "std_db": 2.507859263562208
+    }
+  }
+}

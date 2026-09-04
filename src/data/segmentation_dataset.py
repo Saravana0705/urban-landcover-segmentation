@@ -39,11 +39,15 @@ from torch import Tensor
 from torch.utils.data import Dataset
 
 from src.data.v3_mt_derived_features import (
+    D2_F1_BANDS,
+    D2_RATIO_BANDS,
+    D2_SOURCE_BANDS,
     F1_BANDS,
     F2_BANDS,
     LOCAL_BANDS,
     RATIO_BANDS,
     SOURCE_BANDS,
+    build_d2_model_input_db,
     build_model_input_db,
 )
 
@@ -392,17 +396,34 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
             for band_name in ("VH_Q1", "VH_Q2", "VH_Q3", "VH_Q4")
             if band_name in normalization_bands
         }
+        self.derived_feature_schema = "none"
         if self.cross_ratio_enabled:
-            if self.source_channel_names != list(SOURCE_BANDS):
+            if self.source_channel_names == list(SOURCE_BANDS):
+                self.derived_feature_schema = "v3_mt"
+                if self.cross_ratio_names != list(RATIO_BANDS):
+                    raise ValueError(
+                        "Quarterly cross-ratio names must be CR_Q1 through CR_Q4."
+                    )
+                expected_channels = list(F1_BANDS)
+            elif self.source_channel_names == list(D2_SOURCE_BANDS):
+                self.derived_feature_schema = "v3_mt_d2"
+                if self.cross_ratio_names != list(D2_RATIO_BANDS):
+                    raise ValueError(
+                        "D2 cross-ratio names/order must be four ascending "
+                        "quarters followed by four descending quarters."
+                    )
+                if self.local_spatial_enabled:
+                    raise ValueError(
+                        "D2 orbit-specific ratios cannot be combined with the "
+                        "V3-MT-F2 local-spatial schema."
+                    )
+                expected_channels = list(D2_F1_BANDS)
+            else:
                 raise ValueError(
-                    "Quarterly cross-ratio features require the canonical "
-                    "eight-band V3-MT source order."
+                    "Cross-ratio features require a canonical V3-MT or D2 "
+                    "source-channel order."
                 )
-            if self.cross_ratio_names != list(RATIO_BANDS):
-                raise ValueError(
-                    "Quarterly cross-ratio names must be CR_Q1 through CR_Q4."
-                )
-            expected_channels = list(F1_BANDS)
+
             if self.local_spatial_enabled:
                 if self.local_spatial_names != list(LOCAL_BANDS):
                     raise ValueError(
@@ -694,14 +715,21 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
                 10.0 * np.log10(np.maximum(image[usable], self.epsilon))
             ).astype(np.float32)
         else:
-            model_db = build_model_input_db(
-                image,
-                epsilon=self.epsilon,
-                include_cross_ratio=self.cross_ratio_enabled,
-                include_local_spatial=self.local_spatial_enabled,
-                local_fill_values_db=self.local_fill_values_db,
-                local_window_size=self.local_window_size,
-            )
+            if self.derived_feature_schema == "v3_mt_d2":
+                model_db = build_d2_model_input_db(
+                    image,
+                    epsilon=self.epsilon,
+                    include_cross_ratio=self.cross_ratio_enabled,
+                )
+            else:
+                model_db = build_model_input_db(
+                    image,
+                    epsilon=self.epsilon,
+                    include_cross_ratio=self.cross_ratio_enabled,
+                    include_local_spatial=self.local_spatial_enabled,
+                    local_fill_values_db=self.local_fill_values_db,
+                    local_window_size=self.local_window_size,
+                )
 
         if model_db.shape[0] != self.channel_count:
             raise ValueError(
