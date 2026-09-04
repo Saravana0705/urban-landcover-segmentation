@@ -1,0 +1,2130 @@
+{
+  "schema_version": "dataset-v3-mt-d2-acquisition-audit-qa-0.2",
+  "generated_at_utc": "2026-09-03T14:14:51.034759+00:00",
+  "status": "PASS",
+  "dataset_version": "v3-mt-d2",
+  "parent_dataset": "v3-mt",
+  "experiment": "quarterly-ascending-descending-early-fusion",
+  "coverage_unit": "same_day_slice_union",
+  "city_count": 20,
+  "split_counts": {
+    "train": 14,
+    "val": 3,
+    "test": 3
+  },
+  "minimum_observations_per_quarter": 2,
+  "minimum_scene_coverage_fraction": 0.98,
+  "selected_period_count": 4,
+  "selected_pass_count": 2,
+  "selected_channel_count": 16,
+  "expected_channel_order": [
+    "VV_ASC_Q1",
+    "VH_ASC_Q1",
+    "VV_ASC_Q2",
+    "VH_ASC_Q2",
+    "VV_ASC_Q3",
+    "VH_ASC_Q3",
+    "VV_ASC_Q4",
+    "VH_ASC_Q4",
+    "VV_DESC_Q1",
+    "VH_DESC_Q1",
+    "VV_DESC_Q2",
+    "VH_DESC_Q2",
+    "VV_DESC_Q3",
+    "VH_DESC_Q3",
+    "VV_DESC_Q4",
+    "VH_DESC_Q4"
+  ],
+  "labels_modified": false,
+  "split_assignments_modified": false,
+  "failures": [],
+  "cities": [
+    {
+      "city_id": "DE01",
+      "city_name": "Mannheim",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 50,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 49,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE02",
+      "city_name": "Heidelberg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 50,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 49,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE03",
+      "city_name": "Karlsruhe",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 66
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 66,
+          "annual_observation_count": 49,
+          "quarterly_observation_counts": {
+            "q1": 7,
+            "q2": 13,
+            "q3": 15,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 7,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 88,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 49,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE04",
+      "city_name": "Stuttgart",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 66
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 66,
+          "annual_observation_count": 49,
+          "quarterly_observation_counts": {
+            "q1": 7,
+            "q2": 13,
+            "q3": 15,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 7,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 49,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE05",
+      "city_name": "Munich",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 117
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 117,
+          "annual_observation_count": 49,
+          "quarterly_observation_counts": {
+            "q1": 7,
+            "q2": 13,
+            "q3": 15,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 7,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 95,
+          "annual_observation_count": 54,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 15,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 0.9985724709073442,
+          "mean_scene_coverage_fraction": 0.9996376407066662,
+          "selection_role": "added_opposite_pass"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 14,
+              "q3": 15,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 49,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 95,
+            "annual_observation_count": 54,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 0.9985724709073442,
+            "mean_scene_coverage_fraction": 0.9996376407066662
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 168,
+            "annual_observation_count": 48,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 11,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE06",
+      "city_name": "Nuremberg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 168
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 44,
+          "annual_observation_count": 50,
+          "quarterly_observation_counts": {
+            "q1": 7,
+            "q2": 14,
+            "q3": 15,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 7,
+          "minimum_scene_coverage_fraction": 0.9973520804057356,
+          "mean_scene_coverage_fraction": 0.9987962407680676,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 168,
+          "annual_observation_count": 52,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 14,
+            "q3": 15,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 14,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 0.9973520804057356,
+            "mean_scene_coverage_fraction": 0.9987962407680676
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 49,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 168,
+            "annual_observation_count": 52,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 14,
+              "q3": 15,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE07",
+      "city_name": "Frankfurt",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 50,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 14,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE08",
+      "city_name": "Cologne",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 88,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 37,
+            "annual_observation_count": 47,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 14,
+              "q3": 14,
+              "q4": 12
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE09",
+      "city_name": "Dusseldorf",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 52,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 13,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 52,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 88,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 37,
+            "annual_observation_count": 47,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 14,
+              "q3": 14,
+              "q4": 12
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE10",
+      "city_name": "Dortmund",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 52,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 13,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 52,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 88,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 0.9916225083104128,
+            "mean_scene_coverage_fraction": 0.9944773553665373
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 37,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE11",
+      "city_name": "Hamburg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 66
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 44,
+          "annual_observation_count": 50,
+          "quarterly_observation_counts": {
+            "q1": 7,
+            "q2": 15,
+            "q3": 14,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 7,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 66,
+          "annual_observation_count": 50,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 13,
+            "q3": 15,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 15,
+              "q3": 14,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 48,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 12,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 52,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE12",
+      "city_name": "Bremen",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 52,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 13,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 48,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 12,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 52,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE13",
+      "city_name": "Hanover",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 117,
+          "annual_observation_count": 48,
+          "quarterly_observation_counts": {
+            "q1": 7,
+            "q2": 12,
+            "q3": 15,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 7,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 34,
+          "quarterly_observation_counts": {
+            "q1": 6,
+            "q2": 5,
+            "q3": 11,
+            "q4": 12
+          },
+          "minimum_quarterly_observation_count": 5,
+          "minimum_scene_coverage_fraction": 0.980335422209228,
+          "mean_scene_coverage_fraction": 0.9820130500321368,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 48,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 12,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 34,
+            "quarterly_observation_counts": {
+              "q1": 6,
+              "q2": 5,
+              "q3": 11,
+              "q4": 12
+            },
+            "minimum_quarterly_observation_count": 5,
+            "minimum_scene_coverage_fraction": 0.980335422209228,
+            "mean_scene_coverage_fraction": 0.9820130500321368
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE14",
+      "city_name": "Berlin",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 146
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 146,
+          "annual_observation_count": 54,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 15,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 168,
+          "annual_observation_count": 54,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 15,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 146,
+            "annual_observation_count": 54,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 95,
+            "annual_observation_count": 53,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 14,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 168,
+            "annual_observation_count": 54,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE15",
+      "city_name": "Leipzig",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 168
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 44,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 7,
+            "q2": 14,
+            "q3": 15,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 7,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 168,
+          "annual_observation_count": 54,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 15,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 14,
+              "q3": 15,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 146,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 95,
+            "annual_observation_count": 53,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 14,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 0.999510154237874,
+            "mean_scene_coverage_fraction": 0.999977592417698
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 168,
+            "annual_observation_count": 54,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE16",
+      "city_name": "Dresden",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 95
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 146,
+          "annual_observation_count": 54,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 15,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 95,
+          "annual_observation_count": 53,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 15,
+            "q3": 14,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 14,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 0.9990834546383344,
+            "mean_scene_coverage_fraction": 0.99969027173859
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 146,
+            "annual_observation_count": 54,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 95,
+            "annual_observation_count": 53,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 14,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 168,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE17",
+      "city_name": "Munster",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 88,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 37,
+            "annual_observation_count": 0,
+            "quarterly_observation_counts": {
+              "q1": 0,
+              "q2": 0,
+              "q3": 0,
+              "q4": 0
+            },
+            "minimum_quarterly_observation_count": 0,
+            "minimum_scene_coverage_fraction": 0.0,
+            "mean_scene_coverage_fraction": 0.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE18",
+      "city_name": "Freiburg",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 15,
+          "annual_observation_count": 52,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 13,
+            "q3": 15,
+            "q4": 16
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 12,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 15,
+            "annual_observation_count": 52,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 15,
+              "q4": 16
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 88,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 14,
+              "q3": 15,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 49,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 12,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE19",
+      "city_name": "Kiel",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 44,
+          "annual_observation_count": 52,
+          "quarterly_observation_counts": {
+            "q1": 7,
+            "q2": 16,
+            "q3": 15,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 7,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 139,
+          "annual_observation_count": 52,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 13,
+            "q3": 16,
+            "q4": 15
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 52,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 16,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 117,
+            "annual_observation_count": 47,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 12,
+              "q3": 15,
+              "q4": 13
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 139,
+            "annual_observation_count": 52,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 16,
+              "q4": 15
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE20",
+      "city_name": "Rostock",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "frozen_primary": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 146
+      },
+      "selected_orbits": {
+        "ASCENDING": {
+          "orbit_pass": "ASCENDING",
+          "relative_orbit": 146,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 15,
+            "q3": 14,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "frozen_primary"
+        },
+        "DESCENDING": {
+          "orbit_pass": "DESCENDING",
+          "relative_orbit": 168,
+          "annual_observation_count": 51,
+          "quarterly_observation_counts": {
+            "q1": 8,
+            "q2": 15,
+            "q3": 14,
+            "q4": 14
+          },
+          "minimum_quarterly_observation_count": 8,
+          "minimum_scene_coverage_fraction": 1.0,
+          "mean_scene_coverage_fraction": 1.0,
+          "selection_role": "added_opposite_pass"
+        }
+      },
+      "candidates": {
+        "ASCENDING": [
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 44,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 7,
+              "q2": 15,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 7,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "ASCENDING",
+            "relative_orbit": 146,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 14,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ],
+        "DESCENDING": [
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 66,
+            "annual_observation_count": 50,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 13,
+              "q3": 15,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          },
+          {
+            "orbit_pass": "DESCENDING",
+            "relative_orbit": 168,
+            "annual_observation_count": 51,
+            "quarterly_observation_counts": {
+              "q1": 8,
+              "q2": 15,
+              "q3": 14,
+              "q4": 14
+            },
+            "minimum_quarterly_observation_count": 8,
+            "minimum_scene_coverage_fraction": 1.0,
+            "mean_scene_coverage_fraction": 1.0
+          }
+        ]
+      }
+    }
+  ],
+  "image_exports_authorized": true
+}

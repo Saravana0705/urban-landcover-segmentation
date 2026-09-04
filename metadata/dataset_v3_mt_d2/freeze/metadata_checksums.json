@@ -1,0 +1,26 @@
+{
+  "manifest": {
+    "path": "metadata\\dataset_v3_mt_d2\\dataset_manifest.csv",
+    "sha256": "450c0f6f5c4e69e33a3778dd9518ed30c321a5a3ed404c6bf14fd05f441e1ebb"
+  },
+  "tile_qa": {
+    "path": "metadata\\dataset_v3_mt_d2\\qa\\dataset_v3_mt_d2_tile_qa.json",
+    "sha256": "b528d88723787b34ebc575e0b4acc48de467b79076b63ac7de97b373a37ed68d"
+  },
+  "materialization_audit": {
+    "path": "metadata\\dataset_v3_mt_d2\\materialization\\dataset_v3_mt_d2_materialization_audit.json",
+    "sha256": "2e43dc2995c0ecf79f7376025b3748c6375e2a30c336c4e20d91e444b75b9f98"
+  },
+  "source_qa": {
+    "path": "metadata\\dataset_v3_mt_d2\\source_qa\\dataset_v3_mt_d2_source_qa.json",
+    "sha256": "f380837828e468620fb7454aeebec5689bf1c05ac902d1b3d35620672214c872"
+  },
+  "normalization_provenance": {
+    "path": "metadata\\dataset_v3_mt_d2\\normalization\\normalization_provenance.json",
+    "sha256": "d21f82e2a714e95f2b5e3306a8b286c2fe807445bc6dacfd3956d5580d63e34f"
+  },
+  "normalization": {
+    "path": "metadata\\dataset_v3_mt_d2\\normalization\\training_normalization.json",
+    "sha256": "368bbf28c066f2a6dcad3b97ead6a176bd954b6712962b6e3463c4bdc9347ed7"
+  }
+}

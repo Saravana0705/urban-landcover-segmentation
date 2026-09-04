@@ -1,0 +1,3913 @@
+{
+  "schema_version": "dataset-v3-mt-d2-source-qa-0.1",
+  "generated_at_utc": "2026-09-03T23:02:24.651526+00:00",
+  "status": "PASS",
+  "dataset_version": "v3-mt-d2",
+  "city_count": 20,
+  "expected_band_order": [
+    "VV_ASC_Q1",
+    "VH_ASC_Q1",
+    "VV_ASC_Q2",
+    "VH_ASC_Q2",
+    "VV_ASC_Q3",
+    "VH_ASC_Q3",
+    "VV_ASC_Q4",
+    "VH_ASC_Q4",
+    "VV_DESC_Q1",
+    "VH_DESC_Q1",
+    "VV_DESC_Q2",
+    "VH_DESC_Q2",
+    "VV_DESC_Q3",
+    "VH_DESC_Q3",
+    "VV_DESC_Q4",
+    "VH_DESC_Q4"
+  ],
+  "minimum_valid_fraction": 0.98,
+  "coverage_unit": "same_day_slice_union",
+  "selected_orbits": {
+    "DE01": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 50,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE02": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 50,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE03": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 66,
+        "annual_observation_count": 49,
+        "quarterly_observation_counts": {
+          "q1": 7,
+          "q2": 13,
+          "q3": 15,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 7,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE04": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 66,
+        "annual_observation_count": 49,
+        "quarterly_observation_counts": {
+          "q1": 7,
+          "q2": 13,
+          "q3": 15,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 7,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE05": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 117,
+        "annual_observation_count": 49,
+        "quarterly_observation_counts": {
+          "q1": 7,
+          "q2": 13,
+          "q3": 15,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 7,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 95,
+        "annual_observation_count": 54,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 15,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 0.9985724709073442,
+        "mean_scene_coverage_fraction": 0.9996376407066662,
+        "selection_role": "added_opposite_pass"
+      }
+    },
+    "DE06": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 44,
+        "annual_observation_count": 50,
+        "quarterly_observation_counts": {
+          "q1": 7,
+          "q2": 14,
+          "q3": 15,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 7,
+        "minimum_scene_coverage_fraction": 0.9973520804057356,
+        "mean_scene_coverage_fraction": 0.9987962407680676,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 168,
+        "annual_observation_count": 52,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 14,
+          "q3": 15,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE07": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 50,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE08": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE09": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 52,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 13,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE10": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 52,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 13,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE11": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 44,
+        "annual_observation_count": 50,
+        "quarterly_observation_counts": {
+          "q1": 7,
+          "q2": 15,
+          "q3": 14,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 7,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 66,
+        "annual_observation_count": 50,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 13,
+          "q3": 15,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE12": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 52,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 13,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE13": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 117,
+        "annual_observation_count": 48,
+        "quarterly_observation_counts": {
+          "q1": 7,
+          "q2": 12,
+          "q3": 15,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 7,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 34,
+        "quarterly_observation_counts": {
+          "q1": 6,
+          "q2": 5,
+          "q3": 11,
+          "q4": 12
+        },
+        "minimum_quarterly_observation_count": 5,
+        "minimum_scene_coverage_fraction": 0.980335422209228,
+        "mean_scene_coverage_fraction": 0.9820130500321368,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE14": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 146,
+        "annual_observation_count": 54,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 15,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 168,
+        "annual_observation_count": 54,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 15,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      }
+    },
+    "DE15": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 44,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 7,
+          "q2": 14,
+          "q3": 15,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 7,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 168,
+        "annual_observation_count": 54,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 15,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE16": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 146,
+        "annual_observation_count": 54,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 15,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 95,
+        "annual_observation_count": 53,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 15,
+          "q3": 14,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE17": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE18": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 15,
+        "annual_observation_count": 52,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 13,
+          "q3": 15,
+          "q4": 16
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 12,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE19": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 44,
+        "annual_observation_count": 52,
+        "quarterly_observation_counts": {
+          "q1": 7,
+          "q2": 16,
+          "q3": 15,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 7,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 139,
+        "annual_observation_count": 52,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 13,
+          "q3": 16,
+          "q4": 15
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      }
+    },
+    "DE20": {
+      "ASCENDING": {
+        "orbit_pass": "ASCENDING",
+        "relative_orbit": 146,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 15,
+          "q3": 14,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "frozen_primary"
+      },
+      "DESCENDING": {
+        "orbit_pass": "DESCENDING",
+        "relative_orbit": 168,
+        "annual_observation_count": 51,
+        "quarterly_observation_counts": {
+          "q1": 8,
+          "q2": 15,
+          "q3": 14,
+          "q4": 14
+        },
+        "minimum_quarterly_observation_count": 8,
+        "minimum_scene_coverage_fraction": 1.0,
+        "mean_scene_coverage_fraction": 1.0,
+        "selection_role": "added_opposite_pass"
+      }
+    }
+  },
+  "labels_modified": false,
+  "split_assignments_modified": false,
+  "cities": [
+    {
+      "city_id": "DE01",
+      "city_name": "Mannheim",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE01_Mannheim\\DE01_Mannheim_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "a9e79362a99383819d21a7ad10b7f8e2f8a69925b9b76e762853132ef559104f",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0019202555995434523,
+            "maximum_positive": 2370.53369140625,
+            "mean_positive": 0.2575563388227088
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4741690392838791e-05,
+            "maximum_positive": 356.2254333496094,
+            "mean_positive": 0.038143849516223974
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002306810114532709,
+            "maximum_positive": 2197.9423828125,
+            "mean_positive": 0.2394107453888028
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.623885565204546e-05,
+            "maximum_positive": 329.3408203125,
+            "mean_positive": 0.03767177414351759
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001993871293962002,
+            "maximum_positive": 2376.345703125,
+            "mean_positive": 0.23645581929356527
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.418851939495653e-05,
+            "maximum_positive": 331.25677490234375,
+            "mean_positive": 0.03682216859156499
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002049821661785245,
+            "maximum_positive": 2026.6258544921875,
+            "mean_positive": 0.2598138471439397
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001237992983078584,
+            "maximum_positive": 355.22900390625,
+            "mean_positive": 0.03776522691241246
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009091905085369945,
+            "maximum_positive": 3709.88720703125,
+            "mean_positive": 0.23388741319817402
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2827335922338534e-05,
+            "maximum_positive": 82.43665313720703,
+            "mean_positive": 0.03393456641351375
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005967653123661876,
+            "maximum_positive": 4896.9150390625,
+            "mean_positive": 0.21877413821714842
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4178787751006894e-05,
+            "maximum_positive": 73.72808837890625,
+            "mean_positive": 0.035665198700385495
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010659735416993499,
+            "maximum_positive": 4094.189697265625,
+            "mean_positive": 0.22627917748942034
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.101505277911201e-05,
+            "maximum_positive": 71.51937866210938,
+            "mean_positive": 0.03564428435993297
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009838438127189875,
+            "maximum_positive": 2955.392822265625,
+            "mean_positive": 0.25112427535844595
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.2638490160461515e-05,
+            "maximum_positive": 74.65940856933594,
+            "mean_positive": 0.036767656874028345
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE02",
+      "city_name": "Heidelberg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE02_Heidelberg\\DE02_Heidelberg_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "72a3f9c58cf8cf43da1dd1c6005babcfd516db3228c107f7bd78ab0008344eb4",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0021188741084188223,
+            "maximum_positive": 2131.558349609375,
+            "mean_positive": 0.22593287362827158
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.181816595722921e-05,
+            "maximum_positive": 390.426513671875,
+            "mean_positive": 0.04201348200788962
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002073624636977911,
+            "maximum_positive": 2072.9169921875,
+            "mean_positive": 0.21664976155127164
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000117484487418551,
+            "maximum_positive": 359.05865478515625,
+            "mean_positive": 0.039814430543321344
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0019846917130053043,
+            "maximum_positive": 2095.4921875,
+            "mean_positive": 0.21245775325698177
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00015898710989858955,
+            "maximum_positive": 331.25677490234375,
+            "mean_positive": 0.037852998902667766
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001948308665305376,
+            "maximum_positive": 1961.381591796875,
+            "mean_positive": 0.22729026787200182
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001360392925562337,
+            "maximum_positive": 364.6604309082031,
+            "mean_positive": 0.040182937131075125
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0012151362607255578,
+            "maximum_positive": 2397.63134765625,
+            "mean_positive": 0.21940641606289918
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.280169999517966e-05,
+            "maximum_positive": 64.81316375732422,
+            "mean_positive": 0.036845107385019414
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008605223847553134,
+            "maximum_positive": 2137.94482421875,
+            "mean_positive": 0.21309654419749485
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.645337710622698e-05,
+            "maximum_positive": 65.12387084960938,
+            "mean_positive": 0.03772433749017074
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010652709752321243,
+            "maximum_positive": 2297.902587890625,
+            "mean_positive": 0.21906266576190728
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.221526564331725e-05,
+            "maximum_positive": 58.22305679321289,
+            "mean_positive": 0.03651081245583314
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007947168196551502,
+            "maximum_positive": 2955.392822265625,
+            "mean_positive": 0.23699884980572145
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.478458767058328e-05,
+            "maximum_positive": 70.24256134033203,
+            "mean_positive": 0.03945525317071722
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE03",
+      "city_name": "Karlsruhe",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE03_Karlsruhe\\DE03_Karlsruhe_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "c5bbd8fd5d044e7f3989227f367cd07609f467034c98580800c40f333ff3b014",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018445767927914858,
+            "maximum_positive": 8035.82861328125,
+            "mean_positive": 0.2050099086151092
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5778459783177823e-05,
+            "maximum_positive": 89.93495178222656,
+            "mean_positive": 0.042600711989186184
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020656136330217123,
+            "maximum_positive": 1453.3389892578125,
+            "mean_positive": 0.17825314430163575
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.896720201941207e-05,
+            "maximum_positive": 87.32658386230469,
+            "mean_positive": 0.037430430975533065
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020306105725467205,
+            "maximum_positive": 828.3914794921875,
+            "mean_positive": 0.17324687108235406
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010895696323132142,
+            "maximum_positive": 79.1220703125,
+            "mean_positive": 0.03631359163487528
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0019519523484632373,
+            "maximum_positive": 891.2879638671875,
+            "mean_positive": 0.18853934791867982
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00020694572594948113,
+            "maximum_positive": 85.93717956542969,
+            "mean_positive": 0.039372834175572184
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011049375170841813,
+            "maximum_positive": 1313.713623046875,
+            "mean_positive": 0.19061911978827395
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.875374699826352e-05,
+            "maximum_positive": 540.1458129882812,
+            "mean_positive": 0.03533069625342202
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017811462748795748,
+            "maximum_positive": 1570.0799560546875,
+            "mean_positive": 0.1688127352479419
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001819577009882778,
+            "maximum_positive": 722.8621215820312,
+            "mean_positive": 0.03169571967418447
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018441900610923767,
+            "maximum_positive": 1293.256103515625,
+            "mean_positive": 0.17285135712971103
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0002650198293849826,
+            "maximum_positive": 697.0691528320312,
+            "mean_positive": 0.03179506536410758
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018619033508002758,
+            "maximum_positive": 1432.793701171875,
+            "mean_positive": 0.18222794948660453
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00021585010108537972,
+            "maximum_positive": 598.8829345703125,
+            "mean_positive": 0.03388046934422746
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE04",
+      "city_name": "Stuttgart",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE04_Stuttgart\\DE04_Stuttgart_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "31f03cb3457b56261989eccae323fd3cea6c8cd0e2278e4ca7a1efe2b37dcaa4",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017705090576782823,
+            "maximum_positive": 2323.598876953125,
+            "mean_positive": 0.28420054914720977
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.639846181613393e-05,
+            "maximum_positive": 192.53073120117188,
+            "mean_positive": 0.045283937038132466
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001785568310879171,
+            "maximum_positive": 2281.850341796875,
+            "mean_positive": 0.2557376175249375
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001078069835784845,
+            "maximum_positive": 186.79571533203125,
+            "mean_positive": 0.041202556758789824
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002301790751516819,
+            "maximum_positive": 2061.052978515625,
+            "mean_positive": 0.2600118490295994
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001598814851604402,
+            "maximum_positive": 172.00039672851562,
+            "mean_positive": 0.040903474399719406
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001837881631217897,
+            "maximum_positive": 2167.47900390625,
+            "mean_positive": 0.2737356646470346
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010514354653423652,
+            "maximum_positive": 194.3706817626953,
+            "mean_positive": 0.04270589235132771
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0026074901688843966,
+            "maximum_positive": 1115.02978515625,
+            "mean_positive": 0.26026032152910966
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010006475349655375,
+            "maximum_positive": 156.75393676757812,
+            "mean_positive": 0.04598517350220851
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0028491143602877855,
+            "maximum_positive": 1201.0086669921875,
+            "mean_positive": 0.24116157604759073
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00021849299082532525,
+            "maximum_positive": 193.0865478515625,
+            "mean_positive": 0.04311719835663638
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0029072125907987356,
+            "maximum_positive": 1231.297119140625,
+            "mean_positive": 0.2526627166513342
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005050845211371779,
+            "maximum_positive": 183.7082061767578,
+            "mean_positive": 0.04415158317285056
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0029404854867607355,
+            "maximum_positive": 1101.778564453125,
+            "mean_positive": 0.26274510403129375
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000530492456164211,
+            "maximum_positive": 178.01002502441406,
+            "mean_positive": 0.04549732361394751
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE05",
+      "city_name": "Munich",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE05_Munich\\DE05_Munich_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "dd51b7e36c5c549ed517252dd682bf0126a7ce840f072290c67f3c8a0ce292ff",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00049305654829368,
+            "maximum_positive": 2932.65380859375,
+            "mean_positive": 0.27700923891045903
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.542553582112305e-05,
+            "maximum_positive": 776.33203125,
+            "mean_positive": 0.048919136012274045
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009798844112083316,
+            "maximum_positive": 2474.220458984375,
+            "mean_positive": 0.24598993177585562
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.102409391431138e-05,
+            "maximum_positive": 706.5504150390625,
+            "mean_positive": 0.046585807885802896
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008009796147234738,
+            "maximum_positive": 2404.777099609375,
+            "mean_positive": 0.2550921007892713
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001166104048024863,
+            "maximum_positive": 676.2618408203125,
+            "mean_positive": 0.04691641312880125
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014441541861742735,
+            "maximum_positive": 2358.82275390625,
+            "mean_positive": 0.26554299688358896
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001419104664819315,
+            "maximum_positive": 651.147705078125,
+            "mean_positive": 0.047729326942280756
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 0.9985416666666667,
+            "minimum_positive": 4.806229844689369e-05,
+            "maximum_positive": 3103.6435546875,
+            "mean_positive": 0.2573674633348291
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 0.9985416666666667,
+            "minimum_positive": 3.0123905503387505e-07,
+            "maximum_positive": 352.6224670410156,
+            "mean_positive": 0.037366160650397995
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 0.9997873333333334,
+            "minimum_positive": 0.0004111240559723228,
+            "maximum_positive": 2788.8173828125,
+            "mean_positive": 0.2445869876424091
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 0.9997873333333334,
+            "minimum_positive": 2.8578815545188263e-05,
+            "maximum_positive": 355.9320068359375,
+            "mean_positive": 0.037280612797008915
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 0.9997547777777778,
+            "minimum_positive": 0.00019182069809176028,
+            "maximum_positive": 2931.7705078125,
+            "mean_positive": 0.27011104521015983
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 0.9997547777777778,
+            "minimum_positive": 3.266421117587015e-05,
+            "maximum_positive": 373.9783020019531,
+            "mean_positive": 0.03994692135849075
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 0.9991067777777778,
+            "minimum_positive": 8.601002627983689e-05,
+            "maximum_positive": 3067.052490234375,
+            "mean_positive": 0.2662984309192574
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 0.9991067777777778,
+            "minimum_positive": 5.805428372696042e-06,
+            "maximum_positive": 375.7095031738281,
+            "mean_positive": 0.038699991900523124
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE06",
+      "city_name": "Nuremberg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE06_Nuremberg\\DE06_Nuremberg_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "24ec7156db51e53c6f5e761c107c28d2bf5de76bb1e4bfbfd6c04eb0664b8292",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 0.9990212222222222,
+            "minimum_positive": 0.00014446498244069517,
+            "maximum_positive": 1089.4599609375,
+            "mean_positive": 0.23195486856395642
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 0.9990212222222222,
+            "minimum_positive": 2.8440715595934307e-06,
+            "maximum_positive": 254.3295440673828,
+            "mean_positive": 0.04038170698619125
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 0.9989245555555556,
+            "minimum_positive": 0.0007066814578138292,
+            "maximum_positive": 1046.6728515625,
+            "mean_positive": 0.2055405428070781
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 0.9989245555555556,
+            "minimum_positive": 4.1616215185058536e-07,
+            "maximum_positive": 189.6178741455078,
+            "mean_positive": 0.03969522572047707
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 0.9987965555555556,
+            "minimum_positive": 0.0006639868952333927,
+            "maximum_positive": 829.4803466796875,
+            "mean_positive": 0.2106844542277677
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 0.9987965555555556,
+            "minimum_positive": 0.00011158881534356624,
+            "maximum_positive": 184.27134704589844,
+            "mean_positive": 0.039068730312131615
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 0.9990761111111112,
+            "minimum_positive": 0.0002498541143722832,
+            "maximum_positive": 811.3118286132812,
+            "mean_positive": 0.22142864173114293
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 0.9990761111111112,
+            "minimum_positive": 9.57179599936353e-06,
+            "maximum_positive": 358.2565002441406,
+            "mean_positive": 0.038628898379114075
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0026992931962013245,
+            "maximum_positive": 4677.81787109375,
+            "mean_positive": 0.23319950998945924
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.347984450869262e-05,
+            "maximum_positive": 138.69052124023438,
+            "mean_positive": 0.03327330760571176
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001980240922421217,
+            "maximum_positive": 7849.9365234375,
+            "mean_positive": 0.21603609465202098
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00032345083309337497,
+            "maximum_positive": 124.56219482421875,
+            "mean_positive": 0.03325218653463179
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002541400259360671,
+            "maximum_positive": 7078.72998046875,
+            "mean_positive": 0.2321812324807433
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000294067693175748,
+            "maximum_positive": 146.8552703857422,
+            "mean_positive": 0.03558423336817338
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002449191175401211,
+            "maximum_positive": 7088.9755859375,
+            "mean_positive": 0.2299497173630241
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00028989711427129805,
+            "maximum_positive": 150.93402099609375,
+            "mean_positive": 0.03367187430140831
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE07",
+      "city_name": "Frankfurt",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE07_Frankfurt\\DE07_Frankfurt_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "62cab0b7d649baddcf12d2de2a6b1a17648d3b6445a7990203532ba4e23bc1c3",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018179155886173248,
+            "maximum_positive": 11667.927734375,
+            "mean_positive": 0.3012169662573583
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 3.106471194769256e-05,
+            "maximum_positive": 2080.801025390625,
+            "mean_positive": 0.05207504018281231
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00190167932305485,
+            "maximum_positive": 11339.77734375,
+            "mean_positive": 0.2841705114671822
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001745507906889543,
+            "maximum_positive": 2013.583251953125,
+            "mean_positive": 0.048817170447469
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0019250249024480581,
+            "maximum_positive": 9856.625,
+            "mean_positive": 0.2760378848002071
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011234400881221518,
+            "maximum_positive": 1726.8592529296875,
+            "mean_positive": 0.04660479078683407
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017935078358277678,
+            "maximum_positive": 3604.05419921875,
+            "mean_positive": 0.29647841364885524
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00019929188420064747,
+            "maximum_positive": 424.9137878417969,
+            "mean_positive": 0.04857060245797429
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001291787251830101,
+            "maximum_positive": 10268.716796875,
+            "mean_positive": 0.2892874597704758
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3637172742164694e-05,
+            "maximum_positive": 3274.330322265625,
+            "mean_positive": 0.054854129054716885
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017320895567536354,
+            "maximum_positive": 9301.251953125,
+            "mean_positive": 0.2651408514623898
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010803554323501885,
+            "maximum_positive": 2252.35205078125,
+            "mean_positive": 0.05257968865657757
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001411888631992042,
+            "maximum_positive": 8717.0078125,
+            "mean_positive": 0.26846368589197034
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011065394937759265,
+            "maximum_positive": 1511.6976318359375,
+            "mean_positive": 0.050949665889038535
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014458781806752086,
+            "maximum_positive": 10588.298828125,
+            "mean_positive": 0.29708597235616535
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001019662304315716,
+            "maximum_positive": 3149.510986328125,
+            "mean_positive": 0.0563731336876362
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE08",
+      "city_name": "Cologne",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE08_Cologne\\DE08_Cologne_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "6aaf4ead77b5290620f5585b9ee150a89f31b2d9f10a7f9cf6377dd22a75651d",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0012632360449060798,
+            "maximum_positive": 1602.99609375,
+            "mean_positive": 0.3247411956386533
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3202969967096578e-05,
+            "maximum_positive": 289.6898498535156,
+            "mean_positive": 0.049329715862948605
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0015426389873027802,
+            "maximum_positive": 2641.80712890625,
+            "mean_positive": 0.29838776912215026
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.8376734917401336e-05,
+            "maximum_positive": 351.8271484375,
+            "mean_positive": 0.04616200199158593
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0021129765082150698,
+            "maximum_positive": 2284.4814453125,
+            "mean_positive": 0.2976955428385866
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013188194134272635,
+            "maximum_positive": 342.10076904296875,
+            "mean_positive": 0.04494996163053541
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011785553069785237,
+            "maximum_positive": 1359.47802734375,
+            "mean_positive": 0.32665000046464115
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013805695925839245,
+            "maximum_positive": 352.96136474609375,
+            "mean_positive": 0.04870538516552291
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009290673770010471,
+            "maximum_positive": 2443.998291015625,
+            "mean_positive": 0.29378460081232993
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.3258220608113334e-05,
+            "maximum_positive": 220.98580932617188,
+            "mean_positive": 0.04777992128945473
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008567286422476172,
+            "maximum_positive": 2486.167236328125,
+            "mean_positive": 0.27208076126969544
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.537633139989339e-05,
+            "maximum_positive": 222.4264373779297,
+            "mean_positive": 0.045421467978924386
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009462673915550113,
+            "maximum_positive": 2290.433349609375,
+            "mean_positive": 0.2689357940415862
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011655117123154923,
+            "maximum_positive": 207.53848266601562,
+            "mean_positive": 0.043690646347140365
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014991841744631529,
+            "maximum_positive": 2134.825927734375,
+            "mean_positive": 0.2975542430085424
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010408966045361012,
+            "maximum_positive": 202.6304168701172,
+            "mean_positive": 0.04870435211690988
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE09",
+      "city_name": "Dusseldorf",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE09_Dusseldorf\\DE09_Dusseldorf_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "fecfd60691bc4bc4a429ae6a20880e0aa480684804ca2eef31b5571fdb99a6dd",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0015631960704922676,
+            "maximum_positive": 3637.869384765625,
+            "mean_positive": 0.2997323430707709
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3088148989481851e-05,
+            "maximum_positive": 365.330078125,
+            "mean_positive": 0.04663591014067481
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018334236228838563,
+            "maximum_positive": 3412.96533203125,
+            "mean_positive": 0.26156411132422763
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.986646909965202e-05,
+            "maximum_positive": 394.50946044921875,
+            "mean_positive": 0.04253039937787344
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0023548163007944822,
+            "maximum_positive": 3437.871826171875,
+            "mean_positive": 0.2627353673218175
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010234406363451853,
+            "maximum_positive": 363.7611999511719,
+            "mean_positive": 0.04155573211577585
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017597271362319589,
+            "maximum_positive": 3661.216552734375,
+            "mean_positive": 0.2974732444224613
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013706320896744728,
+            "maximum_positive": 369.6121520996094,
+            "mean_positive": 0.04564796349552807
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0028494768775999546,
+            "maximum_positive": 1458.1220703125,
+            "mean_positive": 0.25980430085858736
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00019875729049090296,
+            "maximum_positive": 248.95016479492188,
+            "mean_positive": 0.04335828387056058
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0021068076603114605,
+            "maximum_positive": 3940.584716796875,
+            "mean_positive": 0.24288872082161717
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003671117010526359,
+            "maximum_positive": 240.42486572265625,
+            "mean_positive": 0.04124478816690234
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0024940199218690395,
+            "maximum_positive": 2617.42919921875,
+            "mean_positive": 0.24394184197939628
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00042117928387597203,
+            "maximum_positive": 197.85836791992188,
+            "mean_positive": 0.04036932093829561
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00284402584657073,
+            "maximum_positive": 3717.010009765625,
+            "mean_positive": 0.2723359893662004
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005164045724086463,
+            "maximum_positive": 208.30506896972656,
+            "mean_positive": 0.044836744581987595
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE10",
+      "city_name": "Dortmund",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE10_Dortmund\\DE10_Dortmund_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "3ea0b49087d9a943e7aa5e590a23bdb8fc08d728dd2884874afc549573e0dca9",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0015908259665593505,
+            "maximum_positive": 2481.583740234375,
+            "mean_positive": 0.2947431456143045
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.854710146493744e-05,
+            "maximum_positive": 185.1182098388672,
+            "mean_positive": 0.04233065000124446
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0015997099690139294,
+            "maximum_positive": 2373.64453125,
+            "mean_positive": 0.25652207442079605
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.33823180780746e-05,
+            "maximum_positive": 179.2884063720703,
+            "mean_positive": 0.0357356535786712
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013418415328487754,
+            "maximum_positive": 2520.153076171875,
+            "mean_positive": 0.25593504496381037
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.275719402357936e-05,
+            "maximum_positive": 185.29803466796875,
+            "mean_positive": 0.03457369010799136
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018854782683774829,
+            "maximum_positive": 2475.490234375,
+            "mean_positive": 0.2873239746196151
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001960442023118958,
+            "maximum_positive": 168.5209503173828,
+            "mean_positive": 0.038837608404876926
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011975476518273354,
+            "maximum_positive": 5016.35693359375,
+            "mean_positive": 0.22802600614678553
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.511015868047252e-05,
+            "maximum_positive": 272.3543701171875,
+            "mean_positive": 0.039982287854101364
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008261424954980612,
+            "maximum_positive": 5121.6953125,
+            "mean_positive": 0.2129982508632121
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001484367239754647,
+            "maximum_positive": 262.433837890625,
+            "mean_positive": 0.03761125567375987
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001595972920767963,
+            "maximum_positive": 2723.690673828125,
+            "mean_positive": 0.2105654331705085
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00012853555381298065,
+            "maximum_positive": 216.4348907470703,
+            "mean_positive": 0.03606800548393689
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014025219716131687,
+            "maximum_positive": 1799.0111083984375,
+            "mean_positive": 0.23468760770663846
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001658289402257651,
+            "maximum_positive": 226.37545776367188,
+            "mean_positive": 0.0410516452369345
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE11",
+      "city_name": "Hamburg",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE11_Hamburg\\DE11_Hamburg_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "e96b120f03ce2415122afe93b4e1987ac2e0a77205399830cceaeb97710aa248",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011719148606061935,
+            "maximum_positive": 1819.1771240234375,
+            "mean_positive": 0.3241407945562932
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2444143976608757e-05,
+            "maximum_positive": 147.18902587890625,
+            "mean_positive": 0.046641926445270876
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0012840923154726624,
+            "maximum_positive": 2605.25537109375,
+            "mean_positive": 0.30068727078649
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.375343971536495e-05,
+            "maximum_positive": 206.0067901611328,
+            "mean_positive": 0.044391306016463544
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002165061654523015,
+            "maximum_positive": 2480.0390625,
+            "mean_positive": 0.30378580222431467
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.755044468154665e-05,
+            "maximum_positive": 225.6670684814453,
+            "mean_positive": 0.04377352875359392
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002067937981337309,
+            "maximum_positive": 2231.035888671875,
+            "mean_positive": 0.3367588237325041
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.2847614673082717e-05,
+            "maximum_positive": 160.73219299316406,
+            "mean_positive": 0.047439333037061056
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00028207062860019505,
+            "maximum_positive": 12359.0732421875,
+            "mean_positive": 0.298373819732926
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5390076441690326e-05,
+            "maximum_positive": 616.3851928710938,
+            "mean_positive": 0.041522113525947146
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010161376558244228,
+            "maximum_positive": 12360.1611328125,
+            "mean_positive": 0.2800609377343504
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7169997590826824e-05,
+            "maximum_positive": 735.6700439453125,
+            "mean_positive": 0.03862121509519047
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016181831015273929,
+            "maximum_positive": 12184.9912109375,
+            "mean_positive": 0.28076668546787226
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.7609416318009607e-05,
+            "maximum_positive": 458.0710144042969,
+            "mean_positive": 0.038601420369634626
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020824556704610586,
+            "maximum_positive": 12320.7138671875,
+            "mean_positive": 0.3048000839792143
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.9041099221794866e-05,
+            "maximum_positive": 515.7515258789062,
+            "mean_positive": 0.041914283949059966
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE12",
+      "city_name": "Bremen",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE12_Bremen\\DE12_Bremen_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "d72bb66845c46bab691487d0aa2f3c5ff485efddda528d527ea396f93d22faf8",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0021208508405834436,
+            "maximum_positive": 3180.408935546875,
+            "mean_positive": 0.1800787987144798
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010096166079165414,
+            "maximum_positive": 162.62452697753906,
+            "mean_positive": 0.030375510601937303
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0022836250718683004,
+            "maximum_positive": 1858.6165771484375,
+            "mean_positive": 0.15281002459041632
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00022904355137143284,
+            "maximum_positive": 98.21752166748047,
+            "mean_positive": 0.027604700150744538
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002518110442906618,
+            "maximum_positive": 1580.72705078125,
+            "mean_positive": 0.1494549756253712
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003585457743611187,
+            "maximum_positive": 81.73123168945312,
+            "mean_positive": 0.02713118887959791
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0025673434138298035,
+            "maximum_positive": 4983.78076171875,
+            "mean_positive": 0.17972925536201312
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00036284184898249805,
+            "maximum_positive": 142.4099578857422,
+            "mean_positive": 0.029262549942735652
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005038744420744479,
+            "maximum_positive": 11654.455078125,
+            "mean_positive": 0.19325615664647436
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3732470506511163e-05,
+            "maximum_positive": 60.990394592285156,
+            "mean_positive": 0.02621902804421378
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0007890940178185701,
+            "maximum_positive": 11651.1337890625,
+            "mean_positive": 0.17297394325656706
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.9840721254004166e-05,
+            "maximum_positive": 58.2204475402832,
+            "mean_positive": 0.025414792063149706
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010054113809019327,
+            "maximum_positive": 890.71923828125,
+            "mean_positive": 0.1647964031486904
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 4.542892565950751e-05,
+            "maximum_positive": 67.62079620361328,
+            "mean_positive": 0.026414467722202593
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016000423347577453,
+            "maximum_positive": 11651.701171875,
+            "mean_positive": 0.20627154019163874
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.612476888927631e-05,
+            "maximum_positive": 66.35765838623047,
+            "mean_positive": 0.028910052320423433
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE13",
+      "city_name": "Hanover",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE13_Hanover\\DE13_Hanover_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "e22bf34281500637f2b7a724ae4d25b4edee2064764d00f61a57e8fd18f32f62",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0019550223369151354,
+            "maximum_positive": 1884.861572265625,
+            "mean_positive": 0.2141379969815925
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4705930880154483e-05,
+            "maximum_positive": 244.24929809570312,
+            "mean_positive": 0.030445008463891546
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002915741177275777,
+            "maximum_positive": 819.7625122070312,
+            "mean_positive": 0.19062088497090118
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.290486584883183e-05,
+            "maximum_positive": 259.1487731933594,
+            "mean_positive": 0.030013737333095283
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002276384038850665,
+            "maximum_positive": 848.1911010742188,
+            "mean_positive": 0.19772864107058116
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00016679138934705406,
+            "maximum_positive": 260.4026184082031,
+            "mean_positive": 0.029023875232129907
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020429054275155067,
+            "maximum_positive": 2419.254638671875,
+            "mean_positive": 0.2211285076497405
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001671913923928514,
+            "maximum_positive": 242.77755737304688,
+            "mean_positive": 0.029937811742329273
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 0.9832008888888889,
+            "minimum_positive": 0.00018740924133453518,
+            "maximum_positive": 1514.982421875,
+            "mean_positive": 0.19721869614487345
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 0.9832008888888889,
+            "minimum_positive": 1.781739058515086e-07,
+            "maximum_positive": 303.394775390625,
+            "mean_positive": 0.03170062448491907
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 0.9851744444444445,
+            "minimum_positive": 3.48489334101032e-06,
+            "maximum_positive": 1600.68896484375,
+            "mean_positive": 0.1619297881567779
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 0.9851744444444445,
+            "minimum_positive": 3.347412871335109e-07,
+            "maximum_positive": 275.5964660644531,
+            "mean_positive": 0.029285167394381535
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 0.9827843333333334,
+            "minimum_positive": 0.00016753835370764136,
+            "maximum_positive": 1524.2828369140625,
+            "mean_positive": 0.17979615068404767
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 0.9827843333333334,
+            "minimum_positive": 1.3111583939462435e-05,
+            "maximum_positive": 303.3847961425781,
+            "mean_positive": 0.030359094339246776
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 0.9837888888888889,
+            "minimum_positive": 0.0005056247464381158,
+            "maximum_positive": 1707.7716064453125,
+            "mean_positive": 0.2194120972922605
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 0.9837888888888889,
+            "minimum_positive": 5.544239320443012e-05,
+            "maximum_positive": 296.4641418457031,
+            "mean_positive": 0.03441529413891479
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE14",
+      "city_name": "Berlin",
+      "split": "train",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE14_Berlin\\DE14_Berlin_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "14add90c37ef37cbcd17d234d34407d768ffd5e2fd172396cea8ca5d4e407e8a",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000799205619841814,
+            "maximum_positive": 2516.31201171875,
+            "mean_positive": 0.37260345995640504
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4114952136878856e-05,
+            "maximum_positive": 975.33837890625,
+            "mean_positive": 0.06570051323365257
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001751561532728374,
+            "maximum_positive": 2403.381103515625,
+            "mean_positive": 0.3382398862235491
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.816783232148737e-05,
+            "maximum_positive": 790.3176879882812,
+            "mean_positive": 0.06041370951097103
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013563783140853047,
+            "maximum_positive": 2394.744873046875,
+            "mean_positive": 0.348951808475685
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013835245044901967,
+            "maximum_positive": 990.43408203125,
+            "mean_positive": 0.061450572934394286
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013863001950085163,
+            "maximum_positive": 3254.666748046875,
+            "mean_positive": 0.36400282124710737
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.931602547410876e-05,
+            "maximum_positive": 1845.52978515625,
+            "mean_positive": 0.0646250638658112
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008857056382112205,
+            "maximum_positive": 2822.574462890625,
+            "mean_positive": 0.3714291813271207
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3824315828969702e-05,
+            "maximum_positive": 112.1136703491211,
+            "mean_positive": 0.05738563754669095
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0014595759566873312,
+            "maximum_positive": 2629.778564453125,
+            "mean_positive": 0.3398538146328893
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.352245251648128e-05,
+            "maximum_positive": 182.2435760498047,
+            "mean_positive": 0.054535286382529975
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0015777626540511847,
+            "maximum_positive": 2548.88427734375,
+            "mean_positive": 0.35225642773672267
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011398259812267497,
+            "maximum_positive": 110.97145080566406,
+            "mean_positive": 0.055256737708702666
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017242011381313205,
+            "maximum_positive": 2620.286376953125,
+            "mean_positive": 0.36104208728091663
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.001203579828143e-05,
+            "maximum_positive": 119.87799072265625,
+            "mean_positive": 0.056537411581976026
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE15",
+      "city_name": "Leipzig",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE15_Leipzig\\DE15_Leipzig_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "3d9599c1f0b5be18178f452d66347388d1dd4f8436dcf80a4caf2876fbda4fbd",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009826477617025375,
+            "maximum_positive": 1562.7486572265625,
+            "mean_positive": 0.1925387966749751
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4815167560300324e-05,
+            "maximum_positive": 107.4944839477539,
+            "mean_positive": 0.02599664745699084
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020491909235715866,
+            "maximum_positive": 1485.774169921875,
+            "mean_positive": 0.1665452913653547
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.6277777578798123e-05,
+            "maximum_positive": 74.91007995605469,
+            "mean_positive": 0.025631674448752383
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013553875032812357,
+            "maximum_positive": 1498.5040283203125,
+            "mean_positive": 0.1732410757462939
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.6768146451795474e-05,
+            "maximum_positive": 69.47965240478516,
+            "mean_positive": 0.023054357193552456
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001211568247526884,
+            "maximum_positive": 1637.291748046875,
+            "mean_positive": 0.19552070832735366
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.890941505029332e-05,
+            "maximum_positive": 73.35730743408203,
+            "mean_positive": 0.024690671901510607
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00033176521537825465,
+            "maximum_positive": 3960.08984375,
+            "mean_positive": 0.18387506448793717
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3799919543089345e-05,
+            "maximum_positive": 242.86477661132812,
+            "mean_positive": 0.024759710214234416
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010112882591784,
+            "maximum_positive": 4013.51953125,
+            "mean_positive": 0.1601432199482865
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3827027942170389e-05,
+            "maximum_positive": 87.95056915283203,
+            "mean_positive": 0.023911166826610215
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0006949061062186956,
+            "maximum_positive": 3982.35302734375,
+            "mean_positive": 0.17076307924691717
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5487737982766703e-05,
+            "maximum_positive": 87.17678833007812,
+            "mean_positive": 0.022641147669242714
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009623403311707079,
+            "maximum_positive": 4198.77734375,
+            "mean_positive": 0.19144804584525574
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5466557670151815e-05,
+            "maximum_positive": 76.03987121582031,
+            "mean_positive": 0.024203952525264978
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE16",
+      "city_name": "Dresden",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE16_Dresden\\DE16_Dresden_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "93829d37ca2add7c8481c5f00c9bbe6ce6cd0976d208794bf0f26fbc7bfd455c",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0006943261250853539,
+            "maximum_positive": 2287.22802734375,
+            "mean_positive": 0.17043929433080315
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3889482943341136e-05,
+            "maximum_positive": 217.70242309570312,
+            "mean_positive": 0.033402078966047515
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008219627197831869,
+            "maximum_positive": 1446.915283203125,
+            "mean_positive": 0.15202658740389147
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.561711052199826e-05,
+            "maximum_positive": 190.6997833251953,
+            "mean_positive": 0.03219815314758481
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008450072491541505,
+            "maximum_positive": 1472.1317138671875,
+            "mean_positive": 0.16011382607507482
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00011449793964857236,
+            "maximum_positive": 189.48196411132812,
+            "mean_positive": 0.031337223231871124
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000574248842895031,
+            "maximum_positive": 2297.14794921875,
+            "mean_positive": 0.17045299153295876
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.611456774407998e-05,
+            "maximum_positive": 189.97303771972656,
+            "mean_positive": 0.03236824714682517
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009748683660291135,
+            "maximum_positive": 748.4815673828125,
+            "mean_positive": 0.1429040388338767
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5682069715694524e-05,
+            "maximum_positive": 57.71534729003906,
+            "mean_positive": 0.0267993160035618
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001594935660250485,
+            "maximum_positive": 676.1858520507812,
+            "mean_positive": 0.14038414747461705
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00010886556265177205,
+            "maximum_positive": 60.86170196533203,
+            "mean_positive": 0.02765914481002377
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0015147023368626833,
+            "maximum_positive": 561.64013671875,
+            "mean_positive": 0.1539889590259553
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.749779277015477e-05,
+            "maximum_positive": 54.10307312011719,
+            "mean_positive": 0.028551042706439586
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017934726784005761,
+            "maximum_positive": 481.86151123046875,
+            "mean_positive": 0.15620544766207178
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013820725143887103,
+            "maximum_positive": 56.69240188598633,
+            "mean_positive": 0.028208332261965754
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE17",
+      "city_name": "Munster",
+      "split": "val",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE17_Munster\\DE17_Munster_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "1602b38d83b53da2c8191b9efcacd197d7632cc8e4297f74800e5363cd3b505e",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.003105806652456522,
+            "maximum_positive": 946.8831787109375,
+            "mean_positive": 0.1764444248985684
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.452191882999614e-05,
+            "maximum_positive": 162.849609375,
+            "mean_positive": 0.02957483742553116
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0021400791592895985,
+            "maximum_positive": 976.4412231445312,
+            "mean_positive": 0.1421355876840447
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00013730490172747523,
+            "maximum_positive": 183.60108947753906,
+            "mean_positive": 0.02478927305583937
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0029175318777561188,
+            "maximum_positive": 1018.28857421875,
+            "mean_positive": 0.1424686137986113
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0001812142290873453,
+            "maximum_positive": 179.62254333496094,
+            "mean_positive": 0.024273511903925876
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0024841928388923407,
+            "maximum_positive": 861.8232421875,
+            "mean_positive": 0.17365388640381407
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0003688056021928787,
+            "maximum_positive": 160.30426025390625,
+            "mean_positive": 0.028368361970801444
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001889820909127593,
+            "maximum_positive": 3068.1962890625,
+            "mean_positive": 0.1355249486301443
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 2.4465924070682377e-05,
+            "maximum_positive": 431.50091552734375,
+            "mean_positive": 0.023828579789710126
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018529035151004791,
+            "maximum_positive": 3026.0810546875,
+            "mean_positive": 0.12385142694597304
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 7.738987187622115e-05,
+            "maximum_positive": 436.442138671875,
+            "mean_positive": 0.022750706041923023
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017444370314478874,
+            "maximum_positive": 3004.407470703125,
+            "mean_positive": 0.13216345292118092
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00021654166630469263,
+            "maximum_positive": 436.94091796875,
+            "mean_positive": 0.023863845636814013
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0023749342653900385,
+            "maximum_positive": 2994.66015625,
+            "mean_positive": 0.16123986380958238
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.000215793916140683,
+            "maximum_positive": 433.9287109375,
+            "mean_positive": 0.0286377290265399
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE18",
+      "city_name": "Freiburg",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE18_Freiburg\\DE18_Freiburg_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "9dcd2c7bc8e40bd150ea29486b375a1b5c25221d9576d3111fe5830f12ddee69",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001531068584881723,
+            "maximum_positive": 613.6844482421875,
+            "mean_positive": 0.2054696794307199
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3672645764017943e-05,
+            "maximum_positive": 50.88955307006836,
+            "mean_positive": 0.04213956092899653
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0012952788965776563,
+            "maximum_positive": 738.6320190429688,
+            "mean_positive": 0.1909843472666888
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.9051621065009385e-05,
+            "maximum_positive": 62.85075759887695,
+            "mean_positive": 0.039982147177301454
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018227751133963466,
+            "maximum_positive": 829.5337524414062,
+            "mean_positive": 0.19411322029850517
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 9.37797303777188e-05,
+            "maximum_positive": 45.96660614013672,
+            "mean_positive": 0.03991163597002999
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002151158172637224,
+            "maximum_positive": 1092.8272705078125,
+            "mean_positive": 0.1949236327556627
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00014077818195801228,
+            "maximum_positive": 44.77676010131836,
+            "mean_positive": 0.03995944036870675
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0012598630273714662,
+            "maximum_positive": 2499.242919921875,
+            "mean_positive": 0.16598573542164993
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.303322733292589e-05,
+            "maximum_positive": 143.0997772216797,
+            "mean_positive": 0.030638904632822817
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0005752042634412646,
+            "maximum_positive": 2191.460693359375,
+            "mean_positive": 0.16791654988674945
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 6.815806409576908e-05,
+            "maximum_positive": 156.22344970703125,
+            "mean_positive": 0.032935343929370545
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0016054637962952256,
+            "maximum_positive": 2328.185302734375,
+            "mean_positive": 0.17450166035393
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00012377623352222145,
+            "maximum_positive": 150.95834350585938,
+            "mean_positive": 0.03318982703010505
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0011793336598202586,
+            "maximum_positive": 2427.821533203125,
+            "mean_positive": 0.1736806047872299
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 8.247985533671454e-05,
+            "maximum_positive": 129.7190704345703,
+            "mean_positive": 0.03378633971052405
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE19",
+      "city_name": "Kiel",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE19_Kiel\\DE19_Kiel_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "6b97e4ed112435745dabae36fdb94274b6dcf6614b47a9646b3424df2257a541",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0004367806832306087,
+            "maximum_positive": 363.9248352050781,
+            "mean_positive": 0.13803588012373577
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2962336768396199e-05,
+            "maximum_positive": 119.30593872070312,
+            "mean_positive": 0.02456491354403094
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0017708332743495703,
+            "maximum_positive": 331.26153564453125,
+            "mean_positive": 0.10958401729134389
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3671418855665252e-05,
+            "maximum_positive": 128.27101135253906,
+            "mean_positive": 0.02274273596030962
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0013437039451673627,
+            "maximum_positive": 336.0732727050781,
+            "mean_positive": 0.12130582150596189
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.501892984379083e-05,
+            "maximum_positive": 137.1983642578125,
+            "mean_positive": 0.022771783454556653
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001564376405440271,
+            "maximum_positive": 481.7203674316406,
+            "mean_positive": 0.14866430309338552
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.500188864156371e-05,
+            "maximum_positive": 130.65609741210938,
+            "mean_positive": 0.025722781204705728
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0008273054845631123,
+            "maximum_positive": 442.572509765625,
+            "mean_positive": 0.1320018313989973
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2392618373269215e-05,
+            "maximum_positive": 55.56998825073242,
+            "mean_positive": 0.02241151893784202
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010340175358578563,
+            "maximum_positive": 636.4102783203125,
+            "mean_positive": 0.11147054569111328
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2483836144383531e-05,
+            "maximum_positive": 54.66521072387695,
+            "mean_positive": 0.02148984674574893
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010223190765827894,
+            "maximum_positive": 502.5638122558594,
+            "mean_positive": 0.12709312940855175
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3278182450449094e-05,
+            "maximum_positive": 41.56788635253906,
+            "mean_positive": 0.023120827630301415
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018941406160593033,
+            "maximum_positive": 501.54241943359375,
+            "mean_positive": 0.15612630299890295
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.3913350812799763e-05,
+            "maximum_positive": 50.53961944580078,
+            "mean_positive": 0.025495306349817403
+          }
+        ]
+      }
+    },
+    {
+      "city_id": "DE20",
+      "city_name": "Rostock",
+      "split": "test",
+      "status": "PASS",
+      "failures": [],
+      "raster": {
+        "path": "data\\raw\\sar_multitemporal_v3_mt_d2\\DE20_Rostock\\DE20_Rostock_S1_MT_D2_CROSS_ORBIT_Q1Q4_2025.tif",
+        "sha256": "b74653109298b6ff2bbbc710bc700516276c69e6000d6f282a829661175b0514",
+        "dtype": [
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32",
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "band_descriptions": [
+          "VV_ASC_Q1",
+          "VH_ASC_Q1",
+          "VV_ASC_Q2",
+          "VH_ASC_Q2",
+          "VV_ASC_Q3",
+          "VH_ASC_Q3",
+          "VV_ASC_Q4",
+          "VH_ASC_Q4",
+          "VV_DESC_Q1",
+          "VH_DESC_Q1",
+          "VV_DESC_Q2",
+          "VH_DESC_Q2",
+          "VV_DESC_Q3",
+          "VH_DESC_Q3",
+          "VV_DESC_Q4",
+          "VH_DESC_Q4"
+        ],
+        "band_statistics": [
+          {
+            "band": "VV_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0020973070058971643,
+            "maximum_positive": 1420.083984375,
+            "mean_positive": 0.13882983303642438
+          },
+          {
+            "band": "VH_ASC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.2816461094189435e-05,
+            "maximum_positive": 109.239501953125,
+            "mean_positive": 0.021828661763865755
+          },
+          {
+            "band": "VV_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.00253742141649127,
+            "maximum_positive": 1016.2554931640625,
+            "mean_positive": 0.10313583650767415
+          },
+          {
+            "band": "VH_ASC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.4289987120719161e-05,
+            "maximum_positive": 104.65472412109375,
+            "mean_positive": 0.02080866525569617
+          },
+          {
+            "band": "VV_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0018138070590794086,
+            "maximum_positive": 1103.0050048828125,
+            "mean_positive": 0.11962502956500776
+          },
+          {
+            "band": "VH_ASC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 5.3936986660119146e-05,
+            "maximum_positive": 107.56224060058594,
+            "mean_positive": 0.021299281443846838
+          },
+          {
+            "band": "VV_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.002660414669662714,
+            "maximum_positive": 1437.218017578125,
+            "mean_positive": 0.15394233511051175
+          },
+          {
+            "band": "VH_ASC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.636931483517401e-05,
+            "maximum_positive": 109.87278747558594,
+            "mean_positive": 0.024394056123099406
+          },
+          {
+            "band": "VV_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0010392001131549478,
+            "maximum_positive": 1659.25634765625,
+            "mean_positive": 0.10229920141330674
+          },
+          {
+            "band": "VH_DESC_Q1",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5010590686870273e-05,
+            "maximum_positive": 64.02666473388672,
+            "mean_positive": 0.017079474091524487
+          },
+          {
+            "band": "VV_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001273950794711709,
+            "maximum_positive": 1688.331298828125,
+            "mean_positive": 0.08971586599217117
+          },
+          {
+            "band": "VH_DESC_Q2",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.541279925731942e-05,
+            "maximum_positive": 59.88574981689453,
+            "mean_positive": 0.017303950547638537
+          },
+          {
+            "band": "VV_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.001339512295089662,
+            "maximum_positive": 1815.18603515625,
+            "mean_positive": 0.09709224529388005
+          },
+          {
+            "band": "VH_DESC_Q3",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.5478744899155572e-05,
+            "maximum_positive": 61.775299072265625,
+            "mean_positive": 0.016999289599704058
+          },
+          {
+            "band": "VV_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 0.0009666690602898598,
+            "maximum_positive": 1632.974365234375,
+            "mean_positive": 0.1150537792200418
+          },
+          {
+            "band": "VH_DESC_Q4",
+            "positive_valid_fraction": 1.0,
+            "minimum_positive": 1.6216243238886818e-05,
+            "maximum_positive": 65.38275146484375,
+            "mean_positive": 0.01870827927655436
+          }
+        ]
+      }
+    }
+  ]
+}
