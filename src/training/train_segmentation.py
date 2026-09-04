@@ -101,6 +101,8 @@ IGNORE_INDEX = 255
 
 MODEL_DISPLAY_NAMES = {
     "unet": "U-Net",
+    "orbit_aware_unet": "Orbit-Aware U-Net",
+    "dual_stem_unet": "Orbit-Aware U-Net",
     "attention_unet": "Attention U-Net",
     "unetpp": "U-Net++",
     "unet_plus_plus": "U-Net++",

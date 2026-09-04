@@ -13,11 +13,15 @@ from src.models.unet_plus_plus import build_unet_plus_plus
 from src.models.segformer import build_segformer
 from src.models.swin_transformer import build_swin_transformer
 from src.models.mask2former import build_mask2former
+from src.models.orbit_aware_unet import build_orbit_aware_unet
 
 
 MODEL_ALIASES = {
     "unet": "unet",
     "u_net": "unet",
+    "orbit_aware_unet": "orbit_aware_unet",
+    "orbit-aware-unet": "orbit_aware_unet",
+    "dual_stem_unet": "orbit_aware_unet",
     "attention_unet": "attention_unet",
     "attention-u-net": "attention_unet",
     "att_unet": "attention_unet",
@@ -88,6 +92,13 @@ def build_model(config: Mapping[str, Any]) -> nn.Module:
 
     if model_name == "unet":
         model = build_unet(**common_kwargs)
+    elif model_name == "orbit_aware_unet":
+        model = build_orbit_aware_unet(
+            **common_kwargs,
+            orbit_channels=int(
+                _nested_get(config, "model.orbit_channels", 8)
+            ),
+        )
     elif model_name == "attention_unet":
         model = build_attention_unet(**common_kwargs)
     elif model_name == "unetpp":
