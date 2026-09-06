@@ -112,6 +112,7 @@ MODEL_DISPLAY_NAMES = {
     "swin_transformer": "Swin Transformer",
     "swin_unet": "Swin Transformer",
     "mask2former": "Mask2Former",
+    "multiview_unetpp": "Multi-View U-Net++",
 }
 
 
@@ -611,6 +612,9 @@ def build_project_dataloaders(
         "test_transform": evaluation_transform,
         "drop_last_train": False,
         "persistent_workers": num_workers > 0,
+        "train_label_uncertainty": nested_get(
+            config, "label_uncertainty", default=None
+        ),
     }
 
     bundle = _call_supported(
@@ -676,6 +680,16 @@ def build_project_dataloaders(
     )
     print(f"Training samples: {len(loaders['train'].dataset)}")
     print(f"Validation samples: {len(loaders['val'].dataset)}")
+    uncertainty = nested_get(config, "label_uncertainty", default={}) or {}
+    if bool(uncertainty.get("enabled", False)):
+        print("Training-only label uncertainty: enabled")
+        print(f"Uncertain model class IDs: {uncertainty.get('class_ids', [1, 3])}")
+        print(f"Boundary radius: {uncertainty.get('radius_pixels', 1)} pixel(s)")
+        print(f"Boundary side: {uncertainty.get('boundary_side', 'inner')}")
+        print(
+            "Preserve thin structures: "
+            f"{uncertainty.get('preserve_thin_structures', True)}"
+        )
 
     loaders["train"] = apply_fraction_aware_sampling(
         loaders["train"],

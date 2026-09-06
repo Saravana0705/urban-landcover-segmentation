@@ -1,0 +1,14 @@
+<graph id="Sentinel1SLCInterferometricCoherence">
+  <version>1.0</version>
+  <node id="Read-Master"><operator>Read</operator><parameters><file>${master}</file></parameters></node>
+  <node id="Read-Slave"><operator>Read</operator><parameters><file>${slave}</file></parameters></node>
+  <node id="Split-Master"><operator>TOPSAR-Split</operator><sources><sourceProduct refid="Read-Master"/></sources><parameters><subswath>${subswath}</subswath><selectedPolarisations>${polarisations}</selectedPolarisations></parameters></node>
+  <node id="Split-Slave"><operator>TOPSAR-Split</operator><sources><sourceProduct refid="Read-Slave"/></sources><parameters><subswath>${subswath}</subswath><selectedPolarisations>${polarisations}</selectedPolarisations></parameters></node>
+  <node id="Orbit-Master"><operator>Apply-Orbit-File</operator><sources><sourceProduct refid="Split-Master"/></sources><parameters><orbitType>Sentinel Precise (Auto Download)</orbitType></parameters></node>
+  <node id="Orbit-Slave"><operator>Apply-Orbit-File</operator><sources><sourceProduct refid="Split-Slave"/></sources><parameters><orbitType>Sentinel Precise (Auto Download)</orbitType></parameters></node>
+  <node id="Back-Geocoding"><operator>Back-Geocoding</operator><sources><sourceProduct refid="Orbit-Master"/><sourceProduct.1 refid="Orbit-Slave"/></sources><parameters><demName>COPERNICUS 30M GLOBAL DEM</demName><maskOutAreaWithoutElevation>true</maskOutAreaWithoutElevation></parameters></node>
+  <node id="Coherence"><operator>Coherence</operator><sources><sourceProduct refid="Back-Geocoding"/></sources><parameters><cohWinAz>${cohWinAz}</cohWinAz><cohWinRg>${cohWinRg}</cohWinRg></parameters></node>
+  <node id="Deburst"><operator>TOPSAR-Deburst</operator><sources><sourceProduct refid="Coherence"/></sources><parameters><selectedPolarisations>${polarisations}</selectedPolarisations></parameters></node>
+  <node id="Terrain-Correction"><operator>Terrain-Correction</operator><sources><sourceProduct refid="Deburst"/></sources><parameters><demName>COPERNICUS 30M GLOBAL DEM</demName><pixelSpacingInMeter>${pixelSpacing}</pixelSpacingInMeter><mapProjection>EPSG:32632</mapProjection></parameters></node>
+  <node id="Write"><operator>Write</operator><sources><sourceProduct refid="Terrain-Correction"/></sources><parameters><file>${output}</file><formatName>GeoTIFF</formatName></parameters></node>
+</graph>

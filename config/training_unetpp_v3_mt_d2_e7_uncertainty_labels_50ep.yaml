@@ -1,0 +1,80 @@
+seed: 20260725
+dataset:
+  dataset_version: v3-mt-d2
+  manifest_path: metadata/dataset_v3_mt_d2/dataset_manifest.csv
+  dataset_config_path: metadata/dataset_v3_mt_d2/freeze/dataset_config.json
+  evaluation_manifest_path: metadata/dataset_v3_mt_d2/dataset_manifest.csv
+  evaluation_dataset_config_path: metadata/dataset_v3_mt_d2/freeze/dataset_config.json
+  input_channels: 16
+  num_classes: 5
+label_uncertainty:
+  enabled: true
+  class_ids: [1, 3]
+  class_names: [roads, bare_land]
+  radius_pixels: 1
+  boundary_side: inner
+  preserve_thin_structures: true
+  ignore_index: 255
+  apply_to_splits: [train]
+  maximum_ignored_fraction: 0.15
+  minimum_selected_class_retained_fraction: 0.70
+model:
+  name: unetpp
+  input_channels: 16
+  num_classes: 5
+  base_channels: 32
+  dropout: 0.1
+  use_batch_norm: true
+  bilinear_upsampling: false
+loss:
+  name: ce_tversky
+  ce_weight: 0.3
+  tversky_weight: 0.7
+  tversky_alpha: 0.2
+  tversky_beta: 0.8
+  tversky_smooth: 1.0
+  tversky_epsilon: 1.0e-07
+  include_absent_classes: false
+  class_weights: [0.708374, 0.834706, 0.244015, 2.046274, 1.166632]
+optimizer:
+  name: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+  epsilon: 1.0e-08
+scheduler:
+  name: reduce_on_plateau
+  monitor: val_mean_iou
+  mode: max
+  factor: 0.5
+  patience: 3
+  minimum_learning_rate: 1.0e-06
+data:
+  batch_size: 4
+  num_workers: 0
+  pin_memory: false
+augmentation:
+  enabled: true
+  horizontal_flip_probability: 0.5
+  vertical_flip_probability: 0.5
+  rotate_90_probability: 0.5
+  enable_sar_intensity: false
+  enable_speckle: false
+training:
+  max_epochs: 50
+  device: auto
+  mixed_precision: true
+  gradient_clip_norm: 1.0
+  accumulation_steps: 1
+  monitor: mean_iou
+  monitor_mode: max
+  early_stopping: {patience: 8, minimum_delta: 0.001}
+  checkpoint: {save_every_epochs: 1}
+  logging: {tensorboard: false, progress_bar: true}
+experiment:
+  name: unetpp_v3_mt_d2_e7_uncertainty_labels_50ep
+  output_directory: outputs/model_experiments/unetpp_v3_mt_d2_e7_uncertainty_labels_50ep
+  comparison_parent: unetpp_v3_mt_d2_s0_cross_orbit_50ep
+  intervention: training_only_road_bare_land_boundary_uncertainty
+sampling: {strategy: standard}
+benchmark: {enabled: false}

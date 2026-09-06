@@ -38,6 +38,11 @@ import torch
 from torch import Tensor
 from torch.utils.data import Dataset
 
+from src.data.label_uncertainty import (
+    LabelUncertaintyConfig,
+    apply_boundary_uncertainty,
+)
+
 from src.data.v3_mt_derived_features import (
     D2_F1_BANDS,
     D2_RATIO_BANDS,
@@ -269,6 +274,7 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
         exclude_zero_valid: bool = True,
         verify_raster_metadata: bool = True,
         return_raw_semantic: bool = False,
+        label_uncertainty: Mapping[str, Any] | None = None,
     ) -> None:
         super().__init__()
 
@@ -314,6 +320,9 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
         self.exclude_zero_valid = exclude_zero_valid
         self.verify_raster_metadata = verify_raster_metadata
         self.return_raw_semantic = return_raw_semantic
+        self.label_uncertainty = LabelUncertaintyConfig.from_mapping(label_uncertainty)
+        if self.label_uncertainty.enabled and self.split != "train":
+            raise ValueError("Label uncertainty is permitted only for the training split.")
 
         self.ignore_index = int(
             self.config["labels"].get(
@@ -832,6 +841,14 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
                 dtype=np.uint8,
             )
 
+        uncertainty_mask = np.zeros(target.shape, dtype=bool)
+        if self.label_uncertainty.enabled:
+            target, uncertainty_mask = apply_boundary_uncertainty(
+                target,
+                self.label_uncertainty,
+                num_classes=self.num_classes,
+            )
+
         normalized_image = self._normalize_image(image)
 
         image_tensor = torch.from_numpy(
@@ -855,6 +872,9 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
             "city_name": str(record["city_name"]),
             "split": self.split,
             "ignore_index": self.ignore_index,
+            "uncertainty_mask": torch.from_numpy(
+                np.ascontiguousarray(uncertainty_mask)
+            ).to(dtype=torch.bool),
             "paths": {
                 "image": raster_metadata["image_path"],
                 "semantic": raster_metadata["semantic_path"],
@@ -893,6 +913,13 @@ class Sentinel1UrbanDataset(Dataset[dict[str, Any]]):
             "num_classes": self.num_classes,
             "ignore_index": self.ignore_index,
             "exclude_zero_valid": self.exclude_zero_valid,
+            "label_uncertainty": {
+                "enabled": self.label_uncertainty.enabled,
+                "class_ids": list(self.label_uncertainty.class_ids),
+                "radius_pixels": self.label_uncertainty.radius_pixels,
+                "boundary_side": self.label_uncertainty.boundary_side,
+                "preserve_thin_structures": self.label_uncertainty.preserve_thin_structures,
+            },
             "manifest_path": str(self.manifest_path),
             "dataset_config_path": str(
                 self.dataset_config_path

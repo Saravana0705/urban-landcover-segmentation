@@ -195,6 +195,7 @@ def create_dataloaders(
     prefetch_factor: int | None = 2,
     drop_last_train: bool = False,
     deterministic_algorithms: bool = False,
+    train_label_uncertainty: Mapping[str, Any] | None = None,
 ) -> LoaderBundle:
     """Create frozen train, validation and test DataLoaders."""
     if pin_memory is None:
@@ -229,6 +230,7 @@ def create_dataloaders(
         joint_transform=train_transform,
         exclude_zero_valid=exclude_zero_valid,
         verify_raster_metadata=verify_raster_metadata,
+        label_uncertainty=train_label_uncertainty,
     )
 
     val_dataset = Sentinel1UrbanDataset(

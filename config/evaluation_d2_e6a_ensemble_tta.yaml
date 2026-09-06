@@ -1,0 +1,26 @@
+experiment:
+  name: d2_e6a_weighted_ensemble_tta
+split: val
+batch_size: 2
+num_workers: 0
+dataset:
+  manifest_path: metadata/dataset_v3_mt_d2/dataset_manifest.csv
+  dataset_config_path: metadata/dataset_v3_mt_d2/freeze/dataset_config.json
+tta_transforms:
+- identity
+- horizontal_flip
+- vertical_flip
+members:
+- name: unetpp_d2
+  training_config: config/training_unetpp_v3_mt_d2_s0_cross_orbit_50ep.yaml
+  checkpoint: outputs/model_experiments/unetpp_v3_mt_d2_s0_cross_orbit_50ep/checkpoints/best.pt
+  weight: 0.50
+- name: orbit_aware_unet_d2
+  training_config: config/training_orbit_aware_unet_v3_mt_d2_e2_50ep.yaml
+  checkpoint: outputs/model_experiments/orbit_aware_unet_v3_mt_d2_e2_50ep/checkpoints/best.pt
+  weight: 0.25
+- name: unet_d2_ratio
+  training_config: config/training_unet_v3_mt_d2_f1_cross_orbit_ratio_50ep.yaml
+  checkpoint: outputs/model_experiments/unet_v3_mt_d2_f1_cross_orbit_ratio_50ep/checkpoints/best.pt
+  weight: 0.25
+output_directory: outputs/model_experiments/d2_e6a_weighted_ensemble_tta/metrics

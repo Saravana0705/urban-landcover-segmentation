@@ -14,6 +14,7 @@ from src.models.segformer import build_segformer
 from src.models.swin_transformer import build_swin_transformer
 from src.models.mask2former import build_mask2former
 from src.models.orbit_aware_unet import build_orbit_aware_unet
+from src.models.multiview_unetpp import build_multiview_unetpp
 
 
 MODEL_ALIASES = {
@@ -41,6 +42,8 @@ MODEL_ALIASES = {
     "mask2former": "mask2former",
     "mask_2_former": "mask2former",
     "mask2_former": "mask2former",
+    "multiview_unetpp": "multiview_unetpp",
+    "multi_view_unetpp": "multiview_unetpp",
 }
 
 
@@ -103,6 +106,13 @@ def build_model(config: Mapping[str, Any]) -> nn.Module:
         model = build_attention_unet(**common_kwargs)
     elif model_name == "unetpp":
         model = build_unet_plus_plus(**common_kwargs)
+    elif model_name == "multiview_unetpp":
+        model = build_multiview_unetpp(
+            **common_kwargs,
+            num_views=int(_nested_get(config, "model.num_views", 8)),
+            channels_per_view=int(_nested_get(config, "model.channels_per_view", 2)),
+            fused_channels=int(_nested_get(config, "model.fused_channels", 16)),
+        )
     elif model_name == "deeplabv3plus":
         rates_raw = _nested_get(config, "model.atrous_rates", [6, 12, 18])
         if not isinstance(rates_raw, (list, tuple)) or len(rates_raw) != 3:

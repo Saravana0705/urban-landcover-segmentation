@@ -1,0 +1,29 @@
+experiment: dataset_v3_mt_d3_slc_coherence_pilot
+status: PILOT_ONLY
+full_export_authorized: false
+pilot_cities: [DE01, DE15]
+catalog:
+  collection: sentinel-1-slc
+  product_type: SLC
+  instrument_mode: IW
+  required_polarisations: [VV, VH]
+  start_date: '2025-01-01'
+  end_date: '2025-12-31'
+pairing:
+  same_city: true
+  same_orbit_direction: true
+  same_relative_orbit: true
+  minimum_temporal_baseline_days: 6
+  maximum_temporal_baseline_days: 48
+  minimum_aoi_coverage: 0.99
+  maximum_pairs_per_city_orbit: 4
+processing:
+  snap_graph: snap_graphs/sentinel1_slc_coherence_d3_pilot.xml
+  subswath: IW2
+  polarisations: VV,VH
+  pixel_spacing_m: 10.0
+  coherence_window_azimuth: 3
+  coherence_window_range: 10
+outputs:
+  pair_manifest: metadata/dataset_v3_mt_d3/pilot/slc_pair_manifest.csv
+  pair_audit: metadata/dataset_v3_mt_d3/pilot/slc_pair_audit.json
