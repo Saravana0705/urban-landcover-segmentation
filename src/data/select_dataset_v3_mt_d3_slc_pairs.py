@@ -14,7 +14,7 @@ import yaml
 REQUIRED = {
     "city_id", "stac_item_id", "acquisition_datetime", "orbit_direction",
     "relative_orbit", "coverage_fraction", "instrument_mode", "product_type",
-    "has_vv_vh", "product_download_url",
+    "platform", "has_vv_vh",
 }
 
 
@@ -34,23 +34,31 @@ def select_pairs(catalog: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:
     data = data.loc[
         data["city_id"].isin(pilot)
         & (data["instrument_mode"].astype(str).str.upper() == "IW")
-        & (data["product_type"].astype(str).str.upper() == "SLC")
+        & data["product_type"].astype(str).str.upper().str.contains("SLC", regex=False)
         & truthy(data["has_vv_vh"])
         & (pd.to_numeric(data["coverage_fraction"], errors="coerce") >= float(pairing["minimum_aoi_coverage"]))
         & data["relative_orbit"].notna()
     ].sort_values("acquisition_datetime")
-    rows: list[dict[str, Any]] = []
-    group_columns = ["city_id", "orbit_direction", "relative_orbit"]
-    for (city, direction, orbit), group in data.groupby(group_columns, sort=True):
-        candidates: list[dict[str, Any]] = []
+    preferred_platform = str(pairing.get("preferred_platform", "sentinel-1a")).lower()
+    if preferred_platform:
+        data = data.loc[data["platform"].astype(str).str.lower() == preferred_platform]
+    target_date = pd.Timestamp(str(pairing.get("target_date", "2025-07-15")), tz="UTC")
+    preferred_baseline = float(pairing.get("preferred_temporal_baseline_days", 12))
+    candidates_by_city: dict[str, list[dict[str, Any]]] = {
+        str(city): [] for city in config["pilot_cities"]
+    }
+    group_columns = ["city_id", "platform", "orbit_direction", "relative_orbit"]
+    for (city, platform, direction, orbit), group in data.groupby(group_columns, sort=True):
         records = list(group.to_dict("records"))
         for left_index, master in enumerate(records):
             for slave in records[left_index + 1:]:
                 baseline = (slave["acquisition_datetime"] - master["acquisition_datetime"]).total_seconds() / 86400
                 if float(pairing["minimum_temporal_baseline_days"]) <= baseline <= float(pairing["maximum_temporal_baseline_days"]):
-                    candidates.append({
+                    midpoint = master["acquisition_datetime"] + (slave["acquisition_datetime"] - master["acquisition_datetime"]) / 2
+                    candidates_by_city[str(city)].append({
                         "pair_id": f"{city}_{str(direction).upper()}_R{int(orbit):03d}_{master['acquisition_datetime']:%Y%m%d}_{slave['acquisition_datetime']:%Y%m%d}",
                         "city_id": city,
+                        "platform": str(platform).lower(),
                         "orbit_direction": str(direction).upper(),
                         "relative_orbit": int(orbit),
                         "master_item_id": master["stac_item_id"],
@@ -58,12 +66,28 @@ def select_pairs(catalog: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:
                         "master_datetime": master["acquisition_datetime"].isoformat(),
                         "slave_datetime": slave["acquisition_datetime"].isoformat(),
                         "temporal_baseline_days": baseline,
-                        "minimum_coverage_fraction": min(float(master["coverage_fraction"]), float(slave["coverage_fraction"])),
-                        "master_download_url": master["product_download_url"],
-                        "slave_download_url": slave["product_download_url"],
+                        "midpoint_distance_days": abs((midpoint - target_date).total_seconds()) / 86400,
+                        "baseline_distance_days": abs(baseline - preferred_baseline),
+                        "minimum_coverage_fraction": min(
+                            1.0,
+                            float(master["coverage_fraction"]),
+                            float(slave["coverage_fraction"]),
+                        ),
+                        "master_download_url": master.get("product_download_url", ""),
+                        "slave_download_url": slave.get("product_download_url", ""),
                     })
-        candidates.sort(key=lambda row: (-row["minimum_coverage_fraction"], row["temporal_baseline_days"], row["pair_id"]))
-        rows.extend(candidates[: int(pairing["maximum_pairs_per_city_orbit"])])
+    rows: list[dict[str, Any]] = []
+    for city in config["pilot_cities"]:
+        candidates = candidates_by_city[str(city)]
+        candidates.sort(
+            key=lambda row: (
+                round(row["baseline_distance_days"], 3),
+                row["midpoint_distance_days"],
+                -row["minimum_coverage_fraction"],
+                row["pair_id"],
+            )
+        )
+        rows.extend(candidates[: int(pairing.get("maximum_pairs_per_city", 1))])
     return pd.DataFrame(rows)
 
 

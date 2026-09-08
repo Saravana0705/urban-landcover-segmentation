@@ -11,12 +11,16 @@ catalog:
   end_date: '2025-12-31'
 pairing:
   same_city: true
+  same_platform: true
   same_orbit_direction: true
   same_relative_orbit: true
+  preferred_platform: sentinel-1a
+  target_date: '2025-07-15'
+  preferred_temporal_baseline_days: 12
   minimum_temporal_baseline_days: 6
   maximum_temporal_baseline_days: 48
   minimum_aoi_coverage: 0.99
-  maximum_pairs_per_city_orbit: 4
+  maximum_pairs_per_city: 1
 processing:
   snap_graph: snap_graphs/sentinel1_slc_coherence_d3_pilot.xml
   subswath: IW2
@@ -24,6 +28,29 @@ processing:
   pixel_spacing_m: 10.0
   coherence_window_azimuth: 3
   coherence_window_range: 10
+odata:
+  catalogue_url: https://catalogue.dataspace.copernicus.eu/odata/v1
+  collection_name: SENTINEL-1
+  download_url_template: https://download.dataspace.copernicus.eu/odata/v1/Products({product_id})/$value
+  timeout_seconds: 60
+download:
+  authorized: false
+  output_directory: data/raw/dataset_v3_mt_d3/pilot/slc
+  token_url: https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token
+  client_id: cdse-public
+  timeout_seconds: 300
+  chunk_size_mb: 8
+  maximum_retries: 3
+  retry_wait_seconds: 15
+  minimum_free_space_multiplier: 1.25
+  verify_file_size: true
+  verify_checksum_when_available: true
+  verify_zip: true
 outputs:
   pair_manifest: metadata/dataset_v3_mt_d3/pilot/slc_pair_manifest.csv
   pair_audit: metadata/dataset_v3_mt_d3/pilot/slc_pair_audit.json
+  download_manifest: metadata/dataset_v3_mt_d3/pilot/slc_download_manifest.csv
+  product_resolution_audit: metadata/dataset_v3_mt_d3/pilot/slc_product_resolution_audit.json
+  burst_coverage_manifest: metadata/dataset_v3_mt_d3/pilot/slc_burst_coverage_manifest.csv
+  burst_coverage_audit: metadata/dataset_v3_mt_d3/pilot/slc_burst_coverage_audit.json
+  download_audit: metadata/dataset_v3_mt_d3/pilot/slc_download_audit.json

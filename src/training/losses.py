@@ -48,12 +48,18 @@ class LossConfig:
     tversky_smooth: float = 1.0
     tversky_epsilon: float = 1e-7
 
+    lovasz_weight: float = 0.7
+
     include_absent_classes: bool = False
 
     def validate(self) -> None:
         """Validate configuration values."""
-        if self.name not in {"cross_entropy", "dice", "ce_dice", "tversky", "ce_tversky"}:
-            raise ValueError("name must be one of: cross_entropy, dice, ce_dice, tversky, ce_tversky.")
+        supported = {
+            "cross_entropy", "dice", "ce_dice", "tversky",
+            "ce_tversky", "lovasz", "ce_lovasz",
+        }
+        if self.name not in supported:
+            raise ValueError(f"name must be one of: {', '.join(sorted(supported))}.")
 
         if self.num_classes <= 1:
             raise ValueError("num_classes must be greater than one.")
@@ -90,6 +96,12 @@ class LossConfig:
 
         if (self.name == "ce_tversky" and self.ce_weight + self.tversky_weight <= 0):
             raise ValueError("At least one CE-Tversky loss weight must be positive.")
+
+        if self.lovasz_weight < 0:
+            raise ValueError("lovasz_weight cannot be negative.")
+
+        if self.name == "ce_lovasz" and self.ce_weight + self.lovasz_weight <= 0:
+            raise ValueError("At least one CE-Lovasz loss weight must be positive.")
 
 
 def _validate_inputs(
@@ -415,6 +427,110 @@ class CombinedCrossEntropyDiceLoss(nn.Module):
         )
 
 
+def _lovasz_gradient(sorted_foreground: Tensor) -> Tensor:
+    """Return the discrete Jaccard gradient used by Lovasz-Softmax."""
+    count = sorted_foreground.numel()
+    intersection = sorted_foreground.sum() - sorted_foreground.cumsum(0)
+    union = sorted_foreground.sum() + (1.0 - sorted_foreground).cumsum(0)
+    gradient = 1.0 - intersection / union.clamp_min(1e-7)
+    if count > 1:
+        gradient[1:] = gradient[1:] - gradient[:-1]
+    return gradient
+
+
+class MulticlassLovaszSoftmaxLoss(nn.Module):
+    """Lovasz-Softmax surrogate for dataset mIoU.
+
+    The loss is evaluated over all valid pixels in a batch. Classes absent
+    from the target are skipped by default, matching the project's macro-IoU
+    convention and avoiding gradients driven only by absent classes.
+    """
+
+    def __init__(
+        self,
+        *,
+        num_classes: int = 5,
+        ignore_index: int = 255,
+        include_absent_classes: bool = False,
+    ) -> None:
+        super().__init__()
+        if num_classes <= 1:
+            raise ValueError("num_classes must be greater than one.")
+        self.num_classes = num_classes
+        self.ignore_index = ignore_index
+        self.include_absent_classes = include_absent_classes
+
+    def forward(self, logits: Tensor, target: Tensor) -> Tensor:
+        _validate_inputs(logits, target, num_classes=self.num_classes)
+        probabilities = torch.softmax(logits, dim=1)
+        flat_probabilities = probabilities.permute(0, 2, 3, 1).reshape(-1, self.num_classes)
+        flat_target = target.reshape(-1)
+        valid = flat_target != self.ignore_index
+        if not valid.any():
+            raise ValueError("Lovasz loss received a batch with no supervised pixels.")
+        flat_probabilities = flat_probabilities[valid]
+        flat_target = flat_target[valid]
+
+        losses: list[Tensor] = []
+        for class_id in range(self.num_classes):
+            foreground = (flat_target == class_id).to(dtype=flat_probabilities.dtype)
+            if not self.include_absent_classes and not foreground.any():
+                continue
+            errors = (foreground - flat_probabilities[:, class_id]).abs()
+            errors_sorted, permutation = torch.sort(errors, descending=True)
+            foreground_sorted = foreground[permutation]
+            losses.append(torch.dot(errors_sorted, _lovasz_gradient(foreground_sorted)))
+
+        if not losses:
+            raise ValueError("No active classes are available for Lovasz calculation.")
+        return torch.stack(losses).mean()
+
+
+class CombinedCrossEntropyLovaszLoss(nn.Module):
+    """Class-weighted cross-entropy plus unweighted Lovasz-Softmax."""
+
+    def __init__(
+        self,
+        *,
+        num_classes: int = 5,
+        ignore_index: int = 255,
+        ce_weight: float = 0.3,
+        lovasz_weight: float = 0.7,
+        class_weights: Tensor | Sequence[float] | None = None,
+        include_absent_classes: bool = False,
+    ) -> None:
+        super().__init__()
+        if ce_weight < 0 or lovasz_weight < 0 or ce_weight + lovasz_weight <= 0:
+            raise ValueError("CE-Lovasz weights must be non-negative with a positive sum.")
+        weights = _prepare_class_weights(class_weights, num_classes=num_classes)
+        total = ce_weight + lovasz_weight
+        self.num_classes = num_classes
+        self.ignore_index = ignore_index
+        self.ce_weight = float(ce_weight / total)
+        self.lovasz_weight = float(lovasz_weight / total)
+        self.register_buffer("class_weights", weights)
+        self.lovasz_loss = MulticlassLovaszSoftmaxLoss(
+            num_classes=num_classes,
+            ignore_index=ignore_index,
+            include_absent_classes=include_absent_classes,
+        )
+
+    def forward(self, logits: Tensor, target: Tensor) -> Tensor:
+        _validate_inputs(logits, target, num_classes=self.num_classes)
+        if not (target != self.ignore_index).any():
+            raise ValueError("Combined CE-Lovasz loss received no supervised pixels.")
+        ce = F.cross_entropy(
+            logits,
+            target,
+            weight=(
+                self.class_weights.to(device=logits.device, dtype=logits.dtype)
+                if self.class_weights is not None else None
+            ),
+            ignore_index=self.ignore_index,
+        )
+        return self.ce_weight * ce + self.lovasz_weight * self.lovasz_loss(logits, target)
+
+
 def build_loss(
     config: LossConfig | None = None,
     *,
@@ -463,6 +579,23 @@ def build_loss(
             include_absent_classes=(
                 resolved.include_absent_classes
             ),
+        )
+
+    if resolved.name == "lovasz":
+        return MulticlassLovaszSoftmaxLoss(
+            num_classes=resolved.num_classes,
+            ignore_index=resolved.ignore_index,
+            include_absent_classes=resolved.include_absent_classes,
+        )
+
+    if resolved.name == "ce_lovasz":
+        return CombinedCrossEntropyLovaszLoss(
+            num_classes=resolved.num_classes,
+            ignore_index=resolved.ignore_index,
+            ce_weight=resolved.ce_weight,
+            lovasz_weight=resolved.lovasz_weight,
+            class_weights=class_weights,
+            include_absent_classes=resolved.include_absent_classes,
         )
 
     if resolved.name == "tversky":
@@ -910,6 +1043,20 @@ def smoke_test(
             ),
             class_weights=class_weights,
         ),
+
+        "lovasz": build_loss(
+            LossConfig(name="lovasz"),
+            class_weights=class_weights,
+        ),
+
+        "ce_lovasz": build_loss(
+            LossConfig(
+                name="ce_lovasz",
+                ce_weight=0.3,
+                lovasz_weight=0.7,
+            ),
+            class_weights=class_weights,
+        ),
     }
 
     for name, module in modules.items():
@@ -1009,6 +1156,16 @@ def smoke_test(
             "for perfect predictions."
         )
 
+    perfect_lovasz_loss = MulticlassLovaszSoftmaxLoss(
+        num_classes=num_classes,
+        ignore_index=ignore_index,
+    )(perfect_logits, perfect_target)
+
+    if float(perfect_lovasz_loss.item()) > 1e-4:
+        raise RuntimeError(
+            "Lovasz loss is unexpectedly high for perfect predictions."
+        )
+
     return {
         "seed": seed,
         "batch_size": batch_size,
@@ -1023,6 +1180,9 @@ def smoke_test(
         ),
         "perfect_prediction_tversky_loss": float(
             perfect_tversky_loss.item()
+        ),
+        "perfect_prediction_lovasz_loss": float(
+            perfect_lovasz_loss.item()
         ),
         "all_losses_finite": all(
             torch.isfinite(

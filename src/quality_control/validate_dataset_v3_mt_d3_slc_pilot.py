@@ -25,8 +25,25 @@ def main() -> None:
         "cities_exact": set(pairs["city_id"]) == set(config["pilot_cities"]),
         "pair_ids_unique": bool(pairs["pair_id"].is_unique),
         "relative_orbits_present": bool(pairs["relative_orbit"].notna().all()),
+        "same_platform_enforced": bool(
+            pairs["platform"].astype(str).str.lower().eq(
+                str(pairing.get("preferred_platform", "sentinel-1a")).lower()
+            ).all()
+        ),
+        "maximum_pairs_per_city_respected": bool(
+            pairs.groupby("city_id").size().le(
+                int(pairing.get("maximum_pairs_per_city", 1))
+            ).all()
+        ),
         "baselines_valid": bool(baseline.between(float(pairing["minimum_temporal_baseline_days"]), float(pairing["maximum_temporal_baseline_days"]), inclusive="both").all()),
-        "urls_present": bool(pairs[["master_download_url", "slave_download_url"]].notna().all().all()),
+        "product_ids_present": bool(
+            pairs[["master_item_id", "slave_item_id"]]
+            .fillna("")
+            .astype(str)
+            .apply(lambda column: column.str.strip().ne(""))
+            .all()
+            .all()
+        ),
     }
     report = {"status": "PASS" if all(checks.values()) else "FAIL", "pair_count": len(pairs), "checks": checks}
     print(json.dumps(report, indent=2))

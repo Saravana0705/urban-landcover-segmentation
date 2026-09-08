@@ -79,6 +79,41 @@ python -m src.data.select_dataset_v3_mt_d3_slc_pairs `
 python -m src.quality_control.validate_dataset_v3_mt_d3_slc_pilot
 ```
 
+The selector intentionally chooses at most one same-platform S1A pair per city,
+preferably with a 12-day baseline near 15 July 2025. Empty STAC product URLs do
+not fail pair QA; authenticated download identifiers are resolved through CDSE
+OData in the next gated stage.
+
+Resolve the four selected product names and inspect the total transfer size.
+This step queries only catalogue metadata and downloads no SLC bytes:
+
+```powershell
+python -m src.acquisition.resolve_dataset_v3_mt_d3_slc_products `
+    --overwrite
+
+python -m src.quality_control.validate_dataset_v3_mt_d3_slc_download_plan
+
+python -m src.quality_control.validate_dataset_v3_mt_d3_slc_burst_coverage `
+    --overwrite
+```
+
+Stop if either command fails, if the manifest contains anything other than two
+products per pilot city, if no common IW burst covers an AOI, or if the reported storage requirement is unsuitable.
+Share the resolution and QA reports before downloading. The downloader remains
+blocked unless `--authorize-download` is explicitly supplied:
+
+```powershell
+python -m src.acquisition.download_dataset_v3_mt_d3_slc_pilot `
+    --authorize-download `
+    --overwrite-audit
+```
+
+The downloader requires `CDSE_USERNAME` and `CDSE_PASSWORD` in `.env`, checks
+free disk space, supports `.part` resume files, and verifies size, available
+catalogue checksum, and ZIP integrity. It refuses any manifest outside the
+fixed two-city/four-product pilot scope. Do not run this command until the
+download-size report has been reviewed.
+
 Only after pair QA passes should the selected master/slave products be
 downloaded and processed with SNAP GPT. For each pair, call the graph with
 parameters equivalent to:

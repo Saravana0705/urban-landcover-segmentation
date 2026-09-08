@@ -1306,6 +1306,14 @@ def build_components(
                 default=1e-7,
             )
         ),
+        lovasz_weight=float(
+            nested_get(
+                config,
+                "loss.lovasz_weight",
+                "training.loss.lovasz_weight",
+                default=0.7,
+            )
+        ),
         include_absent_classes=bool(
             nested_get(
                 config,
@@ -1332,6 +1340,9 @@ def build_components(
         print(f"Tversky weight: {loss_config.tversky_weight}")
         print(f"Tversky alpha: {loss_config.tversky_alpha}")
         print(f"Tversky beta: {loss_config.tversky_beta}")
+
+    if loss_config.name in {"lovasz", "ce_lovasz"}:
+        print(f"Lovasz weight: {loss_config.lovasz_weight}")
     
     optimizer = build_optimizer(
         model,
@@ -1386,6 +1397,16 @@ def parse_arguments() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--initialize-from",
+        type=Path,
+        default=None,
+        help=(
+            "Load model weights only from a checkpoint. Optimizer, scheduler, "
+            "epoch, and early-stopping state start fresh."
+        ),
+    )
+
+    parser.add_argument(
         "--integration-check",
         action="store_true",
         help=(
@@ -1406,6 +1427,8 @@ def parse_arguments() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_arguments()
+    if args.resume is not None and args.initialize_from is not None:
+        raise ValueError("--resume and --initialize-from are mutually exclusive.")
     raw_config = read_yaml(args.config)
 
     seed = int(
@@ -1607,6 +1630,25 @@ def main() -> None:
         seed=seed,
     )
 
+    initialized_from: str | None = None
+    if args.initialize_from is not None:
+        if args.integration_check:
+            raise ValueError(
+                "Do not combine --initialize-from with --integration-check; "
+                "the integration check validates the pipeline without a checkpoint."
+            )
+        checkpoint = load_best_checkpoint(
+            model,
+            args.initialize_from,
+            trainer.device,
+        )
+        initialized_from = str(args.initialize_from)
+        print("\nWeights-only initialization")
+        print("---------------------------")
+        print(f"Checkpoint: {args.initialize_from}")
+        print(f"Source epoch: {checkpoint.get('epoch', 'unknown')}")
+        print("Optimizer/scheduler state restored: False")
+
     environment = runtime_environment(
         requested_device=device,
         resolved_device=trainer.device,
@@ -1636,6 +1678,8 @@ def main() -> None:
     print(f"Validation batches: {len(validation_loader)}")
     print(f"Trainable parameters: {trainable_parameters:,}")
     print(f"Output directory: {experiment_root}")
+    if initialized_from is not None:
+        print(f"Initialized from: {initialized_from}")
     print_runtime_environment(environment)
 
     if trainer.device.type == "cuda":
