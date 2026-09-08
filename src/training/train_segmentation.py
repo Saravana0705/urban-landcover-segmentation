@@ -1314,6 +1314,33 @@ def build_components(
                 default=0.7,
             )
         ),
+        cldice_weight=float(
+            nested_get(config, "loss.cldice_weight", default=0.0)
+        ),
+        cldice_class_id=int(
+            nested_get(config, "loss.cldice_class_id", default=1)
+        ),
+        cldice_iterations=int(
+            nested_get(config, "loss.cldice_iterations", default=10)
+        ),
+        boundary_weight=float(
+            nested_get(config, "loss.boundary_weight", default=0.0)
+        ),
+        boundary_class_ids=tuple(
+            int(value)
+            for value in nested_get(
+                config, "loss.boundary_class_ids", default=[0, 1]
+            )
+        ),
+        boundary_tolerance=int(
+            nested_get(config, "loss.boundary_tolerance", default=2)
+        ),
+        deep_supervision_weights=tuple(
+            float(value)
+            for value in nested_get(
+                config, "loss.deep_supervision_weights", default=[]
+            )
+        ),
         include_absent_classes=bool(
             nested_get(
                 config,
@@ -1341,9 +1368,22 @@ def build_components(
         print(f"Tversky alpha: {loss_config.tversky_alpha}")
         print(f"Tversky beta: {loss_config.tversky_beta}")
 
-    if loss_config.name in {"lovasz", "ce_lovasz"}:
+    if loss_config.name in {
+        "lovasz", "ce_lovasz", "ce_lovasz_cldice", "ce_lovasz_boundary"
+    }:
         print(f"Lovasz weight: {loss_config.lovasz_weight}")
-    
+    if loss_config.name == "ce_lovasz_cldice":
+        print(f"Road clDice weight: {loss_config.cldice_weight}")
+        print(f"clDice class ID: {loss_config.cldice_class_id}")
+    if loss_config.name == "ce_lovasz_boundary":
+        print(f"Boundary weight: {loss_config.boundary_weight}")
+        print(f"Boundary class IDs: {list(loss_config.boundary_class_ids)}")
+    if loss_config.deep_supervision_weights:
+        print(
+            "Deep-supervision weights: "
+            f"{list(loss_config.deep_supervision_weights)}"
+        )
+
     optimizer = build_optimizer(
         model,
         make_optimizer_config(config),
@@ -1641,12 +1681,23 @@ def main() -> None:
             model,
             args.initialize_from,
             trainer.device,
+            strict=bool(
+                nested_get(
+                    raw_config,
+                    "initialization.strict",
+                    default=True,
+                )
+            ),
         )
         initialized_from = str(args.initialize_from)
         print("\nWeights-only initialization")
         print("---------------------------")
         print(f"Checkpoint: {args.initialize_from}")
         print(f"Source epoch: {checkpoint.get('epoch', 'unknown')}")
+        if checkpoint.get("load_missing_keys"):
+            print(f"New parameters initialized: {checkpoint['load_missing_keys']}")
+        if checkpoint.get("load_unexpected_keys"):
+            print(f"Unused checkpoint parameters: {checkpoint['load_unexpected_keys']}")
         print("Optimizer/scheduler state restored: False")
 
     environment = runtime_environment(
@@ -1856,7 +1907,7 @@ def main() -> None:
             f"{benchmark_result['inference_images_per_second']:.2f} images/s "
             f"({benchmark_result['inference_milliseconds_per_image']:.2f} ms/image)"
         )
-    
+
     if peak_memory is not None:
         print(
             "Peak GPU allocated memory: "

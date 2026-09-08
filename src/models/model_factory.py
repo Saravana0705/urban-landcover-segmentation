@@ -105,7 +105,19 @@ def build_model(config: Mapping[str, Any]) -> nn.Module:
     elif model_name == "attention_unet":
         model = build_attention_unet(**common_kwargs)
     elif model_name == "unetpp":
-        model = build_unet_plus_plus(**common_kwargs)
+        model = build_unet_plus_plus(
+            **common_kwargs,
+            deep_supervision=bool(
+                _nested_get(config, "model.deep_supervision", False)
+            ),
+            deep_supervision_average_inference=bool(
+                _nested_get(
+                    config,
+                    "model.deep_supervision_average_inference",
+                    True,
+                )
+            ),
+        )
     elif model_name == "multiview_unetpp":
         model = build_multiview_unetpp(
             **common_kwargs,

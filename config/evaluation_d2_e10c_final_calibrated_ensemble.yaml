@@ -1,0 +1,68 @@
+experiment:
+  name: d2_e10c_final_calibrated_ensemble
+selection_split: val
+batch_size: 2
+num_workers: 0
+seed: 20260725
+
+# Run only after E10A, E10B and E10D checkpoints have been downloaded into
+# the output paths below. Test access remains command-line gated.
+tta_transforms:
+  - identity
+  - horizontal_flip
+  - vertical_flip
+  - rotate_180
+
+members:
+  - name: unetpp_d2
+    training_config: config/training_unetpp_v3_mt_d2_s0_cross_orbit_50ep.yaml
+    checkpoint: outputs/model_experiments/unetpp_v3_mt_d2_s0_cross_orbit_50ep/checkpoints/best.pt
+  - name: unetpp_e7_uncertainty
+    training_config: config/training_unetpp_v3_mt_d2_e7_uncertainty_labels_50ep.yaml
+    checkpoint: outputs/model_experiments/unetpp_v3_mt_d2_e7_uncertainty_labels_50ep/checkpoints/best.pt
+  - name: orbit_aware_unet_d2
+    training_config: config/training_orbit_aware_unet_v3_mt_d2_e2_50ep.yaml
+    checkpoint: outputs/model_experiments/orbit_aware_unet_v3_mt_d2_e2_50ep/checkpoints/best.pt
+  - name: unet_d2_ratio
+    training_config: config/training_unet_v3_mt_d2_f1_cross_orbit_ratio_50ep.yaml
+    checkpoint: outputs/model_experiments/unet_v3_mt_d2_f1_cross_orbit_ratio_50ep/checkpoints/best.pt
+  - name: unetpp_e9b_lovasz
+    training_config: config/training_unetpp_v3_mt_d2_e9b_lovasz_finetune_15ep.yaml
+    checkpoint: outputs/model_experiments/unetpp_v3_mt_d2_e9b_lovasz_finetune_15ep/checkpoints/best.pt
+  - name: unetpp_e10a_deep_supervision
+    training_config: config/training_unetpp_v3_mt_d2_e10a_deep_supervision_15ep.yaml
+    checkpoint: outputs/model_experiments/unetpp_v3_mt_d2_e10a_deep_supervision_15ep/checkpoints/best.pt
+  - name: unetpp_e10b_road_cldice
+    training_config: config/training_unetpp_v3_mt_d2_e10b_road_cldice_12ep.yaml
+    checkpoint: outputs/model_experiments/unetpp_v3_mt_d2_e10b_road_cldice_12ep/checkpoints/best.pt
+  - name: unetpp_e10d_boundary
+    training_config: config/training_unetpp_v3_mt_d2_e10d_boundary_12ep.yaml
+    checkpoint: outputs/model_experiments/unetpp_v3_mt_d2_e10d_boundary_12ep/checkpoints/best.pt
+
+search:
+  # Eight values per row, exactly matching the member order above.
+  # The first row reproduces E9A's locked member weights.
+  weight_candidates:
+    - [0.60, 0.15, 0.15, 0.10, 0.00, 0.00, 0.00, 0.00]
+    - [0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00]
+    - [0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00]
+    - [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00]
+    - [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00]
+    - [0.30, 0.05, 0.10, 0.05, 0.20, 0.15, 0.10, 0.05]
+    - [0.25, 0.05, 0.10, 0.05, 0.20, 0.20, 0.10, 0.05]
+    - [0.20, 0.05, 0.10, 0.05, 0.20, 0.20, 0.15, 0.05]
+    - [0.20, 0.05, 0.10, 0.05, 0.15, 0.20, 0.15, 0.10]
+    - [0.10, 0.00, 0.05, 0.05, 0.25, 0.25, 0.20, 0.10]
+    - [0.10, 0.00, 0.05, 0.05, 0.20, 0.25, 0.20, 0.15]
+    - [0.00, 0.00, 0.00, 0.00, 0.30, 0.30, 0.25, 0.15]
+    - [0.00, 0.00, 0.00, 0.00, 0.25, 0.35, 0.25, 0.15]
+  coordinate_passes: 2
+  class_multiplier_candidates:
+    buildings: [1.00, 1.05, 1.10, 1.15]
+    roads: [1.00, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30]
+    vegetation: [1.00, 1.025, 1.05, 1.075]
+    bare_land: [0.85, 0.90, 0.95, 1.00, 1.05]
+    water: [0.95, 1.00, 1.05]
+
+cache_directory: outputs/model_experiments/d2_e10c_final_calibrated_ensemble/cache
+output_directory: outputs/model_experiments/d2_e10c_final_calibrated_ensemble/reports

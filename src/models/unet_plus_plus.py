@@ -20,6 +20,8 @@ class UNetPlusPlusConfig:
     dropout: float = 0.1
     use_batch_norm: bool = True
     bilinear_upsampling: bool = False
+    deep_supervision: bool = False
+    deep_supervision_average_inference: bool = True
 
     def validate(self) -> None:
         if self.input_channels <= 0:
@@ -73,8 +75,9 @@ class UNetPlusPlus(BaseSegmentationModel):
 
     Each node ``X(d,j)`` concatenates all earlier nodes at depth ``d`` with
     the upsampled node from depth ``d+1``. The final prediction is produced
-    from ``X(0,4)``. Deep supervision is intentionally disabled so all models
-    expose the same single-logit interface to the common trainer.
+    from ``X(0,4)`` by default. When deep supervision is enabled, auxiliary
+    heads supervise ``X(0,1)`` through ``X(0,4)`` during training. Evaluation
+    still exposes one tensor, optionally averaging the four prediction heads.
     """
 
     model_name = "unetpp"
@@ -130,13 +133,17 @@ class UNetPlusPlus(BaseSegmentationModel):
         self.x0_4 = DoubleConv(channels[0] * 5, channels[0], **conv_kwargs)
 
         self.classifier = nn.Conv2d(channels[0], self.num_classes, kernel_size=1)
+        self.auxiliary_classifiers = nn.ModuleList(
+            nn.Conv2d(channels[0], self.num_classes, kernel_size=1)
+            for _ in range(3)
+        ) if self.config.deep_supervision else nn.ModuleList()
         self.apply(self.initialize_weights)
 
     @staticmethod
     def _cat(nodes: list[Tensor], upsampled: Tensor) -> Tensor:
         return torch.cat([*nodes, upsampled], dim=1)
 
-    def forward(self, x: Tensor) -> Tensor:
+    def forward(self, x: Tensor) -> Tensor | tuple[Tensor, ...]:
         original_size = self.validate_input(x)
 
         x0_0 = self.x0_0(x)
@@ -158,16 +165,42 @@ class UNetPlusPlus(BaseSegmentationModel):
         x1_3 = self.x1_3(self._cat([x1_0, x1_1, x1_2], self.up2_2(x2_2, x1_0.shape[-2:])))
 
         x0_4 = self.x0_4(self._cat([x0_0, x0_1, x0_2, x0_3], self.up1_3(x1_3, x0_0.shape[-2:])))
-        logits = self.classifier(x0_4)
+        final_logits = self.classifier(x0_4)
+        if not self.config.deep_supervision:
+            return self._resize_logits(final_logits, original_size)
 
-        if logits.shape[-2:] != original_size:
-            logits = F.interpolate(
-                logits,
-                size=original_size,
-                mode="bilinear",
-                align_corners=False,
-            )
-        return logits
+        logits = [
+            self.auxiliary_classifiers[0](x0_1),
+            self.auxiliary_classifiers[1](x0_2),
+            self.auxiliary_classifiers[2](x0_3),
+            final_logits,
+        ]
+        logits = [self._resize_logits(item, original_size) for item in logits]
+
+        # The training loss consumes all four heads. Evaluation remains
+        # architecture-independent and receives one fused logit tensor.
+        if self.training:
+            return tuple(logits)
+        if self.config.deep_supervision_average_inference:
+            mean_probability = torch.stack(
+                [torch.softmax(item, dim=1) for item in logits],
+                dim=0,
+            ).mean(dim=0)
+            # Log-probabilities preserve the common raw-logit interface:
+            # softmax(returned_value) exactly recovers the averaged maps.
+            return mean_probability.clamp_min(1e-7).log()
+        return logits[-1]
+
+    @staticmethod
+    def _resize_logits(logits: Tensor, size: tuple[int, int]) -> Tensor:
+        if logits.shape[-2:] == size:
+            return logits
+        return F.interpolate(
+            logits,
+            size=size,
+            mode="bilinear",
+            align_corners=False,
+        )
 
 
 def build_unet_plus_plus(
@@ -177,6 +210,8 @@ def build_unet_plus_plus(
     dropout: float = 0.1,
     use_batch_norm: bool = True,
     bilinear_upsampling: bool = False,
+    deep_supervision: bool = False,
+    deep_supervision_average_inference: bool = True,
 ) -> UNetPlusPlus:
     return UNetPlusPlus(
         UNetPlusPlusConfig(
@@ -186,5 +221,7 @@ def build_unet_plus_plus(
             dropout=dropout,
             use_batch_norm=use_batch_norm,
             bilinear_upsampling=bilinear_upsampling,
+            deep_supervision=deep_supervision,
+            deep_supervision_average_inference=deep_supervision_average_inference,
         )
     )

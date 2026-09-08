@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -50,6 +50,16 @@ class LossConfig:
 
     lovasz_weight: float = 0.7
 
+    cldice_weight: float = 0.0
+    cldice_class_id: int = 1
+    cldice_iterations: int = 10
+
+    boundary_weight: float = 0.0
+    boundary_class_ids: tuple[int, ...] = (0, 1)
+    boundary_tolerance: int = 2
+
+    deep_supervision_weights: tuple[float, ...] = ()
+
     include_absent_classes: bool = False
 
     def validate(self) -> None:
@@ -57,6 +67,7 @@ class LossConfig:
         supported = {
             "cross_entropy", "dice", "ce_dice", "tversky",
             "ce_tversky", "lovasz", "ce_lovasz",
+            "ce_lovasz_cldice", "ce_lovasz_boundary",
         }
         if self.name not in supported:
             raise ValueError(f"name must be one of: {', '.join(sorted(supported))}.")
@@ -102,6 +113,33 @@ class LossConfig:
 
         if self.name == "ce_lovasz" and self.ce_weight + self.lovasz_weight <= 0:
             raise ValueError("At least one CE-Lovasz loss weight must be positive.")
+
+        if self.cldice_weight < 0 or self.boundary_weight < 0:
+            raise ValueError("Auxiliary loss weights cannot be negative.")
+        if not 0 <= self.cldice_class_id < self.num_classes:
+            raise ValueError("cldice_class_id is outside the model class range.")
+        if self.cldice_iterations < 1:
+            raise ValueError("cldice_iterations must be >= 1.")
+        if not self.boundary_class_ids or any(
+            class_id < 0 or class_id >= self.num_classes
+            for class_id in self.boundary_class_ids
+        ):
+            raise ValueError("boundary_class_ids must contain valid model class IDs.")
+        if self.boundary_tolerance < 1:
+            raise ValueError("boundary_tolerance must be >= 1.")
+        if self.name == "ce_lovasz_cldice" and (
+            self.ce_weight + self.lovasz_weight + self.cldice_weight <= 0
+        ):
+            raise ValueError("CE-Lovasz-clDice weights must have a positive sum.")
+        if self.name == "ce_lovasz_boundary" and (
+            self.ce_weight + self.lovasz_weight + self.boundary_weight <= 0
+        ):
+            raise ValueError("CE-Lovasz-boundary weights must have a positive sum.")
+        if self.deep_supervision_weights:
+            if any(weight < 0 for weight in self.deep_supervision_weights):
+                raise ValueError("deep_supervision_weights cannot be negative.")
+            if sum(self.deep_supervision_weights) <= 0:
+                raise ValueError("deep_supervision_weights must have a positive sum.")
 
 
 def _validate_inputs(
@@ -531,6 +569,186 @@ class CombinedCrossEntropyLovaszLoss(nn.Module):
         return self.ce_weight * ce + self.lovasz_weight * self.lovasz_loss(logits, target)
 
 
+def _soft_erode(mask: Tensor) -> Tensor:
+    horizontal = -F.max_pool2d(-mask, kernel_size=(3, 1), stride=1, padding=(1, 0))
+    vertical = -F.max_pool2d(-mask, kernel_size=(1, 3), stride=1, padding=(0, 1))
+    return torch.minimum(horizontal, vertical)
+
+
+def _soft_dilate(mask: Tensor) -> Tensor:
+    return F.max_pool2d(mask, kernel_size=3, stride=1, padding=1)
+
+
+def _soft_skeleton(mask: Tensor, iterations: int) -> Tensor:
+    opened = _soft_dilate(_soft_erode(mask))
+    skeleton = F.relu(mask - opened)
+    for _ in range(iterations - 1):
+        mask = _soft_erode(mask)
+        opened = _soft_dilate(_soft_erode(mask))
+        delta = F.relu(mask - opened)
+        skeleton = skeleton + F.relu(delta - skeleton * delta)
+    return skeleton
+
+
+class BinaryClassClDiceLoss(nn.Module):
+    """Soft centerline Dice for one configured multiclass channel."""
+
+    def __init__(
+        self,
+        *,
+        num_classes: int = 5,
+        ignore_index: int = 255,
+        class_id: int = 1,
+        iterations: int = 10,
+        epsilon: float = 1e-6,
+    ) -> None:
+        super().__init__()
+        self.num_classes = num_classes
+        self.ignore_index = ignore_index
+        self.class_id = class_id
+        self.iterations = iterations
+        self.epsilon = epsilon
+
+    def forward(self, logits: Tensor, target: Tensor) -> Tensor:
+        _validate_inputs(logits, target, num_classes=self.num_classes)
+        valid = (target != self.ignore_index).unsqueeze(1)
+        truth = (target == self.class_id).unsqueeze(1).to(logits.dtype)
+        probability = torch.softmax(logits, dim=1)[:, self.class_id:self.class_id + 1]
+        truth = truth * valid.to(truth.dtype)
+        probability = probability * valid.to(probability.dtype)
+
+        present = truth.sum(dim=(1, 2, 3)) > 0
+        if not present.any():
+            return logits.sum() * 0.0
+
+        truth = truth[present]
+        probability = probability[present]
+        truth_skeleton = _soft_skeleton(truth, self.iterations)
+        probability_skeleton = _soft_skeleton(probability, self.iterations)
+        topology_precision = (
+            (probability_skeleton * truth).sum(dim=(1, 2, 3)) + self.epsilon
+        ) / (probability_skeleton.sum(dim=(1, 2, 3)) + self.epsilon)
+        topology_sensitivity = (
+            (truth_skeleton * probability).sum(dim=(1, 2, 3)) + self.epsilon
+        ) / (truth_skeleton.sum(dim=(1, 2, 3)) + self.epsilon)
+        score = (
+            2.0 * topology_precision * topology_sensitivity
+            / (topology_precision + topology_sensitivity + self.epsilon)
+        )
+        return 1.0 - score.mean()
+
+
+class SelectedClassBoundaryF1Loss(nn.Module):
+    """Differentiable boundary-F1 loss for selected semantic classes."""
+
+    def __init__(
+        self,
+        *,
+        num_classes: int = 5,
+        ignore_index: int = 255,
+        class_ids: Sequence[int] = (0, 1),
+        tolerance: int = 2,
+        epsilon: float = 1e-6,
+    ) -> None:
+        super().__init__()
+        self.num_classes = num_classes
+        self.ignore_index = ignore_index
+        self.class_ids = tuple(int(value) for value in class_ids)
+        self.tolerance = int(tolerance)
+        self.epsilon = epsilon
+
+    @staticmethod
+    def _boundary(mask: Tensor) -> Tensor:
+        return F.max_pool2d(1.0 - mask, kernel_size=3, stride=1, padding=1) - (1.0 - mask)
+
+    def forward(self, logits: Tensor, target: Tensor) -> Tensor:
+        _validate_inputs(logits, target, num_classes=self.num_classes)
+        probabilities = torch.softmax(logits, dim=1)
+        valid = (target != self.ignore_index).unsqueeze(1)
+        kernel = 2 * self.tolerance + 1
+        losses: list[Tensor] = []
+        for class_id in self.class_ids:
+            truth = (target == class_id).unsqueeze(1).to(logits.dtype)
+            present = truth.sum(dim=(1, 2, 3)) > 0
+            if not present.any():
+                continue
+            truth = truth[present] * valid[present].to(logits.dtype)
+            probability = probabilities[present, class_id:class_id + 1]
+            probability = probability * valid[present].to(probability.dtype)
+            truth_boundary = self._boundary(truth)
+            probability_boundary = self._boundary(probability)
+            truth_extended = F.max_pool2d(
+                truth_boundary, kernel_size=kernel, stride=1, padding=self.tolerance
+            )
+            probability_extended = F.max_pool2d(
+                probability_boundary, kernel_size=kernel, stride=1, padding=self.tolerance
+            )
+            precision = (
+                (probability_boundary * truth_extended).sum(dim=(1, 2, 3)) + self.epsilon
+            ) / (probability_boundary.sum(dim=(1, 2, 3)) + self.epsilon)
+            recall = (
+                (truth_boundary * probability_extended).sum(dim=(1, 2, 3)) + self.epsilon
+            ) / (truth_boundary.sum(dim=(1, 2, 3)) + self.epsilon)
+            score = 2.0 * precision * recall / (precision + recall + self.epsilon)
+            losses.append(1.0 - score.mean())
+        if not losses:
+            return logits.sum() * 0.0
+        return torch.stack(losses).mean()
+
+
+class CombinedCrossEntropyLovaszAuxiliaryLoss(nn.Module):
+    """CE-Lovasz plus one low-weight topology or boundary objective."""
+
+    def __init__(
+        self,
+        *,
+        base: nn.Module,
+        auxiliary: nn.Module,
+        ce_weight: float,
+        lovasz_weight: float,
+        auxiliary_weight: float,
+    ) -> None:
+        super().__init__()
+        total = ce_weight + lovasz_weight + auxiliary_weight
+        if total <= 0:
+            raise ValueError("Combined auxiliary loss weights must have a positive sum.")
+        self.base = base
+        self.auxiliary = auxiliary
+        self.base_weight = float((ce_weight + lovasz_weight) / total)
+        self.auxiliary_weight = float(auxiliary_weight / total)
+
+    def forward(self, logits: Tensor, target: Tensor) -> Tensor:
+        return (
+            self.base_weight * self.base(logits, target)
+            + self.auxiliary_weight * self.auxiliary(logits, target)
+        )
+
+
+class DeepSupervisionLoss(nn.Module):
+    """Apply one segmentation criterion to a sequence of prediction heads."""
+
+    def __init__(self, base: nn.Module, weights: Sequence[float]) -> None:
+        super().__init__()
+        if not weights or any(weight < 0 for weight in weights) or sum(weights) <= 0:
+            raise ValueError("Deep-supervision weights must be non-negative and non-empty.")
+        total = float(sum(weights))
+        self.base = base
+        self.weights = tuple(float(weight) / total for weight in weights)
+
+    def forward(self, logits: Tensor | Sequence[Tensor], target: Tensor) -> Tensor:
+        if isinstance(logits, Tensor):
+            return self.base(logits, target)
+        outputs = tuple(logits)
+        if len(outputs) != len(self.weights):
+            raise ValueError(
+                f"Expected {len(self.weights)} deep-supervision heads, found {len(outputs)}."
+            )
+        return sum(
+            weight * self.base(output, target)
+            for weight, output in zip(self.weights, outputs)
+        )
+
+
 def build_loss(
     config: LossConfig | None = None,
     *,
@@ -543,6 +761,13 @@ def build_loss(
         else config
     )
     resolved.validate()
+
+    if resolved.deep_supervision_weights:
+        base = build_loss(
+            replace(resolved, deep_supervision_weights=()),
+            class_weights=class_weights,
+        )
+        return DeepSupervisionLoss(base, resolved.deep_supervision_weights)
 
     if resolved.name == "cross_entropy":
         weights = _prepare_class_weights(
@@ -596,6 +821,50 @@ def build_loss(
             lovasz_weight=resolved.lovasz_weight,
             class_weights=class_weights,
             include_absent_classes=resolved.include_absent_classes,
+        )
+
+    if resolved.name == "ce_lovasz_cldice":
+        base = CombinedCrossEntropyLovaszLoss(
+            num_classes=resolved.num_classes,
+            ignore_index=resolved.ignore_index,
+            ce_weight=resolved.ce_weight,
+            lovasz_weight=resolved.lovasz_weight,
+            class_weights=class_weights,
+            include_absent_classes=resolved.include_absent_classes,
+        )
+        return CombinedCrossEntropyLovaszAuxiliaryLoss(
+            base=base,
+            auxiliary=BinaryClassClDiceLoss(
+                num_classes=resolved.num_classes,
+                ignore_index=resolved.ignore_index,
+                class_id=resolved.cldice_class_id,
+                iterations=resolved.cldice_iterations,
+            ),
+            ce_weight=resolved.ce_weight,
+            lovasz_weight=resolved.lovasz_weight,
+            auxiliary_weight=resolved.cldice_weight,
+        )
+
+    if resolved.name == "ce_lovasz_boundary":
+        base = CombinedCrossEntropyLovaszLoss(
+            num_classes=resolved.num_classes,
+            ignore_index=resolved.ignore_index,
+            ce_weight=resolved.ce_weight,
+            lovasz_weight=resolved.lovasz_weight,
+            class_weights=class_weights,
+            include_absent_classes=resolved.include_absent_classes,
+        )
+        return CombinedCrossEntropyLovaszAuxiliaryLoss(
+            base=base,
+            auxiliary=SelectedClassBoundaryF1Loss(
+                num_classes=resolved.num_classes,
+                ignore_index=resolved.ignore_index,
+                class_ids=resolved.boundary_class_ids,
+                tolerance=resolved.boundary_tolerance,
+            ),
+            ce_weight=resolved.ce_weight,
+            lovasz_weight=resolved.lovasz_weight,
+            auxiliary_weight=resolved.boundary_weight,
         )
 
     if resolved.name == "tversky":
@@ -1057,6 +1326,28 @@ def smoke_test(
             ),
             class_weights=class_weights,
         ),
+        "ce_lovasz_cldice": build_loss(
+            LossConfig(
+                name="ce_lovasz_cldice",
+                ce_weight=0.27,
+                lovasz_weight=0.63,
+                cldice_weight=0.10,
+                cldice_class_id=1,
+                cldice_iterations=5,
+            ),
+            class_weights=class_weights,
+        ),
+        "ce_lovasz_boundary": build_loss(
+            LossConfig(
+                name="ce_lovasz_boundary",
+                ce_weight=0.27,
+                lovasz_weight=0.63,
+                boundary_weight=0.10,
+                boundary_class_ids=(0, 1),
+                boundary_tolerance=2,
+            ),
+            class_weights=class_weights,
+        ),
     }
 
     for name, module in modules.items():
@@ -1107,6 +1398,32 @@ def smoke_test(
         gradient_checks[name] = (
             gradient_finite and gradient_nonzero
         )
+
+    deep_supervision_module = build_loss(
+        LossConfig(
+            name="ce_lovasz",
+            ce_weight=0.3,
+            lovasz_weight=0.7,
+            deep_supervision_weights=(0.10, 0.15, 0.25, 0.50),
+        ),
+        class_weights=class_weights,
+    )
+    deep_logits = tuple(
+        logits.detach().clone().requires_grad_(True)
+        for _ in range(4)
+    )
+    deep_value = deep_supervision_module(deep_logits, target)
+    deep_value.backward()
+    deep_gradients_valid = all(
+        item.grad is not None
+        and torch.isfinite(item.grad).all().item()
+        and torch.any(item.grad != 0).item()
+        for item in deep_logits
+    )
+    if not deep_gradients_valid:
+        raise RuntimeError("Deep supervision produced invalid gradients.")
+    losses["deep_supervision_ce_lovasz"] = float(deep_value.detach().item())
+    gradient_checks["deep_supervision_ce_lovasz"] = True
 
     perfect_target = torch.randint(
         low=0,

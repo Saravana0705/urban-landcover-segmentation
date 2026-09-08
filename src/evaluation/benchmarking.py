@@ -148,13 +148,24 @@ def _image_from_batch(batch: Any) -> Tensor:
     raise TypeError("Unable to extract image tensor from benchmark batch.")
 
 
-def load_best_checkpoint(model: nn.Module, checkpoint_path: Path, device: torch.device) -> Mapping[str, Any]:
+def load_best_checkpoint(
+    model: nn.Module,
+    checkpoint_path: Path,
+    device: torch.device,
+    *,
+    strict: bool = True,
+) -> Mapping[str, Any]:
     checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     state = checkpoint.get("model_state_dict")
     if not isinstance(state, Mapping):
         raise KeyError(f"Checkpoint lacks model_state_dict: {checkpoint_path}")
-    model.load_state_dict(state)
-    return checkpoint
+    incompatibility = model.load_state_dict(state, strict=strict)
+    if strict:
+        return checkpoint
+    enriched = dict(checkpoint)
+    enriched["load_missing_keys"] = list(incompatibility.missing_keys)
+    enriched["load_unexpected_keys"] = list(incompatibility.unexpected_keys)
+    return enriched
 
 
 def benchmark_inference(
