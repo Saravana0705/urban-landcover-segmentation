@@ -1,0 +1,81 @@
+experiment:
+  name: d2_e11_checkpoint_model_soup
+  output_directory: outputs/model_experiments/d2_e11_checkpoint_model_soup
+
+# E11 is the final validation-only selection experiment. Test data must not be
+# opened by this program. The selected soup can be evaluated on test once in a
+# separate, explicitly authorized final-evaluation step.
+selection_split: val
+test_access: blocked
+seed: 20260725
+batch_size: 2
+num_workers: 0
+
+model_members:
+  - name: e9b
+    training_config: config/training_unetpp_v3_mt_d2_e9b_lovasz_finetune_15ep.yaml
+    checkpoint_relative_path: e9b/best.pt
+  - name: e10b
+    training_config: config/training_unetpp_v3_mt_d2_e10b_road_cldice_12ep.yaml
+    checkpoint_relative_path: e10b/best.pt
+  - name: e10d
+    training_config: config/training_unetpp_v3_mt_d2_e10d_boundary_12ep.yaml
+    checkpoint_relative_path: e10d/best.pt
+
+# Local default. On Kaggle, pass --checkpoint-root with the attached private
+# checkpoint dataset. A recursively nested dataset directory is supported.
+checkpoint_root: outputs/e11_checkpoint_soup_input
+
+# Candidate order is fixed before validation. Floating-point parameters and
+# buffers are averaged in float32. Integer buffers are copied from E9B.
+state_dict_policy:
+  floating_tensors: weighted_average_float32
+  non_floating_tensors: copy_from_e9b
+  batch_norm_recalibration: false
+
+soup_candidates:
+  - name: s0_e9b_reference
+    weights: [1.00, 0.00, 0.00]
+  - name: s1_e9b_75_e10b_25
+    weights: [0.75, 0.25, 0.00]
+  - name: s2_e9b_75_e10d_25
+    weights: [0.75, 0.00, 0.25]
+  - name: s3_e9b_75_e10b_125_e10d_125
+    weights: [0.75, 0.125, 0.125]
+  - name: s4_e9b_50_e10b_25_e10d_25
+    weights: [0.50, 0.25, 0.25]
+
+# Identical to the final locked E10C evaluation. No multiplier search is
+# permitted in E11.
+tta_transforms:
+  - identity
+  - horizontal_flip
+  - vertical_flip
+  - rotate_180
+
+class_names: [buildings, roads, vegetation, bare_land, water]
+class_probability_multipliers:
+  - 1.149999976158142
+  - 1.149999976158142
+  - 1.024999976158142
+  - 0.699999988079071
+  - 1.0750000476837158
+
+# E10C cached TTA probabilities as float16 before scoring. E11 preserves that
+# numerical policy so S0 is a fair replay of the locked E10C result.
+probability_quantization: float16_cpu
+
+reference:
+  experiment: d2_e10c_refined_calibration
+  validation_mean_iou: 0.6982309104696373
+  replay_absolute_tolerance: 0.0001
+  strict_target_mean_iou: 0.70
+
+selection_policy:
+  metric: mean_iou
+  higher_is_better: true
+  deterministic_tie_break: configured_order
+  additional_search_permitted: false
+  multiplier_search_permitted: false
+  training_permitted: false
+
