@@ -1,0 +1,99 @@
+experiment:
+  name: d2_final_controlled_robustness
+  output_directory: outputs/model_comparisons/d2_final_robustness
+
+dataset:
+  dataset_version: v3-mt-d2
+  manifest_path: metadata/dataset_v3_mt_d2/dataset_manifest.csv
+  dataset_config_path: metadata/dataset_v3_mt_d2/freeze/dataset_config.json
+  split: val
+  expected_city_ids: [DE15, DE16, DE17]
+  expected_tile_count: 351
+  input_channels: 16
+  num_classes: 5
+  class_names: [buildings, roads, vegetation, bare_land, water]
+  ignore_index: 255
+
+runtime:
+  seed: 20260725
+  batch_size: 4
+  num_workers: 0
+  pin_memory: false
+  device: auto
+  mixed_precision_inference_benchmark: true
+  warmup_batches: 5
+  measured_batches: 30
+
+noise_conditions:
+  - name: clean
+    speckle_looks: null
+  - name: light_speckle_l25
+    speckle_looks: 25.0
+  - name: moderate_speckle_l9
+    speckle_looks: 9.0
+
+models:
+  - code: E0
+    display_name: U-Net
+    experiment_name: unet_v3_mt_d2_e0_cross_orbit_50ep
+    config_path: config/training_unet_v3_mt_d2_e0_cross_orbit_50ep.yaml
+    expected_mean_iou: 0.6631560487604167
+    clean_miou_tolerance: 0.005
+    expected_trainable_parameters: 7766917
+    checkpoint_role: reproduced_original_configuration
+  - code: E1
+    display_name: Attention U-Net
+    experiment_name: attention_unet_v3_mt_d2_s0_cross_orbit_50ep
+    config_path: config/training_attention_unet_v3_mt_d2_s0_cross_orbit_50ep.yaml
+    expected_mean_iou: 0.661407540763194
+    clean_miou_tolerance: 0.00005
+    expected_trainable_parameters: 7855161
+    checkpoint_role: original_controlled_run
+  - code: E2
+    display_name: U-Net++
+    experiment_name: unetpp_v3_mt_d2_s0_cross_orbit_50ep
+    config_path: config/training_unetpp_v3_mt_d2_s0_cross_orbit_50ep.yaml
+    expected_mean_iou: 0.6860177249062984
+    clean_miou_tolerance: 0.00005
+    expected_trainable_parameters: 9049701
+    checkpoint_role: original_controlled_run
+  - code: E3
+    display_name: Swin Transformer
+    experiment_name: swin_transformer_v3_mt_d2_s0_cross_orbit_50ep
+    config_path: config/training_swin_transformer_v3_mt_d2_s0_cross_orbit_50ep.yaml
+    expected_mean_iou: 0.5807137529011961
+    clean_miou_tolerance: 0.00005
+    expected_trainable_parameters: 6942383
+    checkpoint_role: original_controlled_run
+  - code: E4
+    display_name: DeepLabV3+
+    experiment_name: deeplabv3plus_v3_mt_d2_s0_cross_orbit_50ep
+    config_path: config/training_deeplabv3plus_v3_mt_d2_s0_cross_orbit_50ep.yaml
+    expected_mean_iou: 0.5655732492265485
+    clean_miou_tolerance: 0.00005
+    expected_trainable_parameters: 16644837
+    checkpoint_role: original_controlled_run
+  - code: E5
+    display_name: SegFormer
+    experiment_name: segformer_v3_mt_d2_s0_cross_orbit_50ep
+    config_path: config/training_segformer_v3_mt_d2_s0_cross_orbit_50ep.yaml
+    expected_mean_iou: 0.549814575618085
+    clean_miou_tolerance: 0.00005
+    expected_trainable_parameters: 3735813
+    checkpoint_role: original_controlled_run
+  - code: E6
+    display_name: Mask2Former
+    experiment_name: mask2former_v3_mt_d2_s0_cross_orbit_50ep
+    config_path: config/training_mask2former_v3_mt_d2_s0_cross_orbit_50ep.yaml
+    expected_mean_iou: 0.2743666653643876
+    clean_miou_tolerance: 0.00005
+    expected_trainable_parameters: 11936326
+    checkpoint_role: original_controlled_run
+
+safety:
+  allowed_split: val
+  training_enabled: false
+  test_evaluation_enabled: false
+  checkpoint_updates_enabled: false
+  selection_metric: validation_mean_iou
+
