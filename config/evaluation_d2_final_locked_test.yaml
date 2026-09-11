@@ -1,0 +1,67 @@
+experiment:
+  name: d2_final_locked_test_e9b_tta_calibrated
+  output_directory: outputs/final_evaluation/d2_locked_test_e9b_tta_calibrated
+
+# This is the only permitted test-set method. It was fixed entirely from
+# validation evidence before the test split was opened.
+selection_lock:
+  architecture_benchmark_winner: U-Net++
+  architecture_benchmark_experiment: unetpp_v3_mt_d2_s0_cross_orbit_50ep
+  architecture_benchmark_validation_mean_iou: 0.6860177249062984
+  final_selection_experiment: d2_e11_checkpoint_model_soup
+  selected_candidate: s0_e9b_reference
+  selected_weights: {e9b: 1.0, e10b: 0.0, e10d: 0.0}
+  validation_mean_iou: 0.6982309104696373
+  validation_lock_sha256: 06c5d6cba9774bc0c0ad70ddddcaba8e9d90f3ea5e2cf2f068c3f3ea0946233c
+  validation_tuning_closed: true
+
+dataset:
+  dataset_version: v3-mt-d2
+  manifest_path: metadata/dataset_v3_mt_d2/dataset_manifest.csv
+  dataset_config_path: metadata/dataset_v3_mt_d2/freeze/dataset_config.json
+  split: test
+  expected_city_ids: [DE18, DE19, DE20]
+  expected_city_names: [Freiburg, Kiel, Rostock]
+  expected_city_tile_counts: {DE18: 120, DE19: 117, DE20: 102}
+  expected_tile_count: 339
+  input_channels: 16
+  num_classes: 5
+  class_names: [buildings, roads, vegetation, bare_land, water]
+  ignore_index: 255
+
+model:
+  display_name: U-Net++
+  training_config: config/training_unetpp_v3_mt_d2_e9b_lovasz_finetune_15ep.yaml
+  expected_training_config_sha256: e62269e45eda7356d87876a28a743dfc358fd582df61f1b812f110a7ac52fe38
+  checkpoint_relative_path: e9b/best.pt
+  expected_checkpoint_sha256: 9ea0b5220b96acc26cce52f289e2f5b35a085dab0b0927d0794490907f70c799
+  expected_model_name: unetpp
+  expected_trainable_parameters: 9049701
+
+inference:
+  seed: 20260725
+  batch_size: 2
+  num_workers: 0
+  pin_memory: false
+  mixed_precision: false
+  tta_transforms: [identity, horizontal_flip, vertical_flip, rotate_180]
+  probability_quantization: float16_cpu
+  class_probability_multipliers:
+    - 1.149999976158142
+    - 1.149999976158142
+    - 1.024999976158142
+    - 0.699999988079071
+    - 1.0750000476837158
+
+safety:
+  selection_locked_before_test: true
+  explicit_test_authorization_required: true
+  additional_validation_search_permitted: false
+  additional_training_permitted: false
+  checkpoint_updates_permitted: false
+  test_result_may_trigger_reselection: false
+  refuse_existing_output_directory: true
+  interpretation_policy: >-
+    The single test result estimates final generalization only. It must not
+    trigger checkpoint, threshold, TTA, multiplier, architecture or dataset
+    reselection.
